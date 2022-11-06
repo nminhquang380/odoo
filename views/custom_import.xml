@@ -1,0 +1,188 @@
+<odoo>
+    <data>
+        <record id='lop_tin_chi_import_wizard_form' model='ir.ui.view'>
+            <field name='name'>Import lớp tín chỉ</field>
+            <field name='model'>lop_tin_chi.import_wizard</field>
+            <field name='arch' type='xml'>
+                <form string="Import lớp tín chỉ">
+                    <sheet>
+                        <group col="4">
+                            <field name="ky_nam_hoc_id"/>
+                            <field name="so_tt_dk"/>
+                            <field name="dot_dang_ky_tin_chi_id"/>
+                        </group>
+                        <group>
+                            <field name="import_template"/>
+                        </group>
+                        <group col="4">
+                            <field name="file_import" attrs="{'invisible': ['|', ('import_template', '=', 'AQ'), ('import_template', '=', False)]}"/>
+                            <field name="file_import_sv" attrs="{'invisible': ['|', ('import_template', '=', 'AQ'), ('import_template', '=', False)]}"/>
+                            <field name="file_import_aq" attrs="{'invisible': ['|', ('import_template', '=', 'AIS'), ('import_template', '=', False)]}"/>
+<!--                            <field name="batch_limit"/>-->
+                        </group>
+                        <footer>
+                            <button string='Import' type='object' name='import_lop_tin_chi' class='btn-primary'/>
+                            <button string='Tải mẫu import lớp tín chỉ' type='object' name='get_header' class='btn-primary'/>
+                            <button string='Tải mẫu import sinh viên lớp tín chỉ' type='object' name='get_header_sv' class='btn-primary'
+                                attrs="{'invisible': ['|', ('import_template', '=', 'AQ'), ('import_template', '=', False)]}"/>
+                        </footer>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+        <record id="action_lop_tin_chi_import_wizard" model="ir.actions.act_window">
+            <field name="name">Import lớp tín chỉ</field>
+            <field name="res_model">lop_tin_chi.import_wizard</field>
+            <field name="view_mode">form</field>
+            <field name="target">new</field>
+        </record>
+
+        <record id='tkb_import_wizard_form' model='ir.ui.view'>
+            <field name='name'>Import lớp tín chỉ</field>
+            <field name='model'>tkb.import_wizard</field>
+            <field name='arch' type='xml'>
+                <form string="Import thời khóa biểu">
+                    <sheet>
+                        <group col="4">
+                            <field name="hinh_thuc_dao_tao_id" readonly="1" widget="selection"/>
+                            <field name="import_template"/>
+                            <field name="file_import"/>
+                            <field name="su_dung_template_tiet_hoc" attrs="{'invisible': ['|', ('import_template', '!=', 'AQ'), ('import_template', '=', False)]}"/>
+                            <field name="template_tiet_hoc_id" attrs="{'invisible': ['|', ('import_template', '!=', 'PTTC1'), ('import_template', '=', False)], 'required': [('import_template', '=', 'PTTC1')]}"/>
+                            <field name="ky_nam_hoc_id" attrs="{'invisible': ['|', ('import_template', '!=', 'PTTC1'), ('import_template', '=', False)]}"/>
+                            <field name="start_day" attrs="{'invisible': ['|', ('import_template', '!=', 'AQ'), ('import_template', '=', False)]}"/>
+                            <field name="end_day" attrs="{'invisible': ['|', ('import_template', '!=', 'AQ'), ('import_template', '=', False)]}"/>
+<!--                            <field name="batch_limit"/>-->
+                        </group>
+                        <footer>
+                            <button string='Import' type='object' name='import_tkb' class='btn-primary'/>
+                            <button string='Tải mẫu import' type='object' name='get_header' class='btn-primary'/>
+                        </footer>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+        <record id="action_tkb_import_wizard" model="ir.actions.act_window">
+            <field name="name">Import thời khóa biểu</field>
+            <field name="res_model">tkb.import_wizard</field>
+            <field name="view_mode">form</field>
+            <field name="target">new</field>
+        </record>
+
+        <record id='diem_hp_import_form' model='ir.ui.view'>
+            <field name='name'>Import điểm học phần</field>
+            <field name='model'>diem_hoc_phan.import_wizard</field>
+            <field name='arch' type='xml'>
+                <form string="Import điểm học phần">
+                    <sheet>
+                        <group col="4">
+                            <field name="ky_hoc_id"/>
+                            <field name="import_template"/>
+                            <field name="file_import"/>
+                        </group>
+                        <footer>
+                            <button string='Import' type='object' name='import_diem_hoc_phan' class='btn-primary'/>
+                            <button string='Tải mẫu import' type='object' name='get_header' class='btn-primary'/>
+                        </footer>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+        <record id="action_diem_hp_import_wizard" model="ir.actions.act_window">
+            <field name="name">Import điểm học phần</field>
+            <field name="res_model">diem_hoc_phan.import_wizard</field>
+            <field name="view_mode">form</field>
+            <field name="target">new</field>
+        </record>
+
+        <record id='lop_hanh_chinh_import_form' model='ir.ui.view'>
+            <field name='name'>Import lớp hành chính</field>
+            <field name='model'>lop_hanh_chinh.import_wizard</field>
+            <field name='arch' type='xml'>
+                <form string="Import lớp hành chính">
+                    <sheet>
+                        <group col="4">
+                            <field name="file_import_lop_hc"/>
+                            <field name="file_import_sv"/>
+                        </group>
+                        <footer>
+                            <button string='Import' type='object' name='import_lop' class='btn-primary'/>
+                            <button string='Tải mẫu import lớp hành chính' type='object' name='get_header_lop' class='btn-primary'/>
+                            <button string='Tải mẫu import sinh viên lớp hành chính' type='object' name='get_header_sv' class='btn-primary'/>
+                        </footer>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+        <record id="action_lop_hanh_chinh_import_wizard" model="ir.actions.act_window">
+            <field name="name">Import lớp hành chính</field>
+            <field name="res_model">lop_hanh_chinh.import_wizard</field>
+            <field name="view_mode">form</field>
+            <field name="target">new</field>
+        </record>
+
+        <record id='dssv_import_form' model='ir.ui.view'>
+            <field name='name'>Import danh sách sinh viên</field>
+            <field name='model'>dssv.import_wizard</field>
+            <field name='arch' type='xml'>
+                <form string="Import danh sách sinh viên">
+                    <sheet>
+                        <group>
+                            <field name="hinh_thuc_dao_tao"/>
+                            <field name="khong_masv" required="1"/>
+                            <!-- <field name="nam_hoc" attrs="{'invisible':[('khong_masv', '!=', True)]}"/>
+                            <field name="co_so_dao_tao" attrs="{'invisible':[('khong_masv', '!=', True)]}"/>
+                            <field name="trinh_do_hinh_dao_tao" attrs="{'invisible':[('khong_masv', '!=', True)]}"/> -->
+                            <field name="nam_hoc"/>
+                            <!-- <field name="co_so_dao_tao"/> -->
+                            <field name="co_so"/>
+                            <field name="trinh_hinh" string="Trình độ, hình thức đào tạo"/>
+                            <!-- <field name="trinh_do_hinh_dao_tao"/> -->
+                            <field name="file_import_sv"/>
+                        </group>
+                        <footer>
+                            <button string='Import' type='object' name='import_dssv' class='btn-primary'/>
+                            <button string='Tải biểu mẫu import' type='object' name='get_header' class='btn-primary'/>
+                            <!-- <button string='Tải mẫu import lớp hành chính' type='object' name='get_header_lop' class='btn-primary'/>
+                            <button string='Tải mẫu import sinh viên lớp hành chính' type='object' name='get_header_sv' class='btn-primary'/> -->
+                        </footer>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+        <record id="action_dssv_import_wizard" model="ir.actions.act_window">
+            <field name="name">Import danh sách sinh viên</field>
+            <field name="res_model">dssv.import_wizard</field>
+            <field name="view_mode">form</field>
+            <field name="target">new</field>
+        </record>
+        
+        <record id='hoa_don_phieu_dang_ky_tin_chi_import_form' model='ir.ui.view'>
+            <field name='name'>Import hóa đơn phiếu dktc</field>
+            <field name='model'>hoa_don_phieu_dang_ky_tin_chi.import_wizard</field>
+            <field name='arch' type='xml'>
+                <form string="Import hóa đơn phiếu dktc">
+                    <sheet>
+                        <group col="4">
+                            <field name="file_import"/>
+                            <field name="dot_dang_ky_tin_chi_id"/>
+                            <field name="kiem_tra_don_gia" widget="boolean_toggle"/>
+                            <field name="kiem_tra_lop_hanh_chinh" widget="boolean_toggle"/>
+                            <field name="phe_duyet_ngay" widget="boolean_toggle"/>
+                        </group>
+                        <footer>
+                            <button string='Import' type='object' name='import_hoa_don_phieu_dang_ky_tin_chi' class='btn-primary'/>
+                            <button string='Tải mẫu import hóa đơn phiếu dktc' type='object' name='get_header' class='btn-primary'/>
+                        </footer>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+        <record id="action_hoa_don_phieu_dang_ky_tin_chi_import_wizard" model="ir.actions.act_window">
+            <field name="name">Import hóa đơn phiếu dktc</field>
+            <field name="res_model">hoa_don_phieu_dang_ky_tin_chi.import_wizard</field>
+            <field name="view_mode">form</field>
+            <field name="target">new</field>
+        </record>
+    </data>
+</odoo>

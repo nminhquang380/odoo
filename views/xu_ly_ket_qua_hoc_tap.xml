@@ -1,0 +1,213 @@
+<odoo>
+    <data>
+        <!--    bị cảnh cáo học tập-->
+        <record model="ir.ui.view" id="sinh_vien_bi_canh_cao_hoc_tap_form">
+            <field name="model">qldt.sinh_vien_bi_canh_cao_hoc_tap</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <div class="oe_edit_only" style="font-size:25px" attrs="{'invisible': [('id', '=', False)], }">Chỉnh sửa thông tin sinh viên bị cảnh cáo học tập</div>
+                        <div class="oe_edit_only" style="font-size:25px" attrs="{'invisible': [('id', '!=', False)], }">Tạo mới thông tin sinh viên bị cảnh cáo học tập</div>
+                        <div class="oe_read_only" style="font-size:25px">Thông tin sinh viên bị cảnh cáo học tập</div>
+                        <group col="4">
+                            <field name="sinh_vien_hoc_ky_id" required="1" string="Mã sinh viên" widget="selection"/>
+                            <field name="ten_sinh_vien" readonly="1"/>
+                            <field name="ky_nam_hoc_id" readonly="1"/>
+                            <field name="khoi_lop_id" readonly="1"/>
+                        </group>
+                        <notebook colspan="4">
+                                <page string="Nguyên nhân" name="nguyen_nhan">
+                                    <field name="nguyen_nhan"/>
+                                </page>
+                        </notebook>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="sinh_vien_bi_canh_cao_hoc_tap_tree">
+            <field name="model">qldt.sinh_vien_bi_canh_cao_hoc_tap</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="sinh_vien_hoc_ky_id" string="Mã SV"/>
+                    <field name="ten_sinh_vien"/>
+                    <field name="ky_nam_hoc_id" />
+                    <field name="khoi_lop_id" />
+                    <field name="create_date" string="Ngày tạo"/>
+                    <field name="create_uid" string="Người tạo"/>
+                </tree>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="qldt_sinh_vien_bi_canh_cao_hoc_tap">
+            <field name="model">qldt.sinh_vien_bi_canh_cao_hoc_tap</field>
+            <field name="arch" type="xml">
+                <search>
+                    <field name="sinh_vien_hoc_ky_id" string="Mã SV"/>
+                    <field name="ten_sinh_vien"/>
+                    <field name="ky_nam_hoc_id" />
+                    <field name="khoi_lop_id" />
+                    <field name="create_date" string="Ngày tạo"/>
+                    <field name="create_uid" string="Người tạo"/>
+                    <searchpanel>
+                        <field name="ky_nam_hoc_id" />
+                        <field name="khoi_lop_id" />
+                    </searchpanel>
+                </search>
+
+            </field>
+        </record>
+
+        <record model="ir.actions.act_window" id="action_sinh_vien_bi_canh_cao_hoc_tap">
+            <field name="name">Quản lý danh sách sinh viên bị cảnh cáo học tập</field>
+            <field name="res_model">qldt.sinh_vien_bi_canh_cao_hoc_tap</field>
+            <field name="view_mode">tree,form</field>
+            <field name="search_view_id" ref="qldt_sinh_vien_bi_canh_cao_hoc_tap"/>
+        </record>
+
+        <!--    thôi học -->
+        <record model="ir.ui.view" id="sinh_vien_bi_thoi_hoc_form">
+            <field name="model">qldt.sinh_vien_bi_thoi_hoc</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <div class="oe_edit_only" style="font-size:25px" attrs="{'invisible': [('id', '=', False)], }">Chỉnh sửa thông tin sinh viên bị thôi học</div>
+                        <div class="oe_edit_only" style="font-size:25px" attrs="{'invisible': [('id', '!=', False)], }">Tạo mới thông tin sinh viên bị thôi học</div>
+                        <div class="oe_read_only" style="font-size:25px">Thông tin sinh viên bị thôi học</div>
+                        <group col="4">
+                            <field name="sv_ltc_ds_id" string="Mã sinh viên" required="1" widget="selection"/>
+                            <field name="ky_nam_hoc_id" readonly="1"/>
+                            <field name="khoi_lop_id" readonly="1"/>
+                            <field name="quy_tac_xu_ly" widget="selection"/>
+                            <field name="bao_luu_ket_qua"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="sinh_vien_bi_thoi_hoc_tree">
+            <field name="model">qldt.sinh_vien_bi_thoi_hoc</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="sv_ltc_ds_id"/>
+                    <field name="ky_nam_hoc_id" />
+                    <field name="khoi_lop_id" />
+                    <field name="quy_tac_xu_ly"/>
+                    <field name="bao_luu_ket_qua"/>
+                    <field name="create_date" string="Ngày tạo"/>
+                    <field name="create_uid" string="Người tạo"/>
+                </tree>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="qldt_sinh_vien_bi_thoi_hoc_search">
+            <field name="model">qldt.sinh_vien_bi_thoi_hoc</field>
+            <field name="arch" type="xml">
+                <search>
+                    <field name="sv_ltc_ds_id"/>
+                    <field name="ky_nam_hoc_id" />
+                    <field name="khoi_lop_id" />
+                    <!--                    <field name="quy_tac_xu_ly"/>-->
+                    <field name="bao_luu_ket_qua"/>
+                    <field name="create_date" string="Ngày tạo"/>
+                    <field name="create_uid" string="Người tạo"/>
+                    <searchpanel>
+                        <field name="ky_nam_hoc_id" />
+                        <field name="khoi_lop_id" />
+                        <!--                        <field name="so_lan_bi_xu_ly"/>-->
+                    </searchpanel>
+                </search>
+
+            </field>
+        </record>
+
+        <record model="ir.actions.act_window" id="action_sinh_vien_bi_thoi_hoc">
+            <field name="name">Quản lý danh sách sinh viên bị thôi học</field>
+            <field name="res_model">qldt.sinh_vien_bi_thoi_hoc</field>
+            <field name="view_mode">tree,form</field>
+            <field name="search_view_id" ref="qldt_sinh_vien_bi_thoi_hoc_search"/>
+        </record>
+
+        <!--học lại-->
+        <record model="ir.ui.view" id="sinh_vien_hoc_lai_form">
+            <field name="model">qldt.sinh_vien_hoc_lai</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <div class="oe_edit_only" style="font-size:25px" attrs="{'invisible': [('id', '=', False)], }">Chỉnh sửa thông tin sinh viên học lại</div>
+                        <div class="oe_edit_only" style="font-size:25px" attrs="{'invisible': [('id', '!=', False)], }">Tạo mới thông tin sinh viên học lại</div>
+                        <div class="oe_read_only" style="font-size:25px">Thông tin sinh viên học lại</div>
+                        <group col="4">
+                            <field name="sv_ltc_ds_id" string="Mã sinh viên" widget="selection"/>
+                            <field name="ky_nam_hoc_id" readonly="1"/>
+                            <field name="khoi_lop_id" readonly="1"/>
+                            <field name="quy_tac_xu_ly" widget="selection"/>
+                            <field name="lop_tin_chi_id" readonly="1"/>
+                            <field name="hoc_phan" readonly="1"/>
+                            <field name="so_tin_chi" readonly="1"/>
+                            <field name="diem_tb_hoc_phan" readonly="1"/>
+                            <field name="diem_tong_ket_dang_chu" readonly="1"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="sinh_vien_hoc_lai_tree">
+            <field name="model">qldt.sinh_vien_hoc_lai</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="sv_ltc_ds_id"/>
+                    <field name="ky_nam_hoc_id"/>
+                    <field name="khoi_lop_id" />
+                    <field name="quy_tac_xu_ly" />
+                    <field name="lop_tin_chi_id" />
+                    <field name="hoc_phan" />
+                    <field name="so_tin_chi" />
+                    <field name="diem_tb_hoc_phan"/>
+                    <field name="diem_tong_ket_dang_chu"/>
+                    <field name="create_date" string="Ngày tạo"/>
+                    <field name="create_uid" string="Người tạo"/>
+                </tree>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="qldt_sinh_vien_hoc_lai_search">
+            <field name="model">qldt.sinh_vien_hoc_lai</field>
+            <field name="arch" type="xml">
+                <search>
+                  <field name="sv_ltc_ds_id"/>
+                    <field name="ky_nam_hoc_id"/>
+                    <field name="khoi_lop_id" />
+                    <field name="quy_tac_xu_ly" />
+                    <field name="lop_tin_chi_id" />
+                    <field name="hoc_phan" />
+                    <field name="so_tin_chi" />
+                    <field name="diem_tb_hoc_phan"/>
+                    <field name="diem_tong_ket_dang_chu"/>
+                    <field name="create_date" string="Ngày tạo"/>
+                    <field name="create_uid" string="Người tạo"/>
+                    <field name="create_date" string="Ngày tạo"/>
+                    <field name="create_uid" string="Người tạo"/>
+                    <searchpanel>
+                        <field name="ky_nam_hoc_id" />
+                        <field name="khoi_lop_id" />
+                        <field name="lop_tin_chi_id" />
+                        <!--                        <field name="so_lan_bi_xu_ly"/>-->
+                    </searchpanel>
+                </search>
+
+            </field>
+        </record>
+
+        <record model="ir.actions.act_window" id="action_sinh_vien_hoc_lai">
+            <field name="name">Quản lý danh sách sinh viên học lại</field>
+            <field name="res_model">qldt.sinh_vien_hoc_lai</field>
+            <field name="view_mode">tree,form</field>
+            <field name="search_view_id" ref="qldt_sinh_vien_hoc_lai_search"/>
+        </record>
+
+
+    </data>
+</odoo>

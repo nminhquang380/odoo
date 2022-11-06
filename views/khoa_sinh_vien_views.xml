@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="khoa_sinh_vien_view_form" model="ir.ui.view">
+            <field name="name">khoa_sinh_vien.view.form</field>
+            <field name="model">khoa_sinh_vien</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <div class="oe_edit_only" style="font-size:25px" attrs="{'invisible': [('id', '=', False)], }">
+                            Chỉnh sửa thông tin khóa sinh viên
+                        </div>
+                        <div class="oe_edit_only" style="font-size:25px" attrs="{'invisible': [('id', '!=', False)], }">
+                            Tạo mới khóa sinh viên
+                        </div>
+                        <div class="oe_read_only" style="font-size:25px">Khóa sinh viên</div>
+                        <group col="4">
+                            <field name="so_thu_tu_khoa" required = "1"/>
+                            <field name="ten_hien_thi"/>
+                            <field name="nam_hoc" required = "1"/>
+                            <!-- <field name="ky_nhap_hoc" widget="selection"/> -->
+                            <field name="hinh_thuc_dao_tao_id" required="1"/>
+<!--                            <field name="hinh_thuc_dao_tao_id">-->
+<!--                                <tree>-->
+<!--                                    <field name="ten_hinh_thuc_dao_tao"/>-->
+<!--                                    <field name="thoi_gian_dao_tao" string="Thời gian đào tạo (năm)"/>-->
+<!--                                </tree>-->
+<!--                            </field>-->
+                        </group>
+
+                        <group>
+                            <field name="nganh_ids" context="{'form_view_ref': 'website_slides.khoa_nganh_form_khoa_sinh_vien' }">
+                                <tree>
+                                    <field name="nganh_id" string="Tên ngành viết tắt"/>
+                                    <field name="ten_nganh" string="Tên ngành đầy đủ"/>
+                                </tree>
+                            </field>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="khoa_sinh_vien_view_list" model="ir.ui.view">
+            <field name="name">khoa_sinh_vien.view.list</field>
+            <field name="model">khoa_sinh_vien</field>
+            <field name="arch" type="xml">
+                <tree string="khóa sinh viên" sample="1" default_order="ten_hien_thi desc">
+                    <field name="ten_hien_thi"/>
+                    <field name="so_thu_tu_khoa"/>
+                    <field name="hinh_thuc_dao_tao_id"/>
+                    <!-- <field name="ky_nhap_hoc" widget="selection"/> -->
+                    <field name="create_uid" string="Người nhập"/>
+                    <field name="create_date" string="Ngày nhập"/>
+                </tree>
+            </field>
+        </record>
+
+
+        <record id="action_khoa_sinh_vien_danh_sach_khoa_sinh_vien" model="ir.actions.act_window">
+            <field name="name">Danh sách thông tin khóa sinh viên</field>
+            <field name="res_model">khoa_sinh_vien</field>
+            <field name="view_mode">list,form</field>
+            <!--            <field name="view_id" ref="khoa_sinh_vien_view_list"></field>-->
+        </record>
+    </data>
+</odoo>

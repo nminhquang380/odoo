@@ -1,0 +1,122 @@
+<odoo>
+    <data>
+    <record model="ir.ui.view" id="dot_dang_ky_nhu_cau_form">
+            <field name="model">dot_dang_ky_nhu_cau</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <div class="oe_button_box" name="button_box">
+                            <button name="action_view_thong_ke_dang_ky_nhu_cau"
+                                    type="object"
+                                    icon="fa-table"
+                                    class="oe_stat_button">
+                                <div class="o_field_widget o_stat_info">
+                                    <span class="o_stat_value">Xem tổng hợp</span>
+                                    <span class="o_stat_value">số liệu chung</span>
+                                </div>
+                            </button>
+                            <button name="action_export_thong_ke_dang_ky_nhu_cau"
+                                    type="object"
+                                    icon="fa-cloud-download"
+                                    class="oe_stat_button">
+                                <div class="o_field_widget o_stat_info">
+                                    <span class="o_stat_value">Xuất file tổng</span>
+                                    <span class="o_stat_value">hợp số liệu</span>
+                                </div>
+                            </button>
+                        </div>
+                        <div class="oe_edit_only" style="font-size:25px" attrs="{'invisible': [('id', '=', False)], }">Chỉnh sửa đợt đăng ký nhu cầu</div>
+                        <div class="oe_edit_only" style="font-size:25px" attrs="{'invisible': [('id', '!=', False)], }">Tạo mới đợt đăng ký nhu cầu</div>
+                        <div class="oe_read_only" style="font-size:25px">Đợt đăng ký nhu cầu</div>
+                        <group col="4">
+                            <field name="ten_dot_dang_ky_nhu_cau" required="1"/>
+                            <!-- <field name="ket_thuc"/> -->
+                            <field name="ky_hoc_id" required="1" options="{'no_create':True, 'no_quick_create':True, 'no_create_edit':True}"/>
+                            <field name="ngay_bat_dau_nhu_cau" required="1"/>
+                            <field name="ngay_ket_thuc_nhu_cau" required="1"/>
+                            <field name="trang_thai" attrs="{'invisible':[('trang_thai','!=','Chưa xác định')]}" readonly="1"/>
+                            <field name="trang_thai" attrs="{'invisible':[('trang_thai','!=','Chưa bắt đầu')]}" style="color:green;" readonly="1"/>
+                            <field name="trang_thai" attrs="{'invisible':[('trang_thai','!=','Đang diễn ra')]}" style="color:olive;" readonly="1"/>
+                            <field name="trang_thai" attrs="{'invisible':[('trang_thai','!=','Đã kết thúc')]}" style="color:maroon;" readonly="1"/>
+                            <field name="so_tin_chi_toi_thieu"/>
+                            <field name="so_tin_chi_toi_da"/>
+                            <field name="hinh_thuc_dao_tao_id"/>
+                        </group>
+                        <notebook colspan="4">
+                                <page string="Khối lớp áp dụng" name="khoi_lop">
+                                    <field name="khoi_lop_ids" options="{'no_create':True, 'no_quick_create':True, 'no_create_edit':True}"/>
+                                </page>
+                                <page string="Danh sách phiếu đăng ký nhu cầu" name="phieu_dang_ky">
+                                    <field name="phieu_dang_ky_hoc_phan_id"
+                                       options="{'no_create_edit':1,
+                                        'no_quick_create':1,
+                                        'no_open': True, 'no_create': True}">
+                                            <tree>
+                                                <field name="sinh_vien_id"/>
+                                                <field name="name"/>
+                                                <field name="lop_hanh_chinh_id"/>
+<!--                                                <field name="ten_khoan_thu"/>-->
+                                                <field name="tong_so_tin_chi"/>
+                                                <field name="tong_hoc_phi"/>
+                                                <field name="tong_hoc_phi"/>
+                                            </tree>
+                                    </field>
+                                </page>
+<!--                                <page string="NV đăng ký" name="nv_dang_ky">-->
+<!--                                    <field name="nv_hoc_phan_id"-->
+<!--                                       options="{'no_create_edit':1,-->
+<!--                                        'no_quick_create':1,-->
+<!--                                        'no_open': True, 'no_create': True}"-->
+<!--                                    context="{'group_by': 'ten_hoc_phan'}" domain="[]"-->
+<!--                                    />-->
+<!--                                </page>-->
+                        </notebook>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="dot_dang_ky_nhu_cau_tree">
+            <field name="model">dot_dang_ky_nhu_cau</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="ten_dot_dang_ky_nhu_cau"/>
+                    <field name="ky_hoc_id" options="{'no_create_edit':1,
+                                        'no_quick_create':1,
+                                        'no_open': True, 'no_create': True}"/>
+                    <field name="khoi_lop_ids"/>
+                    <field name="ngay_bat_dau_nhu_cau"/>
+                    <field name="ngay_ket_thuc_nhu_cau"/>
+                    <field name="trang_thai"/>
+                    <field name="hinh_thuc_dao_tao_id"/>
+                    <field name="create_uid" string="Tạo bởi"/>
+                    <field name="create_date" string="Thời gian tạo"/>
+                </tree>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="dot_dang_ky_nhu_cau_search_all">
+            <field name="model">dot_dang_ky_nhu_cau</field>
+            <field name="arch" type="xml">
+                <search>
+                    <field name="ten_dot_dang_ky_nhu_cau" required="1"/>
+                    <!-- <field name="ket_thuc"/> -->
+                    <field name="ngay_bat_dau_nhu_cau"/>
+                    <field name="ngay_ket_thuc_nhu_cau"/>
+                    <searchpanel>
+                        <field name="ky_hoc_id"/>
+                    </searchpanel>
+                </search>
+            </field>
+        </record>
+
+        <record model="ir.actions.act_window" id="action_quan_ly_dot_dang_ky_nhu_cau">
+            <field name="name">Đợt đăng ký nhu cầu</field>
+            <field name="res_model">dot_dang_ky_nhu_cau</field>
+            <field name="view_mode">tree,form</field>
+            <field name="search_view_id" ref="dot_dang_ky_nhu_cau_search_all"/>
+            <!-- <field name="context">{"group_by":["ten_lop_hanh_chinh","ky_ctk","ma_hp_ten_hp"]}</field> -->
+        </record>
+
+    </data>
+</odoo>

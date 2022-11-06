@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record model="ir.ui.view" id="lop_hanh_chinh_view_form">
+            <field name="name">lop_hanh_chinh.view.form</field>
+            <field name="model">lop_hanh_chinh</field>
+            <field name="arch" type="xml">
+                <form string="Lớp hành chính">
+                    <sheet>
+                        <!--                        <div class="oe_title">-->
+                        <!--                            <label for="ten_lop_hanh_chinh" class="oe_edit_only" string="Tên lớp hành chính"/>-->
+                        <!--                            <h1><field name="ten_lop_hanh_chinh" default_focus="1" placeholder=""/></h1>-->
+                        <!--                        </div>-->
+                        <div class="oe_edit_only" style="font-size:25px" attrs="{'invisible': [('id', '=', False)], }">Chỉnh sửa lớp hành chính</div>
+                        <div class="oe_edit_only" style="font-size:25px" attrs="{'invisible': [('id', '!=', False)], }">Tạo mới lớp hành chính</div>
+                        <div class="oe_read_only" style="font-size:25px">Lớp hành chính</div>
+                        <notebook colspan="4">
+                            <page string="Thông tin chung">
+                                <group col="4">
+<!--                                    đoạn này fix hơi tà đạo để đúng tên trường-->
+                                    <field name="khoi_lop_id" required="1" options="{'no_create_edit': True, 'no_quick_create': True}"/>
+                                    <field name="ten_lop_hanh_chinh" string="Tên lớp hành chính"/>
+                                    <field name="so_thu_tu_lop" required="1"/>
+                                    <!-- <field name="co_so_dao_tao_moi" required="1"/> -->
+                                    <field name="hinh_thuc_dao_tao_id" readonly="True"/>
+                                    <field name="khoa_sinh_vien"/>
+                                    <field name="nganh"/>
+                                    <field name="khoa_nganh_id"/>
+                                    <!-- <field name="chuyen_nganh"/> -->
+                                    <!-- <field name='khoa_chuyen_nganh_id' readonly="True"/> -->
+                                    
+                                    <field name="si_so"/>
+<!--                                    <field name="can_bo_id"/>-->
+                                    <field name="can_bo_id" options="{'no_create_edit': True, 'no_quick_create': True}"/>
+                                    <field name="ten_can_bo"/>
+                                    <!-- <field name="don_vi_id"/> -->
+                                </group>
+                                <group t-if="0">
+                                    <!-- <div>
+                                        <font color='red'>Lớp hành chính đã tồn tại, vui lòng tạo lớp khác!</font>
+                                    </div> -->
+                                    <!--                                    <field name="is_lop_chuyen_nganh"/>-->
+                                    <!--                                    <field name="chuyen_nganh" attrs="{'invisible': [('is_lop_chuyen_nganh', '=', False)], } "/>-->
+                                </group>
+                            </page>
+                            <page name="sinh_vien_ids" string="Danh sách sinh viên">
+<!--                                <group string="Import danh sách SV" attrs="{'invisible': [('id', '=', False)], }">-->
+<!--                                    <group>-->
+<!--                                        <field name="csv_sinh_vien"/>-->
+<!--                                    </group>-->
+<!--                                    <group attrs="{'invisible': 1}">-->
+<!--                                        <field name="batch_limit" />-->
+<!--                                    </group>-->
+<!--                                    <group attrs="{'invisible': [('csv_sinh_vien', '=', False)]}">-->
+<!--                                        <button class="oe_highlight oe_edit_only" type="object" name="import_sinh_vien_csv">Import</button>-->
+<!--                                    </group>-->
+<!--                                </group>-->
+                                <field name="sinh_vien_ids">
+                                    <tree>
+                                        <field name="ma_dinh_danh"/>
+                                        <field name="name"/>
+                                        <field name="email"/>
+                                    </tree>
+                                </field>
+                            </page>
+                        </notebook>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+<!--        <record model="ir.ui.view" id="lop_hanh_chinh_view_form_khoi_lop">-->
+<!--            <field name="name">lop_hanh_chinh.view.form</field>-->
+<!--            <field name="model">lop_hanh_chinh</field>-->
+<!--            <field name="arch" type="xml">-->
+<!--                <form string="Lớp hành chính">-->
+<!--                    <sheet>-->
+<!--                        &lt;!&ndash;                        <div class="oe_title">&ndash;&gt;-->
+<!--                        &lt;!&ndash;                            <label for="ten_lop_hanh_chinh" class="oe_edit_only" string="Tên lớp hành chính"/>&ndash;&gt;-->
+<!--                        &lt;!&ndash;                            <h1><field name="ten_lop_hanh_chinh" default_focus="1" placeholder=""/></h1>&ndash;&gt;-->
+<!--                        &lt;!&ndash;                        </div>&ndash;&gt;-->
+<!--                        <div class="oe_edit_only" style="font-size:25px" attrs="{'invisible': [('id', '=', False)], }">Chỉnh sửa lớp hành chính</div>-->
+<!--                        <div class="oe_edit_only" style="font-size:25px" attrs="{'invisible': [('id', '!=', False)], }">Tạo mới lớp hành chính</div>-->
+<!--                        <div class="oe_read_only" style="font-size:25px">Lớp hành chính</div>-->
+<!--                        <notebook colspan="4">-->
+<!--                            <page string="Thông tin chung">-->
+<!--                                <group col="4">-->
+<!--                                    <field name="giang_vien_id"/>-->
+<!--                                    <field name="si_so"/>-->
+<!--                                    <field name="nganh"/>-->
+<!--                                    <field name="chuyen_nganh"/>-->
+<!--                                </group>-->
+<!--                            </page>-->
+<!--                            <page name="sinh_vien_ids" string="Danh sách sinh viên">-->
+<!--                                <field name="sinh_vien_ids">-->
+<!--                                    <tree>-->
+<!--                                        <field name="ma_dinh_danh"/>-->
+<!--                                        <field name="TenSV"/>-->
+<!--                                        <field name="email"/>-->
+<!--                                    </tree>-->
+<!--                                </field>-->
+<!--                            </page>-->
+<!--                        </notebook>-->
+<!--                    </sheet>-->
+<!--                </form>-->
+<!--            </field>-->
+<!--        </record>-->
+
+
+
+        <record model="ir.ui.view" id="lop_hanh_chinh_view_tree">
+            <field name="name">lop_hanh_chinh.view.tree</field>
+            <field name="model">lop_hanh_chinh</field>
+            <field name="arch" type="xml">
+                <tree string="Lớp hành chính">
+                    <field name="ten_lop_hanh_chinh"/>
+<!--                    <field name="ten_lop_hanh_chinh"/>-->
+                    <field name="co_so_dao_tao_moi"/>
+                    <field name="hinh_thuc_dao_tao_id"/>
+                    <field name="can_bo_id"/>
+                    <field name="chuong_trinh_khung_nganh_id"/>
+                    <field name="chuong_trinh_khung_chuyen_nganh_id"/>
+                    <field name="sinh_vien_ids"/>
+                    <field name="create_uid"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="action_lop_hanh_chinh_danh_sach_lop" model="ir.actions.act_window">
+            <field name="name">Danh sách lớp hành chính </field>
+            <field name="res_model">lop_hanh_chinh</field>
+            <field name="view_mode">tree,form,graph</field>
+            <field name="view_id"  ref="lop_hanh_chinh_view_form"/>
+            <field name="view_id"  ref="lop_hanh_chinh_view_tree"/>
+            <field name="help" type="html">
+                <p class="o_view_nocontent_smiling_face">
+                    Tạo lớp hành chính
+                </p>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="lop_hanh_chinh_search_all">
+            <field name="model">lop_hanh_chinh</field>
+            <field name="arch" type="xml">
+                <search>
+                    <field name="ten_lop_hanh_chinh"/>
+                    <field name="khoa_sinh_vien"/>
+                    <searchpanel>
+                        <field name="hinh_thuc_dao_tao_id" select="multi" />
+                        <field name="khoa_sinh_vien" select="multi"/>
+                    </searchpanel>
+                </search>
+            </field>
+        </record>
+
+    </data>
+</odoo>

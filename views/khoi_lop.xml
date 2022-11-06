@@ -1,0 +1,111 @@
+<odoo>
+    <data>
+        <record model="ir.ui.view" id="khoi_lop_form">
+            <field name="model">khoi_lop</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <div class="oe_edit_only" style="font-size:25px" attrs="{'invisible': [('id', '=', False)], }">Chỉnh sửa khối lớp</div>
+                        <div class="oe_edit_only" style="font-size:25px" attrs="{'invisible': [('id', '!=', False)], }">Tạo mới khối lớp</div>
+                        <div class="oe_read_only" style="font-size:25px">Khối lớp</div>
+                        <group col="4">
+                            <field name='khoa_nganh_id' options="{'no_quick_create':True,'no_create_edit':True}"/>
+                            <!-- <field name='khoa_chuyen_nganh_id' domain="[('khoa_nganh_id', '=', khoa_nganh_id)]"/> -->
+                            <field name="dot_nhap_hoc_id"/>
+                            <field name="ten_khoi_lop"/>
+                            <field name="hinh_thuc_dao_tao_id"/>
+                        </group>
+                        <group col="4" string="Lớp hành chính" attrs="{'invisible': [('id', '=', False)], }">
+                            <field name="si_so" string="Sĩ số mong muốn"/>
+                            <!-- <field name="is_lop_chuyen_nganh"/>
+                            <field name="chuyen_nganh" attrs="{'invisible': [('is_lop_chuyen_nganh', '=', False)], } "/> -->
+                            <button class="oe_highlight oe_edit_only" type="object" name="tao_lop_hanh_chinh">Tạo lớp hành chính</button>
+                        </group>
+                        <group>
+                            <field name="ky_nam_hoc_ids"/>
+                        </group>
+                        <group attrs="{'invisible': [('id', '=', False)], }">
+                            <field name="lop_hanh_chinh_ids"/>
+                        </group>
+                        <!--                        <group>-->
+                        <!--                            <field name="dot_dang_ky_nhu_cau_ids">-->
+                        <!--                                <tree>-->
+                        <!--                                    <field name="ten_dot_dang_ky_nhu_cau"/>-->
+                        <!--                                    <field name="ky_hoc_id"/>-->
+                        <!--                                    <field name="ket_thuc"/>-->
+                        <!--                                </tree>-->
+                        <!--                            </field>-->
+                        <!--                        </group>-->
+                    </sheet>
+                </form>
+            </field>
+        </record>
+        <record model="ir.ui.view" id="khoi_lop_form_dot_nhap_hoc">
+            <field name="model">khoi_lop</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <!--                        Đổi lại tên hiển thị khóa - ngành -> khối lớp dể tránh nhầm lẫn -->
+                        <div class="oe_edit_only" style="font-size:25px" attrs="{'invisible': [('id', '=', False)], }">Chọn khóa - ngành cho khối lớp</div>
+                        <div class="oe_edit_only" style="font-size:25px" attrs="{'invisible': [('id', '!=', False)], }">Chọn khóa - ngành cho khối lớp</div>
+                        <div class="oe_read_only" style="font-size:25px">Khối lớp</div>
+                        <group col="4">
+                            <field name='khoa_nganh_id' options="{'no_quick_create':True,'no_create_edit':True}"/>
+                            <!-- <field name="hinh_thuc_dao_tao_id"/> -->
+<!--                            <field name="ctk_id">-->
+<!--                                <tree>-->
+<!--                                    <field name="ten_chuong_trinh_khung"/>-->
+<!--                                    <field name="create_date"/>-->
+<!--                                    <field name="create_uid"/>-->
+<!--                                </tree>-->
+<!--                            </field>-->
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="khoi_lop_tree">
+            <field name="model">khoi_lop</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="ten_khoi_lop"/>
+                    <field name="hinh_thuc_dao_tao_id"/>
+                    <field name="khoa_nganh_id"/>
+                    <field name="ctk_nganh_id"/>
+                    <!-- <field name="ctk_chuyen_nganh_id"/> -->
+<!--                    phần này tạm thay đổi để hiển thị tree view trong menu thiết lập quy chế đào tạo năm học -
+                        do dùng context={'form_view_ref'} không thành công
+-->
+<!--                    <field name="ky_ctk_hien_tai"/>-->
+<!--                    <field name="dot_nhap_hoc_id"/>-->
+                    <field name="create_uid" string="Tạo bởi"/>
+                </tree>
+            </field>
+        </record>
+
+<!--        khối lớp tree view trong menu thiết lập quy chế đào tạo năm học-->
+        <record model="ir.ui.view" id="khoi_lop_tree_quy_che_dao_tao_nam_hoc">
+            <field name="model">khoi_lop</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="ten_khoi_lop"/>
+                    <field name="khoa_nganh_id"/>
+                    <field name="ctk_nganh_id"/>
+                    <!-- <field name="ctk_chuyen_nganh_id"/> -->
+<!--                    <field name="dot_nhap_hoc_id"/>-->
+                    <field name="create_uid" string="Tạo bởi"/>
+                </tree>
+            </field>
+        </record>
+
+        <record model="ir.actions.act_window" id="action_khoi_lop">
+            <field name="name">Khối lớp</field>
+            <field name="res_model">khoi_lop</field>
+            <field name="view_mode">tree,form,graph</field>
+<!--            <field name="view_id" ref="khoi_lop_form"/>-->
+<!--            <field name="view_id" ref="khoi_lop_tree"/>-->
+            <field name="context">{"group_by":"khoa_sinh_vien_id"}</field>
+        </record>
+    </data>
+</odoo>

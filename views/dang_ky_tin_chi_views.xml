@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <act_window
+            id="action_dang_tin_chi"
+            name="Dang ky"
+            res_model="lop_tin_chi"
+            view_mode="tree"
+            limit="20"/>
+        <record model="ir.ui.view" id="dang_ky_tin_chi_view_kanban">
+            <field name="name">dang_ky_tin_chi.view.kanban</field>
+            <field name="model">lop_tin_chi</field>
+            <field name="arch" type="xml">
+                <kanban string="eLearning Overview" class="o_emphasize_colors o_kanban_dashboard o_slide_kanban breadcrumb_item active" edit="false" sample="1">
+                    <field name="color"/>
+<!--                    <field name="website_published"/>-->
+                    <templates>
+                        <t t-name="kanban-box">
+                            <div t-attf-class="oe_kanban_color_#{kanban_getcolor(record.color.raw_value)} oe_kanban_card oe_kanban_global_click">
+<!--                                drop down menu ở dấu ...-->
+                                <div class="o_dropdown_kanban dropdown">
+                                    <a role="button" class="dropdown-toggle o-no-caret btn" data-toggle="dropdown" href="#" aria-label="Dropdown menu" title="Dropdown menu">
+                                        <span class="fa fa-ellipsis-v" aria-hidden="false"/>
+                                    </a>
+                                    <div class="dropdown-menu" role="menu">
+                                        <ul class="oe_kanban_colorpicker" data-field="color"/>
+                                        <t t-if="widget.deletable">
+                                            <a class="dropdown-item" role="menuitem" type="delete">Delete</a>
+                                        </t>
+                                        <a class="dropdown-item" role="menuitem" type="edit">
+                                            Edit
+                                        </a>
+                                        <a class="dropdown-item" name="action_view_slides" role="menuitem" type="object">
+                                            Lessons
+                                        </a>
+                                        <a class="dropdown-item" name="action_channel_invite" role="menuitem" type="object">
+                                            Invite
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="o_kanban_card_header">
+                                    <div class="o_kanban_card_header_title mb16">
+<!--                                        Hiển thị tên course-->
+                                        <div class="o_primary">
+                                            <a type="edit" class="mr-auto">
+                                                <span><field name="ten_lop_tin_chi" class="o_primary"/></span>
+                                            </a>
+                                        </div>
+<!--                                        hiển thị tag của course ở bên dưới tên course-->
+<!--                                        <div t-if="record.tag_ids">-->
+<!--                                            <field name="tag_ids" widget="many2many_tags"/>-->
+<!--                                        </div>-->
+                                    </div>
+                                </div>
+                                <div class="container o_kanban_card_content mt0">
+                                    <div class="row mb16">
+<!--                                        nút view course ở bên dưới tên học phần-->
+                                        <div class="col-6 o_kanban_primary_left">
+                                            <button class="btn btn-primary" name="id" type="object">View course</button>
+                                        </div>
+                                        <div class="col-6 o_kanban_primary_right">
+<!--                                            <div class="d-flex" t-if="record.rating_count.raw_value">-->
+<!--                                                <a name="action_view_ratings" type="object" class="mr-auto"><field name="id"/> reviews</a>-->
+<!--&lt;!&ndash;                                                <span><field name="rating_avg_stars"/> / 5</span>&ndash;&gt;-->
+<!--                                            </div>-->
+<!--                                            đếm số lượng lượt views-->
+                                            <div class="d-flex">
+                                                <span class="mr-auto"><label for="id" class="mb0">Views</label></span>
+                                                <field name="id"/>
+                                            </div>
+<!--                                            đếm tổng thời lượng của học phần-->
+<!--                                            <div class="d-flex" name="info_total_time">-->
+<!--                                                <span class="mr-auto"><label for="total_time" class="mb0">Duration</label></span>-->
+<!--&lt;!&ndash;                                                <field name="total_time" widget="float_time"/>&ndash;&gt;-->
+<!--                                            </div>-->
+                                        </div>
+                                    </div>
+<!--                                    <div class="row mt3">-->
+<!--&lt;!&ndash;                                        Đếm số lượng contents trong học phần&ndash;&gt;-->
+<!--                                        <div class="col-4 border-right">-->
+<!--                                            <a name="action_view_slides" type="object" class="d-flex flex-column align-items-center">-->
+<!--                                                <span class="font-weight-bold"><field name="total_slides"/></span>-->
+<!--                                                <span class="text-muted">Contents</span>-->
+<!--                                            </a>-->
+<!--                                        </div>-->
+<!--&lt;!&ndash;                                        Đếm số lượng attendees của học phần&ndash;&gt;-->
+<!--                                        <div class="col-4 border-right">-->
+<!--                                            <a name="action_redirect_to_members" type="object" class="d-flex flex-column align-items-center">-->
+<!--                                                <span class="font-weight-bold"><field name="members_count"/></span>-->
+<!--                                                <span class="text-muted">Attendees</span>-->
+<!--                                            </a>-->
+<!--                                        </div>-->
+<!--&lt;!&ndash;                                        Đếm số lượng slide đã hoàn thành trong học phần&ndash;&gt;-->
+<!--                                        <div class="col-4">-->
+<!--                                            <a name="action_redirect_to_done_members" type="object" class="d-flex flex-column align-items-center">-->
+<!--                                                <span class="font-weight-bold"><field name="members_done_count"/></span>-->
+<!--                                                <span name="done_members_count_label" class="text-muted">Finished</span>-->
+<!--                                            </a>-->
+<!--                                        </div>-->
+<!--                                    </div>-->
+                                </div>
+                             </div>
+                        </t>
+                    </templates>
+                </kanban>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="dang_ky_tin_chi_view_form">
+            <field name="name">dang_ky_tin_chi.view.form</field>
+            <field name="model">lop_tin_chi</field>
+            <field name="arch" type="xml">
+                <form string="Lớp tín chỉ">
+
+                    <header>
+                        <button type="object" name="dang_ky_tin_chi"
+                            string="Đăng ký học"
+                            class="btn-primary" />
+                    </header>
+                    <sheet>
+                        
+                        <div class="oe_title">
+                            <label for="ten_lop_tin_chi" class="oe_edit_only" string="Tên lớp tín chỉ"/>
+                            <h1><field name="ten_lop_tin_chi" default_focus="1" placeholder="VD: D15-AT15-K2"/></h1>
+                             <button type="action"
+                                name="%(action_dang_tin_chi)d"
+                                string="Đăng ký" />
+                        </div>
+
+                        <notebook colspan="4">
+                            <page string="Thông tin chung">
+                                <div>
+                                    <label for="mon_hoc_ids" class="oe_edit_only" string="Chọn môn học"/>
+                                    <field name="mon_hoc_ids"/>
+                                </div>
+                                <div>
+                                    <label for="giang_vien_id" class="oe_edit_only" string="Chọn giảng viên"/>
+                                    <field name="giang_vien_id"/>
+                                </div>
+                                <div>
+                                    <label for="thoi_gian_bat_dau" class="oe_edit_only" string="Thời gian bắt đầu"/>
+                                    <field name="thoi_gian_bat_dau"/>
+                                </div>
+                            </page>
+                            <page name="sinh_vien_ids" string="Danh sách sinh viên">
+                                <field name="sinh_vien_ids">
+                                    <tree>
+                                        <field name="ma_dinh_danh"/>
+                                        <field name="TenSV"/>
+                                        <field name="email"/>
+                                    </tree>
+                                </field>
+                            </page>
+                            <page name="lich_hoc" string="Lịch học">
+                                <field name="buoi_hoc_ids">
+                                    <tree>
+                                        <field name="ten_buoi_hoc"/>
+                                        <field name="dia_diem"/>
+                                        <field name="loai_hinh"/>
+                                        <field name="calendar_event_id"/>
+                                    </tree>
+                                </field>
+                            </page>
+                        </notebook>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="dang_ky_tin_chi_view_tree">
+            <field name="name">dang_ky_tin_chi.view.tree</field>
+            <field name="model">lop_tin_chi</field>
+            <field name="arch" type="xml">
+                <tree string="Lớp tín chỉ">
+                    <field name="ten_lop_tin_chi"/>
+                    <field name="mon_hoc_ids">
+                        <tree>
+                            <field name="name"/>
+                            <field name="so_tin_chi"/>
+                        </tree>
+                    </field>
+                    <field name="thoi_gian_bat_dau"/>
+                    <field name="sinh_vien_ids"/>
+                    <field name="giang_vien_id"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="action_dang_ky_tin_chi_danh_sach_lop" model="ir.actions.act_window">
+            <field name="name">Danh sách lớp tín chỉ được đăng ký</field>
+            <field name="res_model">lop_tin_chi</field>
+            <field name="view_mode">kanban,tree,form</field>
+            <field name="view_id" ref="dang_ky_tin_chi_view_kanban"/>
+            <field name="view_id" ref="dang_ky_tin_chi_view_form"/>
+            <field name="view_id" ref="dang_ky_tin_chi_view_tree"/>
+            <field name="help" type="html">
+                <p class="o_view_nocontent_smiling_face">
+                    Tạo lớp tín chỉ
+                </p>
+            </field>
+        </record>
+
+    </data>
+</odoo>

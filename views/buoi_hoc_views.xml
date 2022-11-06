@@ -1,0 +1,67 @@
+<odoo>
+    <data>
+        <record model="ir.ui.view" id="buoi_hoc_form">
+            <field name="model">buoi_hoc</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group col="4" string="Thông tin lớp học">
+                            <field name="lop_tin_chi_id"/>
+                            <field name="ten_hoc_phan"/>
+                            <field name="nhom_lop_tin_chi_id"/>
+                            <field name="hoc_phan_id"/>
+                            <field name="tong_so_sinh_vien"/>
+                        </group>
+                        <group col="4" string="Thông tin liên lạc">
+                            <field name="giang_vien_id"/>
+                            <field name="dien_thoai"/>
+                            <field name="tai_khoan"/>
+                            <field name="mat_khau"/>
+                            <field name="id_zoom"/>
+                            <field name="phong_hoc"/>
+                            <field name="mat_khau_1"/>
+                        </group>
+                        <group string="Thông tin lịch học">
+                            <group string="Thông tin chung">
+                                <field name="thu_kieu_so"/>
+                                <field name="ngay_bd"/>
+                                <field name="template_tiet_hoc_id"/>
+                            </group>
+                            <group col="4" string="Thông tin tiết học">
+<!--                                <field name="tiet_bd" invisible="1"/>-->
+                                <field name="tiet_bd_so"/>
+                                <field name="tiet_kt_so" />
+<!--                                <field name="tiet_bd" widget="selection" domain="[('template_tiet_hoc_id', '=', template_tiet_hoc_id)]"/>-->
+<!--                                <field name="tiet_kt" widget="selection" domain="[('template_tiet_hoc_id', '=', template_tiet_hoc_id)]"/>-->
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="buoi_hoc_tree">
+            <field name="model">buoi_hoc</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="ten_hoc_phan"/>
+                    <field name="lop_tin_chi_id"/>
+                    <field name="nhom_lop_tin_chi_id"/>
+                    <field name="tong_so_sinh_vien"/>
+                    <field name="thu_kieu_so"/>
+                    <field name="ngay_bd"/>
+                    <field name="tiet_bd_so"/>
+                    <field name="tiet_kt_so"/>
+                </tree>
+            </field>
+        </record>
+
+        <record model="ir.actions.act_window" id="action_ky_hoc_quan_ly_buoi_hoc">
+            <field name="name">Buổi học</field>
+            <field name="res_model">buoi_hoc</field>
+            <field name="view_mode">tree,form</field>
+            <field name="context">{"group_by":["ky_nam_hoc_id", "hoc_phan_id", "lop_tin_chi_id"]}</field>
+        </record>
+
+    </data>
+</odoo>

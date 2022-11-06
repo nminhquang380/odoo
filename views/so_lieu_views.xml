@@ -1,0 +1,188 @@
+<odoo>
+    <data>
+        <record model="ir.ui.view" id="so_lieu_form">
+            <field name="model">so_lieu</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <div class="oe_edit_only" style="font-size:25px" attrs="{'invisible': [('id', '=', False)], }">Chỉnh sửa Số liệu hiển thị</div>
+                        <div class="oe_edit_only" style="font-size:25px" attrs="{'invisible': [('id', '!=', False)], }">Tạo mới Số liệu hiển thị</div>
+                        <div class="oe_read_only" style="font-size:25px">Số liệu</div>
+                        <group>
+                            <group>
+                                <field name="hinh_thuc_dao_tao_id"/>
+                                <field name="ten_so_lieu"/>
+                                <field name="hien_thi_so_lieu_tai_khoan"/>
+                                <field name="hien_thi_so_lieu_dao_tao"/>
+                            </group>
+                        </group>
+                        <notebook colspan="4">
+                            <page string="Số liệu tài khoản" attrs="{'invisible':[('hien_thi_so_lieu_tai_khoan','==',False)]}">
+                                <group col="4">
+                                    <field name="tong_so_giang_vien"/>
+                                    <field name="tong_so_sinh_vien"/>
+                                    <field name="tong_so_tai_khoan_khach"/>
+                                </group>
+                            </page>
+                            <page string="Số liệu đào tạo" attrs="{'invisible':[('hien_thi_so_lieu_dao_tao','==',False)]}">
+                                <group col="4">
+                                    <field name="nam_hoc_hien_tai"/>
+                                    <field name="tong_so_nganh_hoc"/>
+                                    <field name="tong_so_chuyen_nganh"/>
+                                    <field name="tong_so_hoc_phan"/>
+                                    <field name="tong_so_hoc_lieu"/>
+                                </group>
+                            </page>
+                        </notebook>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+            <record id="so_lieu_view_kanban" model="ir.ui.view">
+            <field name="name">so.lieu.view.kanban</field>
+            <field name="model">so_lieu</field>
+            <field name="arch" type="xml">
+                <kanban string="Quản lý số liệu" class="o_emphasize_colors o_kanban_dashboard o_slide_kanban breadcrumb_item active" edit="false" sample="1">
+                    <field name="color"/>
+<!--                    <field name="website_published"/>-->
+                    <templates>
+                        <t t-name="kanban-box">
+                            <div t-attf-class="oe_kanban_color_#{kanban_getcolor(record.color.raw_value)} oe_kanban_card oe_kanban_global_click">
+<!--                                drop down menu ở dấu ...-->
+                                <div class="o_dropdown_kanban dropdown">
+                                    <a role="button" class="dropdown-toggle o-no-caret btn" data-toggle="dropdown" href="#" aria-label="Dropdown menu" title="Dropdown menu">
+                                        <span class="fa fa-ellipsis-v" aria-hidden="false"/>
+                                    </a>
+                                    <div class="dropdown-menu" role="menu">
+                                        <ul class="oe_kanban_colorpicker" data-field="color"/>
+                                        <t t-if="widget.deletable">
+                                            <a class="dropdown-item" role="menuitem" type="delete">Delete</a>
+                                        </t>
+                                        <a class="dropdown-item" role="menuitem" type="edit">
+                                            Edit
+                                        </a>
+<!--                                        <a class="dropdown-item" name="action_channel_invite" role="menuitem" type="object">-->
+<!--                                            Invite-->
+<!--                                        </a>-->
+                                    </div>
+                                </div>
+                                <div class="o_kanban_card_header">
+                                    <div class="o_kanban_card_header_title mb16">
+<!--                                        Hiển thị tên course-->
+                                        <div class="o_primary">
+                                            <a type="edit" class="mr-auto">
+                                                <span><field name="ten_so_lieu" class="o_primary"/></span>
+                                            </a>
+                                        </div>
+<!--                                        hiển thị tag của course ở bên dưới tên số liệu, k có thì bỏ qua-->
+<!--                                        <div t-if="record.tag_ids">-->
+<!--                                            <field name="tag_ids" widget="many2many_tags"/>-->
+<!--                                        </div>-->
+                                    </div>
+                                </div>
+                                <div class="container o_kanban_card_content mt0">
+                                    <div class="row mb16">
+<!--                                        nút view course ở bên dưới tên học phần-->
+<!--                                        <div class="col-6 o_kanban_primary_left">-->
+<!--                                            <button class="btn btn-primary" name="open_website_url" type="object">Xem trước</button>-->
+<!--                                        </div>-->
+                                        <div class="col-6 o_kanban_primary_right">
+<!--                                            <div class="d-flex">-->
+<!--                                                <a name="action_view_ratings" type="object" class="mr-auto"><field name="tong_so_sinh_vien"/> sinh viên</a>-->
+<!--&lt;!&ndash;                                                <span><field name="rating_avg_stars"/> / 5</span>&ndash;&gt;-->
+<!--                                            </div>-->
+<!--                                            đếm số lượng lượt views-->
+                                            <div class="d-flex" attrs="{'invisible':[('hien_thi_so_lieu_tai_khoan','==',False)]}">
+                                                <span class="mr-auto"><label for="tong_so_giang_vien" class="mb0">Tổng số giảng viên</label></span>
+                                                <field name="tong_so_giang_vien" />
+                                                <field name="hien_thi_so_lieu_tai_khoan" attrs="{'invisible':1}"/>
+                                            </div>
+                                            <div class="d-flex" attrs="{'invisible':[('hien_thi_so_lieu_tai_khoan','==',False)]}">
+                                                <span class="mr-auto"><label for="tong_so_sinh_vien" class="mb0">Tổng số sinh viên</label></span>
+                                                <field name="tong_so_sinh_vien"/>
+                                                <field name="hien_thi_so_lieu_tai_khoan" attrs="{'invisible':1}"/>
+                                            </div>
+                                            <div class="d-flex" attrs="{'invisible':[('hien_thi_so_lieu_tai_khoan','==',False)]}">
+                                                <span class="mr-auto"><label for="tong_so_tai_khoan_khach" class="mb0">Tổng số tài khoản khách</label></span>
+                                                <field name="tong_so_tai_khoan_khach"/>
+                                                <field name="hien_thi_so_lieu_tai_khoan" attrs="{'invisible':1}"/>
+                                            </div>
+                                            <div class="d-flex" attrs="{'invisible':[('hien_thi_so_lieu_dao_tao','==',False)]}">
+                                                <span class="mr-auto"><label for="nam_hoc_hien_tai" class="mb0">Năm học hiện tại</label></span>
+                                                <field name="nam_hoc_hien_tai"/>
+                                                <field name="hien_thi_so_lieu_dao_tao" attrs="{'invisible':1}"/>
+                                            </div>
+                                            <div class="d-flex" attrs="{'invisible':[('hien_thi_so_lieu_dao_tao','==',False)]}">
+                                                <span class="mr-auto"><label for="tong_so_nganh_hoc" class="mb0">Số ngành đào tạo</label></span>
+                                                <field name="tong_so_nganh_hoc"/>
+                                                <field name="hien_thi_so_lieu_dao_tao" attrs="{'invisible':1}"/>
+                                            </div>
+                                            <div class="d-flex" attrs="{'invisible':[('hien_thi_so_lieu_dao_tao','==',False)]}">
+                                                <span class="mr-auto"><label for="tong_so_hoc_phan" class="mb0">Số lượng học phần</label></span>
+                                                <field name="tong_so_hoc_phan"/>
+                                                <field name="hien_thi_so_lieu_dao_tao" attrs="{'invisible':1}"/>
+                                            </div>
+                                            <div class="d-flex" attrs="{'invisible':[('hien_thi_so_lieu_dao_tao','==',False)]}">
+                                                <span class="mr-auto"><label for="tong_so_hoc_lieu" class="mb0">Số lượng học liệu</label></span>
+                                                <field name="tong_so_hoc_lieu"/>
+                                                <field name="hien_thi_so_lieu_dao_tao" attrs="{'invisible':1}"/>
+                                            </div>
+<!--                                            đếm tổng thời lượng của học phần-->
+<!--                                            <div class="d-flex" name="info_total_time">-->
+<!--                                                <span class="mr-auto"><label for="ky_hoc_id" class="mb0">Kỳ học</label></span>-->
+<!--                                                <field name="ky_hoc_id" />-->
+<!--&lt;!&ndash;                                                <field name="total_time" widget="float_time"/>&ndash;&gt;-->
+<!--                                            </div>-->
+                                        </div>
+                                    </div>
+                                    <div class="row mt3">
+<!--&lt;!&ndash;                                        Đếm số lượng contents trong học phần&ndash;&gt;-->
+<!--                                        <div class="col-4 border-right">-->
+<!--                                            <a name="action_view_slides" type="object" class="d-flex flex-column align-items-center">-->
+<!--                                                <span class="font-weight-bold"><field name="total_slides"/></span>-->
+<!--                                                <span class="text-muted">Contents</span>-->
+<!--                                            </a>-->
+<!--                                        </div>-->
+<!--&lt;!&ndash;                                        Đếm số lượng attendees của học phần&ndash;&gt;-->
+<!--                                        <div class="col-4 border-right">-->
+<!--                                            <a name="action_redirect_to_members" type="object" class="d-flex flex-column align-items-center">-->
+<!--                                                <span class="font-weight-bold"><field name="members_count"/></span>-->
+<!--                                                <span class="text-muted">Attendees</span>-->
+<!--                                            </a>-->
+<!--                                        </div>-->
+<!--&lt;!&ndash;                                        Đếm số lượng slide đã hoàn thành trong học phần&ndash;&gt;-->
+<!--                                        <div class="col-4">-->
+<!--                                            <a name="action_redirect_to_done_members" type="object" class="d-flex flex-column align-items-center">-->
+<!--                                                <span class="font-weight-bold"><field name="members_done_count"/></span>-->
+<!--                                                <span name="done_members_count_label" class="text-muted">Finished</span>-->
+<!--                                            </a>-->
+<!--                                        </div>-->
+                                    </div>
+                                </div>
+                             </div>
+                        </t>
+                    </templates>
+                </kanban>
+            </field>
+        </record>
+
+<!--        <record model="ir.ui.view" id="so_lieu_tree">-->
+<!--            <field name="model">so_lieu</field>-->
+<!--            <field name="arch" type="xml">-->
+<!--                <tree>-->
+<!--                    <field name="ten_so_lieu"/>-->
+<!--                    <field name="tong_so_sinh_vien"/>-->
+<!--                    <field name="tong_so_giang_vien"/>-->
+<!--                    <field name="tong_so_nganh_hoc"/>-->
+<!--                    <field name="tong_so_tai_khoan_khach"/>-->
+<!--                </tree>-->
+<!--            </field>-->
+<!--        </record>-->
+<!--        <record model="ir.actions.act_window" id="action_so_lieu">-->
+<!--            <field name="name">Số liệu</field>-->
+<!--            <field name="res_model">so_lieu</field>-->
+<!--            <field name="view_mode">kanban,form</field>-->
+<!--        </record>-->
+    </data>
+</odoo>

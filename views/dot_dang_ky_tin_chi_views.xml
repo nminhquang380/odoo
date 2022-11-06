@@ -1,0 +1,106 @@
+<odoo>
+    <data>
+        <record model="ir.ui.view" id="dot_dang_ky_tin_chi_form">
+            <field name="model">dot_dang_ky_tin_chi</field>
+            <field name="arch" type="xml">
+                <form string="Đợt đăng ký tín chỉ">
+                    <header>
+                        <field name="state" widget="statusbar"/>
+                    </header>
+                    <sheet>
+                        <div class="oe_button_box" name="button_box">
+                            <button name="action_hoa_don_phieu_dang_ky_tin_chi_import_wizard"
+                                    type="object"
+                                    icon="fa-upload"
+                                    class="oe_stat_button">
+                                <div class="o_field_widget o_stat_info">
+                                    <span class="o_stat_value">Import hóa</span>
+                                    <span class="o_stat_value">đơn dktc</span>
+                                </div>
+                            </button>
+                            <button name="action_view_thong_ke_dang_ky_tin_chi"
+                                    type="object"
+                                    icon="fa-table"
+                                    class="oe_stat_button">
+                                <div class="o_field_widget o_stat_info">
+                                    <span class="o_stat_value">Xem tổng hợp</span>
+                                    <span class="o_stat_value">số liệu dktc</span>
+                                </div>
+                            </button>
+                            <button name="action_phe_duyet_tat_ca_phieu_dang_ky_tin_chi"
+                                    type="object"
+                                    icon="fa-check-square-o"
+                                    class="oe_stat_button">
+                                <div class="o_field_widget o_stat_info">
+                                    <span class="o_stat_value">Phê duyệt tất</span>
+                                    <span class="o_stat_value"> cả phiếu DKTC</span>
+                                </div>
+                            </button>
+                        </div>
+                        <div class="oe_edit_only" style="font-size:25px" attrs="{'invisible': [('id', '=', False)], }">Chỉnh sửa đợt đăng ký tín chỉ</div>
+                        <div class="oe_edit_only" style="font-size:25px" attrs="{'invisible': [('id', '!=', False)], }">Tạo mới đợt đăng ký tín chỉ</div>
+                        <div class="oe_read_only" style="font-size:25px">Đợt đăng ký tín chỉ</div>
+                        <group col="4">
+                            <field name="ky_hoc_id" options="{'no_create':True, 'no_quick_create':True, 'no_create_edit':True}" required="1"/>
+                            <field name="so_thu_tu_dot"/>
+                            <field name="ten_dot_dang_ky_tin_chi" placeholder="Cấu trúc: tên_kỳ_học-số_thứ-tự_đợt, VD:2021-1-1 "/>
+                            <field name="dot_dang_ky_hoc_phan_id"/>
+                            <field name="ngay_bat_dau_tin_chi"/>
+                            <field name="ngay_ket_thuc_tin_chi"/>
+                            <field name="so_tin_chi_toi_thieu"/>
+                            <field name="so_tin_chi_toi_da"/>
+                            <field name="so_phan_tram_cho_phep_trung_lich_hoc"/>
+                            <field name="hinh_thuc_dao_tao_id"/>
+                            <field name="trang_thai"/>
+                            <field name="ap_dung_thanh_toan_truc_tuyen" widget="boolean_toggle"/>
+                        </group>
+                        <notebook colspan="4">
+                            <page string="Khối lớp áp dụng">
+                                <field name="khoi_lop_ids"/>
+                            </page>
+                            <page string="Danh sách phiếu đăng ký tín chỉ">
+                                <field name="phieu_dang_ky_tin_chi">
+                                    <tree>
+                                        <field name="ten_phieu_dktc"/>
+                                        <field name="hoc_phi_mot_tin_chi"/>
+                                        <field name="tong_so_tin_chi"/>
+                                        <field name="tong_hoc_phi"/>
+                                        <field name="trang_thai_sinh_ma_thanh_toan"/>
+                                        <field name="trang_thai_thanh_toan"/>
+                                    </tree>
+                                </field>
+                            </page>
+                        </notebook>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="dot_dang_ky_tin_chi_tree">
+            <field name="model">dot_dang_ky_tin_chi</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="ten_dot_dang_ky_tin_chi"/>
+                    <field name="ky_hoc_id"/>
+                    <field name="so_thu_tu_dot"/>
+                    <field name="khoi_lop_ids"/>
+                    <field name="so_tin_chi_toi_thieu"/>
+                    <field name="so_tin_chi_toi_da"/>
+                    <field name="hinh_thuc_dao_tao_id"/>
+                    <field name="trang_thai"/>
+                    <field name="create_uid" string="Người tạo"/>
+                    <field name="create_date" string="Ngày tạo"/>
+                </tree>
+            </field>
+        </record>
+
+
+
+        <record model="ir.actions.act_window" id="action_quan_ly_dot_dang_ky_tin_chi">
+            <field name="name">Đợt đăng ký tín chỉ</field>
+            <field name="res_model">dot_dang_ky_tin_chi</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+    </data>
+</odoo>

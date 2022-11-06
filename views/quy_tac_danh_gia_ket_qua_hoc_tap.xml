@@ -1,0 +1,321 @@
+<odoo>
+    <data>
+        <!--        &lt;!&ndash;        Học phần tương đương &ndash;&gt;-->
+        <!--        <record model="ir.ui.view" id="hoc_phan_tuong_duong_form">-->
+        <!--            <field name="model">qldt.hoc_phan_tuong_duong</field>-->
+        <!--            <field name="arch" type="xml">-->
+        <!--                <form>-->
+        <!--                    <sheet>-->
+        <!--                        <div class="oe_edit_only" style="font-size:25px" attrs="{'invisible': [('id', '=', False)], }">Chỉnh sửa danh sách học phần tương đương</div>-->
+        <!--                        <div class="oe_edit_only" style="font-size:25px" attrs="{'invisible': [('id', '!=', False)], }">Tạo mới danh sách học phần tương đương</div>-->
+        <!--                        <div class="oe_read_only" style="font-size:25px">Danh sách học phần tương đương</div>-->
+        <!--                        <group>-->
+        <!--                            <group>-->
+        <!--                                <field name="ctk_id"/>-->
+        <!--                                <field name="hoc_phan_id" domain="[('ctk_id','=',ctk_id)]"  widget="selection"/>-->
+        <!--&lt;!&ndash;                                <field name="ma_hoc_phan_goc" readonly="1"/>&ndash;&gt;-->
+        <!--                            </group>-->
+        <!--                        </group>-->
+        <!--                        <group>-->
+        <!--                            <field name="id">-->
+        <!--                            </field>-->
+        <!--                        </group>-->
+        <!--                    </sheet>-->
+        <!--                </form>-->
+        <!--            </field>-->
+        <!--        </record>-->
+
+        <!--        <record model="ir.ui.view" id="hoc_phan_tuong_duong_tree">-->
+        <!--            <field name="model">qldt.hoc_phan_tuong_duong</field>-->
+        <!--            <field name="arch" type="xml">-->
+        <!--                <tree>-->
+        <!--&lt;!&ndash;                    <field name="ma_hoc_phan_goc"/>&ndash;&gt;-->
+        <!--                    <field name="hoc_phan_id"/>-->
+        <!--                    <field name="hoc_phan_co_so_dao_tao_khac" widget="many2many_tags"/>-->
+        <!--                    <field name="create_date" string="Ngày tạo"/>-->
+        <!--                    <field name="create_uid" string="Tạo bởi"/>-->
+        <!--                </tree>-->
+        <!--            </field>-->
+        <!--        </record>-->
+
+        <!--        <record model="ir.actions.act_window" id="action_quan_ly_hoc_phan_tuong_duong">-->
+        <!--            <field name="name">Quản lý danh sách học phần tương đương</field>-->
+        <!--            <field name="res_model">qldt.hoc_phan_tuong_duong</field>-->
+        <!--            <field name="view_mode">tree,form</field>-->
+        <!--        </record>-->
+
+        <!--        Danh mục quy tắc đánh giá tính điểm học phần-->
+        <record model="ir.ui.view" id="danh_muc_quy_tac_danh_gia_tinh_diem_hoc_phan_form">
+            <field name="model">qldt.danh_muc_quy_tac_danh_gia_tinh_diem_hoc_phan</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <div class="oe_edit_only" style="font-size:25px" attrs="{'invisible': [('id', '=', False)], }">Chỉnh sửa Danh mục quy tắc đánh giá - tính điểm học phần</div>
+                        <div class="oe_edit_only" style="font-size:25px" attrs="{'invisible': [('id', '!=', False)], }">Tạo mới Danh mục quy tắc đánh giá - tính điểm học phần</div>
+                        <div class="oe_read_only" style="font-size:25px">Danh mục quy tắc đánh giá - tính điểm học phần</div>
+                        <group col="4">
+                            <field name="ten_danh_muc_quy_tac"/>
+                            <field name="ma_danh_muc_quy_tac"/>
+                            <field name="van_ban_quy_dinh" widget="selection"/>
+                            <field name="hinh_thuc_dao_tao_ap_dung"/>
+                        </group>
+                        <notebook>
+                                <page string="Quy tắt đánh giá tính điểm học phần" name="quy_tac_danh_gia_tinh_tiem_hoc_phan">
+                                    <field name="quy_tac_danh_gia_tinh_tiem_hoc_phan"/>
+                                </page>
+                        </notebook>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="danh_muc_quy_tac_danh_gia_tinh_diem_hoc_phan_tree">
+            <field name="model">qldt.danh_muc_quy_tac_danh_gia_tinh_diem_hoc_phan</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="ten_danh_muc_quy_tac"/>
+                    <field name="ma_danh_muc_quy_tac"/>
+                    <field name="van_ban_quy_dinh" widget="selection"/>
+                    <field name="hinh_thuc_dao_tao_ap_dung"/>
+                    <field name="create_date" string="Ngày tạo"/>
+                    <field name="create_uid" string="Người tạo"/>
+                </tree>
+            </field>
+        </record>
+
+        <record model="ir.actions.act_window" id="action_danh_muc_quy_tac_danh_gia_tinh_diem_hoc_phan">
+            <field name="name">Quản lý danh mục quy tắc đánh giá - tính điểm học phần</field>
+            <field name="res_model">qldt.danh_muc_quy_tac_danh_gia_tinh_diem_hoc_phan</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+
+        <!--        Quy tắc đánh giá tính điểm học phần-->
+        <record model="ir.ui.view" id="quy_tac_danh_gia_tinh_diem_hoc_phan_form">
+            <field name="model">qldt.quy_tac_danh_gia_tinh_diem_hoc_phan</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <div class="oe_edit_only" style="font-size:25px" attrs="{'invisible': [('id', '=', False)], }">Chỉnh sửa quy tắc đánh giá - tính điểm học phần</div>
+                        <div class="oe_edit_only" style="font-size:25px" attrs="{'invisible': [('id', '!=', False)], }">Tạo mới quy tắc đánh giá - tính điểm học phần</div>
+                        <div class="oe_read_only" style="font-size:25px">Quy tắc đánh giá - tính điểm học phần</div>
+                        <group col="4">
+                            <field name="ma_quy_tac"/>
+                            <field name="loai_hoc_phan_ap_dung"/>
+                            <field name="gia_tri_diem"/>
+                            <field name="gia_tri_diem_thang_4" attrs="{'invisible': [('loai_hoc_phan_ap_dung', '=', '3')], }"/>
+<!--                            <field name="gia_tri_diem_thang_4_min" attrs="{'invisible': [('loai_hoc_phan_ap_dung', '=', '3')], }"/>-->
+<!--                            <field name="gia_tri_diem_thang_4_max" attrs="{'invisible': [('loai_hoc_phan_ap_dung', '=', '3')], }"/>-->
+                            <field name="gia_tri_diem_thang_10_min" attrs="{'invisible': [('loai_hoc_phan_ap_dung', '=', '3')], }"/>
+                            <field name="gia_tri_diem_thang_10_max" attrs="{'invisible': [('loai_hoc_phan_ap_dung', '=', '3')], }"/>
+                            <field name="van_ban_quy_dinh" widget="selection"/>
+                            <field name="trang_thai_hoc_phan" widget="selection"/>
+                            <field name="da_qua" widget="boolean_toggle"/>
+                            <field name="danh_muc_quy_danh_gia_tinh_tiem_hoc_phan" invisible="1"/>
+                        </group>
+                        <group>
+                            <field name="ghi_chu"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="quy_tac_danh_gia_tinh_diem_hoc_phan_tree">
+            <field name="model">qldt.quy_tac_danh_gia_tinh_diem_hoc_phan</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="ma_quy_tac"/>
+                    <field name="loai_hoc_phan_ap_dung"/>
+                    <field name="gia_tri_diem"/>
+                    <field name="gia_tri_diem_thang_4" attrs="{'invisible': [('loai_hoc_phan_ap_dung', '=', '3')], }"/>
+<!--                    <field name="gia_tri_diem_thang_4_min"/>-->
+<!--                    <field name="gia_tri_diem_thang_4_max"/>-->
+                    <field name="gia_tri_diem_thang_10_min"/>
+                    <field name="gia_tri_diem_thang_10_max"/>
+                    <field name="van_ban_quy_dinh" />
+                    <field name="create_date" string="Ngày tạo"/>
+                    <field name="create_uid" string="Người tạo"/>
+                </tree>
+            </field>
+        </record>
+
+        <record model="ir.actions.act_window" id="action_quy_tac_danh_gia_tinh_diem_hoc_phan">
+            <field name="name">Quản lý quy tắc đánh giá - tính điểm học phần</field>
+            <field name="res_model">qldt.quy_tac_danh_gia_tinh_diem_hoc_phan</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <!--        Quy tắc đánh giá tính điểm học kỳ-->
+        <record model="ir.ui.view" id="quy_tac_danh_gia_tinh_diem_hoc_ky_form">
+            <field name="model">qldt.quy_tac_danh_gia_tinh_diem_hoc_ky</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <div class="oe_edit_only" style="font-size:25px" attrs="{'invisible': [('id', '=', False)], }">Chỉnh sửa quy tắc đánh giá - tính điểm học kỳ</div>
+                        <div class="oe_edit_only" style="font-size:25px" attrs="{'invisible': [('id', '!=', False)], }">Tạo mới quy tắc đánh giá - tính điểm học kỳ</div>
+                        <div class="oe_read_only" style="font-size:25px">Quy tắc đánh giá - tính điểm học kỳ</div>
+                        <group col="4">
+                            <field name="ma_quy_tac"/>
+                            <field name="van_ban_quy_dinh" widget="selection"/>
+                            <field name="gia_tri_diem"/>
+                            <field name="diem_quy_doi_thang_4"/>
+                            <field name="diem_quy_doi_thang_10"/>
+                        </group>
+                        <group>
+                            <field name="ghi_chu"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="quy_tac_danh_gia_tinh_diem_hoc_ky_tree">
+            <field name="model">qldt.quy_tac_danh_gia_tinh_diem_hoc_ky</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="ma_quy_tac"/>
+                    <field name="van_ban_quy_dinh" widget="selection"/>
+                    <field name="gia_tri_diem"/>
+                    <field name="diem_quy_doi_thang_4"/>
+                    <field name="diem_quy_doi_thang_10"/>
+                    <field name="create_date" string="Ngày tạo"/>
+                    <field name="create_uid" string="Người tạo"/>
+                </tree>
+            </field>
+        </record>
+
+        <record model="ir.actions.act_window" id="action_quy_tac_danh_gia_tinh_diem_hoc_ky">
+            <field name="name">Quản lý quy tắc đánh giá - tính điểm học kỳ</field>
+            <field name="res_model">qldt.quy_tac_danh_gia_tinh_diem_hoc_ky</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+                <!--        danh mục quy tắc xếp loại học lực-->
+        <record model="ir.ui.view" id="danh_muc_quy_tac_xep_loai_hoc_luc_form">
+            <field name="model">qldt.danh_muc_quy_tac_xep_loai_hoc_luc</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <div class="oe_edit_only" style="font-size:25px" attrs="{'invisible': [('id', '=', False)], }">Chỉnh sửa danh mục quy tắc xếp loại học lực</div>
+                        <div class="oe_edit_only" style="font-size:25px" attrs="{'invisible': [('id', '!=', False)], }">Tạo mới danh mục quy tắc xếp loại học lực</div>
+                        <div class="oe_read_only" style="font-size:25px">Danh mục quy tắc xếp loại học lực</div>
+                        <group col="4">
+                            <field name="ten_danh_muc_quy_tac" required = "1"/>
+                            <field name="van_ban_quy_dinh"/>
+                        </group>
+                        <notebook>
+                            <page string="Danh  quy tắc đánh giá, xếp loại học lực">
+                                <field name="quy_tac_danh_gia_xep_loai_hoc_luc"/>
+                            </page>
+                        </notebook>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="danh_muc_quy_tac_xep_loai_hoc_luc_tree">
+            <field name="model">qldt.danh_muc_quy_tac_xep_loai_hoc_luc</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="ten_danh_muc_quy_tac" required = "1"/>
+                    <field name="van_ban_quy_dinh"/>
+                    <field name="quy_tac_danh_gia_xep_loai_hoc_luc" widget="one2many"/>
+                    <field name="create_date" string="Ngày tạo"/>
+                    <field name="create_uid" string="Người tạo"/>
+                </tree>
+            </field>
+        </record>
+
+        <record model="ir.actions.act_window" id="action_danh_muc_quy_tac_xep_loai_hoc_luc">
+            <field name="name">Quản lý danh mục quy tắc xếp loại học lực</field>
+            <field name="res_model">qldt.danh_muc_quy_tac_xep_loai_hoc_luc</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <!--        quy tắc xếp loại học lực-->
+        <record model="ir.ui.view" id="quy_tac_xep_loai_hoc_luc_form">
+            <field name="model">qldt.quy_tac_xep_loai_hoc_luc</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <div class="oe_edit_only" style="font-size:25px" attrs="{'invisible': [('id', '=', False)], }">Chỉnh sửa quy tắc xếp loại học lực</div>
+                        <div class="oe_edit_only" style="font-size:25px" attrs="{'invisible': [('id', '!=', False)], }">Tạo mới quy tắc xếp loại học lực</div>
+                        <div class="oe_read_only" style="font-size:25px">Quy tắc xếp loại học lực</div>
+                        <group col="4">
+                            <field name="ma_quy_tac"/>
+                            <field name="danh_muc_quy_tac_danh_gia_xep_loai_hoc_luc" readonly="1"/>
+                            <field name="loai_hoc_luc" required = "1"/>
+                            <field name="gia_tri_diem_thang_4_min"/>
+                            <field name="gia_tri_diem_thang_4_max"/>
+                            <field name="gia_tri_diem_thang_10_min"/>
+                            <field name="gia_tri_diem_thang_10_max"/>
+                            <field name="van_ban_quy_dinh" widget="selection"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="quy_tac_xep_loai_hoc_luc_tree">
+            <field name="model">qldt.quy_tac_xep_loai_hoc_luc</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="ma_quy_tac"/>
+                    <field name="loai_hoc_luc"/>
+                    <field name="gia_tri_diem_thang_4_min"/>
+                    <field name="gia_tri_diem_thang_4_max"/>
+                    <field name="gia_tri_diem_thang_10_min"/>
+                    <field name="gia_tri_diem_thang_10_max"/>
+                    <field name="van_ban_quy_dinh" widget="selection"/>
+                    <field name="create_date" string="Ngày tạo"/>
+                    <field name="create_uid" string="Người tạo"/>
+                </tree>
+            </field>
+        </record>
+
+        <record model="ir.actions.act_window" id="action_quy_tac_xep_loai_hoc_luc">
+            <field name="name">Quản lý quy tắc xếp loại học lực</field>
+            <field name="res_model">qldt.quy_tac_xep_loai_hoc_luc</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <!--        quy tắc xử lý kết quả học tập (cảnh báo + thôi học ...)-->
+        <record model="ir.ui.view" id="quy_tac_xu_ly_ket_qua_hoc_tap_form">
+            <field name="model">qldt.quy_tac_xu_ly_ket_qua_hoc_tap_theo_tin_chi</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <div class="oe_edit_only" style="font-size:25px" attrs="{'invisible': [('id', '=', False)], }">Chỉnh sửa quy tắc xếp loại học lực</div>
+                        <div class="oe_edit_only" style="font-size:25px" attrs="{'invisible': [('id', '!=', False)], }">Tạo mới quy tắc xếp loại học lực</div>
+                        <div class="oe_read_only" style="font-size:25px">Quy tắc xử lý kết quả học tập</div>
+                        <group col="4">
+                            <field name="ma_quy_tac"/>
+                            <field name="van_ban_quy_dinh" widget="selection"/>
+                            <field name="hinh_thuc_xu_ly"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="quy_tac_xu_ly_ket_qua_hoc_tap_tree">
+            <field name="model">qldt.quy_tac_xu_ly_ket_qua_hoc_tap_theo_tin_chi</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="ma_quy_tac"/>
+                    <field name="van_ban_quy_dinh" widget="selection"/>
+                    <field name="hinh_thuc_xu_ly"/>
+                    <field name="create_date" string="Ngày tạo"/>
+                    <field name="create_uid" string="Người tạo"/>
+                </tree>
+            </field>
+        </record>
+
+        <record model="ir.actions.act_window" id="action_quy_tac_xu_ly_ket_qua_hoc_tap">
+            <field name="name">Quản lý quy tắc xử lý kết quả học tập theo tín chỉ</field>
+            <field name="res_model">qldt.quy_tac_xu_ly_ket_qua_hoc_tap_theo_tin_chi</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+    </data>
+</odoo>

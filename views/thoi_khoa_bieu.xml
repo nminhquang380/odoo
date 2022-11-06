@@ -1,0 +1,67 @@
+<odoo>
+    <data>
+        <record model="ir.ui.view" id="thoi_khoa_bieu_form">
+            <field name="model">thoi_khoa_bieu</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group col="4">
+                            <field name="mon_hoc"/>
+                            <!-- <field name="nhom_to"/>
+                            <field name="to_th"/> -->
+                            <field name="ten_lop"/>
+                            <field name="tong_so_sinh_vien"/>
+                            <field name="thu_kieu_so"/>
+                            <field name="tiet_bd"/>
+                            <field name="so_tiet"/>
+                            <field name="ma_ph"/>
+                            <!-- <field name="ds_tuan_hoc"/>
+                            <field name="tuan_bd"/>
+                            <field name="ma_nv"/> -->
+                            <field name="ten_day_du_nv"/>
+                            <field name="ten_ph"/>
+                            <field name="ngay_bd"/>
+                            <!-- <field name="ngay_kt"/> -->
+                            <!-- <field name="ten_to_hop"/>
+                            <field name="ds_tiet"/> -->
+                            <field name="so_tin_chi"/>
+                            <!-- <field name="ma_lop_tkb"/>  -->
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+        <record model="ir.ui.view" id="thoi_khoa_bieu_tree">
+            <field name="model">thoi_khoa_bieu</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="mon_hoc"/>
+                    <!-- <field name="nhom_to"/>
+                    <field name="to_th"/> -->
+                    <field name="ten_lop"/>
+                    <field name="tong_so_sinh_vien"/>
+                    <field name="thu_kieu_so"/>
+                    <field name="tiet_bd"/>
+                    <field name="so_tiet"/>
+                    <field name="ma_ph"/>
+                    <!-- <field name="ds_tuan_hoc"/>
+                    <field name="tuan_bd"/>
+                    <field name="ma_nv"/> -->
+                    <field name="ten_day_du_nv"/>
+                    <field name="ten_ph"/>
+                    <field name="ngay_bd"/>
+                    <!-- <field name="ngay_kt"/> -->
+                    <!-- <field name="ten_to_hop"/>
+                    <field name="ds_tiet"/> -->
+                    <field name="so_tin_chi"/>
+                    <!-- <field name="ma_lop_tkb"/>  -->
+                </tree>
+            </field>
+        </record>
+        <record model="ir.actions.act_window" id="action_thoi_khoa_bieu">
+            <field name="name">Thời khóa biểu</field>
+            <field name="res_model">thoi_khoa_bieu</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+    </data>
+</odoo>

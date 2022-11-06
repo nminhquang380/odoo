@@ -1,0 +1,179 @@
+<odoo>
+    <data>
+        <record model="ir.ui.view" id="khoa_nganh_form">
+            <field name="model">khoa_nganh</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <div class="oe_edit_only" style="font-size:25px" attrs="{'invisible': [('id', '=', False)], }">Chỉnh sửa khóa - ngành</div>
+                        <div class="oe_edit_only" style="font-size:25px" attrs="{'invisible': [('id', '!=', False)], }">Tạo mới khóa - ngành</div>
+                        <div class="oe_read_only" style="font-size:25px">Khóa - ngành</div>
+                        <group col="4">
+                            <field name="khoa_sinh_vien_id"
+                                   options="{'no_create_edit':1,
+                                   'no_quick_create':1,
+                                   'no_open': True}" required = "1"/>
+                            <field name='nganh_id'
+                                   options="{'no_create_edit':1,
+                                   'no_quick_create':1,
+                                   'no_open': True}" required = "1"/>
+                            <field name="hoc_phi_ids"
+                                   options="{'no_create_edit':1,
+                                   'no_quick_create':1,
+                                   'no_open': True}" required = "1"/>
+                        </group>
+                        <group col="4">
+                            <field name="hinh_thuc_dao_tao_id"/>
+<!--                            <field name="bieu_gia_id"/>-->
+                            <field name="ctk_id"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <!--  tạo mới khóa - ngành trong menu tạo mới khóa sinh viên   -->
+        <!--        -->
+        <record model="ir.ui.view" id="khoa_nganh_form_khoa_sinh_vien">
+            <field name="model">khoa_nganh</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <div class="oe_edit_only" style="font-size:25px" attrs="{'invisible': [('id', '=', False)], }">Chỉnh sửa ngành học của khóa sinh viên</div>
+                        <div class="oe_edit_only" style="font-size:25px" attrs="{'invisible': [('id', '!=', False)], }">Thêm ngành học cho khóa sinh viên</div>
+                        <div class="oe_read_only" style="font-size:25px">Ngành</div>
+                        <group>
+                            <field name='nganh_id'
+                                   options="{'no_create_edit':1,
+                                   'no_quick_create':1,
+                                   'no_open': True}"/>
+                            <field name='ten_nganh'
+                                   options="{'no_create_edit':1,
+                                   'no_quick_create':1,
+                                   'no_open': True}"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <!--        khóa ngành form trong menu thiết lập quy chế đào tạo năm học -->
+        <record model="ir.ui.view" id="khoa_nganh_form_quy_che_dao_tao_nam_hoc">
+            <field name="model">khoa_nganh</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <div class="oe_edit_only" style="font-size:25px" attrs="{'invisible': [('id', '=', False)], }">Chỉnh sửa khóa - ngành</div>
+                        <div class="oe_edit_only" style="font-size:25px" attrs="{'invisible': [('id', '!=', False)], }">Tạo mới khóa - ngành</div>
+                        <div class="oe_read_only" style="font-size:25px">Khóa - ngành</div>
+                        <group col="4">
+                            <field name="khoa_sinh_vien_id"/>
+                            <field name='nganh_id'/>
+                        </group>
+                        <group>
+                            <field name="ctk_id">
+                                <tree>
+                                    <field name="ten_chuong_trinh_khung"/>
+                                    <field name="create_date"/>
+                                    <field name="create_uid"/>
+                                </tree>
+                            </field>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+        <record model="ir.ui.view" id="khoa_nganh_tree">
+            <field name="model">khoa_nganh</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="khoa_sinh_vien_id"/>
+                    <field name="nganh_id"/>
+                    <field name="hinh_thuc_dao_tao_id"/>
+                    <field name="ctk_id"/>
+                    <field name="create_uid" string="Tạo bởi"/>
+                    <field name="create_date" string="Ngày tạo"/>
+                </tree>
+            </field>
+        </record>
+
+<!--        <record id="khoa_nganh_group_by_nganh" model="ir.ui.view">-->
+<!--            <field name="model">khoa_nganh</field>-->
+<!--            <field name="arch" type="xml">-->
+<!--                <search>-->
+<!--                    <field name="khoa_sinh_vien_id"/>-->
+<!--                    &lt;!&ndash;                    <field name="create_uid" string="Tạo bởi"/>&ndash;&gt;-->
+<!--                    <group expand="0" string="Group By">-->
+<!--                        <filter name="group_by_nganh_id"-->
+<!--                                string="Ngành học"-->
+<!--                                context="{'group_by':'nganh_id'}"/>-->
+<!--                    </group>-->
+<!--                </search>-->
+<!--            </field>-->
+<!--        </record>-->
+
+        <record model="ir.ui.view" id="khoa_nganh_search_all">
+            <field name="model">khoa_nganh</field>
+            <field name="arch" type="xml">
+                <search>
+                    <searchpanel>
+                        <field name="hinh_thuc_dao_tao_id" select="multi" />
+                        <field name="khoa_sinh_vien_id" select="multi"/>
+                        <field name="ten_nganh" select="multi"/>
+                    </searchpanel>
+                    <field name="khoa_sinh_vien_id"/>
+                    <group expand="0" string="Group By">
+                        <filter name="group_by_nganh_id"
+                                string="Ngành học"
+                                context="{'group_by':'nganh_id'}"/>
+                    </group>
+                </search>
+            </field>
+        </record>
+
+        <record model="ir.actions.act_window" id="action_khoa_nganh">
+            <field name="name">Thông tin khóa - ngành</field>
+            <field name="res_model">khoa_nganh</field>
+            <field name="view_mode">tree,form</field>
+            <field name="view_id" ref="khoa_nganh_form"/>
+            <field name="view_id" ref="khoa_nganh_tree"/>
+            <field name="context">{"group_by":"nganh_id"}</field>
+        </record>
+
+        <record model="ir.ui.view" id="khoa_chuyen_nganh_form">
+            <field name="model">khoa_chuyen_nganh</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <div class="oe_edit_only" style="font-size:25px" attrs="{'invisible': [('id', '=', False)], }">Chỉnh sửa khóa - chuyên ngành</div>
+                        <div class="oe_edit_only" style="font-size:25px" attrs="{'invisible': [('id', '!=', False)], }">Tạo mới khóa - chuyên ngành</div>
+                        <div class="oe_read_only" style="font-size:25px">Khóa - chuyên ngành</div>
+                        <group>
+                            <field name="chuyen_nganh_id" required="1"/>
+                            <field name="khoi_lop_id"/>
+                            <field name="ctk_id"/>
+                            <field name="ten_khoa_chuyen_nganh"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="khoa_chuyen_nganh_tree">
+            <field name="model">khoa_chuyen_nganh</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="khoi_lop_id"/>
+                    <field name="chuyen_nganh_id"/>
+                    <field name="ctk_id"/>
+                </tree>
+            </field>
+        </record>
+
+        <record model="ir.actions.act_window" id="action_khoa_chuyen_nganh">
+            <field name="name">Thông tin khóa - chuyên ngành</field>
+            <field name="res_model">khoa_chuyen_nganh</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+    </data>
+</odoo>

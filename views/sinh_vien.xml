@@ -1,0 +1,700 @@
+<odoo>
+    <data>
+        <!-- explicit list view definition -->
+
+        <record model="ir.ui.view" id="sinh_vien_kanban">
+            <field name="model">sinh_vien</field>
+            <field name="arch" type="xml">
+                <kanban class="o_res_partner_kanban" sample="1">
+                    <field name="id"/>
+                    <field name="color"/>
+                    <field name="display_name"/>
+                    <field name="title"/>
+                    <field name="email"/>
+                    <field name="parent_id"/>
+                    <field name="is_company"/>
+                    <field name="function"/>
+                    <field name="phone"/>
+                    <field name="street"/>
+                    <field name="street2"/>
+                    <field name="zip"/>
+                    <field name="city"/>
+                    <field name="country_id"/>
+                    <field name="mobile"/>
+                    <field name="state_id"/>
+                    <field name="category_id"/>
+                    <field name="image_128"/>
+                    <field name="type"/>
+                    <field name="name"/>
+                    <field name="image_128"/>
+                    <field name="ten"/>
+                    <templates>
+                        <t t-name="kanban-box">
+                            <div class="oe_kanban_global_click o_kanban_record_has_image_fill o_res_partner_kanban">
+                                <t t-if="!record.is_company.raw_value">
+                                    <t t-if="record.type.raw_value === 'delivery'" t-set="placeholder"
+                                       t-value="'/base/static/img/truck.png'"/>
+                                    <t t-elif="record.type.raw_value === 'invoice'" t-set="placeholder"
+                                       t-value="'/base/static/img/money.png'"/>
+                                    <t t-else="" t-set="placeholder" t-value="'/base/static/img/avatar_grey.png'"/>
+                                    <div class="o_kanban_image_fill_left d-none d-md-block"
+                                         t-attf-style="background-image:url('#{kanban_image('sinh_vien', 'image_128', record.id.raw_value,  placeholder)}')">
+                                        <img class="o_kanban_image_inner_pic" t-if="record.parent_id.raw_value"
+                                             t-att-alt="record.parent_id.value"
+                                             t-att-src="kanban_image('sinh_vien', 'image_128', record.parent_id.raw_value)"/>
+                                    </div>
+                                    <div class="o_kanban_image d-md-none"
+                                         t-attf-style="background-image:url('#{kanban_image('sinh_vien', 'image_128', record.id.raw_value,  placeholder)}')">
+                                        <img class="o_kanban_image_inner_pic" t-if="record.parent_id.raw_value"
+                                             t-att-alt="record.parent_id.value"
+                                             t-att-src="kanban_image('sinh_vien', 'image_128', record.parent_id.raw_value)"/>
+                                    </div>
+                                </t>
+                                <t t-else="">
+                                    <t t-set="placeholder" t-value="'/base/static/img/company_image.png'"/>
+                                    <div class="o_kanban_image_fill_left o_kanban_image_full"
+                                         t-attf-style="background-image: url(#{kanban_image('res.partner', 'image_128', record.id.raw_value, placeholder)})"
+                                         role="img"/>
+                                </t>
+                                <div class="oe_kanban_details d-flex flex-column">
+                                    <strong class="o_kanban_record_title oe_partner_heading">
+                                        <field name="name"/>
+                                    </strong>
+                                    <field name="khoi_lop_id"/>
+                                    <field name="email"/>
+                                    <div class="o_kanban_tags_section oe_kanban_partner_categories"/>
+                                    <ul>
+                                        <li t-if="record.parent_id.raw_value and !record.function.raw_value">
+                                            <field name="parent_id"/>
+                                        </li>
+                                        <li t-if="!record.parent_id.raw_value and record.function.raw_value">
+                                            <field name="function"/>
+                                        </li>
+                                        <li t-if="record.parent_id.raw_value and record.function.raw_value">
+                                            <field name="function"/>
+                                            at
+                                            <field name="parent_id"/>
+                                        </li>
+                                        <li t-if="record.city.raw_value or record.country_id.raw_value">
+                                            <t t-if="record.city.raw_value">
+                                                <field name="city"/>
+                                                <t t-if="record.country_id.raw_value">,</t>
+                                            </t>
+                                            <t t-if="record.country_id.raw_value">
+                                                <field name="country_id"/>
+                                            </t>
+                                        </li>
+                                        <li t-if="record.email.raw_value" class="o_text_overflow">
+                                            <field name="email"/>
+                                        </li>
+                                    </ul>
+                                    <div class="o_row">
+                                        <span class="oe_kanban_partner_links"/>
+                                    </div>
+                                </div>
+                            </div>
+                        </t>
+                    </templates>
+                </kanban>
+            </field>
+        </record>
+
+        <record id="sinh_vien_form" model="ir.ui.view">
+            <!--            <field name="name">sinh_vien.form</field>-->
+            <field name="model">sinh_vien</field>
+            <!--            <field name="priority" eval="1"/>-->
+            <field name="arch" type="xml">
+                <form>
+                    <!--                <div class="alert alert-warning oe_edit_only" role="alert" attrs="{'invisible': [('same_vat_partner_id', '=', False)]}">-->
+                    <!--                  A partner with the same <span><span class="o_vat_label">Tax ID</span></span> already exists (<field name="same_vat_partner_id"/>), are you sure to create a new one?-->
+                    <!--                </div>-->
+                    <sheet>
+                        <div class="oe_button_box" name="button_box"/>
+                        <div class="oe_edit_only" style="font-size:25px" attrs="{'invisible': [('id', '=', False)], }">
+                            Chỉnh sửa sinh viên
+                        </div>
+                        <div class="oe_edit_only" style="font-size:25px" attrs="{'invisible': [('id', '!=', False)], }">
+                            Tạo mới sinh viên
+                        </div>
+                        <div class="oe_read_only" style="font-size:25px">Sinh viên</div>
+                        <!--                    <widget name="web_ribbon" title="Archived" bg_color="bg-danger" attrs="{'invisible': [('active', '=', True)]}"/>-->
+                        <!--                    <div class="oe_title">-->
+                        <!--                        <field name="is_company" invisible="1"/>-->
+                        <!--                        <field name="commercial_partner_id" invisible="1"/>-->
+                        <!--                        <field name="active" invisible="1"/>-->
+                        <!--                        <field name="company_type" widget="radio"-->
+                        <!--                            class="oe_edit_only"-->
+                        <!--                            options="{'horizontal': true}"/>-->
+
+                        <!--                        <div class="o_row">-->
+                        <!--                            <field name="parent_id"-->
+                        <!--                                widget="res_partner_many2one"-->
+                        <!--                                placeholder="Company"-->
+                        <!--                                domain="[('is_company', '=', True)]" context="{'default_is_company': True, 'show_vat': True}"-->
+                        <!--                                attrs="{'invisible': ['|', '&amp;', ('is_company','=', True),('parent_id', '=', False),('company_name', '!=', False),('company_name', '!=', '')]}"/>-->
+                        <!--                                <field name="company_name" attrs="{'invisible': ['|', '|', ('company_name', '=', False), ('company_name', '=', ''), ('is_company', '=', True)]}"/>-->
+                        <!--                                <button name="create_company" icon="fa-plus-square" string="Create company"-->
+                        <!--                                    type="object" class="oe_edit_only btn-link"-->
+                        <!--                                    attrs="{'invisible': ['|', '|', ('is_company','=', True), ('company_name', '=', ''), ('company_name', '=', False)]}"/>-->
+                        <!--                        </div>-->
+                        <!--                    </div>-->
+
+                        <group>
+                            <group>
+                                <field name="name" string="Họ và tên" placeholder="VD: Nguyễn Văn A"/>
+                                <field name="ho_dem" placeholder="VD: Nguyễn Văn"/>
+                                <field name="ten"  placeholder="VD: A"/>
+                                <field name="ma_dinh_danh"/>
+<!--                                <field name="user_id"/>-->
+                                <field name="email"/>
+                                <field name="hinh_thuc_dao_tao_id"/>
+                                <field name="trinh_hinh_id"/>
+                                <field name="khoa_nganh_id"/>
+                                <field name="khoa_chuyen_nganh_id"/>
+                                <field name="khoi_lop_id"/>
+                                <field name="diem_tich_luy"/>
+                                <field name="diem_tich_luy_thang_4"/>
+<!--                                <field name="trang_thai"/> #deprecated: trường này sẽ bị xóa trong tương lai-->
+                                <field name="trang_thai_sinh_vien"/>
+                            </group>
+
+                            <group>
+                                <field name="anh_dai_dien" widget='image' class="oe_avatar"
+                                       options='{"preview_image": "image_128"}'/>
+                            </group>
+                        </group>
+                        <group>
+<!--                            <field name="lop_hanh_chinh_ids"/>-->
+                        </group>
+                        <group>
+                            <field name="ghi_chu"/>
+                            <!--                            <field name="password" required="1" password="1" />-->
+                        </group>
+
+                        <notebook colspan="4">
+                            <page name="thong_tin_ca_nhan" string="Thông tin cá nhân">
+                                <group col="4">
+
+                                    <!--                                    <field name="HoLotSV"/>-->
+                                    <!--                                    <field name="TenSV"/>-->
+                                    <field name="ngay_sinh"/>
+                                    <field name="gioi_tinh"/>
+                                    <field name="MaDT"/>
+                                    <field name="MaTG"/> <!-- mã db tôn giáo -->
+                                    <field name="SoTaiKhoan"/>
+                                    <field name="MaNH"/>
+                                    <field name="CHINHANHNH"/>
+                                    <field name="SoNamBD"/>
+                                    <field name="SoNamTNXP"/>
+                                    <field name="so_cmnd"/>
+                                    <field name="CanNang"/>
+                                    <field name="ChieuCao"/>
+                                    <field name="NoiCapCMND"/>
+                                    <field name="NgCapCMND"/>
+                                    <!-- <field name="QueQuan"/> -->
+                                    <field name="TenGiamHo"/>
+                                    <field name="NgSinhGH"/>
+                                    <field name="NNgGH"/>
+                                </group>
+                            </page>
+                            <!--                        <page name="xem_anh_dai_dien" string="Ảnh đại diện">-->
+                            <!--                                    <group col="4">-->
+                            <!--                                        <field name="anh_dai_dien" widget="image" options="{'preview_image':'image_128'}"/>-->
+                            <!--                                    </group>-->
+                            <!--                                </page>-->
+                            <page name="thong_tin_noi_sinh" string="Thông tin nơi sinh">
+                                <group col="4">
+                                    <field name="loaiNoiSinh"/>
+                                    <field name="tinh_tp_id"/>
+                                    <field name="quan_huyen_id" domain="[('cap_don_vi', '=', 2)]"/>
+                                    <field name="phuong_xa_id" domain="[('cap_don_vi', '=', 3)]"/>
+                                    <field name="so_nha_ten_duong_ns"/>
+                                    <field name="noiSinhNuocNgoai" attrs="{'invisible': [('loaiNoiSinh', '=', '0')], }"/>
+                                    <field name="MADBQUOCTICH"/> <!-- mã db quốc tịch -->
+                                    <field name="MADBNOISINHSV"/> <!-- mã db nơi sinh -->
+                                </group>
+                            </page>
+                            <page name="thong_tin_sinh_vien" string="Thông tin sinh viên">
+                                <group col="4">
+                                    <!--                                    <field name="ma_dinh_danh"/>-->
+                                    <!--                                    <field name="MaNg"/>    -->
+                                    <!--                                    <field name="MaChngNg"/>-->
+                                    <field name="TheThuVien"/>
+                                    <field name="DC_DT1LLSV"/>
+                                    <field name="DC_DT2LLSV"/>
+                                    <field name="DC_EML2LLSV"/>
+                                    <field name="NgayNHOC"/>
+                                    <field name="MADBHKSV"/>
+                                    <field name="MADBLLSV"/>
+                                    <field name="MADBTTSV"/>
+                                    <field name="MADBVCSV"/>
+                                    <field name="PhongKTX"/>
+                                    <field name="MADBCQCTSV"/>
+                                    <field name="SoBHSV"/>
+                                    <field name="MaBVKCB"/>
+                                    <field name="GcSV"/>
+                                </group>
+                            </page>
+                            <page name="thong_tin_nghe_nghiep" string="Thông tin nghề nghiệp">
+                                <group col="4">
+                                    <field name="DangHoc"/>
+                                    <field name="CoNghe"/>
+                                    <field name="CQCT"/>
+                                    <field name="CVCQCT"/>
+                                    <field name="DCCQCT"/>
+                                    <field name="NguonTuyen"/>
+                                    <field name="MaSoThue"/>
+                                    <field name="TenDVThue"/>
+                                    <field name="TGianCT"/>
+                                </group>
+                            </page>
+                            <page name="thong_tin_gia_dinh" string="Thông tin gia đình">
+                                <group col="4">
+                                    <field name="DC_DCHK"/>
+                                    <field name="ThPhanGD"/>
+                                    <field name="DC_DCHK2"/>
+                                    <field name="DC_DCLLSV"/>
+                                    <field name="DC_DCTT"/>
+                                    <field name="DC_DT1HK"/>
+                                    <field name="DC_DT1TT"/>
+                                    <field name="DC_Eml1HK"/>
+                                    <field name="DC_EML1LLSV"/>
+                                    <field name="DC_Eml1TT"/>
+                                    <field name="DC_GcHK"/>
+                                    <field name="DC_GcLL"/>
+                                    <field name="DC_GcTT"/>
+                                    <field name="DC_DT1Me"/>
+                                    <field name="DC_DT1Cha"/>
+                                    <field name="DKKinhTe"/>
+                                    <field name="GcThPhanGD"/>
+                                    <field name="LoaiCuTru"/>
+                                    <field name="SoAnhChiEm"/>
+                                    <field name="TenCha"/>
+                                    <field name="TenChuHo"/>
+                                    <field name="TenChuHoHK"/>
+                                    <field name="TenMe"/>
+                                    <field name="TenHo"/>
+                                    <field name="MatCha"/>
+                                    <field name="MatMe"/>
+                                    <field name="NgayNgTru"/>
+                                    <field name="NgSinhCha"/>
+                                    <field name="NgSinhMe"/>
+                                    <field name="NNgCha"/>
+                                    <field name="NNgMe"/>
+                                    <field name="NguoiLL"/>
+                                    <field name="GhiChuView1"/>
+                                    <field name="DC_DTNgLL"/>
+                                    <field name="DC_EmlNgLL"/>
+                                </group>
+                            </page>
+                            <page name="thong_tin_hon_nhan" string="Thông tin hôn nhân">
+                                <group col="4">
+                                    <field name="TenVC"/>
+                                    <field name="NgNghiepVC"/>
+                                    <field name="DC_DCVC"/>
+                                    <field name="DC_GcVC"/>
+                                    <field name="DC_DT1VC"/>
+                                    <field name="DC_DT2HK"/>
+                                    <field name="DC_DT2TT"/>
+                                    <field name="DC_DT2VC"/>
+                                    <field name="DC_Eml1VC"/>
+                                    <field name="DC_Eml2HK"/>
+                                    <field name="DC_EML2LL"/>
+                                    <field name="DC_Eml2TT"/>
+                                    <field name="DC_Eml2VC"/>
+                                </group>
+                            </page>
+                            <page name="thong_tin_du_thi_dai_hoc" string="Thông tin dự thi đại học">
+                                <group col="4">
+                                    <field name="TTSV"/>
+                                    <field name="TrChuyen"/>
+                                    <field name="SoBD"/>
+                                    <field name="DC_EML2LLSV"/>
+                                    <field name="Diem1"/>
+                                    <field name="Diem2"/>
+                                    <field name="Diem3"/>
+                                    <field name="Diem4"/>
+                                    <field name="DiemUT"/>
+                                    <field name="Diem5"/>
+                                    <field name="DiemTong"/>
+                                    <field name="NganhThi"/>
+                                    <field name="KhoiThi"/>
+                                    <field name="NhomKVTS"/>
+                                    <field name="DOITUONGTS"/>
+                                    <field name="NAMTN"/>
+                                    <field name="DotTS"/>
+                                    <field name="DIEMCHUAN"/>
+                                    <field name="HocLuc"/>
+                                    <field name="HanhKiem"/>
+                                    <field name="LoaiKhuyetTat"/>
+                                    <field name="DVDKDTHI"/>
+                                </group>
+                            </page>
+
+                            <page name="cong_no" string="Công nợ">
+                                <field name="cong_no_id">
+                                    <tree>
+                                        <field name="ten_day_du_sinh_vien"/>
+                                        <field name="ma_dinh_danh"/>
+                                        <field name="khoi_lop_id"/>
+                                        <field name="so_tien_phai_nop"/>
+                                        <field name="so_tien_duoc_nhan"/>
+                                        <field name="so_tien_sv_da_thanh_toan"/>
+                                        <field name="so_tien_nha_truong_da_thanh_toan"/>
+                                    </tree>
+                                </field>
+                            </page>
+                            <!--                            &lt;!&ndash;                        <page string="Contacts &amp; Addresses" name="contact_addresses" autofocus="autofocus">&ndash;&gt;-->
+                            <!--                            &lt;!&ndash;                            <field name="child_ids" mode="kanban" context="{'default_parent_id': active_id, 'default_street': street, 'default_street2': street2, 'default_city': city, 'default_state_id': state_id, 'default_zip': zip, 'default_country_id': country_id, 'default_lang': None, 'default_user_id': user_id, 'default_type': 'other'}">&ndash;&gt;-->
+                            <!--                            &lt;!&ndash;                                <kanban>&ndash;&gt;-->
+                            <!--                            &lt;!&ndash;                                    <field name="id"/>&ndash;&gt;-->
+                            <!--                            &lt;!&ndash;                                    <field name="color"/>&ndash;&gt;-->
+                            <!--                            &lt;!&ndash;                                    <field name="name"/>&ndash;&gt;-->
+                            <!--                            &lt;!&ndash;                                    <field name="title"/>&ndash;&gt;-->
+                            <!--                            &lt;!&ndash;                                    <field name="type"/>&ndash;&gt;-->
+                            <!--                            &lt;!&ndash;                                    <field name="email"/>&ndash;&gt;-->
+                            <!--                            &lt;!&ndash;                                    <field name="parent_id"/>&ndash;&gt;-->
+                            <!--                            &lt;!&ndash;                                    <field name="is_company"/>&ndash;&gt;-->
+                            <!--                            &lt;!&ndash;                                    <field name="function"/>&ndash;&gt;-->
+                            <!--                            &lt;!&ndash;                                    <field name="phone"/>&ndash;&gt;-->
+                            <!--                            &lt;!&ndash;                                    <field name="street"/>&ndash;&gt;-->
+                            <!--                            &lt;!&ndash;                                    <field name="street2"/>&ndash;&gt;-->
+                            <!--                            &lt;!&ndash;                                    <field name="zip"/>&ndash;&gt;-->
+                            <!--                            &lt;!&ndash;                                    <field name="city"/>&ndash;&gt;-->
+                            <!--                            &lt;!&ndash;                                    <field name="country_id"/>&ndash;&gt;-->
+                            <!--                            &lt;!&ndash;                                    <field name="mobile"/>&ndash;&gt;-->
+                            <!--                            &lt;!&ndash;                                    <field name="state_id"/>&ndash;&gt;-->
+                            <!--                            &lt;!&ndash;                                    <field name="image_128"/>&ndash;&gt;-->
+                            <!--                            &lt;!&ndash;                                    <field name="lang"/>&ndash;&gt;-->
+                            <!--                            &lt;!&ndash;                                    &lt;!&ndash; fields in form x2many view to diminish requests &ndash;&gt;&ndash;&gt;-->
+                            <!--                            &lt;!&ndash;                                    <field name="comment"/>&ndash;&gt;-->
+                            <!--                            &lt;!&ndash;                                    <field name="display_name"/>&ndash;&gt;-->
+                            <!--                            &lt;!&ndash;                                    <templates>&ndash;&gt;-->
+                            <!--                            &lt;!&ndash;                                        <t t-name="kanban-box">&ndash;&gt;-->
+                            <!--                            &lt;!&ndash;                                            <t t-set="color" t-value="kanban_color(record.color.raw_value)"/>&ndash;&gt;-->
+                            <!--                            &lt;!&ndash;                                            <div t-att-class="color + (record.title.raw_value == 1 ? ' oe_kanban_color_alert' : '') + ' oe_kanban_global_click'">&ndash;&gt;-->
+                            <!--                            &lt;!&ndash;                                                <div class="o_kanban_image">&ndash;&gt;-->
+                            <!--                            &lt;!&ndash;                                                    <img alt="Contact image" t-if="record.image_128.raw_value" t-att-src="kanban_image('res.partner', 'image_128', record.id.raw_value)"/>&ndash;&gt;-->
+                            <!--                            &lt;!&ndash;                                                    <t t-if="!record.image_128.raw_value">&ndash;&gt;-->
+                            <!--                            &lt;!&ndash;                                                        <img alt="Delivery" t-if="record.type.raw_value === 'delivery'" t-att-src='_s + "/base/static/img/truck.png"'/>&ndash;&gt;-->
+                            <!--                            &lt;!&ndash;                                                        <img alt="Invoice" t-if="record.type.raw_value === 'invoice'" t-att-src='_s + "/base/static/img/money.png"'/>&ndash;&gt;-->
+                            <!--                            &lt;!&ndash;                                                        <t t-if="record.type.raw_value !== 'invoice' &amp;&amp; record.type.raw_value !== 'delivery'">&ndash;&gt;-->
+                            <!--                            &lt;!&ndash;                                                            <img alt="Logo" t-if="record.is_company.raw_value === true" t-att-src='_s + "/base/static/img/company_image.png"'/>&ndash;&gt;-->
+                            <!--                            &lt;!&ndash;                                                            <img alt="Avatar" t-if="record.is_company.raw_value === false" t-att-src='_s + "/base/static/img/avatar_grey.png"'/>&ndash;&gt;-->
+                            <!--                            &lt;!&ndash;                                                        </t>&ndash;&gt;-->
+                            <!--                            &lt;!&ndash;                                                    </t>&ndash;&gt;-->
+                            <!--                            &lt;!&ndash;                                                </div>&ndash;&gt;-->
+                            <!--                            &lt;!&ndash;                                                <div class="oe_kanban_details">&ndash;&gt;-->
+                            <!--                            &lt;!&ndash;                                                    <field name="name"/>&ndash;&gt;-->
+                            <!--                            &lt;!&ndash;                                                    <div t-if="record.function.raw_value"><field name="function"/></div>&ndash;&gt;-->
+                            <!--                            &lt;!&ndash;                                                    <div t-if="record.email.raw_value"><field name="email" widget="email"/></div>&ndash;&gt;-->
+                            <!--                            &lt;!&ndash;                                                    <div t-if="record.type.raw_value != 'contact'">&ndash;&gt;-->
+                            <!--                            &lt;!&ndash;                                                        <div>&ndash;&gt;-->
+                            <!--                            &lt;!&ndash;                                                            <field name="zip"/>&ndash;&gt;-->
+                            <!--                            &lt;!&ndash;                                                            <field name="city"/>&ndash;&gt;-->
+                            <!--                            &lt;!&ndash;                                                        </div>&ndash;&gt;-->
+                            <!--                            &lt;!&ndash;                                                        <field t-if="record.state_id.raw_value" name="state_id"/>&ndash;&gt;-->
+                            <!--                            &lt;!&ndash;                                                        <field name="country_id"/>&ndash;&gt;-->
+                            <!--                            &lt;!&ndash;                                                    </div>&ndash;&gt;-->
+                            <!--                            &lt;!&ndash;                                                    <div t-if="record.phone.raw_value">Phone: <t t-esc="record.phone.value"/></div>&ndash;&gt;-->
+                            <!--                            &lt;!&ndash;                                                    <div t-if="record.mobile.raw_value">Mobile: <t t-esc="record.mobile.value"/></div>&ndash;&gt;-->
+                            <!--                            &lt;!&ndash;                                                </div>&ndash;&gt;-->
+                            <!--                            &lt;!&ndash;                                            </div>&ndash;&gt;-->
+                            <!--                            &lt;!&ndash;                                        </t>&ndash;&gt;-->
+                            <!--                            &lt;!&ndash;                                    </templates>&ndash;&gt;-->
+                            <!--                            &lt;!&ndash;                                </kanban>&ndash;&gt;-->
+                            <!--                            &lt;!&ndash;                                <form string="Contact / Address">&ndash;&gt;-->
+                            <!--                            &lt;!&ndash;                                    <sheet>&ndash;&gt;-->
+                            <!--                            &lt;!&ndash;                                        &lt;!&ndash; parent_id and type fields needed in attrs in base_address_city module which overwrites&ndash;&gt;-->
+                            <!--                            &lt;!&ndash;                                        _fields_view_get() of partner. It would be better to put those fields there but the web client&ndash;&gt;-->
+                            <!--                            &lt;!&ndash;                                        dosen't support when a field is displayed several times in the same view.&ndash;&gt;&ndash;&gt;-->
+                            <!--                            &lt;!&ndash;                                        <field name="type" required="1" widget="radio" options="{'horizontal': true}"/>&ndash;&gt;-->
+                            <!--                            &lt;!&ndash;                                        <field name="parent_id" invisible="1"/>&ndash;&gt;-->
+                            <!--                            &lt;!&ndash;                                        <hr/>&ndash;&gt;-->
+                            <!--                            &lt;!&ndash;                                        <group col="12">&ndash;&gt;-->
+                            <!--                            &lt;!&ndash;                                            <group colspan="5">&ndash;&gt;-->
+                            <!--                            &lt;!&ndash;                                                <field name="name" string="Contact Name" attrs="{'required' : [('type', '=', 'contact')]}"/>&ndash;&gt;-->
+                            <!--                            &lt;!&ndash;                                                <field name="title" placeholder="e.g. Mr."&ndash;&gt;-->
+                            <!--                            &lt;!&ndash;                                                    attrs="{'invisible': [('type','!=', 'contact')]}"/>&ndash;&gt;-->
+                            <!--                            &lt;!&ndash;                                                <field name="function" placeholder="e.g. Sales Director"&ndash;&gt;-->
+                            <!--                            &lt;!&ndash;                                                    attrs="{'invisible': [('type','!=', 'contact')]}"/>&ndash;&gt;-->
+                            <!--                            &lt;!&ndash;                                                <label for="street" string="Address" attrs="{'invisible': [('type','=', 'contact')]}"/>&ndash;&gt;-->
+                            <!--                            &lt;!&ndash;                                                <div attrs="{'invisible': [('type','=', 'contact')]}">&ndash;&gt;-->
+                            <!--                            &lt;!&ndash;                                                    <div class="o_address_format" name="div_address">&ndash;&gt;-->
+                            <!--                            &lt;!&ndash;                                                        <field name="street" placeholder="Street..." class="o_address_street"/>&ndash;&gt;-->
+                            <!--                            &lt;!&ndash;                                                        <field name="street2" placeholder="Street 2..." class="o_address_street"/>&ndash;&gt;-->
+                            <!--                            &lt;!&ndash;                                                        <field name="city" placeholder="City" class="o_address_city"/>&ndash;&gt;-->
+                            <!--                            &lt;!&ndash;                                                        <field name="state_id" class="o_address_state" placeholder="State" options="{'no_open': True, 'no_quick_create': True}" context="{'country_id': country_id, 'default_country_id': country_id, 'zip': zip}"/>&ndash;&gt;-->
+                            <!--                            &lt;!&ndash;                                                        <field name="zip" placeholder="ZIP" class="o_address_zip"/>&ndash;&gt;-->
+                            <!--                            &lt;!&ndash;                                                        <field name="country_id" placeholder="Country" class="o_address_country" options='{"no_open": True, "no_create": True}'/>&ndash;&gt;-->
+                            <!--                            &lt;!&ndash;                                                    </div>&ndash;&gt;-->
+                            <!--                            &lt;!&ndash;                                                </div>&ndash;&gt;-->
+                            <!--                            &lt;!&ndash;                                                <field name="comment" placeholder="Internal notes..."/>&ndash;&gt;-->
+                            <!--                            &lt;!&ndash;                                            </group>&ndash;&gt;-->
+                            <!--                            &lt;!&ndash;                                            <group colspan="5">&ndash;&gt;-->
+                            <!--                            &lt;!&ndash;                                                <field name="email" widget="email"/>&ndash;&gt;-->
+                            <!--                            &lt;!&ndash;                                                <field name="phone" widget="phone"/>&ndash;&gt;-->
+                            <!--                            &lt;!&ndash;                                                <field name="mobile" widget="phone"/>&ndash;&gt;-->
+                            <!--                            &lt;!&ndash;                                                <field name="company_id" invisible="1"/>&ndash;&gt;-->
+                            <!--                            &lt;!&ndash;                                            </group>&ndash;&gt;-->
+                            <!--                            &lt;!&ndash;                                            <group colspan="1">&ndash;&gt;-->
+                            <!--                            &lt;!&ndash;                                                <field name="image_1920" widget="image" class="oe_avatar" nolabel="1" options="{'image_preview': 'image_128'}"/>&ndash;&gt;-->
+                            <!--                            &lt;!&ndash;                                            </group>&ndash;&gt;-->
+                            <!--                            &lt;!&ndash;                                        </group>&ndash;&gt;-->
+                            <!--                            &lt;!&ndash;                                        <field name="lang" invisible="True"/>&ndash;&gt;-->
+                            <!--                            &lt;!&ndash;                                        <field name="user_id" invisible="True"/>&ndash;&gt;-->
+                            <!--                            &lt;!&ndash;                                    </sheet>&ndash;&gt;-->
+                            <!--                            &lt;!&ndash;                                </form>&ndash;&gt;-->
+                            <!--                            &lt;!&ndash;                            </field>&ndash;&gt;-->
+                            <!--                            &lt;!&ndash;                        </page>&ndash;&gt;-->
+                            <!--                            &lt;!&ndash;                        <page name='sales_purchases' string="Sales &amp; Purchase">&ndash;&gt;-->
+                            <!--                            &lt;!&ndash;                            <group name="container_row_2">&ndash;&gt;-->
+                            <!--                            &lt;!&ndash;                                <group string="Sales" name="sale" priority="1">&ndash;&gt;-->
+                            <!--                            &lt;!&ndash;                                    <field name="user_id" domain="[('share', '=', False)]"/>&ndash;&gt;-->
+                            <!--                            &lt;!&ndash;                                </group>&ndash;&gt;-->
+                            <!--                            &lt;!&ndash;                                <group string="Purchase" name="purchase" priority="2">&ndash;&gt;-->
+                            <!--                            &lt;!&ndash;                                </group>&ndash;&gt;-->
+                            <!--                            &lt;!&ndash;                                <group name="misc" string="Misc">&ndash;&gt;-->
+                            <!--                            &lt;!&ndash;                                    <field name="ref" string="Reference"/>&ndash;&gt;-->
+                            <!--                            &lt;!&ndash;                                    <field name="company_id" groups="base.group_multi_company" options="{'no_create': True}" attrs="{'readonly': [('parent_id', '!=', False)]}" force_save="1"/>&ndash;&gt;-->
+                            <!--                            &lt;!&ndash;                                    <field name="industry_id" attrs="{'invisible': [('is_company', '=', False)]}" options="{'no_create': True}"/>&ndash;&gt;-->
+                            <!--                            &lt;!&ndash;                                </group>&ndash;&gt;-->
+                            <!--                            &lt;!&ndash;                            </group>&ndash;&gt;-->
+                            <!--                            &lt;!&ndash;                        </page>&ndash;&gt;-->
+                            <!--                            &lt;!&ndash;                        <page name='internal_notes' string="Internal Notes">&ndash;&gt;-->
+                            <!--                            &lt;!&ndash;                            <field name="comment" placeholder="Internal note..."/>&ndash;&gt;-->
+                            <!--                            &lt;!&ndash;                        </page>&ndash;&gt;-->
+                        </notebook>
+                        <notebook colspan="4">
+                            <page name="ds_ltc" string="Danh sách lớp">
+                                <notebook colspan="4">
+                                    <page string="Danh sách lớp tín chỉ">
+                                        <field name="lop_tin_chi_ids" string="Danh sách lớp tín chỉ"/>
+                                    </page>
+                                    <page string="Lớp hành chính">
+                                        <group>
+                                            <field name="lop_hanh_chinh_id"/>
+                                            <field name="lop_hanh_chinh_ids"/>
+                                        </group>
+                                    </page>
+                                </notebook>
+                            </page>
+                            <page name="tien_trinh_hoc_tap" string="Tiến trình học tập">
+                                <group>
+                                    <field name="ctk_nganh_id"/>
+                                    <field name="ctk_chuyen_nganh_id"/>
+                                </group>
+                            </page>
+                            <page name="ket_qua_hoc_tap" string="Kết quả học tập">
+                                <group>
+                                    <field name="sv_hp_ds_ids">
+                                        <tree>
+                                            <field name="hoc_phan_id"/>
+                                            <field name="ma_hoc_phan_moi"/>
+                                            <field name="so_tin_chi"/>
+                                            <field name="diem_hoc_phan" string="Điểm học phần"/>
+                                            <field name="diem_chu"/>
+                                            <!--                                        <field name="diem_lan_2"/>-->
+                                            <!--                                        <field name="diem_lan_3"/>-->
+                                            <!--                                        <field name="diem_lan_4"/>-->
+                                            <!--                                        <field name="diem_lan_5"/>-->
+                                            <field name="diem_quy_doi" string="Điểm quy đổi (nếu có)"/>
+                                            <field name="trang_thai"/>
+                                            <field name="ghi_chu"/>
+                                            <field name="create_date" string="Ngày tạo"/>
+                                        </tree>
+                                    </field>
+                                </group>
+                                <!--                                <field name="sv_ltc_ds_ids">-->
+                                <!--                                    <tree>-->
+                                <!--                                        <field name="lop_tin_chi_id">-->
+                                <!--                                            <tree>-->
+                                <!--                                                <field name="mon_hoc_ids"/>-->
+                                <!--                                                <field name="ky_nam_hoc_id"/>-->
+                                <!--                                            </tree>-->
+                                <!--                                        </field>-->
+                                <!--                                        <field name="so_tin_chi"/>-->
+                                <!--                                        <field name="diem_attendance"/>-->
+                                <!--                                        <field name="diem_bai_tap"/>-->
+                                <!--                                        <field name="diem_trung_binh_kiem_tra_tren_lop"/>-->
+                                <!--                                        <field name="diem_cuoi_ky"/>-->
+                                <!--                                        <field name="diem_tong_ket"/>-->
+                                <!--                                    </tree>-->
+                                <!--                                </field>-->
+                            </page>
+                        </notebook>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+
+        <record model="ir.ui.view" id="sinh_vien_tree">
+            <field name="name">sinh vien list</field>
+            <field name="model">sinh_vien</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="ma_dinh_danh"/>
+                    <field name="name" string="Họ và tên"/>
+                    <field name="ho_dem"/>
+                    <field name="ten"/>
+                    <!--                    <field name="VtSV"/>-->
+                    <!--                    <field name="DC_DTNgLL" string="Số điện thoại"/>-->
+                    <!--                    <field name="email" string="Email"/>-->
+                    <field name="ngay_sinh"/>
+                    <field name="so_cmnd"/>
+                    <field name="so_dien_thoai"/>
+                    <!--                    <field name="Phai"/>-->
+                    <!--                    <field name="NoiSinh"/>-->
+                    <field name="hinh_thuc_dao_tao_id"/>
+                    <field name="lop_hanh_chinh_id"/>
+                    <field name="ghi_chu"/>
+                    <field name="lop_tin_chi_ids" string="Danh sách lớp tín chỉ"/>
+                    <!--                    <field name="AvatarSV"/>-->
+                    <!--                    <field name="MaDT"/>-->
+                    <!--                    <field name="MaTG"/>-->
+                    <!--                    <field name="MaNg"/>-->
+                    <!--                    <field name="MaChngNg"/>-->
+                    <!--                    <field name="TheThuVien"/>-->
+                    <!--                    <field name="SoTaiKhoan"/>-->
+                    <!--                    <field name="MaNH"/>-->
+                    <!--                    <field name="CHINHANHNH"/>-->
+                    <!--                    <field name="SoNamBD"/>-->
+                    <!--                    <field name="SoNamTNXP"/>-->
+                    <!--                    <field name="SoCMND"/>-->
+                    <!--                    <field name="CanNang"/>-->
+                    <!--                    <field name="ChieuCao"/>-->
+                    <!--                    <field name="MADBQUOCTICH"/>-->
+                    <!--                    <field name="CoNghe"/>-->
+                    <!--                    <field name="CQCT"/>-->
+                    <!--                    <field name="CVCQCT"/>-->
+                    <!--                    <field name="DangHoc"/>-->
+                    <!--                    <field name="DC_DCHK"/>-->
+                    <!--                    <field name="DC_DCHK2"/>-->
+                    <!--                    <field name="DC_DCLLSV"/>-->
+                    <!--                    <field name="DC_DCTT"/>-->
+                    <!--                    <field name="DC_DCVC"/>-->
+                    <!--                    <field name="DC_DT1HK"/>-->
+                    <!--                    <field name="DC_DT1LLSV"/>-->
+                    <!--                    <field name="DC_DT1TT"/>-->
+                    <!--                    <field name="DC_DT1VC"/>-->
+                    <!--                    <field name="DC_DT2HK"/>-->
+                    <!--                    <field name="DC_DT2LLSV"/>-->
+                    <!--                    <field name="DC_DT2TT"/>-->
+                    <!--                    <field name="DC_DT2VC"/>-->
+                    <!--                    <field name="DC_Eml1HK"/>-->
+                    <!--                    <field name="DC_EML1LLSV"/>-->
+                    <!--                    <field name="DC_Eml1TT"/>-->
+                    <!--                    <field name="DC_Eml1VC"/>-->
+                    <!--                    <field name="DC_Eml2HK"/>-->
+                    <!--                    <field name="DC_EML2LL"/>-->
+                    <!--                    <field name="DC_Eml2TT"/>-->
+                    <!--                    <field name="DC_Eml2VC"/>-->
+                    <!--                    <field name="DC_GcHK"/>-->
+                    <!--                    <field name="DC_GcLL"/>-->
+                    <!--                    <field name="DC_GcTT"/>-->
+                    <!--                    <field name="DC_GcVC"/>-->
+                    <!--                    <field name="MADBHKSV"/>-->
+                    <!--                    <field name="MADBLLSV"/>-->
+                    <!--                    <field name="MADBTTSV"/>-->
+                    <!--                    <field name="MADBVCSV"/>-->
+                    <!--                    <field name="DCCQCT"/>-->
+                    <!--                    <field name="DKKinhTe"/>-->
+                    <!--                    <field name="GcSV"/>-->
+                    <!--                    <field name="GcThPhanGD"/>-->
+                    <!--                    <field name="MADBCQCTSV"/>-->
+                    <!--                    <field name="LoaiCuTru"/>-->
+                    <!--                    <field name="MatCha"/>-->
+                    <!--                    <field name="MatMe"/>-->
+                    <!--                    <field name="NgayNgTru"/>-->
+                    <!--                    <field name="NgNghiepVC"/>-->
+                    <!--                    <field name="NgSinhCha"/>-->
+                    <!--                    <field name="NgSinhMe"/>-->
+                    <!--                    <field name="NguoiLL"/>-->
+                    <!--                    <field name="NguonTuyen"/>-->
+                    <!--                    <field name="NNgCha"/>-->
+                    <!--                    <field name="NNgMe"/>-->
+                    <!--                    <field name="NoiCapCMND"/>-->
+                    <!--                    <field name="PhongKTX"/>-->
+                    <!--                    <field name="QueQuan"/>-->
+                    <!--                    <field name="SoAnhChiEm"/>-->
+                    <!--                    <field name="TenCha"/>-->
+                    <!--                    <field name="TenChuHo"/>-->
+                    <!--                    <field name="TenChuHoHK"/>-->
+                    <!--                    <field name="TenMe"/>-->
+                    <!--                    <field name="TenVC"/>-->
+                    <!--                    <field name="ThPhanGD"/>-->
+                    <!--                    <field name="TrChuyen"/>-->
+                    <!--                    <field name="NgCapCMND"/>-->
+                    <!--                    <field name="MADBNOISINHSV"/>-->
+                    <!--                    <field name="DC_EML2LLSV"/>-->
+                    <!--                    <field name="DC_DT1Me"/>-->
+                    <!--                    <field name="DC_DT1Cha"/>-->
+                    <!--                    <field name="GhiChuView1"/>-->
+                    <!--                    <field name="TenHo"/>-->
+                    <!--                    <field name="DC_DTNgLL"/>-->
+                    <!--                    <field name="DC_EmlNgLL"/>-->
+                    <!--                    <field name="SoBD"/>-->
+                    <!--                    <field name="Diem1"/>-->
+                    <!--                    <field name="Diem2"/>-->
+                    <!--                    <field name="Diem3"/>-->
+                    <!--                    <field name="Diem4"/>-->
+                    <!--                    <field name="DiemUT"/>-->
+                    <!--                    <field name="Diem5"/>-->
+                    <!--                    <field name="DiemTong"/>-->
+                    <!--                    <field name="NganhThi"/>-->
+                    <!--                    <field name="KhoiThi"/>-->
+                    <!--                    <field name="NhomKVTS"/>-->
+                    <!--                    <field name="DOITUONGTS"/>-->
+                    <!--                    <field name="NAMTN"/>-->
+                    <!--                    <field name="MaSoThue"/>-->
+                    <!--                    <field name="TenDVThue"/>-->
+                    <!--                    <field name="TTSV"/>-->
+                    <!--                    <field name="TGianCT"/>-->
+                    <!--                    <field name="DotTS"/>-->
+                    <!--                    <field name="DIEMCHUAN"/>-->
+                    <!--                    <field name="HocLuc"/>-->
+                    <!--                    <field name="HanhKiem"/>-->
+                    <!--                    <field name="SoBHSV"/>-->
+                    <!--                    <field name="MaBVKCB"/>-->
+                    <!--                    <field name="NgSinhGH"/>-->
+                    <!--                    <field name="TenGiamHo"/>-->
+                    <!--                    <field name="LoaiKhuyetTat"/>-->
+                    <!--                    <field name="NNgGH"/>-->
+                    <!--                    <field name="NgayNHOC"/>-->
+                    <!--                    <field name="DVDKDTHI"/>-->
+                </tree>
+            </field>
+        </record>
+
+        <!--        <record model="ir.ui.view" id="sinh_vien_bar_graph">-->
+        <!--            <field name="model">sinh_vien</field>-->
+        <!--            <field name="arch" type="xml">-->
+        <!--                <graph type="bar" string="Graph sinh viên">-->
+        <!--                    <field name="lop_hanh_chinh_id" type="row"/>-->
+        <!--                </graph>-->
+        <!--            </field>-->
+        <!--        </record>-->
+
+        <!-- actions opening views on models -->
+
+        <record id="sinh_vien_search_view" model="ir.ui.view">
+            <field name="name">sinh_vien_search_field</field>
+            <field name="model">sinh_vien</field>
+            <field name="arch" type="xml">
+                <search>
+                    <field name="name"/>
+                    <field name="ma_dinh_danh"/>
+                </search>
+            </field>
+        </record>        
+
+        <record model="ir.actions.act_window" id="action_sinh_vien_danh_sach_sinh_vien">
+            <field name="name">Sinh viên</field>
+            <field name="res_model">sinh_vien</field>
+            <field name="view_mode">tree,kanban,form</field>
+            <!--            <field name="view_id" ref="sinh_vien_bar_graph"/>-->
+            <field name="context">{"group_by":"khoa_sinh_vien_id"}</field>
+        </record>
+    </data>
+</odoo>

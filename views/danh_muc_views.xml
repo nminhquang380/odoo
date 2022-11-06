@@ -1,0 +1,757 @@
+<odoo>
+    <data>
+
+        <!--    Danh mục văn bản - quy định-->
+        <record model="ir.ui.view" id="danh_muc_van_ban_quy_dinh_form">
+            <field name="model">danh_muc.van_ban_quy_dinh</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <div class="oe_edit_only" style="font-size:25px" attrs="{'invisible': [('id', '=', False)], }">Chỉnh sửa danh mục Quy định - văn bản</div>
+                        <div class="oe_edit_only" style="font-size:25px" attrs="{'invisible': [('id', '!=', False)], }">Tạo mới danh mục Quy định - văn bản</div>
+                        <div class="oe_read_only" style="font-size:25px">Quy định - văn bản</div>
+                        <group col="4">
+                            <field name="ma_van_ban_quy_dinh"/>
+                            <field name="ten_van_ban_quy_dinh"/>
+                            <field name="noi_dung_tom_tat"/>
+                            <field name="file_dinh_kem" filename="ten_file_dinh_kem"/>
+                            <field name="ten_file_dinh_kem" invisible="1"/>
+                            <field name="hinh_thuc_dao_tao_ids"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+        <record model="ir.ui.view" id="danh_muc_van_ban_quy_dinh_tree">
+            <field name="model">danh_muc.van_ban_quy_dinh</field>
+            <field name="arch" type="xml">
+                <tree default_order="create_date desc">
+                    <field name="ma_van_ban_quy_dinh"/>
+                    <field name="ten_van_ban_quy_dinh"/>
+                    <field name="hinh_thuc_dao_tao_ids" widget="many2many_tags"/>
+                    <field name="create_uid" string="Tạo bởi"/>
+                    <field name="create_date" string="Thời gian tạo"/>
+                </tree>
+            </field>
+        </record>
+        <record model="ir.actions.act_window" id="action_danh_muc_van_ban_quy_dinh">
+            <field name="name">Quản lý danh mục Quy định - văn bản</field>
+            <field name="res_model">danh_muc.van_ban_quy_dinh</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <!--        Danh mục khoa-->
+        <record model="ir.ui.view" id="danh_muc_khoa_form">
+            <field name="model">danh_muc.khoa</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <div class="oe_edit_only" style="font-size:25px" attrs="{'invisible': [('id', '=', False)], }">Chỉnh sửa danh mục khoa</div>
+                        <div class="oe_edit_only" style="font-size:25px" attrs="{'invisible': [('id', '!=', False)], }">Tạo mới danh mục khoa</div>
+                        <div class="oe_read_only" style="font-size:25px">Khoa</div>
+                        <group col="4">
+                            <field name="ma_khoa" required="1"/>
+                            <field name="ten_khoa" required="1"/>
+                            <field name="so_dien_thoai" required="1"/>
+                            <field name="email" required="1"/>
+                        </group>
+                        <notebook groups="base.group_no_one">
+                            <page string="Hình thức đào tạo" name="hinh_thuc_dao_tao">
+                                <field name="hinh_thuc_dao_tao_ids">
+                                </field>
+                            </page>
+                            <page string="Giới thiệu khoa" name="gioi_thieu_khoa">
+                                <field name="gioi_thieu_khoa">
+                                </field>
+                            </page>
+                        </notebook>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+        <record model="ir.ui.view" id="danh_muc_khoa_tree">
+            <field name="model">danh_muc.khoa</field>
+            <field name="arch" type="xml">
+                <tree default_order="create_date desc">
+                    <field name="ma_khoa"/>
+                    <field name="ten_khoa"/>
+                    <field name="so_dien_thoai"/>
+                    <field name="email"/>
+                    <field name="hinh_thuc_dao_tao_ids" widget="many2many_tags"/>
+                    <field name="create_uid" string="Tạo bởi"/>
+                    <field name="create_date" string="Thời gian tạo"/>
+                </tree>
+            </field>
+        </record>
+        <record model="ir.actions.act_window" id="action_danh_muc_khoa">
+            <field name="name">Danh mục khoa</field>
+            <field name="res_model">danh_muc.khoa</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <!--    Danh mục ngành học -->
+        <record model="ir.ui.view" id="danh_muc_nganh_hoc_form">
+            <field name="model">danh_muc.nganh_hoc</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <div class="oe_edit_only" style="font-size:25px" attrs="{'invisible': [('id', '=', False)], }">Chỉnh sửa danh mục ngành học</div>
+                        <div class="oe_edit_only" style="font-size:25px" attrs="{'invisible': [('id', '!=', False)], }">Tạo mới danh mục ngành học</div>
+                        <div class="oe_read_only" style="font-size:25px">Ngành học</div>
+                        <group>
+                            <group>
+                                <field name="ma_nganh_hoc"/>
+                                <field name="ten_nganh_hoc"/>
+                                <field name="ma_khoa_quan_ly" widget="selection"/>
+                            </group>
+                            <group>
+                                <field name="van_ban_quy_dinh_id" widget="selection"/>
+                                <field name="file_dinh_kem" filename="ten_file_dinh_kem"/>
+                                <field name="ten_file_dinh_kem" invisible="1"/>
+                            </group>
+                        </group>
+                        <notebook colspan="4">
+                            <page string="Hình thức đào tạo" name="hinh_thuc_dao_tao">
+                                <field name="hinh_thuc_dao_tao_ids"/>
+                            </page>
+                        </notebook>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+        <record model="ir.ui.view" id="danh_muc_nganh_hoc_tree">
+            <field name="model">danh_muc.nganh_hoc</field>
+            <field name="arch" type="xml">
+                <tree default_order="create_date desc">
+                    <field name="ma_nganh_hoc"/>
+                    <field name="ten_nganh_hoc"/>
+                    <field name="ma_khoa_quan_ly"/>
+                    <field name="hinh_thuc_dao_tao_ids" widget="many2many_tags"/>
+                    <field name="van_ban_quy_dinh_id"/>
+                    <field name="create_uid" string="Tạo bởi"/>
+                    <field name="create_date" string="Thời gian tạo"/>
+                </tree>
+            </field>
+        </record>
+        <record model="ir.actions.act_window" id="action_danh_muc_nganh_hoc">
+            <field name="name">Quản lý danh mục ngành học</field>
+            <field name="res_model">danh_muc.nganh_hoc</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <!--    Danh mục chuyên ngành-->
+        <record model="ir.ui.view" id="danh_muc_chuyen_nganh_form">
+            <field name="model">danh_muc.chuyen_nganh</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <div class="oe_edit_only" style="font-size:25px" attrs="{'invisible': [('id', '=', False)], }">Chỉnh sửa danh mục chuyên ngành</div>
+                        <div class="oe_edit_only" style="font-size:25px" attrs="{'invisible': [('id', '!=', False)], }">Tạo mới danh mục chuyên ngành</div>
+                        <div class="oe_read_only" style="font-size:25px">Chuyên ngành</div>
+                        <group col="4">
+                            <field name="ma_chuyen_nganh"/>
+                            <field name="ten_chuyen_nganh"/>
+                            <field name="ma_nganh_hoc" string="Thuộc ngành"/>
+                            <field name="van_ban_quy_dinh_id" widget="selection"/>
+                            <field name="file_dinh_kem" filename="ten_file_dinh_kem"/>
+                            <field name="ten_file_dinh_kem" invisible="1"/>
+                            <!--                            <field name="hinh_thuc_dao_tao_ids"/>-->
+                        </group>
+                        <notebook colspan="4">
+                            <page name="hinh_thuc_dao_tao" string="Hình thức đào tạo">
+                                <group>
+                                    <field name="hinh_thuc_dao_tao_ids"/>
+                                </group>
+                            </page>
+                        </notebook>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+        <record model="ir.ui.view" id="danh_muc_chuyen_nganh_tree">
+            <field name="model">danh_muc.chuyen_nganh</field>
+            <field name="arch" type="xml">
+                <tree default_order="create_date desc">
+                    <field name="ma_chuyen_nganh"/>
+                    <field name="ten_chuyen_nganh"/>
+                    <field name="ma_nganh_hoc"/>
+                    <field name="hinh_thuc_dao_tao_ids" widget="many2many_tags"/>
+                    <field name="van_ban_quy_dinh_id"/>
+                    <field name="create_uid" string="Tạo bởi"/>
+                    <field name="create_date" string="Thời gian tạo"/>
+                </tree>
+            </field>
+        </record>
+        <record model="ir.actions.act_window" id="action_danh_muc_chuyen_nganh">
+            <field name="name">Quản lý danh mục chuyên ngành</field>
+            <field name="res_model">danh_muc.chuyen_nganh</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+
+        <!--        &lt;!&ndash;    Danh mục học phần&ndash;&gt;-->
+        <!--        <record model="ir.ui.view" id="danh_muc_hoc_phan_form">-->
+        <!--            <field name="model">danh_muc.hoc_phan</field>-->
+        <!--            <field name="arch" type="xml">-->
+        <!--                <form>-->
+        <!--                    <sheet>-->
+        <!--                        <div class="oe_edit_only" style="font-size:25px" attrs="{'invisible': [('id', '=', False)], }">Chỉnh sửa danh mục học phần</div>-->
+        <!--                        <div class="oe_edit_only" style="font-size:25px" attrs="{'invisible': [('id', '!=', False)], }">Tạo mới danh mục học phần</div>-->
+        <!--                        <div class="oe_read_only" style="font-size:25px">Học phần</div>-->
+        <!--                        <group col="4">-->
+        <!--                            <field name="ma_hoc_phan"/>-->
+        <!--                            <field name="ten_hoc_phan"/>-->
+        <!--                            <field name="van_ban_quy_dinh_id" widget="selection"/>-->
+        <!--                        </group>-->
+        <!--                    </sheet>-->
+        <!--                </form>-->
+        <!--            </field>-->
+        <!--        </record>-->
+        <!--        <record model="ir.ui.view" id="danh_muc_hoc_phan_tree">-->
+        <!--            <field name="model">danh_muc.hoc_phan</field>-->
+        <!--            <field name="arch" type="xml">-->
+        <!--                <tree>-->
+        <!--                    <field name="ma_hoc_phan"/>-->
+        <!--                    <field name="ten_hoc_phan"/>-->
+        <!--                    <field name="van_ban_quy_dinh_id"/>-->
+        <!--                    <field name="create_uid"/>-->
+        <!--                    <field name="create_date"/>-->
+        <!--                </tree>-->
+        <!--            </field>-->
+        <!--        </record>-->
+        <!--        <record model="ir.actions.act_window" id="action_danh_muc_hoc_phan">-->
+        <!--            <field name="name">Quản lý danh mục học phần</field>-->
+        <!--            <field name="res_model">danh_muc.hoc_phan</field>-->
+        <!--            <field name="view_mode">tree,form</field>-->
+        <!--        </record>-->
+
+        <!--        Danh mục phí-->
+        <record model="ir.ui.view" id="danh_muc_phi_form">
+            <field name="model">danh_muc.phi</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <div class="oe_edit_only" style="font-size:25px" attrs="{'invisible': [('id', '=', False)], }">Chỉnh sửa danh mục phí</div>
+                        <div class="oe_edit_only" style="font-size:25px" attrs="{'invisible': [('id', '!=', False)], }">Tạo mới danh mục phí</div>
+                        <div class="oe_read_only" style="font-size:25px">Phí</div>
+                        <group col="4">
+                            <field name="ma_phi"/>
+                            <field name="ten_phi" required="1"/>
+                            <!--                            <field name="gia_tien" required="1"/>-->
+                            <field name="don_vi_tien_te"/>
+                            <field name="van_ban_quy_dinh_id"/>
+                            <field name="file_dinh_kem"/>
+                            <field name="ten_file_dinh_kem" invisible="1"/>
+                        </group>
+                        <notebook>
+                            <page string="Hình thức đào tạo" name="hinh_thuc_dao_tao">
+                                <field name="hinh_thuc_dao_tao_id"/>
+                            </page>
+                        </notebook>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+        <record model="ir.ui.view" id="danh_muc_phi_tree">
+            <field name="model">danh_muc.phi</field>
+            <field name="arch" type="xml">
+                <tree default_order="create_date desc">
+                    <field name="hinh_thuc_dao_tao_id"/>
+                    <field name="ma_phi"/>
+                    <field name="ten_phi"/>
+                    <!--                    <field name="gia_tien"/>-->
+                    <field name="don_vi_tien_te"/>
+                    <field name="van_ban_quy_dinh_id"/>
+                    <field name="create_uid" string="Tạo bởi"/>
+                    <field name="create_date" string="Thời gian tạo"/>
+                </tree>
+            </field>
+        </record>
+        <record model="ir.actions.act_window" id="action_danh_muc_phi">
+            <field name="name">Danh mục phí</field>
+            <field name="res_model">danh_muc.phi</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <!--        Danh mục biểu giá-->
+        <record model="ir.ui.view" id="danh_muc_bieu_gia_form">
+            <field name="model">danh_muc.bieu_gia</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <div class="oe_edit_only" style="font-size:25px" attrs="{'invisible': [('id', '=', False)], }">Chỉnh sửa danh mục biểu giá</div>
+                        <div class="oe_edit_only" style="font-size:25px" attrs="{'invisible': [('id', '!=', False)], }">Tạo mới danh mục biểu giá</div>
+                        <div class="oe_read_only" style="font-size:25px">Biểu giá</div>
+                        <group col="4">
+                            <field name="ma_bieu_gia"/>
+                            <field name="ten_bieu_gia"/>
+                            <field name="loai_phi_id" widget="selection" required="1"/>
+                            <field name="gia_tien" required="1"/>
+                            <field name="nam_hoc_ap_dung"/>
+                            <!--                            <field name="khoa_nganh_ids"/>-->
+                            <field name="don_vi_tien_te"/>
+                            <field name="van_ban_quy_dinh_id"/>
+                            <field name="file_dinh_kem"/>
+                            <field name="ten_file_dinh_kem" invisible="1"/>
+                        </group>
+                        <notebook>
+                            <page string="Khóa ngành áp dụng" name="khoa_nganh_ids">
+                                <field name="khoa_nganh_ids"/>
+                            </page>
+                            <page string="Hình thức đào tạo áp dụng" name="hinh_thuc_dao_tao">
+                                <field name="hinh_thuc_dao_tao_id"/>
+                            </page>
+                        </notebook>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+        <record model="ir.ui.view" id="danh_muc_bieu_gia_tree">
+            <field name="model">danh_muc.bieu_gia</field>
+            <field name="arch" type="xml">
+                <tree default_order="create_date desc">
+                    <field name="hinh_thuc_dao_tao_id"/>
+                    <field name="ma_bieu_gia"/>
+                    <field name="ten_bieu_gia"/>
+                    <field name="loai_phi_id"/>
+                    <field name="gia_tien"/>
+                    <field name="don_vi_tien_te"/>
+                    <field name="nam_hoc_ap_dung"/>
+                    <field name="khoa_nganh_ids"/>
+                    <field name="van_ban_quy_dinh_id"/>
+                    <field name="create_uid" string="Tạo bởi"/>
+                    <field name="create_date" string="Thời gian tạo"/>
+                </tree>
+            </field>
+        </record>
+        <record model="ir.actions.act_window" id="action_danh_muc_bieu_gia">
+            <field name="name">Danh mục biểu giá</field>
+            <field name="res_model">danh_muc.bieu_gia</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <!--        danh mục miễn giảm phí -->
+        <record model="ir.ui.view" id="danh_muc_mien_giam_form">
+            <field name="model">danh_muc.mien_giam_phi</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <div class="oe_edit_only" style="font-size:25px" attrs="{'invisible': [('id', '=', False)], }">Chỉnh sửa danh mục miễn giảm các loại phí </div>
+                        <div class="oe_edit_only" style="font-size:25px" attrs="{'invisible': [('id', '!=', False)], }">Tạo mới danh mục miễn giảm các loại phí</div>
+                        <div class="oe_read_only" style="font-size:25px">Danh mục miễn giảm các loại phí</div>
+                        <group col="4">
+                            <field name="ten_loai_mien_giam"/>
+                            <field name="van_ban_quy_dinh"/>
+                            <field name="kieu_mien_giam_phan_tram" />
+                            <field name="kieu_mien_giam_truc_tiep" />
+                            <field name="ghi_chu"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+        <record model="ir.ui.view" id="danh_muc_mien_giam_tree">
+            <field name="model">danh_muc.mien_giam_phi</field>
+            <field name="arch" type="xml">
+                <tree default_order="create_date desc">
+                    <field name="ten_loai_mien_giam"/>
+                    <field name="van_ban_quy_dinh"/>
+                    <field name="kieu_mien_giam_phan_tram" />
+                    <field name="kieu_mien_giam_truc_tiep" />
+                    <field name="ghi_chu"/>
+                    <field name="create_uid" string="Tạo bởi"/>
+                    <field name="create_date" string="Thời gian tạo"/>
+                </tree>
+            </field>
+        </record>
+        <record model="ir.actions.act_window" id="action_danh_muc_mien_giam_cac_loai_phi">
+            <field name="name">Danh mục miễn giảm các loại phí</field>
+            <field name="res_model">danh_muc.mien_giam_phi</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+
+        <!--        Danh mục cơ sở đào tạo-->
+        <record model="ir.ui.view" id="danh_muc_co_so_dao_tao_form">
+            <field name="model">danh_muc.co_so_dao_tao</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <div class="oe_edit_only" style="font-size:25px" attrs="{'invisible': [('id', '=', False)], }">Chỉnh sửa danh mục cơ sở đào tạo</div>
+                        <div class="oe_edit_only" style="font-size:25px" attrs="{'invisible': [('id', '!=', False)], }">Tạo mới danh mục cơ sở đào tạo</div>
+                        <div class="oe_read_only" style="font-size:25px">Cơ sở đào tạo</div>
+                        <group col="4">
+                            <field name="ten_co_so_dao_tao" required = "1"/>
+                            <field name="ky_hieu_co_so_dao_tao" required = "1"/>
+                            <field name="dia_chi"/>
+                            <field name="so_dien_thoai"/>
+                        </group>
+                        <group>
+                            <field name="ghi_chu"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+        <record model="ir.ui.view" id="danh_muc_co_so_dao_tao_tree">
+            <field name="model">danh_muc.co_so_dao_tao</field>
+            <field name="arch" type="xml">
+                <tree default_order="create_date desc">
+                    <field name="ten_co_so_dao_tao"/>
+                    <field name="ky_hieu_co_so_dao_tao"/>
+                    <field name="dia_chi"/>
+                    <field name="so_dien_thoai"/>
+                    <field name="create_uid" string="Tạo bởi"/>
+                    <field name="create_date" string="Thời gian tạo"/>
+                </tree>
+            </field>
+        </record>
+        <record model="ir.actions.act_window" id="action_danh_muc_co_so_dao_tao">
+            <field name="name">Danh mục cơ sở đào tạo</field>
+            <field name="res_model">danh_muc.co_so_dao_tao</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <!--        Danh mục Phương pháp đánh giá học phần-->
+        <record model="ir.ui.view" id="danh_muc_phuong_phap_danh_gia_hoc_phan_form">
+            <field name="model">danh_muc.phuong_phap_danh_gia_hoc_phan</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <div class="oe_edit_only" style="font-size:25px" attrs="{'invisible': [('id', '=', False)], }">Chỉnh sửa danh mục phương pháp đánh giá học phần</div>
+                        <div class="oe_edit_only" style="font-size:25px" attrs="{'invisible': [('id', '!=', False)], }">Tạo mới danh mục phương pháp đánh giá học phần</div>
+                        <div class="oe_read_only" style="font-size:25px">Phương pháp đánh giá học phần</div>
+                        <group col="4">
+                            <field name="mo_ta_phuong_phap" required = "1"/>
+                            <field name="hinh_thuc_dao_tao_ap_dung"/>
+                        </group>
+                        <group>
+                            <field name="dau_diem_ids"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+        <record model="ir.ui.view" id="danh_muc_phuong_phap_danh_gia_hoc_phan_tree">
+            <field name="model">danh_muc.phuong_phap_danh_gia_hoc_phan</field>
+            <field name="arch" type="xml">
+                <tree default_order="create_date desc">
+                    <field name="mo_ta_phuong_phap"/>
+                    <field name="hinh_thuc_dao_tao_ap_dung"/>
+                    <field name="dau_diem_ids" widget="many2many_tags"/>
+                    <field name="create_uid" string="Tạo bởi"/>
+                    <field name="create_date" string="Thời gian tạo"/>
+                </tree>
+            </field>
+        </record>
+        <record model="ir.actions.act_window" id="action_danh_muc_phuong_phap_danh_gia_hoc_phan">
+            <field name="name">Danh mục phương pháp đánh giá học phần</field>
+            <field name="res_model">danh_muc.phuong_phap_danh_gia_hoc_phan</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <!--        Danh mục Tên Trọng số điểm -->
+        <record model="ir.ui.view" id="danh_muc_dau_diem_form">
+            <field name="model">danh_muc.dau_diem</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <div class="oe_edit_only" style="font-size:25px" attrs="{'invisible': [('id', '=', False)], }">Chỉnh sửa danh mục đầu điểm</div>
+                        <div class="oe_edit_only" style="font-size:25px" attrs="{'invisible': [('id', '!=', False)], }">Tạo mới danh mục đầu điểm</div>
+                        <div class="oe_read_only" style="font-size:25px">Danh mục đầu điểm</div>
+                        <group>
+                            <field name="ten_dau_diem"/>
+                        </group>
+                        <group>
+                            <field name="phuong_phap_danh_gia_hoc_phan_id"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+        <record model="ir.ui.view" id="danh_muc_dau_diem_tree">
+            <field name="model">danh_muc.dau_diem</field>
+            <field name="arch" type="xml">
+                <tree default_order="create_date desc">
+                    <field name="ten_dau_diem"/>
+                    <field name="phuong_phap_danh_gia_hoc_phan_id" widget="many2many_tags"/>
+                    <field name="create_uid" string="Tạo bởi"/>
+                    <field name="create_date" string="Thời gian tạo"/>
+                </tree>
+            </field>
+        </record>
+        <record model="ir.actions.act_window" id="action_danh_muc_dau_diem">
+            <field name="name">Danh mục đầu điểm</field>
+            <field name="res_model">danh_muc.dau_diem</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <!--        Danh mục đơn vị-->
+        <record model="ir.ui.view" id="danh_muc_don_vi_form">
+            <field name="model">danh_muc.don_vi</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <div class="oe_edit_only" style="font-size:25px" attrs="{'invisible': [('id', '=', False)], }">Chỉnh sửa danh mục đơn vị</div>
+                        <div class="oe_edit_only" style="font-size:25px" attrs="{'invisible': [('id', '!=', False)], }">Tạo mới danh mục đơn vị</div>
+                        <div class="oe_read_only" style="font-size:25px">Đơn vị</div>
+                        <group col="4">
+                            <field name="ten_don_vi" required="1"/>
+                            <field name="ma_don_vi" required="1"/>
+                            <field name="ma_don_vi_cap_tren"/>
+                            <field name="don_vi_cap_tren_id"/>
+                            <field name="is_root"/>
+                            <field name="loai_don_vi" required="1"/>
+                            <field name="cap_don_vi" required="1"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+        <record model="ir.ui.view" id="danh_muc_don_vi_tree">
+            <field name="model">danh_muc.don_vi</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="ten_don_vi"/>
+                    <field name="ma_don_vi"/>
+                    <field name="ma_don_vi_cap_tren"/>
+                    <field name="don_vi_cap_tren_id"/>
+                    <field name="is_root"/>
+                    <field name="loai_don_vi"/>
+                    <field name="cap_don_vi"/>
+                    <field name="create_uid"/>
+                    <field name="create_date"/>
+                </tree>
+            </field>
+        </record>
+        <record model="ir.actions.act_window" id="action_danh_muc_don_vi">
+            <field name="name">Danh mục đơn vị</field>
+            <field name="res_model">danh_muc.don_vi</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <!--        Danh mục đơn vị thụ hưởng-->
+        <record model="ir.ui.view" id="danh_muc_don_vi_thu_huong_form">
+            <field name="model">danh_muc.don_vi_thu_huong</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <div class="oe_edit_only" style="font-size:25px" attrs="{'invisible': [('id', '=', False)], }">Chỉnh sửa danh mục đơn vị thụ hưởng</div>
+                        <div class="oe_edit_only" style="font-size:25px" attrs="{'invisible': [('id', '!=', False)], }">Tạo mới danh mục đơn vị thụ hưởng</div>
+                        <div class="oe_read_only" style="font-size:25px">Đơn vị thụ hưởng</div>
+                        <group col="4">
+                            <field name="ten_don_vi" required="1"/>
+                            <field name="ma_don_vi" required="1"/>
+                            <field name="so_tai_khoan"/>
+                            <field name="ten_ngan_hang"/>
+                            <field name="chi_nhanh"/>
+                            <field name="ghi_chu"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+        <record model="ir.ui.view" id="danh_muc_don_vi_thu_huong_tree">
+            <field name="model">danh_muc.don_vi_thu_huong</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="ten_don_vi" required="1"/>
+                    <field name="ma_don_vi" required="1"/>
+                    <field name="so_tai_khoan"/>
+                    <field name="ten_ngan_hang"/>
+                    <field name="chi_nhanh"/>
+                    <field name="ghi_chu"/>
+                    <field name="create_uid"/>
+                    <field name="create_date"/>
+                </tree>
+            </field>
+        </record>
+        <record model="ir.actions.act_window" id="action_danh_muc_don_vi_thu_huong">
+            <field name="name">Danh mục đơn vị thụ hưởng</field>
+            <field name="res_model">danh_muc.don_vi_thu_huong</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <!--        Danh mục khoản thu-->
+        <record model="ir.ui.view" id="danh_muc_khoan_thu_form">
+            <field name="model">danh_muc.khoan_thu</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <div class="oe_edit_only" style="font-size:25px" attrs="{'invisible': [('id', '=', False)], }">Chỉnh sửa danh mục đơn vị thụ hưởng</div>
+                        <div class="oe_edit_only" style="font-size:25px" attrs="{'invisible': [('id', '!=', False)], }">Tạo mới danh mục đơn vị thụ hưởng</div>
+                        <div class="oe_read_only" style="font-size:25px">Đơn vị thụ hưởng</div>
+                        <group col="4">
+                             <field name="ma_khoan_thu" />
+                            <field name="ten_khoan_thu"/>
+                            <field name="van_ban_quy_dinh"/>
+                            <field name="ghi_chu"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+        <record model="ir.ui.view" id="danh_muc_khoan_thu_tree">
+            <field name="model">danh_muc.khoan_thu</field>
+            <field name="arch" type="xml">
+                <tree>
+                     <field name="ma_khoan_thu" />
+                    <field name="ten_khoan_thu"/>
+                    <field name="van_ban_quy_dinh"/>
+                    <field name="create_uid"/>
+                    <field name="create_date"/>
+                </tree>
+            </field>
+        </record>
+        <record model="ir.actions.act_window" id="action_danh_muc_khoan_thu">
+            <field name="name">Danh mục khoản thu</field>
+            <field name="res_model">danh_muc.khoan_thu</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <!--    Danh mục hướng dẫn sử dụng-->
+        <record model="ir.ui.view" id="danh_muc_hdsd_form">
+            <field name="model">danh_muc.hdsd</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <div class="oe_edit_only" style="font-size:25px" attrs="{'invisible': [('id', '=', False)], }">Chỉnh sửa danh mục HDSD</div>
+                        <div class="oe_edit_only" style="font-size:25px" attrs="{'invisible': [('id', '!=', False)], }">Tạo mới danh mục HDSD</div>
+                        <div class="oe_read_only" style="font-size:25px">Hướng dẫn sử dụng</div>
+                        <group col="4">
+                            <field name="ma_hdsd"/>
+                            <field name="ten_hdsd"/>
+                            <field name="duong_dan_file" widget="url"/>
+                            <field name="duong_dan_he_thong" widget="url"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+        <record model="ir.ui.view" id="danh_muc_hdsd_tree">
+            <field name="model">danh_muc.hdsd</field>
+            <field name="arch" type="xml">
+                <tree default_order="create_date desc">
+                    <field name="ma_hdsd"/>
+                    <field name="ten_hdsd"/>
+                    <field name="duong_dan_file" widget="url"/>
+                    <field name="duong_dan_he_thong" widget="url"/>
+                    <field name="create_uid" string="Tạo bởi"/>
+                    <field name="create_date" string="Thời gian tạo"/>
+                </tree>
+            </field>
+        </record>
+        <record model="ir.actions.act_window" id="action_danh_muc_hdsd">
+            <field name="name">Quản lý danh mục hướng dẫn sử dụng</field>
+            <field name="res_model">danh_muc.hdsd</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+        <record model="ir.ui.view" id="danh_muc_tiet_hoc_form">
+            <field name="model">danh_muc.tiet_hoc</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="tiet_hoc"/>
+                                <field name="hinh_thuc_dao_tao_id"/>
+                                <field name="template_tiet_hoc_id"/>
+                            </group>
+                            <group col="4">
+                                <field name="gio_bat_dau"/>
+                                <field name="phut_bat_dau"/>
+                                <field name="gio_ket_thuc"/>
+                                <field name="phut_ket_thuc"/>
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+        <record model="ir.ui.view" id="danh_muc_tiet_hoc_form_in_template_tiet_hoc">
+            <field name="model">danh_muc.tiet_hoc</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="tiet_hoc" string="Tiết học"/>
+                                <field name="hinh_thuc_dao_tao_id"/>
+                            </group>
+                            <group col="4">
+                                <field name="gio_bat_dau"/>
+                                <field name="phut_bat_dau"/>
+                                <field name="gio_ket_thuc"/>
+                                <field name="phut_ket_thuc"/>
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+        <record model="ir.ui.view" id="danh_muc_tiet_hoc_tree">
+            <field name="model">danh_muc.tiet_hoc</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="tiet_hoc"/>
+                    <field name="hinh_thuc_dao_tao_id"/>
+                    <field name="template_tiet_hoc_id"/>
+                    <field name="gio_bat_dau"/>
+                    <field name="phut_bat_dau"/>
+                    <field name="gio_ket_thuc"/>
+                    <field name="phut_ket_thuc"/>
+                </tree>
+            </field>
+        </record>
+        <record model="ir.actions.act_window" id="action_danh_muc_tiet_hoc">
+            <field name="name">Danh mục tiết hoc</field>
+            <field name="res_model">danh_muc.tiet_hoc</field>
+            <field name="view_mode">tree,form</field>
+            <field name="context">{"group_by":["hinh_thuc_dao_tao_id"]}</field>
+        </record>
+
+
+        <record model="ir.ui.view" id="danh_muc_template_tiet_hoc_form">
+            <field name="model">danh_muc.template_tiet_hoc</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group>
+                            <field name="ma_template_tiet_hoc"/>
+                            <field name="ten_template_tiet_hoc"/>
+                            <field name="hinh_thuc_dao_tao_id"/>
+                        </group>
+                        <group>
+                            <field name="tiethoc_id" context="{'form_view_ref':'website_slides.danh_muc_tiet_hoc_form_in_template_tiet_hoc'}" string="Tiết học">
+                                <tree>
+                                    <field name="tiet_hoc"/>
+                                    <field name="hinh_thuc_dao_tao_id"/>
+                                    <field name="gio_bat_dau"/>
+                                    <field name="phut_bat_dau"/>
+                                    <field name="gio_ket_thuc"/>
+                                    <field name="phut_ket_thuc"/>
+                                </tree>
+                            </field>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+        <record model="ir.ui.view" id="danh_muc_template_tiet_hoc_tree">
+            <field name="model">danh_muc.template_tiet_hoc</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="ma_template_tiet_hoc"/>
+                    <field name="ten_template_tiet_hoc"/>
+                    <field name="hinh_thuc_dao_tao_id"/>
+                </tree>
+            </field>
+        </record>
+        <record model="ir.actions.act_window" id="action_danh_muc_template_tiet_hoc">
+            <field name="name">Danh mục nhóm tiết hoc</field>
+            <field name="res_model">danh_muc.template_tiet_hoc</field>
+            <field name="view_mode">tree,form</field>
+            <field name="context">{"group_by":["hinh_thuc_dao_tao_id"]}</field>
+        </record>
+    </data>
+</odoo>

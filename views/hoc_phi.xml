@@ -1,0 +1,46 @@
+<odoo>
+    <data>
+        <record model="ir.ui.view" id="hoc_phi_tree">
+            <field name="model">hoc_phi</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="ma_hoc_phi"/>
+                    <field name="khoan_thu_id"/>
+                    <field name="nam_hoc_id"/>
+                    <field name="khoa_nganh_ids"/>
+                    <field name="phuong_thuc_thu_phi"/>
+                </tree>
+            </field>
+        </record>
+        <record model="ir.ui.view" id="hoc_phi_form">
+            <field name="model">hoc_phi</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group col="4" string="Thông tin chung">
+                            <field name="ma_hoc_phi"/>
+                            <field name="khoan_thu_id"/>
+                            <field name="nam_hoc_id"/>
+                            <field name="phuong_thuc_thu_phi"/>
+                            <field name="don_vi_tien_te"/>
+                            <field name="gia_tin_chi_chung" attrs="{ 'invisible': [('phuong_thuc_thu_phi', '!=', '0')], }"/>
+                            <field name="gia_tin_chi_ky_thuong_xuyen" attrs="{ 'invisible': [('phuong_thuc_thu_phi', '!=', '1')], }"/>
+                            <field name="gia_tin_chi_ky_tot_nghiep" attrs="{ 'invisible': [('phuong_thuc_thu_phi', '!=', '1')], }"/>
+                            <field name="gia_hoc_ky" attrs="{ 'invisible': [('phuong_thuc_thu_phi', '!=', '2')], }"/>
+                            <field name="gia_nam_hoc" attrs="{ 'invisible': [('phuong_thuc_thu_phi', '!=', '3')], }"/>
+
+                        </group>
+                        <group>
+                            <field name="khoa_nganh_ids"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+        <record model="ir.actions.act_window" id="action_hoc_phi">
+            <field name="name">Quản lý học phí</field>
+            <field name="res_model">hoc_phi</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+    </data>
+</odoo>

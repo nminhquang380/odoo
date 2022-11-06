@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record id="trinh_hinh_dao_tao_view_form" model="ir.ui.view">
+            <field name="name">trinh.hinh.dao.tao.view.form</field>
+            <field name="model">danh_muc.trinh_do_hinh_dao_tao</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <div class="oe_edit_only" style="font-size:25px" attrs="{'invisible': [('id', '=', False)], }">Chỉnh sửa trình độ, hình thức đào tạo</div>
+                        <div class="oe_edit_only" style="font-size:25px" attrs="{'invisible': [('id', '!=', False)], }">Tạo mới trình độ, hình thức đào tạo</div>
+                        <div class="oe_read_only" style="font-size:25px">Trình độ, hình thức đào tạo</div>
+                        <group col="4">
+                            <field name="ten_trinh_do_hinh_dao_tao"/>
+                            <field name="ky_hieu_trinh_do_hinh_dao_tao"/>
+                            <field name="hinh_thuc_dao_tao_id"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+
+
+        <record id="trinh_hinh_dao_tao_view_list" model="ir.ui.view">
+            <field name="name">trinh.hinh.dao.tao.view.list</field>
+            <field name="model">danh_muc.trinh_do_hinh_dao_tao</field>
+            <field name="arch" type="xml">
+                <tree string="Trình độ, hình thức đào tạo" default_order="create_date desc">
+                    <field name="ten_trinh_do_hinh_dao_tao" string="Tên trình độ, hình thức đào tạo"/>
+                    <field name="ky_hieu_trinh_do_hinh_dao_tao" string="Ký hiệu trình độ, hình thức đào tạo"/>
+                    <field name="hinh_thuc_dao_tao_id" string="Hình thức đào tạo"/>
+                    <field string="Ngày tạo" name="create_date"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="action_danh_muc_trinh_hinh_dao_tao" model="ir.actions.act_window">
+            <field name="name">Danh mục trình độ, hình thức đào tạo</field>
+            <field name="res_model">danh_muc.trinh_do_hinh_dao_tao</field>
+            <field name="view_mode">list,form</field>
+            <!--            <field name="view_id" ref="hinh_thuc_dao_tao_view_kanban"/>-->
+            <field name="view_id" ref="trinh_hinh_dao_tao_view_form"/>
+            <field name="view_id" ref="trinh_hinh_dao_tao_view_list"/>
+            <field name="help" type="html">
+                <p class="o_view_nocontent_smiling_face">
+                    Thêm trình độ, hình đào tạo
+                </p>
+            </field>
+        </record>
+
+    </data>
+</odoo>

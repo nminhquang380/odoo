@@ -1,0 +1,255 @@
+<odoo>
+    <data>
+        <record model="ir.ui.view" id="sv_ltc_ds_form">
+            <field name="model">sv_ltc_ds</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <div class="oe_edit_only" style="font-size:25px" attrs="{'invisible': [('id', '=', False)], }">Chỉnh sửa kết quả học tập theo lớp tín chỉ</div>
+                        <div class="oe_edit_only" style="font-size:25px" attrs="{'invisible': [('id', '!=', False)], }">Tạo mới kết quả học tập theo lớp tín chỉ</div>
+                        <div class="oe_read_only" style="font-size:25px">Kết quả học tập theo lớp tín chỉ</div>
+                        <group col="4" string="Thông tin chung">
+                            <field name="sinh_vien_id"/>
+                            <field name="name"/>
+                            <field name="lop_tin_chi_id"/>
+                            <field name="hoc_phan_id" attrs="{'readonly': [('lop_tin_chi_id', '!=', False)], }"/>
+
+                            <field name="ky_hoc_id" domain="[('ma_ky_nam_hoc','=',ky_hoc)]" widget="selection"/>
+<!--                            <field name="ma_lop"/>-->
+                            <field name="so_tin_chi"/>
+                            <field name="tu_dong_tinh_diem" widget="boolean_toggle"/>
+                            <field name="du_dau_diem" widget="boolean_toggle"/>
+                            <field name="loai_hoc_phan_ap_dung"/>
+                            <field name="ky_hoc" attrs="{'invisible': 1 }"/>
+                            <field name="sv_hp_ds_id"/>
+                            <field name="sinh_vien_hoc_ky_id"/>
+                        </group>
+                        <group col="4" string="Các điểm thành phần">
+                            <field name="diem_attendance"/>
+                            <field name="diem_trung_binh_kiem_tra_tren_lop"/>
+                            <field name="diem_bai_tap"/>
+                            <field name="diem_thi_nghiem"/>
+                            <field name="diem_cuoi_ky" string="Điểm thi"/>
+                        </group>
+                        <group col="4" string="Điểm tổng kết">
+                            <field name="diem_tong_ket" attrs="{'readonly': [('tu_dong_tinh_diem', '=', True)], }"/>
+                            <field name="diem_tong_ket_dang_chu" attrs="{'readonly': [('tu_dong_tinh_diem', '=', True)], }"/>
+                            <field name="diem_tong_ket_thang_4" attrs="{'readonly': [('tu_dong_tinh_diem', '=', True)], }"/>
+                            <field name="trang_thai_sv_ltc_ds" attrs="{'readonly': [('tu_dong_tinh_diem', '=', True)], }"/>
+                        </group>
+                        <group col="4">
+                            <field name="is_diem_tieng_anh"/>
+                            <field name="diem_nghe"/>
+                            <field name="diem_doc"/>
+                            <field name="diem_viet"/>
+                            <field name="diem_noi"/>
+                            <field name="diem_tong_tieng_anh"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+        <record model="ir.ui.view" id="sv_ltc_ds_form_lop_tin_chi">
+            <field name="model">sv_ltc_ds</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <div class="oe_edit_only" style="font-size:25px" attrs="{'invisible': [('id', '=', False)], }">Chỉnh sửa sinh viên</div>
+                        <div class="oe_edit_only" style="font-size:25px" attrs="{'invisible': [('id', '!=', False)], }">Tạo mới sinh viên</div>
+                        <div class="oe_read_only" style="font-size:25px">Sinh viên</div>
+                        <group col="4">
+                            <field name="sinh_vien_id"/>
+                            <field name="name"/>
+                            <field name="email"/>
+                            <field name="du_dau_diem" widget="boolean_toggle"/>
+                            <field name="diem_attendance"/>
+                            <field name="diem_bai_tap"/>
+                            <field name="diem_thi_nghiem"/>
+                            <field name="diem_trung_binh_kiem_tra_tren_lop"/>
+                            <field name="diem_cuoi_ky" string="Điểm thi"/>
+                            <field name="diem_tong_ket" readonly="1"/>
+                            <field name="diem_tong_ket_dang_chu" readonly="1"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+        <record model="ir.ui.view" id="sv_ltc_ds_form_nhom_lop_tin_chi">
+            <field name="model">sv_ltc_ds</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <div class="oe_edit_only" style="font-size:25px" attrs="{'invisible': [('id', '=', False)], }">Chỉnh sửa sinh viên</div>
+                        <div class="oe_edit_only" style="font-size:25px" attrs="{'invisible': [('id', '!=', False)], }">Tạo mới sinh viên</div>
+                        <div class="oe_read_only" style="font-size:25px">Sinh viên</div>
+                        <group col="4">
+                            <field name="sinh_vien_id"/>
+                            <field name="name"/>
+                            <field name="email"/>
+                            <field name="diem_attendance"/>
+                            <field name="diem_bai_tap"/>
+                            <field name="diem_thi_nghiem"/>
+                            <field name="diem_trung_binh_kiem_tra_tren_lop"/>
+                            <field name="diem_cuoi_ky" string="Điểm thi"/>
+                            <field name="diem_tong_ket" readonly="1"/>
+                            <field name="diem_tong_ket_dang_chu" readonly="1"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+        <record model="ir.ui.view" id="sv_ltc_ds_form_sinh_vien">
+            <field name="model">sv_ltc_ds</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <div class="oe_edit_only" style="font-size:25px" attrs="{'invisible': [('id', '=', False)], }">Chỉnh sửa lớp tín chỉ</div>
+                        <div class="oe_edit_only" style="font-size:25px" attrs="{'invisible': [('id', '!=', False)], }">Tạo mới lớp tín chỉ</div>
+                        <div class="oe_read_only" style="font-size:25px">Lớp tín chỉ</div>
+                        <group col="4">
+                            <field name="lop_tin_chi_id"/>
+                            <field name="ma_lop"/>
+                            <field name="so_tin_chi"/>
+                            <!-- <field name="sv_hp_ds_id"/> -->
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+        <record model="ir.ui.view" id="sv_ltc_ds_tree">
+            <field name="model">sv_ltc_ds</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="name"/>
+                    <field name="sinh_vien_id"/>
+                    <field name="lop_tin_chi_id">
+                        <tree>
+                            <field name="mon_hoc_ids"/>
+                            <field name="ky_nam_hoc_id"/>
+                        </tree>
+                    </field>
+                    <field name="so_tin_chi"/>
+                    <field name="diem_attendance"/>
+                    <field name="diem_bai_tap"/>
+                    <field name="diem_trung_binh_kiem_tra_tren_lop"/>
+                    <field name="diem_cuoi_ky" string="Điểm thi"/>
+                    <field name="diem_tong_ket" readonly="1"/>
+                    <field name="diem_tong_ket_dang_chu" readonly="1"/>
+                </tree>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="sv_ltc_ds_tree_group_by_sinh_vien">
+            <field name="name">Quản lý điểm theo sinh viên</field>
+            <field name="model">sv_ltc_ds</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="sinh_vien_id"/>
+                    <field name="name"/>
+                    <field name="hoc_phan_id"/>
+                    <field name="so_tin_chi"/>
+                    <field name="ky_hoc"/>
+                    <field name="diem_attendance"/>
+                    <field name="diem_bai_tap"/>
+                    <field name="diem_trung_binh_kiem_tra_tren_lop"/>
+                    <field name="diem_cuoi_ky" string="Điểm thi"/>
+                    <field name="diem_tong_ket"/>
+                    <field name="diem_tong_ket_dang_chu"/>
+<!--                    <field name="diem_tong_ket_thang_4"/>-->
+                </tree>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="sv_ltc_ds_tree_group_by_lop_tin_chi">
+            <field name="model">sv_ltc_ds</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="ky_hoc"/>
+                    <field name="ma_lop"/>
+                    <field name="hoc_phan_id"/>
+                    <field name="so_tin_chi"/>
+                    <field name="sinh_vien_id" string="Mã SV"/>
+                    <field name="name"/>
+                    <field name="diem_attendance"/>
+                    <field name="diem_bai_tap"/>
+                    <field name="diem_trung_binh_kiem_tra_tren_lop"/>
+                    <field name="diem_cuoi_ky" string="Điểm thi"/>
+                    <field name="diem_tong_ket"/>
+                    <field name="diem_tong_ket_dang_chu"/>
+                </tree>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="sv_ltc_ds_search_all">
+            <field name="model">sv_ltc_ds</field>
+            <field name="arch" type="xml">
+                <search>
+                    <field name="ky_hoc"/>
+                    <field name="ma_lop"/>
+                    <field name="ten_hoc_phan"/>
+                    <field name="so_tin_chi"/>
+                    <field name="sinh_vien_id" string="Mã SV"/>
+                    <field name="name"/>
+                    <field name="diem_attendance"/>
+                    <field name="diem_bai_tap"/>
+                    <field name="diem_trung_binh_kiem_tra_tren_lop"/>
+                    <field name="diem_cuoi_ky" string="Điểm thi"/>
+                    <field name="diem_tong_ket"/>
+                    <field name="diem_tong_ket_dang_chu"/>
+                    <searchpanel>
+                        <field name="nam_hoc_id" select="multi" />
+                        <field name="ky_hoc_id" select="multi"/>
+                    </searchpanel>
+                </search>
+            </field>
+        </record>
+
+<!--        <record model="ir.actions.act_window" id="action_sv_ltc_ds">-->
+<!--            <field name="name">Quản lý điểm theo lớp tín chỉ</field>-->
+<!--            <field name="res_model">sv_ltc_ds</field>-->
+<!--&lt;!&ndash;            <field name="view_mode">tree,form</field>&ndash;&gt;-->
+<!--            <field name="view_id" ref="sv_ltc_ds_form"/>-->
+<!--            <field name="view_id" ref="sv_ltc_ds_tree_group_by_lop_tin_chi"/>-->
+<!--&lt;!&ndash;            <field name="context">{"group_by":"lop_tin_chi_id"}</field>&ndash;&gt;-->
+<!--        </record>-->
+
+<!--        menu này đang thừa, không dùng đến-->
+        <record model="ir.actions.act_window" id="action_sv_ltc_ds_group_by_sinh_vien">
+            <field name="name">Quản lý đánh giá và tính điểm sinh viên</field>
+            <field name="res_model">sv_ltc_ds</field>
+<!--            <field name="view_mode">tree,form</field>-->
+            <field name="view_id" ref="sv_ltc_ds_form"/>
+            <field name="view_id" ref="sv_ltc_ds_tree_group_by_sinh_vien"/>
+            <field name="context">{"group_by":"sinh_vien_id"}</field>
+        </record>
+
+        <record model="ir.actions.act_window" id="action_sv_ltc_ds_group_by_lop_tin_chi">
+            <field name="name">Danh sách điểm theo lớp tín chỉ</field>
+            <field name="res_model">sv_ltc_ds</field>
+<!--            <field name="view_mode">tree,form</field>-->
+            <field name="view_id" ref="sv_ltc_ds_form"/>
+            <field name="view_id" ref="sv_ltc_ds_tree_group_by_lop_tin_chi"/>
+            <field name="context">{"group_by":["lop_tin_chi_id"]}</field>
+            <field name="search_view_id" ref="sv_ltc_ds_search_all"/>
+<!--            <field name="context">{'search_khoi_lop': 1}</field>-->
+        </record>
+
+        <record model="ir.actions.act_window" id="action_sv_ltc_ds_view_from_ltc">
+            <field name="name">Danh sách điểm theo lớp tín chỉ</field>
+            <field name="res_model">sv_ltc_ds</field>
+<!--            <field name="view_mode">tree,form</field>-->
+<!--            <field name="view_id" ref="sv_ltc_ds_form"/>-->
+            <field name="view_id" ref="sv_ltc_ds_tree"/>
+<!--            <field name="context">{"group_by":["lop_tin_chi_id"]}</field>-->
+<!--            <field name="search_view_id" ref="sv_ltc_ds_search_all"/>-->
+        </record>
+<!--        <record model="ir.actions.act_window" id="action_sv_ltc_ds_group_by_lop_tin_chi">-->
+<!--            <field name="name">Quản lý đánh giá và tính điểm học phần</field>-->
+<!--            <field name="res_model">sv_ltc_ds</field>-->
+<!--&lt;!&ndash;            <field name="view_mode">tree,form</field>&ndash;&gt;-->
+<!--            <field name="view_id" ref="sv_ltc_ds_form"/>-->
+<!--            <field name="view_id" ref="sv_ltc_ds_tree_group_by_lop_tin_chi"/>-->
+<!--            <field name="context">{"group_by":["nam_hoc","ky_hoc","khoi_lop","ten_hoc_phan","ma_lop"]}</field>-->
+<!--        </record>-->
+    </data>
+</odoo>

@@ -1,0 +1,4725 @@
+[
+    {
+        "email" : "matamHT1010@stu.ptit.edu.vn",
+        "maSv" : "HT1010"
+    },
+    {
+        "email" : "matamKO1014@stu.ptit.edu.vn",
+        "maSv" : "KO1014"
+    },
+    {
+        "email" : "matamMAR003@stu.ptit.edu.vn",
+        "maSv" : "MAR003"
+    },
+    {
+        "email" : "matamMAR006@stu.ptit.edu.vn",
+        "maSv" : "MAR006"
+    },
+    {
+        "email" : "matamPM1016@stu.ptit.edu.vn",
+        "maSv" : "PM1016"
+    },
+    {
+        "email" : "matamPM1017@stu.ptit.edu.vn",
+        "maSv" : "PM1017"
+    },
+    {
+        "email" : "matamQL1001@stu.ptit.edu.vn",
+        "maSv" : "QL1001"
+    },
+    {
+        "email" : "matamQL1002@stu.ptit.edu.vn",
+        "maSv" : "QL1002"
+    },
+    {
+        "email" : "matamQL1004@stu.ptit.edu.vn",
+        "maSv" : "QL1004"
+    },
+    {
+        "email" : "matamQL1010@stu.ptit.edu.vn",
+        "maSv" : "QL1010"
+    },
+    {
+        "email" : "matamQL1012@stu.ptit.edu.vn",
+        "maSv" : "QL1012"
+    },
+    {
+        "email" : "matamQL1016@stu.ptit.edu.vn",
+        "maSv" : "QL1016"
+    },
+    {
+        "email" : "matamQL1024@stu.ptit.edu.vn",
+        "maSv" : "QL1024"
+    },
+    {
+        "email" : "matamQL1025@stu.ptit.edu.vn",
+        "maSv" : "QL1025"
+    },
+    {
+        "email" : "matamQL1026@stu.ptit.edu.vn",
+        "maSv" : "QL1026"
+    },
+    {
+        "email" : "matamQL1032@stu.ptit.edu.vn",
+        "maSv" : "QL1032"
+    },
+    {
+        "email" : "matamQL1040@stu.ptit.edu.vn",
+        "maSv" : "QL1040"
+    },
+    {
+        "email" : "matamQL1050@stu.ptit.edu.vn",
+        "maSv" : "QL1050"
+    },
+    {
+        "email" : "matamTG0354@stu.ptit.edu.vn",
+        "maSv" : "TG0354"
+    },
+    {
+        "email" : "matamTG0356@stu.ptit.edu.vn",
+        "maSv" : "TG0356"
+    },
+    {
+        "email" : "matamTG0358@stu.ptit.edu.vn",
+        "maSv" : "TG0358"
+    },
+    {
+        "email" : "matamTG0362@stu.ptit.edu.vn",
+        "maSv" : "TG0362"
+    },
+    {
+        "email" : "matamTG0364@stu.ptit.edu.vn",
+        "maSv" : "TG0364"
+    },
+    {
+        "email" : "matamTG0365@stu.ptit.edu.vn",
+        "maSv" : "TG0365"
+    },
+    {
+        "email" : "matamTG0366@stu.ptit.edu.vn",
+        "maSv" : "TG0366"
+    },
+    {
+        "email" : "matamTG0369@stu.ptit.edu.vn",
+        "maSv" : "TG0369"
+    },
+    {
+        "email" : "matamTG0370@stu.ptit.edu.vn",
+        "maSv" : "TG0370"
+    },
+    {
+        "email" : "matamTG0371@stu.ptit.edu.vn",
+        "maSv" : "TG0371"
+    },
+    {
+        "email" : "matamTG0373@stu.ptit.edu.vn",
+        "maSv" : "TG0373"
+    },
+    {
+        "email" : "matamTG0374@stu.ptit.edu.vn",
+        "maSv" : "TG0374"
+    },
+    {
+        "email" : "matamTG0375@stu.ptit.edu.vn",
+        "maSv" : "TG0375"
+    },
+    {
+        "email" : "matamTG0376@stu.ptit.edu.vn",
+        "maSv" : "TG0376"
+    },
+    {
+        "email" : "matamTG0377@stu.ptit.edu.vn",
+        "maSv" : "TG0377"
+    },
+    {
+        "email" : "matamTG0379@stu.ptit.edu.vn",
+        "maSv" : "TG0379"
+    },
+    {
+        "email" : "matamTG0380@stu.ptit.edu.vn",
+        "maSv" : "TG0380"
+    },
+    {
+        "email" : "matamTG0381@stu.ptit.edu.vn",
+        "maSv" : "TG0381"
+    },
+    {
+        "email" : "matamTG0382@stu.ptit.edu.vn",
+        "maSv" : "TG0382"
+    },
+    {
+        "email" : "matamTG0383@stu.ptit.edu.vn",
+        "maSv" : "TG0383"
+    },
+    {
+        "email" : "matamTG0384@stu.ptit.edu.vn",
+        "maSv" : "TG0384"
+    },
+    {
+        "email" : "matamTG0385@stu.ptit.edu.vn",
+        "maSv" : "TG0385"
+    },
+    {
+        "email" : "matamTG0388@stu.ptit.edu.vn",
+        "maSv" : "TG0388"
+    },
+    {
+        "email" : "matamTG0389@stu.ptit.edu.vn",
+        "maSv" : "TG0389"
+    },
+    {
+        "email" : "matamTG0390@stu.ptit.edu.vn",
+        "maSv" : "TG0390"
+    },
+    {
+        "email" : "matamTG0392@stu.ptit.edu.vn",
+        "maSv" : "TG0392"
+    },
+    {
+        "email" : "matamTG0394@stu.ptit.edu.vn",
+        "maSv" : "TG0394"
+    },
+    {
+        "email" : "matamTG0395@stu.ptit.edu.vn",
+        "maSv" : "TG0395"
+    },
+    {
+        "email" : "matamTG0396@stu.ptit.edu.vn",
+        "maSv" : "TG0396"
+    },
+    {
+        "email" : "matamTG0397@stu.ptit.edu.vn",
+        "maSv" : "TG0397"
+    },
+    {
+        "email" : "matamTG0398@stu.ptit.edu.vn",
+        "maSv" : "TG0398"
+    },
+    {
+        "email" : "matamTG0399@stu.ptit.edu.vn",
+        "maSv" : "TG0399"
+    },
+    {
+        "email" : "matamTG0400@stu.ptit.edu.vn",
+        "maSv" : "TG0400"
+    },
+    {
+        "email" : "matamTG0401@stu.ptit.edu.vn",
+        "maSv" : "TG0401"
+    },
+    {
+        "email" : "matamTG0404@stu.ptit.edu.vn",
+        "maSv" : "TG0404"
+    },
+    {
+        "email" : "matamTG0405@stu.ptit.edu.vn",
+        "maSv" : "TG0405"
+    },
+    {
+        "email" : "matamTG0406@stu.ptit.edu.vn",
+        "maSv" : "TG0406"
+    },
+    {
+        "email" : "matamTG0407@stu.ptit.edu.vn",
+        "maSv" : "TG0407"
+    },
+    {
+        "email" : "matamTG0408@stu.ptit.edu.vn",
+        "maSv" : "TG0408"
+    },
+    {
+        "email" : "matamTG0409@stu.ptit.edu.vn",
+        "maSv" : "TG0409"
+    },
+    {
+        "email" : "matamTG0410@stu.ptit.edu.vn",
+        "maSv" : "TG0410"
+    },
+    {
+        "email" : "matamTG0411@stu.ptit.edu.vn",
+        "maSv" : "TG0411"
+    },
+    {
+        "email" : "matamTG0412@stu.ptit.edu.vn",
+        "maSv" : "TG0412"
+    },
+    {
+        "email" : "matamTG0413@stu.ptit.edu.vn",
+        "maSv" : "TG0413"
+    },
+    {
+        "email" : "matamTG0414@stu.ptit.edu.vn",
+        "maSv" : "TG0414"
+    },
+    {
+        "email" : "matamTG0415@stu.ptit.edu.vn",
+        "maSv" : "TG0415"
+    },
+    {
+        "email" : "matamTG0416@stu.ptit.edu.vn",
+        "maSv" : "TG0416"
+    },
+    {
+        "email" : "matamTG0417@stu.ptit.edu.vn",
+        "maSv" : "TG0417"
+    },
+    {
+        "email" : "matamTG0418@stu.ptit.edu.vn",
+        "maSv" : "TG0418"
+    },
+    {
+        "email" : "matamTG0421@stu.ptit.edu.vn",
+        "maSv" : "TG0421"
+    },
+    {
+        "email" : "matamTG0423@stu.ptit.edu.vn",
+        "maSv" : "TG0423"
+    },
+    {
+        "email" : "matamTG0424@stu.ptit.edu.vn",
+        "maSv" : "TG0424"
+    },
+    {
+        "email" : "matamTG0426@stu.ptit.edu.vn",
+        "maSv" : "TG0426"
+    },
+    {
+        "email" : "matamTG0428@stu.ptit.edu.vn",
+        "maSv" : "TG0428"
+    },
+    {
+        "email" : "matamTG0429@stu.ptit.edu.vn",
+        "maSv" : "TG0429"
+    },
+    {
+        "email" : "matamTG0432@stu.ptit.edu.vn",
+        "maSv" : "TG0432"
+    },
+    {
+        "email" : "matamTG0433@stu.ptit.edu.vn",
+        "maSv" : "TG0433"
+    },
+    {
+        "email" : "matamTG0434@stu.ptit.edu.vn",
+        "maSv" : "TG0434"
+    },
+    {
+        "email" : "matamTG0435@stu.ptit.edu.vn",
+        "maSv" : "TG0435"
+    },
+    {
+        "email" : "matamTG0437@stu.ptit.edu.vn",
+        "maSv" : "TG0437"
+    },
+    {
+        "email" : "matamTG0438@stu.ptit.edu.vn",
+        "maSv" : "TG0438"
+    },
+    {
+        "email" : "matamTG0439@stu.ptit.edu.vn",
+        "maSv" : "TG0439"
+    },
+    {
+        "email" : "matamTG0440@stu.ptit.edu.vn",
+        "maSv" : "TG0440"
+    },
+    {
+        "email" : "matamTG0441@stu.ptit.edu.vn",
+        "maSv" : "TG0441"
+    },
+    {
+        "email" : "matamTG0442@stu.ptit.edu.vn",
+        "maSv" : "TG0442"
+    },
+    {
+        "email" : "matamTG0443@stu.ptit.edu.vn",
+        "maSv" : "TG0443"
+    },
+    {
+        "email" : "matamTG0445@stu.ptit.edu.vn",
+        "maSv" : "TG0445"
+    },
+    {
+        "email" : "matamTG0446@stu.ptit.edu.vn",
+        "maSv" : "TG0446"
+    },
+    {
+        "email" : "matamTG0447@stu.ptit.edu.vn",
+        "maSv" : "TG0447"
+    },
+    {
+        "email" : "matamTG0448@stu.ptit.edu.vn",
+        "maSv" : "TG0448"
+    },
+    {
+        "email" : "matamTG0449@stu.ptit.edu.vn",
+        "maSv" : "TG0449"
+    },
+    {
+        "email" : "matamTG0450@stu.ptit.edu.vn",
+        "maSv" : "TG0450"
+    },
+    {
+        "email" : "matamTG0451@stu.ptit.edu.vn",
+        "maSv" : "TG0451"
+    },
+    {
+        "email" : "matamTG0489@stu.ptit.edu.vn",
+        "maSv" : "TG0489"
+    },
+    {
+        "email" : "matamTG0490@stu.ptit.edu.vn",
+        "maSv" : "TG0490"
+    },
+    {
+        "email" : "matamTG0491@stu.ptit.edu.vn",
+        "maSv" : "TG0491"
+    },
+    {
+        "email" : "matamTG0492@stu.ptit.edu.vn",
+        "maSv" : "TG0492"
+    },
+    {
+        "email" : "matamTG0493@stu.ptit.edu.vn",
+        "maSv" : "TG0493"
+    },
+    {
+        "email" : "matamTG0494@stu.ptit.edu.vn",
+        "maSv" : "TG0494"
+    },
+    {
+        "email" : "matamTG0495@stu.ptit.edu.vn",
+        "maSv" : "TG0495"
+    },
+    {
+        "email" : "matamTG0496@stu.ptit.edu.vn",
+        "maSv" : "TG0496"
+    },
+    {
+        "email" : "matamTG0497@stu.ptit.edu.vn",
+        "maSv" : "TG0497"
+    },
+    {
+        "email" : "matamTG0498@stu.ptit.edu.vn",
+        "maSv" : "TG0498"
+    },
+    {
+        "email" : "matamTG0499@stu.ptit.edu.vn",
+        "maSv" : "TG0499"
+    },
+    {
+        "email" : "matamTG0500@stu.ptit.edu.vn",
+        "maSv" : "TG0500"
+    },
+    {
+        "email" : "matamTG0501@stu.ptit.edu.vn",
+        "maSv" : "TG0501"
+    },
+    {
+        "email" : "matamTG0502@stu.ptit.edu.vn",
+        "maSv" : "TG0502"
+    },
+    {
+        "email" : "matamTG0504@stu.ptit.edu.vn",
+        "maSv" : "TG0504"
+    },
+    {
+        "email" : "matamTG0507@stu.ptit.edu.vn",
+        "maSv" : "TG0507"
+    },
+    {
+        "email" : "matamTG0508@stu.ptit.edu.vn",
+        "maSv" : "TG0508"
+    },
+    {
+        "email" : "matamTG0509@stu.ptit.edu.vn",
+        "maSv" : "TG0509"
+    },
+    {
+        "email" : "matamTG0510@stu.ptit.edu.vn",
+        "maSv" : "TG0510"
+    },
+    {
+        "email" : "matamTG0511@stu.ptit.edu.vn",
+        "maSv" : "TG0511"
+    },
+    {
+        "email" : "matamTG0512@stu.ptit.edu.vn",
+        "maSv" : "TG0512"
+    },
+    {
+        "email" : "matamTG0513@stu.ptit.edu.vn",
+        "maSv" : "TG0513"
+    },
+    {
+        "email" : "matamTG0514@stu.ptit.edu.vn",
+        "maSv" : "TG0514"
+    },
+    {
+        "email" : "matamTG0515@stu.ptit.edu.vn",
+        "maSv" : "TG0515"
+    },
+    {
+        "email" : "matamTG0516@stu.ptit.edu.vn",
+        "maSv" : "TG0516"
+    },
+    {
+        "email" : "matamTG0517@stu.ptit.edu.vn",
+        "maSv" : "TG0517"
+    },
+    {
+        "email" : "matamTG0519@stu.ptit.edu.vn",
+        "maSv" : "TG0519"
+    },
+    {
+        "email" : "matamTG0520@stu.ptit.edu.vn",
+        "maSv" : "TG0520"
+    },
+    {
+        "email" : "matamTG0521@stu.ptit.edu.vn",
+        "maSv" : "TG0521"
+    },
+    {
+        "email" : "matamQL1046@stu.ptit.edu.vn",
+        "maSv" : "QL1046"
+    },
+    {
+        "email" : "matamPM1009@stu.ptit.edu.vn",
+        "maSv" : "PM1009"
+    },
+    {
+        "email" : "matamQL1034@stu.ptit.edu.vn",
+        "maSv" : "QL1034"
+    },
+    {
+        "email" : "matamTG0015@stu.ptit.edu.vn",
+        "maSv" : "TG0015"
+    },
+    {
+        "email" : "matamTG0041@stu.ptit.edu.vn",
+        "maSv" : "TG0041"
+    },
+    {
+        "email" : "matamTG0042@stu.ptit.edu.vn",
+        "maSv" : "TG0042"
+    },
+    {
+        "email" : "matamTG0054@stu.ptit.edu.vn",
+        "maSv" : "TG0054"
+    },
+    {
+        "email" : "matamTG0058@stu.ptit.edu.vn",
+        "maSv" : "TG0058"
+    },
+    {
+        "email" : "matamTG0061@stu.ptit.edu.vn",
+        "maSv" : "TG0061"
+    },
+    {
+        "email" : "matamTG0073@stu.ptit.edu.vn",
+        "maSv" : "TG0073"
+    },
+    {
+        "email" : "matamTG0075@stu.ptit.edu.vn",
+        "maSv" : "TG0075"
+    },
+    {
+        "email" : "matamTG0082@stu.ptit.edu.vn",
+        "maSv" : "TG0082"
+    },
+    {
+        "email" : "matamTG0083@stu.ptit.edu.vn",
+        "maSv" : "TG0083"
+    },
+    {
+        "email" : "matamTG0084@stu.ptit.edu.vn",
+        "maSv" : "TG0084"
+    },
+    {
+        "email" : "matamTG0087@stu.ptit.edu.vn",
+        "maSv" : "TG0087"
+    },
+    {
+        "email" : "matamTG0088@stu.ptit.edu.vn",
+        "maSv" : "TG0088"
+    },
+    {
+        "email" : "matamTG0095@stu.ptit.edu.vn",
+        "maSv" : "TG0095"
+    },
+    {
+        "email" : "matamTG0106@stu.ptit.edu.vn",
+        "maSv" : "TG0106"
+    },
+    {
+        "email" : "matamTG0107@stu.ptit.edu.vn",
+        "maSv" : "TG0107"
+    },
+    {
+        "email" : "matamTG0211@stu.ptit.edu.vn",
+        "maSv" : "TG0211"
+    },
+    {
+        "email" : "matamTG0215@stu.ptit.edu.vn",
+        "maSv" : "TG0215"
+    },
+    {
+        "email" : "matamTG0223@stu.ptit.edu.vn",
+        "maSv" : "TG0223"
+    },
+    {
+        "email" : "matamTG0224@stu.ptit.edu.vn",
+        "maSv" : "TG0224"
+    },
+    {
+        "email" : "matamTG0225@stu.ptit.edu.vn",
+        "maSv" : "TG0225"
+    },
+    {
+        "email" : "matamTG0226@stu.ptit.edu.vn",
+        "maSv" : "TG0226"
+    },
+    {
+        "email" : "matamTG0290@stu.ptit.edu.vn",
+        "maSv" : "TG0290"
+    },
+    {
+        "email" : "matamTG0292@stu.ptit.edu.vn",
+        "maSv" : "TG0292"
+    },
+    {
+        "email" : "matamTG0298@stu.ptit.edu.vn",
+        "maSv" : "TG0298"
+    },
+    {
+        "email" : "matamTG0299@stu.ptit.edu.vn",
+        "maSv" : "TG0299"
+    },
+    {
+        "email" : "matamTG0300@stu.ptit.edu.vn",
+        "maSv" : "TG0300"
+    },
+    {
+        "email" : "matamTG0301@stu.ptit.edu.vn",
+        "maSv" : "TG0301"
+    },
+    {
+        "email" : "matamTG0303@stu.ptit.edu.vn",
+        "maSv" : "TG0303"
+    },
+    {
+        "email" : "matamTG0305@stu.ptit.edu.vn",
+        "maSv" : "TG0305"
+    },
+    {
+        "email" : "matamTG0327@stu.ptit.edu.vn",
+        "maSv" : "TG0327"
+    },
+    {
+        "email" : "matamTG0337@stu.ptit.edu.vn",
+        "maSv" : "TG0337"
+    },
+    {
+        "email" : "matamGD1004@stu.ptit.edu.vn",
+        "maSv" : "GD1004"
+    },
+    {
+        "email" : "matamGD1005@stu.ptit.edu.vn",
+        "maSv" : "GD1005"
+    },
+    {
+        "email" : "matamTG0487@stu.ptit.edu.vn",
+        "maSv" : "TG0487"
+    },
+    {
+        "email" : "matamHT1001@stu.ptit.edu.vn",
+        "maSv" : "HT1001"
+    },
+    {
+        "email" : "matamHT1002@stu.ptit.edu.vn",
+        "maSv" : "HT1002"
+    },
+    {
+        "email" : "matamHT1006@stu.ptit.edu.vn",
+        "maSv" : "HT1006"
+    },
+    {
+        "email" : "matamHT1007@stu.ptit.edu.vn",
+        "maSv" : "HT1007"
+    },
+    {
+        "email" : "matamTG0077@stu.ptit.edu.vn",
+        "maSv" : "TG0077"
+    },
+    {
+        "email" : "matamTG0217@stu.ptit.edu.vn",
+        "maSv" : "TG0217"
+    },
+    {
+        "email" : "matamTG0315@stu.ptit.edu.vn",
+        "maSv" : "TG0315"
+    },
+    {
+        "email" : "matamTG0329@stu.ptit.edu.vn",
+        "maSv" : "TG0329"
+    },
+    {
+        "email" : "matamKO1001@stu.ptit.edu.vn",
+        "maSv" : "KO1001"
+    },
+    {
+        "email" : "matamKO1003@stu.ptit.edu.vn",
+        "maSv" : "KO1003"
+    },
+    {
+        "email" : "matamKO1005@stu.ptit.edu.vn",
+        "maSv" : "KO1005"
+    },
+    {
+        "email" : "matamKO1007@stu.ptit.edu.vn",
+        "maSv" : "KO1007"
+    },
+    {
+        "email" : "matamTG0002@stu.ptit.edu.vn",
+        "maSv" : "TG0002"
+    },
+    {
+        "email" : "matamTG0003@stu.ptit.edu.vn",
+        "maSv" : "TG0003"
+    },
+    {
+        "email" : "matamTG0006@stu.ptit.edu.vn",
+        "maSv" : "TG0006"
+    },
+    {
+        "email" : "matamTG0008@stu.ptit.edu.vn",
+        "maSv" : "TG0008"
+    },
+    {
+        "email" : "matamTG0014@stu.ptit.edu.vn",
+        "maSv" : "TG0014"
+    },
+    {
+        "email" : "matamTG0044@stu.ptit.edu.vn",
+        "maSv" : "TG0044"
+    },
+    {
+        "email" : "matamTG0056@stu.ptit.edu.vn",
+        "maSv" : "TG0056"
+    },
+    {
+        "email" : "matamTG0064@stu.ptit.edu.vn",
+        "maSv" : "TG0064"
+    },
+    {
+        "email" : "matamTG0212@stu.ptit.edu.vn",
+        "maSv" : "TG0212"
+    },
+    {
+        "email" : "matamTG0214@stu.ptit.edu.vn",
+        "maSv" : "TG0214"
+    },
+    {
+        "email" : "matamTG0220@stu.ptit.edu.vn",
+        "maSv" : "TG0220"
+    },
+    {
+        "email" : "matamTG0222@stu.ptit.edu.vn",
+        "maSv" : "TG0222"
+    },
+    {
+        "email" : "matamTG0239@stu.ptit.edu.vn",
+        "maSv" : "TG0239"
+    },
+    {
+        "email" : "matamTG0279@stu.ptit.edu.vn",
+        "maSv" : "TG0279"
+    },
+    {
+        "email" : "matamTG0281@stu.ptit.edu.vn",
+        "maSv" : "TG0281"
+    },
+    {
+        "email" : "matamTG0482@stu.ptit.edu.vn",
+        "maSv" : "TG0482"
+    },
+    {
+        "email" : "matamKM1003@stu.ptit.edu.vn",
+        "maSv" : "KM1003"
+    },
+    {
+        "email" : "matamKM1004@stu.ptit.edu.vn",
+        "maSv" : "KM1004"
+    },
+    {
+        "email" : "matamTG0010@stu.ptit.edu.vn",
+        "maSv" : "TG0010"
+    },
+    {
+        "email" : "matamTG0039@stu.ptit.edu.vn",
+        "maSv" : "TG0039"
+    },
+    {
+        "email" : "matamTG0040@stu.ptit.edu.vn",
+        "maSv" : "TG0040"
+    },
+    {
+        "email" : "matamTG0096@stu.ptit.edu.vn",
+        "maSv" : "TG0096"
+    },
+    {
+        "email" : "matamTG0310@stu.ptit.edu.vn",
+        "maSv" : "TG0310"
+    },
+    {
+        "email" : "matamTG0475@stu.ptit.edu.vn",
+        "maSv" : "TG0475"
+    },
+    {
+        "email" : "matamTG1332@stu.ptit.edu.vn",
+        "maSv" : "TG1332"
+    },
+    {
+        "email" : "matamKN1002@stu.ptit.edu.vn",
+        "maSv" : "KN1002"
+    },
+    {
+        "email" : "matamTG0326@stu.ptit.edu.vn",
+        "maSv" : "TG0326"
+    },
+    {
+        "email" : "matamKNM001@stu.ptit.edu.vn",
+        "maSv" : "KNM001"
+    },
+    {
+        "email" : "matamKNM004@stu.ptit.edu.vn",
+        "maSv" : "KNM004"
+    },
+    {
+        "email" : "matamKNM005@stu.ptit.edu.vn",
+        "maSv" : "KNM005"
+    },
+    {
+        "email" : "matamKNM007@stu.ptit.edu.vn",
+        "maSv" : "KNM007"
+    },
+    {
+        "email" : "matamTG0051@stu.ptit.edu.vn",
+        "maSv" : "TG0051"
+    },
+    {
+        "email" : "matamTG0052@stu.ptit.edu.vn",
+        "maSv" : "TG0052"
+    },
+    {
+        "email" : "matamTG0060@stu.ptit.edu.vn",
+        "maSv" : "TG0060"
+    },
+    {
+        "email" : "matamTG0097@stu.ptit.edu.vn",
+        "maSv" : "TG0097"
+    },
+    {
+        "email" : "matamTG0099@stu.ptit.edu.vn",
+        "maSv" : "TG0099"
+    },
+    {
+        "email" : "matamTG0100@stu.ptit.edu.vn",
+        "maSv" : "TG0100"
+    },
+    {
+        "email" : "matamTG0219@stu.ptit.edu.vn",
+        "maSv" : "TG0219"
+    },
+    {
+        "email" : "matamTG0240@stu.ptit.edu.vn",
+        "maSv" : "TG0240"
+    },
+    {
+        "email" : "matamKT1003@stu.ptit.edu.vn",
+        "maSv" : "KT1003"
+    },
+    {
+        "email" : "matamKT1006@stu.ptit.edu.vn",
+        "maSv" : "KT1006"
+    },
+    {
+        "email" : "matamTG0213@stu.ptit.edu.vn",
+        "maSv" : "TG0213"
+    },
+    {
+        "email" : "matamTG0345@stu.ptit.edu.vn",
+        "maSv" : "TG0345"
+    },
+    {
+        "email" : "matamLM1006@stu.ptit.edu.vn",
+        "maSv" : "LM1006"
+    },
+    {
+        "email" : "matamLM1009@stu.ptit.edu.vn",
+        "maSv" : "LM1009"
+    },
+    {
+        "email" : "matamLM1012@stu.ptit.edu.vn",
+        "maSv" : "LM1012"
+    },
+    {
+        "email" : "matamLM1013@stu.ptit.edu.vn",
+        "maSv" : "LM1013"
+    },
+    {
+        "email" : "matamTG0019@stu.ptit.edu.vn",
+        "maSv" : "TG0019"
+    },
+    {
+        "email" : "matamTG0026@stu.ptit.edu.vn",
+        "maSv" : "TG0026"
+    },
+    {
+        "email" : "matamTG0050@stu.ptit.edu.vn",
+        "maSv" : "TG0050"
+    },
+    {
+        "email" : "matamTG0081@stu.ptit.edu.vn",
+        "maSv" : "TG0081"
+    },
+    {
+        "email" : "matamTG0102@stu.ptit.edu.vn",
+        "maSv" : "TG0102"
+    },
+    {
+        "email" : "matamTG0103@stu.ptit.edu.vn",
+        "maSv" : "TG0103"
+    },
+    {
+        "email" : "matamTG0104@stu.ptit.edu.vn",
+        "maSv" : "TG0104"
+    },
+    {
+        "email" : "matamTG0268@stu.ptit.edu.vn",
+        "maSv" : "TG0268"
+    },
+    {
+        "email" : "matamTG0308@stu.ptit.edu.vn",
+        "maSv" : "TG0308"
+    },
+    {
+        "email" : "matamTG0330@stu.ptit.edu.vn",
+        "maSv" : "TG0330"
+    },
+    {
+        "email" : "matamTG0331@stu.ptit.edu.vn",
+        "maSv" : "TG0331"
+    },
+    {
+        "email" : "matamTG0332@stu.ptit.edu.vn",
+        "maSv" : "TG0332"
+    },
+    {
+        "email" : "matamTG0348@stu.ptit.edu.vn",
+        "maSv" : "TG0348"
+    },
+    {
+        "email" : "matamTG0467@stu.ptit.edu.vn",
+        "maSv" : "TG0467"
+    },
+    {
+        "email" : "matamTG0484@stu.ptit.edu.vn",
+        "maSv" : "TG0484"
+    },
+    {
+        "email" : "matamTG0488@stu.ptit.edu.vn",
+        "maSv" : "TG0488"
+    },
+    {
+        "email" : "matamMT1003@stu.ptit.edu.vn",
+        "maSv" : "MT1003"
+    },
+    {
+        "email" : "matamMT1014@stu.ptit.edu.vn",
+        "maSv" : "MT1014"
+    },
+    {
+        "email" : "matamTH1012@stu.ptit.edu.vn",
+        "maSv" : "TH1012"
+    },
+    {
+        "email" : "matamQL1023@stu.ptit.edu.vn",
+        "maSv" : "QL1023"
+    },
+    {
+        "email" : "matamTG0067@stu.ptit.edu.vn",
+        "maSv" : "TG0067"
+    },
+    {
+        "email" : "matamTG0071@stu.ptit.edu.vn",
+        "maSv" : "TG0071"
+    },
+    {
+        "email" : "matamTG0105@stu.ptit.edu.vn",
+        "maSv" : "TG0105"
+    },
+    {
+        "email" : "matamTG0121@stu.ptit.edu.vn",
+        "maSv" : "TG0121"
+    },
+    {
+        "email" : "matamTG0320@stu.ptit.edu.vn",
+        "maSv" : "TG0320"
+    },
+    {
+        "email" : "matamTG9999@stu.ptit.edu.vn",
+        "maSv" : "TG9999"
+    },
+    {
+        "email" : "matamTG0001@stu.ptit.edu.vn",
+        "maSv" : "TG0001"
+    },
+    {
+        "email" : "matamTG0005@stu.ptit.edu.vn",
+        "maSv" : "TG0005"
+    },
+    {
+        "email" : "matamTG0007@stu.ptit.edu.vn",
+        "maSv" : "TG0007"
+    },
+    {
+        "email" : "matamTG0009@stu.ptit.edu.vn",
+        "maSv" : "TG0009"
+    },
+    {
+        "email" : "matamTG0012@stu.ptit.edu.vn",
+        "maSv" : "TG0012"
+    },
+    {
+        "email" : "matamTG0017@stu.ptit.edu.vn",
+        "maSv" : "TG0017"
+    },
+    {
+        "email" : "matamTG0018@stu.ptit.edu.vn",
+        "maSv" : "TG0018"
+    },
+    {
+        "email" : "matamTG0031@stu.ptit.edu.vn",
+        "maSv" : "TG0031"
+    },
+    {
+        "email" : "matamTG0035@stu.ptit.edu.vn",
+        "maSv" : "TG0035"
+    },
+    {
+        "email" : "matamTG0037@stu.ptit.edu.vn",
+        "maSv" : "TG0037"
+    },
+    {
+        "email" : "matamTG0046@stu.ptit.edu.vn",
+        "maSv" : "TG0046"
+    },
+    {
+        "email" : "matamTG0053@stu.ptit.edu.vn",
+        "maSv" : "TG0053"
+    },
+    {
+        "email" : "matamTG0091@stu.ptit.edu.vn",
+        "maSv" : "TG0091"
+    },
+    {
+        "email" : "matamTG0092@stu.ptit.edu.vn",
+        "maSv" : "TG0092"
+    },
+    {
+        "email" : "matamTG0108@stu.ptit.edu.vn",
+        "maSv" : "TG0108"
+    },
+    {
+        "email" : "matamTG0109@stu.ptit.edu.vn",
+        "maSv" : "TG0109"
+    },
+    {
+        "email" : "matamTG0110@stu.ptit.edu.vn",
+        "maSv" : "TG0110"
+    },
+    {
+        "email" : "matamTG0111@stu.ptit.edu.vn",
+        "maSv" : "TG0111"
+    },
+    {
+        "email" : "matamTG0112@stu.ptit.edu.vn",
+        "maSv" : "TG0112"
+    },
+    {
+        "email" : "matamTG0113@stu.ptit.edu.vn",
+        "maSv" : "TG0113"
+    },
+    {
+        "email" : "matamTG0114@stu.ptit.edu.vn",
+        "maSv" : "TG0114"
+    },
+    {
+        "email" : "matamTG0115@stu.ptit.edu.vn",
+        "maSv" : "TG0115"
+    },
+    {
+        "email" : "matamTG0116@stu.ptit.edu.vn",
+        "maSv" : "TG0116"
+    },
+    {
+        "email" : "matamTG0117@stu.ptit.edu.vn",
+        "maSv" : "TG0117"
+    },
+    {
+        "email" : "matamTG0118@stu.ptit.edu.vn",
+        "maSv" : "TG0118"
+    },
+    {
+        "email" : "matamTG0119@stu.ptit.edu.vn",
+        "maSv" : "TG0119"
+    },
+    {
+        "email" : "matamTG0120@stu.ptit.edu.vn",
+        "maSv" : "TG0120"
+    },
+    {
+        "email" : "matamTG0130@stu.ptit.edu.vn",
+        "maSv" : "TG0130"
+    },
+    {
+        "email" : "matamTG0131@stu.ptit.edu.vn",
+        "maSv" : "TG0131"
+    },
+    {
+        "email" : "matamTG0210@stu.ptit.edu.vn",
+        "maSv" : "TG0210"
+    },
+    {
+        "email" : "matamTG0230@stu.ptit.edu.vn",
+        "maSv" : "TG0230"
+    },
+    {
+        "email" : "matamTG0232@stu.ptit.edu.vn",
+        "maSv" : "TG0232"
+    },
+    {
+        "email" : "matamTG0233@stu.ptit.edu.vn",
+        "maSv" : "TG0233"
+    },
+    {
+        "email" : "matamTG0234@stu.ptit.edu.vn",
+        "maSv" : "TG0234"
+    },
+    {
+        "email" : "matamTG0235@stu.ptit.edu.vn",
+        "maSv" : "TG0235"
+    },
+    {
+        "email" : "matamTG0236@stu.ptit.edu.vn",
+        "maSv" : "TG0236"
+    },
+    {
+        "email" : "matamTG0237@stu.ptit.edu.vn",
+        "maSv" : "TG0237"
+    },
+    {
+        "email" : "matamTG0269@stu.ptit.edu.vn",
+        "maSv" : "TG0269"
+    },
+    {
+        "email" : "matamTG0318@stu.ptit.edu.vn",
+        "maSv" : "TG0318"
+    },
+    {
+        "email" : "matamTG0334@stu.ptit.edu.vn",
+        "maSv" : "TG0334"
+    },
+    {
+        "email" : "matamQL1044@stu.ptit.edu.vn",
+        "maSv" : "QL1044"
+    },
+    {
+        "email" : "matamQU1005@stu.ptit.edu.vn",
+        "maSv" : "QU1005"
+    },
+    {
+        "email" : "matamQU1012@stu.ptit.edu.vn",
+        "maSv" : "QU1012"
+    },
+    {
+        "email" : "matamQU1013@stu.ptit.edu.vn",
+        "maSv" : "QU1013"
+    },
+    {
+        "email" : "matamTG0074@stu.ptit.edu.vn",
+        "maSv" : "TG0074"
+    },
+    {
+        "email" : "matamTG0346@stu.ptit.edu.vn",
+        "maSv" : "TG0346"
+    },
+    {
+        "email" : "matamTG0347@stu.ptit.edu.vn",
+        "maSv" : "TG0347"
+    },
+    {
+        "email" : "matamTH1001@stu.ptit.edu.vn",
+        "maSv" : "TH1001"
+    },
+    {
+        "email" : "matamTH1005@stu.ptit.edu.vn",
+        "maSv" : "TH1005"
+    },
+    {
+        "email" : "matamTH1009@stu.ptit.edu.vn",
+        "maSv" : "TH1009"
+    },
+    {
+        "email" : "matamTH1010@stu.ptit.edu.vn",
+        "maSv" : "TH1010"
+    },
+    {
+        "email" : "matamTG0016@stu.ptit.edu.vn",
+        "maSv" : "TG0016"
+    },
+    {
+        "email" : "matamTG0020@stu.ptit.edu.vn",
+        "maSv" : "TG0020"
+    },
+    {
+        "email" : "matamTG0021@stu.ptit.edu.vn",
+        "maSv" : "TG0021"
+    },
+    {
+        "email" : "matamTG0022@stu.ptit.edu.vn",
+        "maSv" : "TG0022"
+    },
+    {
+        "email" : "matamTG0024@stu.ptit.edu.vn",
+        "maSv" : "TG0024"
+    },
+    {
+        "email" : "matamTG0085@stu.ptit.edu.vn",
+        "maSv" : "TG0085"
+    },
+    {
+        "email" : "matamTG0086@stu.ptit.edu.vn",
+        "maSv" : "TG0086"
+    },
+    {
+        "email" : "matamTG0090@stu.ptit.edu.vn",
+        "maSv" : "TG0090"
+    },
+    {
+        "email" : "matamTG0098@stu.ptit.edu.vn",
+        "maSv" : "TG0098"
+    },
+    {
+        "email" : "matamTG0229@stu.ptit.edu.vn",
+        "maSv" : "TG0229"
+    },
+    {
+        "email" : "matamTG0250@stu.ptit.edu.vn",
+        "maSv" : "TG0250"
+    },
+    {
+        "email" : "matamTG0252@stu.ptit.edu.vn",
+        "maSv" : "TG0252"
+    },
+    {
+        "email" : "matamTG0253@stu.ptit.edu.vn",
+        "maSv" : "TG0253"
+    },
+    {
+        "email" : "matamTG0270@stu.ptit.edu.vn",
+        "maSv" : "TG0270"
+    },
+    {
+        "email" : "matamTG0271@stu.ptit.edu.vn",
+        "maSv" : "TG0271"
+    },
+    {
+        "email" : "matamTG0272@stu.ptit.edu.vn",
+        "maSv" : "TG0272"
+    },
+    {
+        "email" : "matamTG0335@stu.ptit.edu.vn",
+        "maSv" : "TG0335"
+    },
+    {
+        "email" : "matamTG0336@stu.ptit.edu.vn",
+        "maSv" : "TG0336"
+    },
+    {
+        "email" : "matamTG0479@stu.ptit.edu.vn",
+        "maSv" : "TG0479"
+    },
+    {
+        "email" : "matamKNM1004@stu.ptit.edu.vn",
+        "maSv" : "KNM1004"
+    },
+    {
+        "email" : "matamMAR011@stu.ptit.edu.vn",
+        "maSv" : "MAR011"
+    },
+    {
+        "email" : "matamPT1001@stu.ptit.edu.vn",
+        "maSv" : "PT1001"
+    },
+    {
+        "email" : "matamPT1004@stu.ptit.edu.vn",
+        "maSv" : "PT1004"
+    },
+    {
+        "email" : "matamPT1007@stu.ptit.edu.vn",
+        "maSv" : "PT1007"
+    },
+    {
+        "email" : "matamQL1020@stu.ptit.edu.vn",
+        "maSv" : "QL1020"
+    },
+    {
+        "email" : "matamQL1039@stu.ptit.edu.vn",
+        "maSv" : "QL1039"
+    },
+    {
+        "email" : "matamQL1043@stu.ptit.edu.vn",
+        "maSv" : "QL1043"
+    },
+    {
+        "email" : "matamQL1045@stu.ptit.edu.vn",
+        "maSv" : "QL1045"
+    },
+    {
+        "email" : "matamTG0028@stu.ptit.edu.vn",
+        "maSv" : "TG0028"
+    },
+    {
+        "email" : "matamTG0029@stu.ptit.edu.vn",
+        "maSv" : "TG0029"
+    },
+    {
+        "email" : "matamTG0030@stu.ptit.edu.vn",
+        "maSv" : "TG0030"
+    },
+    {
+        "email" : "matamTG0038@stu.ptit.edu.vn",
+        "maSv" : "TG0038"
+    },
+    {
+        "email" : "matamTG0047@stu.ptit.edu.vn",
+        "maSv" : "TG0047"
+    },
+    {
+        "email" : "matamTG0048@stu.ptit.edu.vn",
+        "maSv" : "TG0048"
+    },
+    {
+        "email" : "matamTG0057@stu.ptit.edu.vn",
+        "maSv" : "TG0057"
+    },
+    {
+        "email" : "matamTG0065@stu.ptit.edu.vn",
+        "maSv" : "TG0065"
+    },
+    {
+        "email" : "matamTG0066@stu.ptit.edu.vn",
+        "maSv" : "TG0066"
+    },
+    {
+        "email" : "matamTG0070@stu.ptit.edu.vn",
+        "maSv" : "TG0070"
+    },
+    {
+        "email" : "matamTG0076@stu.ptit.edu.vn",
+        "maSv" : "TG0076"
+    },
+    {
+        "email" : "matamTG0078@stu.ptit.edu.vn",
+        "maSv" : "TG0078"
+    },
+    {
+        "email" : "matamTG0079@stu.ptit.edu.vn",
+        "maSv" : "TG0079"
+    },
+    {
+        "email" : "matamTG0093@stu.ptit.edu.vn",
+        "maSv" : "TG0093"
+    },
+    {
+        "email" : "matamTG0243@stu.ptit.edu.vn",
+        "maSv" : "TG0243"
+    },
+    {
+        "email" : "matamTG0244@stu.ptit.edu.vn",
+        "maSv" : "TG0244"
+    },
+    {
+        "email" : "matamTG0245@stu.ptit.edu.vn",
+        "maSv" : "TG0245"
+    },
+    {
+        "email" : "matamTG0246@stu.ptit.edu.vn",
+        "maSv" : "TG0246"
+    },
+    {
+        "email" : "matamTG0247@stu.ptit.edu.vn",
+        "maSv" : "TG0247"
+    },
+    {
+        "email" : "matamTG0278@stu.ptit.edu.vn",
+        "maSv" : "TG0278"
+    },
+    {
+        "email" : "matamTG0284@stu.ptit.edu.vn",
+        "maSv" : "TG0284"
+    },
+    {
+        "email" : "matamTG0287@stu.ptit.edu.vn",
+        "maSv" : "TG0287"
+    },
+    {
+        "email" : "matamTG0288@stu.ptit.edu.vn",
+        "maSv" : "TG0288"
+    },
+    {
+        "email" : "matamTG0289@stu.ptit.edu.vn",
+        "maSv" : "TG0289"
+    },
+    {
+        "email" : "matamTG0294@stu.ptit.edu.vn",
+        "maSv" : "TG0294"
+    },
+    {
+        "email" : "matamTG0306@stu.ptit.edu.vn",
+        "maSv" : "TG0306"
+    },
+    {
+        "email" : "matamTG0311@stu.ptit.edu.vn",
+        "maSv" : "TG0311"
+    },
+    {
+        "email" : "matamTG0312@stu.ptit.edu.vn",
+        "maSv" : "TG0312"
+    },
+    {
+        "email" : "matamTG0313@stu.ptit.edu.vn",
+        "maSv" : "TG0313"
+    },
+    {
+        "email" : "matamTG0314@stu.ptit.edu.vn",
+        "maSv" : "TG0314"
+    },
+    {
+        "email" : "matamTG0317@stu.ptit.edu.vn",
+        "maSv" : "TG0317"
+    },
+    {
+        "email" : "matamTG0319@stu.ptit.edu.vn",
+        "maSv" : "TG0319"
+    },
+    {
+        "email" : "matamTG0322@stu.ptit.edu.vn",
+        "maSv" : "TG0322"
+    },
+    {
+        "email" : "matamTG0338@stu.ptit.edu.vn",
+        "maSv" : "TG0338"
+    },
+    {
+        "email" : "matamTG0340@stu.ptit.edu.vn",
+        "maSv" : "TG0340"
+    },
+    {
+        "email" : "matamTG0341@stu.ptit.edu.vn",
+        "maSv" : "TG0341"
+    },
+    {
+        "email" : "matamTG0342@stu.ptit.edu.vn",
+        "maSv" : "TG0342"
+    },
+    {
+        "email" : "matamTG0343@stu.ptit.edu.vn",
+        "maSv" : "TG0343"
+    },
+    {
+        "email" : "matamTG0349@stu.ptit.edu.vn",
+        "maSv" : "TG0349"
+    },
+    {
+        "email" : "matamTG0352@stu.ptit.edu.vn",
+        "maSv" : "TG0352"
+    },
+    {
+        "email" : "matamTG0464@stu.ptit.edu.vn",
+        "maSv" : "TG0464"
+    },
+    {
+        "email" : "matamTG0476@stu.ptit.edu.vn",
+        "maSv" : "TG0476"
+    },
+    {
+        "email" : "matamTG0478@stu.ptit.edu.vn",
+        "maSv" : "TG0478"
+    },
+    {
+        "email" : "matamTT1004@stu.ptit.edu.vn",
+        "maSv" : "TT1004"
+    },
+    {
+        "email" : "matamTTD003@stu.ptit.edu.vn",
+        "maSv" : "TTD003"
+    },
+    {
+        "email" : "matamTTD008@stu.ptit.edu.vn",
+        "maSv" : "TTD008"
+    },
+    {
+        "email" : "matamTTD009@stu.ptit.edu.vn",
+        "maSv" : "TTD009"
+    },
+    {
+        "email" : "matamTTD012@stu.ptit.edu.vn",
+        "maSv" : "TTD012"
+    },
+    {
+        "email" : "matamTTD013@stu.ptit.edu.vn",
+        "maSv" : "TTD013"
+    },
+    {
+        "email" : "matamTG00026@stu.ptit.edu.vn",
+        "maSv" : "TG00026"
+    },
+    {
+        "email" : "matamTG0036@stu.ptit.edu.vn",
+        "maSv" : "TG0036"
+    },
+    {
+        "email" : "matamTG0273@stu.ptit.edu.vn",
+        "maSv" : "TG0273"
+    },
+    {
+        "email" : "matamTG0101@stu.ptit.edu.vn",
+        "maSv" : "TG0101"
+    },
+    {
+        "email" : "matamVO1001@stu.ptit.edu.vn",
+        "maSv" : "VO1001"
+    },
+    {
+        "email" : "matamVO1006@stu.ptit.edu.vn",
+        "maSv" : "VO1006"
+    },
+    {
+        "email" : "matamQL1036@stu.ptit.edu.vn",
+        "maSv" : "QL1036"
+    },
+    {
+        "email" : "matamXT1002@stu.ptit.edu.vn",
+        "maSv" : "XT1002"
+    },
+    {
+        "email" : "matamXT1005@stu.ptit.edu.vn",
+        "maSv" : "XT1005"
+    },
+    {
+        "maSv" : "TG0532",
+        "email" : "lecturer1@example.co"
+    },
+    {
+        "maSv" : "TG0538",
+        "email" : "matamgv@ptit.edu.vn"
+    },
+    {
+        "maSv" : "TG0525",
+        "email" : "matamgv@ptit.edu.vn"
+    },
+    {
+        "maSv" : "TG0524",
+        "email" : "matamgv@ptit.edu.vn"
+    },
+    {
+        "maSv" : "TG0539",
+        "email" : "matamgv@ptit.edu.vn"
+    },
+    {
+        "maSv" : "TG0540",
+        "email" : "matamgv@ptit.edu.vn"
+    },
+    {
+        "maCanBo" : "KCN100256",
+        "email" : "dungnq@ptit.edu.vn",
+        "maSv" : "AT1005"
+    },
+    {
+        "maSv" : "KM1001",
+        "maCanBo" : "HDHV00001",
+        "email" : "phuongtm@ptit.edu.vn"
+    },
+    {
+        "maSv" : "VPH100027",
+        "maCanBo" : "VPH100027",
+        "email" : "nhminh@ptit.edu.vn"
+    },
+    {
+        "maSv" : "QL1051",
+        "maCanBo" : "PTC100034",
+        "email" : "hadt@ptit.edu.vn"
+    },
+    {
+        "maSv" : "QL1047",
+        "maCanBo" : "PSV100045",
+        "email" : "yendh@ptit.edu.vn"
+    },
+    {
+        "maSv" : "QL1013",
+        "maCanBo" : "PSV100046",
+        "email" : "nhieunt@ptit.edu.vn"
+    },
+    {
+        "maSv" : "QL1038",
+        "maCanBo" : "PSV100048",
+        "email" : "bangch@ptit.edu.vn"
+    },
+    {
+        "maSv" : "QL1015",
+        "maCanBo" : "PSV100050",
+        "email" : "chiendd@ptit.edu.vn"
+    },
+    {
+        "maSv" : "TG0286",
+        "maCanBo" : "PSV100052",
+        "email" : "huongngt@ptit.edu.vn"
+    },
+    {
+        "maSv" : "QL1014",
+        "maCanBo" : "PSV100055",
+        "email" : "ngantt2@ptit.edu.vn"
+    },
+    {
+        "maSv" : "QL1031",
+        "maCanBo" : "PDT100061",
+        "email" : "huenth@ptit.edu.vn"
+    },
+    {
+        "maSv" : "LM1002",
+        "maCanBo" : "PQL100065",
+        "email" : "thiennd@ptit.edu.vn"
+    },
+    {
+        "maSv" : "PQL100071",
+        "maCanBo" : "PQL100071",
+        "email" : "ntnga@ptit.edu.vn"
+    },
+    {
+        "maSv" : "TG0238",
+        "maCanBo" : "PQL100074",
+        "email" : "huongtt1@ptit.edu.vn"
+    },
+    {
+        "maSv" : "QL1234",
+        "maCanBo" : "PGV100108",
+        "email" : "thanhnc@ptit.edu.vn"
+    },
+    {
+        "maSv" : "QL1068",
+        "maCanBo" : "PGV100109",
+        "email" : "thanhnx@ptit.edu.vn"
+    },
+    {
+        "maSv" : "QL1009",
+        "maCanBo" : "PGV100110",
+        "email" : "hkcuc@ptit.edu.vn"
+    },
+    {
+        "maSv" : "QL1008",
+        "maCanBo" : "PGV100112",
+        "email" : "ntvha@ptit.edu.vn"
+    },
+    {
+        "maSv" : "QL1011",
+        "maCanBo" : "PGV100113",
+        "email" : "hangdt@ptit.edu.vn"
+    },
+    {
+        "maSv" : "QL1007",
+        "maCanBo" : "PGV100114",
+        "email" : "cphien@ptit.edu.vn"
+    },
+    {
+        "maSv" : "QL2007",
+        "maCanBo" : "PGV100115",
+        "email" : "nthieu1@ptit.edu.vn"
+    },
+    {
+        "maSv" : "QL1006",
+        "maCanBo" : "PGV100117",
+        "email" : "minhnh@ptit.edu.vn"
+    },
+    {
+        "maSv" : "QL1048",
+        "maCanBo" : "TKT100121",
+        "email" : "hanhtm@ptit.edu.vn"
+    },
+    {
+        "maSv" : "QL1003",
+        "maCanBo" : "TKT100129",
+        "email" : "thuntm@ptit.edu.vn"
+    },
+    {
+        "maSv" : "XT1001",
+        "maCanBo" : "TTN100131",
+        "email" : "synq@ptit.edu.vn"
+    },
+    {
+        "maSv" : "XT1003",
+        "maCanBo" : "TTN100132",
+        "email" : "vietnd@ptit.edu.vn"
+    },
+    {
+        "maSv" : "TTN100135",
+        "maCanBo" : "TTN100135",
+        "email" : "hienntt@ptit.edu.vn"
+    },
+    {
+        "maSv" : "XT1011",
+        "maCanBo" : "TTN100136",
+        "email" : "hungnx@ptit.edu.vn"
+    },
+    {
+        "maSv" : "XT1004",
+        "maCanBo" : "TTN100137",
+        "email" : "minhnd@ptit.edu.vn"
+    },
+    {
+        "maSv" : "XT1009",
+        "maCanBo" : "TTN100138",
+        "email" : "ngocnq@ptit.edu.vn"
+    },
+    {
+        "maSv" : "XT1010",
+        "maCanBo" : "TTN100139",
+        "email" : "oanhttt@ptit.edu.vn"
+    },
+    {
+        "maSv" : "XT1008",
+        "maCanBo" : "TTN100141",
+        "email" : "tuyennt@ptit.edu.vn"
+    },
+    {
+        "maSv" : "PT1003",
+        "maCanBo" : "TQT100142",
+        "email" : "hhhanh@ptit.edu.vn"
+    },
+    {
+        "maSv" : "QL1017",
+        "maCanBo" : "TQT100143",
+        "email" : "phuongnm@ptit.edu.vn"
+    },
+    {
+        "maSv" : "QL1019",
+        "maCanBo" : "TQT100144",
+        "email" : "halt@ptit.edu.vn"
+    },
+    {
+        "maSv" : "QL1018",
+        "maCanBo" : "TQT100145",
+        "email" : "phuongttl@ptit.edu.vn"
+    },
+    {
+        "maSv" : "PT1006",
+        "maCanBo" : "TQT100146",
+        "email" : "tupvm@ptit.edu.vn"
+    },
+    {
+        "maSv" : "TG0045",
+        "maCanBo" : "TDV100166",
+        "email" : "hongtt@ptit.edu.vn"
+    },
+    {
+        "maSv" : "TDV100174",
+        "maCanBo" : "TDV100174",
+        "email" : "tamntt@ptit.edu.vn"
+    },
+    {
+        "maSv" : "QL1035",
+        "maCanBo" : "KSD100183",
+        "email" : "thangln@ptit.edu.vn"
+    },
+    {
+        "maSv" : "QL1030",
+        "maCanBo" : "KSD100185",
+        "email" : "yenlth@ptit.edu.vn"
+    },
+    {
+        "maSv" : "XT1006",
+        "maCanBo" : "KSD100186",
+        "email" : "xuanbl@ptit.edu.vn"
+    },
+    {
+        "maSv" : "TO1004",
+        "maCanBo" : "KCB100189",
+        "email" : "anhpn@ptit.edu.vn"
+    },
+    {
+        "maSv" : "NN1001",
+        "maCanBo" : "KCB100190",
+        "email" : "giaonq@ptit.edu.vn"
+    },
+    {
+        "maSv" : "ML1006",
+        "maCanBo" : "KCB100191",
+        "email" : "aipm@ptit.edu.vn"
+    },
+    {
+        "maSv" : "TO1008",
+        "maCanBo" : "KCB100192",
+        "email" : "tvanh@ptit.edu.vn"
+    },
+    {
+        "maSv" : "NN1010",
+        "maCanBo" : "KCB100193",
+        "email" : "binhttt@ptit.edu.vn"
+    },
+    {
+        "maSv" : "TG0528",
+        "maCanBo" : "KCB100194",
+        "email" : "dieudt@ptit.edu.vn"
+    },
+    {
+        "maSv" : "TO1003",
+        "maCanBo" : "KCB100195",
+        "email" : "dungnt@ptit.edu.vn"
+    },
+    {
+        "maSv" : "TO1007",
+        "maCanBo" : "KCB100196",
+        "email" : "dunghp@ptit.edu.vn"
+    },
+    {
+        "maSv" : "NN1004",
+        "maCanBo" : "KCB100197",
+        "email" : "hanhlth@ptit.edu.vn"
+    },
+    {
+        "maSv" : "VL1006",
+        "maCanBo" : "KCB100198",
+        "email" : "hongdt2802@gmail.com"
+    },
+    {
+        "maSv" : "VL1002",
+        "maCanBo" : "KCB100199",
+        "email" : "huonghtl@ptit.edu.vn"
+    },
+    {
+        "maSv" : "NN1011",
+        "maCanBo" : "KCB100200",
+        "email" : "huyenvtt@ptit.edu.vn"
+    },
+    {
+        "maSv" : "ML1007",
+        "maCanBo" : "KCB100201",
+        "email" : "khanhpt@ptit.edu.vn"
+    },
+    {
+        "maSv" : "GD1003",
+        "maCanBo" : "KCB100202",
+        "email" : "lientk@ptit.edu.vn"
+    },
+    {
+        "maSv" : "TO1006",
+        "maCanBo" : "KCB100203",
+        "email" : "linhnk@ptit.edu.vn"
+    },
+    {
+        "maSv" : "VL1003",
+        "maCanBo" : "KCB100204",
+        "email" : "lieuntt@ptit.edu.vn"
+    },
+    {
+        "maSv" : "ML1003",
+        "maCanBo" : "KCB100205",
+        "email" : "ninhdm@ptit.edu.vn"
+    },
+    {
+        "maSv" : "NN1005",
+        "maCanBo" : "KCB100206",
+        "email" : "nganh@ptit.edu.vn"
+    },
+    {
+        "maSv" : "VL1004",
+        "maCanBo" : "KCB100207",
+        "email" : "ngavth@ptit.edu.vn"
+    },
+    {
+        "maSv" : "TO1005",
+        "maCanBo" : "KCB100208",
+        "email" : "ngoclv@ptit.edu.vn"
+    },
+    {
+        "maSv" : "NN1007",
+        "maCanBo" : "KCB100209",
+        "email" : "ngocnd@ptit.edu.vn"
+    },
+    {
+        "maSv" : "NN1008",
+        "maCanBo" : "KCB100210",
+        "email" : "nhungntp@ptit.edu.vn"
+    },
+    {
+        "maSv" : "TO1009",
+        "maCanBo" : "KCB100211",
+        "email" : "quyntk@ptit.edu.vn"
+    },
+    {
+        "maSv" : "NN1009",
+        "maCanBo" : "KCB100212",
+        "email" : "samvt@ptit.edu.vn"
+    },
+    {
+        "maSv" : "ML1005",
+        "maCanBo" : "KCB100213",
+        "email" : "sondm@ptit.edu.vn"
+    },
+    {
+        "maSv" : "VL1001",
+        "maCanBo" : "KCB100214",
+        "email" : "thanhltm@ptit.edu.vn"
+    },
+    {
+        "maSv" : "VL1005",
+        "maCanBo" : "KCB100215",
+        "email" : "thaott@ptit.edu.vn"
+    },
+    {
+        "maSv" : "NN1002",
+        "maCanBo" : "KCB100216",
+        "email" : "thietnt@ptit.edu.vn"
+    },
+    {
+        "maSv" : "GD1001",
+        "maCanBo" : "KCB100217",
+        "email" : "thinhnd@ptit.edu.vn"
+    },
+    {
+        "maSv" : "NN1003",
+        "maCanBo" : "KCB100218",
+        "email" : "thupn@ptit.edu.vn"
+    },
+    {
+        "maSv" : "NN1012",
+        "maCanBo" : "KCB100219",
+        "email" : "thuongbtl@ptit.edu.vn"
+    },
+    {
+        "maSv" : "TG0403",
+        "maCanBo" : "KCB100221",
+        "email" : "KCB100221@ptit.edu.vn"
+    },
+    {
+        "maSv" : "GD1006",
+        "maCanBo" : "KCB100222",
+        "email" : "truongnd@ptit.edu.vn"
+    },
+    {
+        "maSv" : "TO1001",
+        "maCanBo" : "KCB100224",
+        "email" : "longlb@ptit.edu.vn"
+    },
+    {
+        "maSv" : "KT1008",
+        "maCanBo" : "KDT100225",
+        "email" : "minhnn@ptit.edu.vn"
+    },
+    {
+        "maSv" : "KT1005",
+        "maCanBo" : "KDT100226",
+        "email" : "hieunt@ptit.edu.vn"
+    },
+    {
+        "maSv" : "LM1015",
+        "maCanBo" : "KDT100227",
+        "email" : "mrtran3332@gmail.com"
+    },
+    {
+        "maSv" : "LM1007",
+        "maCanBo" : "KDT100228",
+        "email" : "danbt@ptit.edu.vn"
+    },
+    {
+        "maSv" : "LM1003",
+        "maCanBo" : "KDT100229",
+        "email" : "dinhnq@ptit.edu.vn"
+    },
+    {
+        "maSv" : "KT1011",
+        "maCanBo" : "KDT100230",
+        "email" : "duanlc@ptit.edu.vn"
+    },
+    {
+        "maSv" : "TG0505",
+        "maCanBo" : "KDT100231",
+        "email" : "dungnm@ptit.edu.vn"
+    },
+    {
+        "maSv" : "KT1010",
+        "maCanBo" : "KDT100232",
+        "email" : "dungtc@ptit.edu.vn"
+    },
+    {
+        "maSv" : "KT1002",
+        "maCanBo" : "KDT100233",
+        "email" : "daova@ptit.edu.vn"
+    },
+    {
+        "maSv" : "KT1004",
+        "maCanBo" : "KDT100234",
+        "email" : "hatt@ptit.edu.vn"
+    },
+    {
+        "maSv" : "KT1007",
+        "maCanBo" : "KDT100235",
+        "email" : "linhtt@ptit.edu.vn"
+    },
+    {
+        "maSv" : "LM1008",
+        "maCanBo" : "KDT100236",
+        "email" : "supv@ptit.edu.vn"
+    },
+    {
+        "maSv" : "LM1005",
+        "maCanBo" : "KDT100237",
+        "email" : "toanld@ptit.edu.vn"
+    },
+    {
+        "maSv" : "LM1014",
+        "maCanBo" : "KDT100238",
+        "email" : "thanhnv@ptit.edu.vn"
+    },
+    {
+        "maSv" : "LM1004",
+        "maCanBo" : "KDT100239",
+        "email" : "thaonth@ptit.edu.vn"
+    },
+    {
+        "maSv" : "KT1009",
+        "maCanBo" : "KDT100240",
+        "email" : "uynq@ptit.edu.vn"
+    },
+    {
+        "maSv" : "LM1001",
+        "maCanBo" : "KDT100242",
+        "email" : "nguyenbinh@ptit.edu.vn"
+    },
+    {
+        "maSv" : "PM1006",
+        "maCanBo" : "KCN100243",
+        "email" : "phuongnd@ptit.edu.vn"
+    },
+    {
+        "maSv" : "HT1008",
+        "maCanBo" : "KCN100244",
+        "email" : "cuongpv@ptit.edu.vn"
+    },
+    {
+        "maSv" : "AT1001",
+        "maCanBo" : "KCN100245",
+        "email" : "dauhx@ptit.edu.vn"
+    },
+    {
+        "maSv" : "PM1014",
+        "maCanBo" : "KCN100246",
+        "email" : "anhnh@ptit.edu.vn"
+    },
+    {
+        "maSv" : "HT1005",
+        "maCanBo" : "KCN100247",
+        "email" : "anhnx@ptit.edu.vn"
+    },
+    {
+        "maSv" : "PM1005",
+        "maCanBo" : "KCN100248",
+        "email" : "anhttv@ptit.edu.vn"
+    },
+    {
+        "maSv" : "KM1008",
+        "maCanBo" : "KCN100250",
+        "email" : "bachnx@ptit.edu.vn"
+    },
+    {
+        "maSv" : "HT1004",
+        "maCanBo" : "KCN100251",
+        "email" : "chinq@ptit.edu.vn"
+    },
+    {
+        "maSv" : "AT1002",
+        "maCanBo" : "KCN100252",
+        "email" : "chodx@ptit.edu.vn"
+    },
+    {
+        "maSv" : "AT1008",
+        "maCanBo" : "KCN100254",
+        "email" : "duydinhtr@gmail.com"
+    },
+    {
+        "maSv" : "AT1003",
+        "maCanBo" : "KCN100255",
+        "email" : "duyph@ptit.edu.vn"
+    },
+    {
+        "maSv" : "AT1004",
+        "maCanBo" : "KCN100257",
+        "email" : "diepnguyenngoc@ptit.edu.vn"
+    },
+    {
+        "maSv" : "PM1013",
+        "maCanBo" : "KCN100258",
+        "email" : "ducdt@ptit.edu.vn"
+    },
+    {
+        "maSv" : "HT1011",
+        "maCanBo" : "KCN100260",
+        "email" : "hapt@ptit.edu.vn"
+    },
+    {
+        "maSv" : "PM1004",
+        "maCanBo" : "KCN100261",
+        "email" : "hiennd@ptit.edu.vn"
+    },
+    {
+        "maSv" : "HT1009",
+        "maCanBo" : "KCN100262",
+        "email" : "hoand@ptit.edu.vn"
+    },
+    {
+        "maSv" : "PM1011",
+        "maCanBo" : "KCN100263",
+        "email" : "hungdn@ptit.edu.vn"
+    },
+    {
+        "maSv" : "PM1007",
+        "maCanBo" : "KCN100264",
+        "email" : "mhnguyen@ptit.edu.vn"
+    },
+    {
+        "maSv" : "PM1012",
+        "maCanBo" : "KCN100265",
+        "email" : "khanhnt@ptit.edu.vn"
+    },
+    {
+        "maSv" : "KM1009",
+        "maCanBo" : "KCN100266",
+        "email" : "namvh@ptit.edu.vn"
+    },
+    {
+        "maSv" : "PM1015",
+        "maCanBo" : "KCN100267",
+        "email" : "ngocdtb@ptit.edu.vn"
+    },
+    {
+        "maSv" : "TG0522",
+        "maCanBo" : "KCN100268",
+        "email" : "phongdn.aivietnam@gmail.com"
+    },
+    {
+        "maSv" : "KM1010",
+        "maCanBo" : "KCN100269",
+        "email" : "quynhdtt@ptit.edu.vn"
+    },
+    {
+        "maSv" : "PM1003",
+        "maCanBo" : "KCN100270",
+        "email" : "sonnm@ptit.edu.vn"
+    },
+    {
+        "maSv" : "PM1234",
+        "maCanBo" : "KCN100271",
+        "email" : "nvtien94@gmail.com"
+    },
+    {
+        "maSv" : "AT1006",
+        "maCanBo" : "KCN100272",
+        "email" : "tuandm@ptit.edu.vn"
+    },
+    {
+        "maSv" : "KM1011",
+        "maCanBo" : "KCN100273",
+        "email" : "thangnt@ptit.edu.vn"
+    },
+    {
+        "maSv" : "KM1018",
+        "maCanBo" : "KCN100274",
+        "email" : "vuhoaithu020896@gmail.com"
+    },
+    {
+        "maSv" : "HT1012",
+        "maCanBo" : "KCN100275",
+        "email" : "thuyntt@ptit.edu.vn"
+    },
+    {
+        "maSv" : "KM1013",
+        "maCanBo" : "KCN100276",
+        "email" : "thuynv@ptit.edu.vn"
+    },
+    {
+        "maSv" : "KM1019",
+        "maCanBo" : "KCN100277",
+        "email" : "trangnguyen.hust117@gmail.com"
+    },
+    {
+        "maSv" : "KM1017",
+        "maCanBo" : "KCN100279",
+        "email" : "truongdinh4w@gmail.com"
+    },
+    {
+        "maSv" : "TG0063",
+        "maCanBo" : "KCN100281",
+        "email" : "hoannq@ptit.edu.vn"
+    },
+    {
+        "maSv" : "PM1001",
+        "maCanBo" : "KCN100283",
+        "email" : "quetd@ptit.edu.vn"
+    },
+    {
+        "maSv" : "TG0013",
+        "maCanBo" : "KCN100284",
+        "email" : "thoavv@ptit.edu.vn"
+    },
+    {
+        "maSv" : "MT1001",
+        "maCanBo" : "KVT100285",
+        "email" : "bannt@ptit.edu.vn"
+    },
+    {
+        "maSv" : "VO1007",
+        "maCanBo" : "KVT100286",
+        "email" : "ngocdt@ptit.edu.vn"
+    },
+    {
+        "maSv" : "MT1013",
+        "maCanBo" : "KVT100287",
+        "email" : "trinhnc@ptit.edu.vn"
+    },
+    {
+        "maSv" : "TH1013",
+        "maCanBo" : "KVT100289",
+        "email" : "anhntt@ptit.edu.vn"
+    },
+    {
+        "maSv" : "TH1011",
+        "maCanBo" : "KVT100290",
+        "email" : "chaulh@ptit.edu.vn"
+    },
+    {
+        "maSv" : "KVT100292",
+        "maCanBo" : "KVT100292",
+        "email" : "damnv@ptit.edu.vn"
+    },
+    {
+        "maSv" : "TH1004",
+        "maCanBo" : "KVT100293",
+        "email" : "havt@ptit.edu.vn"
+    },
+    {
+        "maSv" : "TH1014",
+        "maCanBo" : "KVT100294",
+        "email" : "haidt102@gmail.com"
+    },
+    {
+        "maSv" : "MT1004",
+        "maCanBo" : "KVT100295",
+        "email" : "hangntt@ptit.edu.vn"
+    },
+    {
+        "maSv" : "TH1003",
+        "maCanBo" : "KVT100296",
+        "email" : "hiennt@ptit.edu.vn"
+    },
+    {
+        "maSv" : "VO1002",
+        "maCanBo" : "KVT100297",
+        "email" : "hienptt@ptit.edu.vn"
+    },
+    {
+        "maSv" : "VO1005",
+        "maCanBo" : "KVT100298",
+        "email" : "hoalt@ptit.edu.vn"
+    },
+    {
+        "maSv" : "VO1008",
+        "maCanBo" : "KVT100299",
+        "email" : "nvhung_vt1@ptit.edu.vn"
+    },
+    {
+        "maSv" : "MT1002",
+        "maCanBo" : "KVT100300",
+        "email" : "longnd@ptit.edu.vn"
+    },
+    {
+        "maSv" : "MT1005",
+        "maCanBo" : "KVT100301",
+        "email" : "hoangtrongminh@ptit.edu.vn"
+    },
+    {
+        "maSv" : "VO1004",
+        "maCanBo" : "KVT100302",
+        "email" : "minhnv@ptit.edu.vn"
+    },
+    {
+        "maSv" : "TH1007",
+        "maCanBo" : "KVT100303",
+        "email" : "ngantt@ptit.edu.vn"
+    },
+    {
+        "maSv" : "TH1006",
+        "maCanBo" : "KVT100304",
+        "email" : "sonch@ptit.edu.vn"
+    },
+    {
+        "maSv" : "MT1007",
+        "maCanBo" : "KVT100307",
+        "email" : "thupa@ptit.edu.vn"
+    },
+    {
+        "maSv" : "MT1006",
+        "maCanBo" : "KVT100310",
+        "email" : "trant@ptit.edu.vn"
+    },
+    {
+        "maSv" : "TH1008",
+        "maCanBo" : "KVT100311",
+        "email" : "trangntt1@ptit.edu.vn"
+    },
+    {
+        "maSv" : "KVT100312",
+        "maCanBo" : "KVT100312",
+        "email" : "dungntp1@ptit.edu.vn"
+    },
+    {
+        "maSv" : "KO1012",
+        "maCanBo" : "KTC100313",
+        "email" : "ducdtv@ptit.edu.vn"
+    },
+    {
+        "maSv" : "KO1013",
+        "maCanBo" : "KTC100314",
+        "email" : "haunv@ptit.edu.vn"
+    },
+    {
+        "maSv" : "KO1019",
+        "maCanBo" : "KTC100315",
+        "email" : "huonganhng@gmail.com"
+    },
+    {
+        "maSv" : "KO1018",
+        "maCanBo" : "KTC100316",
+        "email" : "anhntv@ptit.edu.vn"
+    },
+    {
+        "maSv" : "KO1017",
+        "maCanBo" : "KTC100317",
+        "email" : "anhlt1@ptit.edu.vn"
+    },
+    {
+        "maSv" : "KO1002",
+        "maCanBo" : "KTC100318",
+        "email" : "ketvq@ptit.edu.vn"
+    },
+    {
+        "maSv" : "KO1004",
+        "maCanBo" : "KTC100319",
+        "email" : "lamntc@ptit.edu.vn"
+    },
+    {
+        "maSv" : "TG0351",
+        "maCanBo" : "KTC100320",
+        "email" : "lentv@ptit.edu.vn"
+    },
+    {
+        "maSv" : "KO1020",
+        "maCanBo" : "KTC100321",
+        "email" : "nguyendang94@gmail.com"
+    },
+    {
+        "maSv" : "KO1015",
+        "maCanBo" : "KTC100322",
+        "email" : "phuongln@ptit.edu.vn"
+    },
+    {
+        "maSv" : "KO1016",
+        "maCanBo" : "KTC100323",
+        "email" : "thanhpvh@ptit.edu.vn"
+    },
+    {
+        "maSv" : "QL1005",
+        "maCanBo" : "KTC100324",
+        "email" : "ngoctt@ptit.edu.vn"
+    },
+    {
+        "maSv" : "QU1002",
+        "maCanBo" : "KTC100325",
+        "email" : "phongbx@ptit.edu.vn"
+    },
+    {
+        "maSv" : "KN1001",
+        "maCanBo" : "KQT100326",
+        "email" : "phongvt@ptit.edu.vn"
+    },
+    {
+        "maSv" : "QU1006",
+        "maCanBo" : "KQT100327",
+        "email" : "thaptt@ptit.edu.vn"
+    },
+    {
+        "maSv" : "QU1001",
+        "maCanBo" : "KQT100328",
+        "email" : "anntm@ptit.edu.vn"
+    },
+    {
+        "maSv" : "KN1007",
+        "maCanBo" : "KQT100329",
+        "email" : "anhdl@ptit.edu.vn"
+    },
+    {
+        "maSv" : "TG0518",
+        "maCanBo" : "KQT100330",
+        "email" : "anhttt@ptit.edu.vn"
+    },
+    {
+        "maSv" : "KN1003",
+        "maCanBo" : "KQT100331",
+        "email" : "diepletn@ptit.edu.vn"
+    },
+    {
+        "maSv" : "TG0363",
+        "maCanBo" : "KQT100332",
+        "email" : "KQT100332@ptit.edu.vn"
+    },
+    {
+        "maSv" : "KN1004",
+        "maCanBo" : "KQT100335",
+        "email" : "hanhtd@ptit.edu.vn"
+    },
+    {
+        "maSv" : "KN1006",
+        "maCanBo" : "KQT100336",
+        "email" : "hoatt@ptit.edu.vn"
+    },
+    {
+        "maSv" : "TG0534",
+        "maCanBo" : "KQT100337",
+        "email" : "huyennguyen.eco@gmail.com"
+    },
+    {
+        "maSv" : "QU1004",
+        "maCanBo" : "KQT100338",
+        "email" : "lanptm@ptit.edu.vn"
+    },
+    {
+        "maSv" : "KN1005",
+        "maCanBo" : "KQT100339",
+        "email" : "minhtn@ptit.edu.vn"
+    },
+    {
+        "maSv" : "QU1003",
+        "maCanBo" : "KQT100341",
+        "email" : "ngocltb@ptit.edu.vn"
+    },
+    {
+        "maSv" : "TT1001",
+        "maCanBo" : "KDP100344",
+        "email" : "hanglt@ptit.edu.vn"
+    },
+    {
+        "maSv" : "TT1006",
+        "maCanBo" : "KDP100345",
+        "email" : "anhnv@ptit.edu.vn"
+    },
+    {
+        "maSv" : "PT1010",
+        "maCanBo" : "KDP100346",
+        "email" : "anhvtt@ptit.edu.vn"
+    },
+    {
+        "maSv" : "PT1014",
+        "maCanBo" : "KDP100347",
+        "email" : "chaunc@ptit.edu.vn"
+    },
+    {
+        "maSv" : "TG0529",
+        "maCanBo" : "KDP100348",
+        "email" : "nguyenthudung.kgn@gmail.com"
+    },
+    {
+        "maSv" : "TT1003",
+        "maCanBo" : "KDP100350",
+        "email" : "duongth@ptit.edu.vn"
+    },
+    {
+        "maSv" : "TT1002",
+        "maCanBo" : "KDP100351",
+        "email" : "dieplv@ptit.edu.vn"
+    },
+    {
+        "maSv" : "TT1005",
+        "maCanBo" : "KDP100352",
+        "email" : "hoandh@ptit.edu.vn"
+    },
+    {
+        "maSv" : "QL1052",
+        "maCanBo" : "KDP100353",
+        "email" : "haihd@ptit.edu.vn"
+    },
+    {
+        "maSv" : "PT1009",
+        "maCanBo" : "KDP100354",
+        "email" : "huypc@ptit.edu.vn"
+    },
+    {
+        "maSv" : "TT1007",
+        "maCanBo" : "KDP100355",
+        "email" : "lamlv@ptit.edu.vn"
+    },
+    {
+        "maSv" : "PT1005",
+        "maCanBo" : "KDP100356",
+        "email" : "liendt@ptit.edu.vn"
+    },
+    {
+        "maSv" : "PT1011",
+        "maCanBo" : "KDP100358",
+        "email" : "maintt@ptit.edu.vn"
+    },
+    {
+        "maSv" : "PT1013",
+        "maCanBo" : "KDP100360",
+        "email" : "namtq@ptit.edu.vn"
+    },
+    {
+        "maSv" : "TG0535",
+        "maCanBo" : "KDP100361",
+        "email" : "tranngoctrangninh@gmail.com"
+    },
+    {
+        "maSv" : "PT1008",
+        "maCanBo" : "KDP100362",
+        "email" : "nganhth@ptit.edu.vn"
+    },
+    {
+        "maSv" : "PT1012",
+        "maCanBo" : "KDP100363",
+        "email" : "ngannk82@gmail.com"
+    },
+    {
+        "maSv" : "TTD014",
+        "maCanBo" : "KDP100365",
+        "email" : "sonnd@ptit.edu.vn"
+    },
+    {
+        "maSv" : "TG0523",
+        "maCanBo" : "KDP100366",
+        "email" : "thanhtam0306@gmail.com"
+    },
+    {
+        "maSv" : "PT1002",
+        "maCanBo" : "KDP100367",
+        "email" : "trungtq@ptit.edu.vn"
+    },
+    {
+        "maSv" : "KDP100368",
+        "maCanBo" : "KDP100368",
+        "email" : "huyenttt@ptit.edu.vn"
+    },
+    {
+        "maSv" : "TG0011",
+        "maCanBo" : "KCB200412",
+        "email" : "haingx@ptit.edu.vn"
+    },
+    {
+        "maSv" : "QL1033",
+        "maCanBo" : "KCB200416",
+        "email" : "nvhung@ptit.edu.vn"
+    },
+    {
+        "maSv" : "KCN200432",
+        "maCanBo" : "KCN200432",
+        "email" : "hieunt.tg@ptithcm.edu.vn"
+    },
+    {
+        "maSv" : "TG0231",
+        "maCanBo" : "KDT200451",
+        "email" : "binhnt@ptit.edu.vn"
+    },
+    {
+        "maSv" : "TG0316",
+        "maCanBo" : "KQT200484",
+        "email" : "KQT200484@ptit.edu.vn"
+    },
+    {
+        "maSv" : "KNM1005",
+        "maCanBo" : "VKT100563",
+        "email" : "chintk@ptit.edu.vn"
+    },
+    {
+        "maSv" : "KNM003",
+        "maCanBo" : "VKT100564",
+        "email" : "giangth@ptit.edu.vn"
+    },
+    {
+        "maSv" : "TG0386",
+        "maCanBo" : "VKT100566",
+        "email" : "phinga@ptit.edu.vn"
+    },
+    {
+        "maSv" : "KNM002",
+        "maCanBo" : "VKT100567",
+        "email" : "maitt@ptit.edu.vn"
+    },
+    {
+        "maSv" : "MAR001",
+        "maCanBo" : "VKT100569",
+        "email" : "yennth@ptit.edu.vn"
+    },
+    {
+        "maSv" : "MAR010",
+        "maCanBo" : "VKT100570",
+        "email" : "anhnn@ptit.edu.vn"
+    },
+    {
+        "maSv" : "MAR007",
+        "maCanBo" : "VKT100571",
+        "email" : "dungntp@ptit.edu.vn"
+    },
+    {
+        "maSv" : "MAR009",
+        "maCanBo" : "VKT100572",
+        "email" : "dungnv@ptit.edu.vn"
+    },
+    {
+        "maSv" : "MAR015",
+        "maCanBo" : "VKT100573",
+        "email" : "huong.tranmobifone@gmail.com"
+    },
+    {
+        "maSv" : "MAR008",
+        "maCanBo" : "VKT100574",
+        "email" : "maint@ptit.edu.vn"
+    },
+    {
+        "maSv" : "MAR005",
+        "maCanBo" : "VKT100575",
+        "email" : "minhnb@ptit.edu.vn"
+    },
+    {
+        "maSv" : "MAR012",
+        "maCanBo" : "VKT100579",
+        "email" : "ngoclb@ptit.edu.vn"
+    },
+    {
+        "maSv" : "MAR004",
+        "maCanBo" : "VKT100580",
+        "email" : "ngocnb@ptit.edu.vn"
+    },
+    {
+        "maSv" : "MAR016",
+        "maCanBo" : "VKT100581",
+        "email" : "thaiquynh91@gmail.com"
+    },
+    {
+        "maSv" : "MAR014",
+        "maCanBo" : "VKT100582",
+        "email" : "tienvu@ptit.edu.vn"
+    },
+    {
+        "maSv" : "MAR013",
+        "maCanBo" : "VKT100583",
+        "email" : "vietvt@ptit.edu.vn"
+    },
+    {
+        "maSv" : "TG0032",
+        "maCanBo" : "VKT100584",
+        "email" : "hadv@ptit.edu.vn"
+    },
+    {
+        "maCanBo" : "PQL100066",
+        "email" : "anhdt@ptit.edu.vn",
+        "maSv" : "QL1042"
+    },
+    {
+        "maSv" : "VPH100032",
+        "maCanBo" : "VPH100032",
+        "email" : "ndthinh@ptit.edu.vn"
+    },
+    {
+        "maSv" : "QL900001",
+        "maCanBo" : "psv900001",
+        "email" : "ngantt2@ptit.edu.vn"
+    },
+    {
+        "maSv" : "KVT100319",
+        "email" : "tuanmnvt1@ptit.edu.vn"
+    },
+    {
+        "maSv" : "TEST00002",
+        "email" : "example@domain.co"
+    },
+    {
+        "maSv" : "giaovu"
+    },
+    {
+        "maSv" : "hangtt"
+    },
+    {
+        "maSv" : "ngaptt"
+    },
+    {
+        "maSv" : "khaothi"
+    },
+    {
+        "maSv" : "dungbth"
+    },
+    {
+        "maSv" : "chiendd"
+    },
+    {
+        "maSv" : "ctctsv",
+        "email" : "a@yopmail.com"
+    },
+    {
+        "maSv" : "BGD100001",
+        "maCanBo" : "BGD100001",
+        "email" : "sanvv@ptit.edu.vn"
+    },
+    {
+        "maSv" : "BGD100002",
+        "maCanBo" : "BGD100002",
+        "email" : "lamvt@ptit.edu.vn"
+    },
+    {
+        "maSv" : "QL1049",
+        "maCanBo" : "BGD100005",
+        "email" : "anhtq@ptit.edu.vn"
+    },
+    {
+        "maSv" : "BGD200006",
+        "maCanBo" : "BGD200006",
+        "email" : "tanhanh@ptithcm.edu.vn"
+    },
+    {
+        "maSv" : "VPH100010",
+        "maCanBo" : "VPH100010",
+        "email" : "haitv@ptit.edu.vn"
+    },
+    {
+        "maSv" : "VPH100011",
+        "maCanBo" : "VPH100011",
+        "email" : "hungdq@ptit.edu.vn"
+    },
+    {
+        "maSv" : "VPH100012",
+        "maCanBo" : "VPH100012",
+        "email" : "gianghh@ptit.edu.vn"
+    },
+    {
+        "maSv" : "VPH100014",
+        "maCanBo" : "VPH100014",
+        "email" : "giangnth@ptit.edu.vn"
+    },
+    {
+        "maSv" : "VPH100015",
+        "maCanBo" : "VPH100015",
+        "email" : "quyendh@ptit.edu.vn"
+    },
+    {
+        "maSv" : "VPH100016",
+        "maCanBo" : "VPH100016",
+        "email" : "nganntt@ptit.edu.vn"
+    },
+    {
+        "maSv" : "VPH100017",
+        "maCanBo" : "VPH100017",
+        "email" : "mont@ptit.edu.vn"
+    },
+    {
+        "maSv" : "VPH100018",
+        "maCanBo" : "VPH100018",
+        "email" : "ngocmy.trinh@gmail.com"
+    },
+    {
+        "maSv" : "VPH100019",
+        "maCanBo" : "VPH100019",
+        "email" : "tuannm@ptit.edu.vn"
+    },
+    {
+        "maSv" : "VPH100020",
+        "maCanBo" : "VPH100020",
+        "email" : "bachvd@ptit.edu.vn"
+    },
+    {
+        "maSv" : "VPH100021",
+        "maCanBo" : "VPH100021",
+        "email" : "hiennq@ptit.edu.vn"
+    },
+    {
+        "maSv" : "VPH100022",
+        "maCanBo" : "VPH100022",
+        "email" : "phuongnv@ptit.edu.vn"
+    },
+    {
+        "maSv" : "VPH100024",
+        "maCanBo" : "VPH100024",
+        "email" : "thuttm@ptit.edu.vn"
+    },
+    {
+        "maSv" : "VPH100025",
+        "maCanBo" : "VPH100025",
+        "email" : "VPH100025@ptit.edu.vn"
+    },
+    {
+        "maSv" : "VPH100026",
+        "maCanBo" : "VPH100026",
+        "email" : "hunghv@ptit.edu.vn"
+    },
+    {
+        "maSv" : "VPH100028",
+        "maCanBo" : "VPH100028",
+        "email" : "namnp@ptit.edu.vn"
+    },
+    {
+        "maSv" : "VPH100029",
+        "maCanBo" : "VPH100029",
+        "email" : "nddung@ptit.edu.vn"
+    },
+    {
+        "maSv" : "VPH100030",
+        "maCanBo" : "VPH100030",
+        "email" : "ntngoc@ptit.edu.vn"
+    },
+    {
+        "maSv" : "VPH100031",
+        "maCanBo" : "VPH100031",
+        "email" : "nttuyen@ptit.edu.vn"
+    },
+    {
+        "maSv" : "VPH100033",
+        "maCanBo" : "VPH100033",
+        "email" : "xuannq@ptit.edu.vn"
+    },
+    {
+        "maSv" : "PTC100035",
+        "maCanBo" : "PTC100035",
+        "email" : "nhanntt@ptit.edu.vn"
+    },
+    {
+        "maSv" : "PTC100036",
+        "maCanBo" : "PTC100036",
+        "email" : "huypl@ptit.edu.vn"
+    },
+    {
+        "maSv" : "PTC100037",
+        "maCanBo" : "PTC100037",
+        "email" : "anhvut@ptit.edu.vn"
+    },
+    {
+        "maSv" : "PTC100038",
+        "maCanBo" : "PTC100038",
+        "email" : "dungpk@ptit.edu.vn"
+    },
+    {
+        "maSv" : "PTC100039",
+        "maCanBo" : "PTC100039",
+        "email" : "yencth@ptit.edu.vn"
+    },
+    {
+        "maSv" : "PTC100040",
+        "maCanBo" : "PTC100040",
+        "email" : "lanttp@ptit.edu.vn"
+    },
+    {
+        "maSv" : "PTC100041",
+        "maCanBo" : "PTC100041",
+        "email" : "vanlt@ptit.edu.vn"
+    },
+    {
+        "maSv" : "PTC100042",
+        "maCanBo" : "PTC100042",
+        "email" : "haipnh@ptit.edu.vn"
+    },
+    {
+        "maSv" : "PTC100043",
+        "maCanBo" : "PTC100043",
+        "email" : "ntmai@ptit.edu.vn"
+    },
+    {
+        "maSv" : "PSV100047",
+        "maCanBo" : "PSV100047",
+        "email" : "anlh@ptit.edu.vn"
+    },
+    {
+        "maSv" : "PSV100051",
+        "maCanBo" : "PSV100051",
+        "email" : "dungpd@ptit.edu.vn"
+    },
+    {
+        "maSv" : "PSV100054",
+        "maCanBo" : "PSV100054",
+        "email" : "linhnt@ptit.edu.vn"
+    },
+    {
+        "maSv" : "PSV100056",
+        "maCanBo" : "PSV100056",
+        "email" : "nttrang@ptit.edu.vn"
+    },
+    {
+        "maSv" : "PSV100057",
+        "maCanBo" : "PSV100057",
+        "email" : "yptn@ptit.edu.vn"
+    },
+    {
+        "maSv" : "PDT100058",
+        "maCanBo" : "PDT100058",
+        "email" : "tungdv@ptit.edu.vn"
+    },
+    {
+        "maSv" : "PDT100059",
+        "maCanBo" : "PDT100059",
+        "email" : "hattn@ptit.edu.vn"
+    },
+    {
+        "maSv" : "PDT100060",
+        "maCanBo" : "PDT100060",
+        "email" : "hanhdtb@ptit.edu.vn"
+    },
+    {
+        "maSv" : "PDT100062",
+        "maCanBo" : "PDT100062",
+        "email" : "nuonght@ptit.edu.vn"
+    },
+    {
+        "maSv" : "PDT100063",
+        "maCanBo" : "PDT100063",
+        "email" : "quynhph@ptit.edu.vn"
+    },
+    {
+        "maSv" : "PDT100064",
+        "maCanBo" : "PDT100064",
+        "email" : "tuyetnt@ptit.edu.vn"
+    },
+    {
+        "maSv" : "PQL100067",
+        "maCanBo" : "PQL100067",
+        "email" : "thangpt@ptit.edu.vn"
+    },
+    {
+        "maSv" : "PQL100068",
+        "maCanBo" : "PQL100068",
+        "email" : "yennh@ptit.edu.vn"
+    },
+    {
+        "maSv" : "PQL100069",
+        "maCanBo" : "PQL100069",
+        "email" : "thaotp@ptit.edu.vn"
+    },
+    {
+        "maSv" : "PQL100070",
+        "maCanBo" : "PQL100070",
+        "email" : "giangtth@ptit.edu.vn"
+    },
+    {
+        "maSv" : "PQL100072",
+        "maCanBo" : "PQL100072",
+        "email" : "huebm@ptit.edu.vn"
+    },
+    {
+        "maSv" : "PQL100073",
+        "maCanBo" : "PQL100073",
+        "email" : "phuongdtl@ptit.edu.vn"
+    },
+    {
+        "maSv" : "PQL100075",
+        "maCanBo" : "PQL100075",
+        "email" : "thampth@ptit.edu.vn"
+    },
+    {
+        "maSv" : "PKT100080",
+        "maCanBo" : "PKT100080",
+        "email" : "lienntb@ptit.edu.vn"
+    },
+    {
+        "maSv" : "PKT100081",
+        "maCanBo" : "PKT100081",
+        "email" : "hanh@ptit.edu.vn"
+    },
+    {
+        "maSv" : "PKT100082",
+        "maCanBo" : "PKT100082",
+        "email" : "ptthien@ptit.edu.vn"
+    },
+    {
+        "maSv" : "PKT100083",
+        "maCanBo" : "PKT100083",
+        "email" : "thuydtt@ptit.edu.vn"
+    },
+    {
+        "maSv" : "PKT100084",
+        "maCanBo" : "PKT100084",
+        "email" : "huyenvt@ptit.edu.vn"
+    },
+    {
+        "maSv" : "PKT100085",
+        "maCanBo" : "PKT100085",
+        "email" : "lucnh@ptit.edu.vn"
+    },
+    {
+        "maSv" : "PKT100086",
+        "maCanBo" : "PKT100086",
+        "email" : "thunth@ptit.edu.vn"
+    },
+    {
+        "maSv" : "PKT100088",
+        "maCanBo" : "PKT100088",
+        "email" : "lytt@ptit.edu.vn"
+    },
+    {
+        "maSv" : "PKT100089",
+        "maCanBo" : "PKT100089",
+        "email" : "havtv@ptit.edu.vn"
+    },
+    {
+        "maSv" : "PKT100090",
+        "maCanBo" : "PKT100090",
+        "email" : "hangcm@ptit.edu.vn"
+    },
+    {
+        "maSv" : "PKT100091",
+        "maCanBo" : "PKT100091",
+        "email" : "PKT100091@ptit.edu.vn"
+    },
+    {
+        "maSv" : "PKT100092",
+        "maCanBo" : "PKT100092",
+        "email" : "hanhttx@ptit.edu.vn"
+    },
+    {
+        "maSv" : "PKT100093",
+        "maCanBo" : "PKT100093",
+        "email" : "loannh@ptit.edu.vn"
+    },
+    {
+        "maSv" : "PKT100094",
+        "maCanBo" : "PKT100094",
+        "email" : "thanhhuongnt@ptit.edu.vn"
+    },
+    {
+        "maSv" : "PKT100095",
+        "maCanBo" : "PKT100095",
+        "email" : "tamdtm@ptit.edu.vn"
+    },
+    {
+        "maSv" : "PKT100096",
+        "maCanBo" : "PKT100096",
+        "email" : "phihaiyen09@gmail.com"
+    },
+    {
+        "maSv" : "PKH100097",
+        "maCanBo" : "PKH100097",
+        "email" : "tuantn@ptit.edu.vn"
+    },
+    {
+        "maSv" : "PKH100098",
+        "maCanBo" : "PKH100098",
+        "email" : "haidh@ptit.edu.vn"
+    },
+    {
+        "maSv" : "PKH100099",
+        "maCanBo" : "PKH100099",
+        "email" : "sonth@ptit.edu.vn"
+    },
+    {
+        "maSv" : "PKH100100",
+        "maCanBo" : "PKH100100",
+        "email" : "haibm@ptit.edu.vn"
+    },
+    {
+        "maSv" : "PKH100101",
+        "maCanBo" : "PKH100101",
+        "email" : "hieunk@ptit.edu.vn"
+    },
+    {
+        "maSv" : "PKH100102",
+        "maCanBo" : "PKH100102",
+        "email" : "hungnd@ptit.edu.vn"
+    },
+    {
+        "maSv" : "PKH100103",
+        "maCanBo" : "PKH100103",
+        "email" : "quanghung@ptit.edu.vn"
+    },
+    {
+        "maSv" : "PKH100104",
+        "maCanBo" : "PKH100104",
+        "email" : "khanhcq@ptit.edu.vn"
+    },
+    {
+        "maSv" : "PKH100105",
+        "maCanBo" : "PKH100105",
+        "email" : "namhp@ptit.edu.vn"
+    },
+    {
+        "maSv" : "PKH100106",
+        "maCanBo" : "PKH100106",
+        "email" : "quynhnd@ptit.edu.vn"
+    },
+    {
+        "maSv" : "PGV100111",
+        "maCanBo" : "PGV100111",
+        "email" : "giaptm@ptit.edu.vn"
+    },
+    {
+        "maSv" : "PGV100116",
+        "maCanBo" : "PGV100116",
+        "email" : "huongntt2@ptit.edu.vn"
+    },
+    {
+        "maSv" : "PGV100118",
+        "maCanBo" : "PGV100118",
+        "email" : "phuongctl@ptit.edu.vn"
+    },
+    {
+        "maSv" : "PGV100119",
+        "maCanBo" : "PGV100119",
+        "email" : "quangnn@ptit.edu.vn"
+    },
+    {
+        "maSv" : "PGV100120",
+        "maCanBo" : "PGV100120",
+        "email" : "tamltm@ptit.edu.vn"
+    },
+    {
+        "maSv" : "TKT100122",
+        "maCanBo" : "TKT100122",
+        "email" : "taipp@ptit.edu.vn"
+    },
+    {
+        "maSv" : "TKT100123",
+        "maCanBo" : "TKT100123",
+        "email" : "dungbth@ptit.edu.vn"
+    },
+    {
+        "maSv" : "TKT100124",
+        "maCanBo" : "TKT100124",
+        "email" : "hangtt@ptit.edu.vn"
+    },
+    {
+        "maSv" : "TKT100125",
+        "maCanBo" : "TKT100125",
+        "email" : "maudt@ptit.edu.vn"
+    },
+    {
+        "maSv" : "TKT100126",
+        "maCanBo" : "TKT100126",
+        "email" : "ngaptt@ptit.edu.vn"
+    },
+    {
+        "maSv" : "TKT100127",
+        "maCanBo" : "TKT100127",
+        "email" : "ngocnh@ptit.edu.vn"
+    },
+    {
+        "maSv" : "TKT100128",
+        "maCanBo" : "TKT100128",
+        "email" : "minhph@ptit.edu.vn"
+    },
+    {
+        "maSv" : "TKT100130",
+        "maCanBo" : "TKT100130",
+        "email" : "tranghtm@ptit.edu.vn"
+    },
+    {
+        "maSv" : "TTN100133",
+        "maCanBo" : "TTN100133",
+        "email" : "anhotv@ptit.edu.vn"
+    },
+    {
+        "maSv" : "TTN100134",
+        "maCanBo" : "TTN100134",
+        "email" : "doanbv@ptit.edu.vn"
+    },
+    {
+        "maSv" : "TTN100140",
+        "maCanBo" : "TTN100140",
+        "email" : "phund@ptit.edu.vn"
+    },
+    {
+        "maSv" : "TQT100147",
+        "maCanBo" : "TQT100147",
+        "email" : "luant@ptit.edu.vn"
+    },
+    {
+        "maSv" : "TQT100148",
+        "maCanBo" : "TQT100148",
+        "email" : "vanptc@ptit.edu.vn"
+    },
+    {
+        "maSv" : "TDV100150",
+        "maCanBo" : "TDV100150",
+        "email" : "hiencx@ptit.edu.vn"
+    },
+    {
+        "maSv" : "TDV100151",
+        "maCanBo" : "TDV100151",
+        "email" : "hongld@ptit.edu.vn"
+    },
+    {
+        "maSv" : "TDV100152",
+        "maCanBo" : "TDV100152",
+        "email" : "hungnm@ptit.edu.vn"
+    },
+    {
+        "maSv" : "TDV100153",
+        "maCanBo" : "TDV100153",
+        "email" : "sontc@ptit.edu.vn"
+    },
+    {
+        "maSv" : "TDV100154",
+        "maCanBo" : "TDV100154",
+        "email" : "quyetnh@ptit.edu.vn"
+    },
+    {
+        "maSv" : "TDV100155",
+        "maCanBo" : "TDV100155",
+        "email" : "nqhung@ptit.edu.vn"
+    },
+    {
+        "maSv" : "TDV100156",
+        "maCanBo" : "TDV100156",
+        "email" : "TDV100156@ptit.edu.vn"
+    },
+    {
+        "maSv" : "TDV100157",
+        "maCanBo" : "TDV100157",
+        "email" : "TDV100157@ptit.edu.vn"
+    },
+    {
+        "maSv" : "TDV100158",
+        "maCanBo" : "TDV100158",
+        "email" : "vietdt@ptit.edu.vn"
+    },
+    {
+        "maSv" : "TDV100159",
+        "maCanBo" : "TDV100159",
+        "email" : "bedt@ptit.edu.vn"
+    },
+    {
+        "maSv" : "TDV100160",
+        "maCanBo" : "TDV100160",
+        "email" : "cucnt@ptit.edu.vn"
+    },
+    {
+        "maSv" : "TDV100161",
+        "maCanBo" : "TDV100161",
+        "email" : "dungdc@ptit.edu.vn"
+    },
+    {
+        "maSv" : "TDV100162",
+        "maCanBo" : "TDV100162",
+        "email" : "nqdinh@ptit.edu.vn"
+    },
+    {
+        "maSv" : "TDV100163",
+        "maCanBo" : "TDV100163",
+        "email" : "dongnv@ptit.edu.vn"
+    },
+    {
+        "maSv" : "TDV100164",
+        "maCanBo" : "TDV100164",
+        "email" : "hanx@ptit.edu.vn"
+    },
+    {
+        "maSv" : "TDV100165",
+        "maCanBo" : "TDV100165",
+        "email" : "hanhmtb@ptit.edu.vn"
+    },
+    {
+        "maSv" : "TDV100167",
+        "maCanBo" : "TDV100167",
+        "email" : "hungnv@ptit.edu.vn"
+    },
+    {
+        "maSv" : "TDV100168",
+        "maCanBo" : "TDV100168",
+        "email" : "khuyenlt@ptit.edu.vn"
+    },
+    {
+        "maSv" : "TDV100169",
+        "maCanBo" : "TDV100169",
+        "email" : "loannt@ptit.edu.vn"
+    },
+    {
+        "maSv" : "TDV100170",
+        "maCanBo" : "TDV100170",
+        "email" : "muint@ptit.edu.vn"
+    },
+    {
+        "maSv" : "TDV100171",
+        "maCanBo" : "TDV100171",
+        "email" : "saudt@ptit.edu.vn"
+    },
+    {
+        "maSv" : "TDV100172",
+        "maCanBo" : "TDV100172",
+        "email" : "senltt@ptit.edu.vn"
+    },
+    {
+        "maSv" : "TDV100173",
+        "maCanBo" : "TDV100173",
+        "email" : "tamnt@ptit.edu.vn"
+    },
+    {
+        "maSv" : "TDV100175",
+        "maCanBo" : "TDV100175",
+        "email" : "nvtoan@ptit.edu.vn"
+    },
+    {
+        "maSv" : "TDV100176",
+        "maCanBo" : "TDV100176",
+        "email" : "toannq@ptit.edu.vn"
+    },
+    {
+        "maSv" : "TDV100177",
+        "maCanBo" : "TDV100177",
+        "email" : "tungnn@ptit.edu.vn"
+    },
+    {
+        "maSv" : "TDV100178",
+        "maCanBo" : "TDV100178",
+        "email" : "tungpt@ptit.edu.vn"
+    },
+    {
+        "maSv" : "TDV100179",
+        "maCanBo" : "TDV100179",
+        "email" : "tuyetlta@ptit.edu.vn"
+    },
+    {
+        "maSv" : "TDV100180",
+        "maCanBo" : "TDV100180",
+        "email" : "thieund@ptit.edu.vn"
+    },
+    {
+        "maSv" : "TDV100181",
+        "maCanBo" : "TDV100181",
+        "email" : "thuvt@ptit.edu.vn"
+    },
+    {
+        "maSv" : "TDV100182",
+        "maCanBo" : "TDV100182",
+        "email" : "vannh@ptit.edu.vn"
+    },
+    {
+        "maSv" : "vph100184",
+        "maCanBo" : "VPH100184",
+        "email" : "thuanltc@ptit.edu.vn"
+    },
+    {
+        "maSv" : "KSD100187",
+        "maCanBo" : "KSD100187",
+        "email" : "hanhnb@ptit.edu.vn"
+    },
+    {
+        "maSv" : "KSD100188",
+        "maCanBo" : "KSD100188",
+        "email" : "huongpt@ptit.edu.vn"
+    },
+    {
+        "maSv" : "KCB100220",
+        "maCanBo" : "KCB100220",
+        "email" : "thuydtp@ptit.edu.vn"
+    },
+    {
+        "maSv" : "KCB100223",
+        "maCanBo" : "KCB100223",
+        "email" : "hanhhh@ptit.edu.vn"
+    },
+    {
+        "maSv" : "KDT100241",
+        "maCanBo" : "KDT100241",
+        "email" : "lamnt@ptit.edu.vn"
+    },
+    {
+        "maSv" : "KCN100280",
+        "maCanBo" : "KCN100280",
+        "email" : "phuongdn@ptit.edu.vn"
+    },
+    {
+        "maSv" : "KCN100282",
+        "maCanBo" : "KCN100282",
+        "email" : "laplh@ptit.edu.vn"
+    },
+    {
+        "maSv" : "KVT100288",
+        "maCanBo" : "KVT100288",
+        "email" : "anhdtl@ptit.edu.vn"
+    },
+    {
+        "maSv" : "KVT100291",
+        "maCanBo" : "KVT100291",
+        "email" : "duynth@ptit.edu.vn"
+    },
+    {
+        "maSv" : "KVT100305",
+        "maCanBo" : "KVT100305",
+        "email" : "sonbt@ptit.edu.vn"
+    },
+    {
+        "maSv" : "KVT100306",
+        "maCanBo" : "KVT100306",
+        "email" : "tudtt@ptit.edu.vn"
+    },
+    {
+        "maSv" : "KVT100308",
+        "maCanBo" : "KVT100308",
+        "email" : "thuylt@ptit.edu.vn"
+    },
+    {
+        "maSv" : "KVT100309",
+        "maCanBo" : "KVT100309",
+        "email" : "thuyttt@ptit.edu.vn"
+    },
+    {
+        "maSv" : "KQT100333",
+        "maCanBo" : "KQT100333",
+        "email" : "Gracetran2210@gmail.com"
+    },
+    {
+        "maSv" : "KQT100334",
+        "maCanBo" : "KQT100334",
+        "email" : "hang.duong23@gmail.com"
+    },
+    {
+        "maSv" : "KQT100340",
+        "maCanBo" : "KQT100340",
+        "email" : "nganguyen@ptit.edu.vn"
+    },
+    {
+        "maSv" : "KQT100342",
+        "maCanBo" : "KQT100342",
+        "email" : "vanntl@ptit.edu.vn"
+    },
+    {
+        "maSv" : "KDP100343",
+        "maCanBo" : "KDP100343",
+        "email" : "tienvh@ptit.edu.vn"
+    },
+    {
+        "maSv" : "KDP100357",
+        "maCanBo" : "KDP100357",
+        "email" : "linhvt@ptit.edu.vn"
+    },
+    {
+        "maSv" : "KDP100364",
+        "maCanBo" : "KDP100364",
+        "email" : "phuongnth@ptit.edu.vn"
+    },
+    {
+        "maSv" : "PTC200369",
+        "maCanBo" : "PTC200369",
+        "email" : "soatpv@ptit.edu.vn"
+    },
+    {
+        "maSv" : "PTC200370",
+        "maCanBo" : "PTC200370",
+        "email" : "ntthuy@ptit.edu.vn"
+    },
+    {
+        "maSv" : "PTC200371",
+        "maCanBo" : "PTC200371",
+        "email" : "hoangpta@ptit.edu.vn"
+    },
+    {
+        "maSv" : "PTC200372",
+        "maCanBo" : "PTC200372",
+        "email" : "hungtran@ptit.edu.vn"
+    },
+    {
+        "maSv" : "PTC200373",
+        "maCanBo" : "PTC200373",
+        "email" : "tranth@ptit.edu.vn"
+    },
+    {
+        "maSv" : "PTC200374",
+        "maCanBo" : "PTC200374",
+        "email" : "khoandk@ptit.edu.vn"
+    },
+    {
+        "maSv" : "PTC200375",
+        "maCanBo" : "PTC200375",
+        "email" : "maivt@ptit.edu.vn"
+    },
+    {
+        "maSv" : "PTC200379",
+        "maCanBo" : "PTC200379",
+        "email" : "tienttm@ptit.edu.vn"
+    },
+    {
+        "maSv" : "PTC200380",
+        "maCanBo" : "PTC200380",
+        "email" : "trungvv@ptit.edu.vn"
+    },
+    {
+        "maSv" : "PTC200381",
+        "maCanBo" : "PTC200381",
+        "email" : "yennt@ptit.edu.vn"
+    },
+    {
+        "maSv" : "PKT200382",
+        "maCanBo" : "PKT200382",
+        "email" : "diemptb@ptit.edu.vn"
+    },
+    {
+        "maSv" : "PKT200383",
+        "maCanBo" : "PKT200383",
+        "email" : "mydkn@ptit.edu.vn"
+    },
+    {
+        "maSv" : "PKT200384",
+        "maCanBo" : "PKT200384",
+        "email" : "ntthanh@ptit.edu.vn"
+    },
+    {
+        "maSv" : "PKT200385",
+        "maCanBo" : "PKT200385",
+        "email" : "thaoptt@ptit.edu.vn"
+    },
+    {
+        "maSv" : "PKT200386",
+        "maCanBo" : "PKT200386",
+        "email" : "thoht@ptit.edu.vn"
+    },
+    {
+        "maSv" : "PKT200387",
+        "maCanBo" : "PKT200387",
+        "email" : "thuda@ptit.edu.vn"
+    },
+    {
+        "maSv" : "PKT200388",
+        "maCanBo" : "PKT200388",
+        "email" : "xinhlth@ptit.edu.vn"
+    },
+    {
+        "maSv" : "PDT200389",
+        "maCanBo" : "PDT200389",
+        "email" : "phulq@ptit.edu.vn"
+    },
+    {
+        "maSv" : "PDT200390",
+        "maCanBo" : "PDT200390",
+        "email" : "duytt@ptit.edu.vn"
+    },
+    {
+        "maSv" : "PDT200391",
+        "maCanBo" : "PDT200391",
+        "email" : "dannv@ptit.edu.vn"
+    },
+    {
+        "maSv" : "PDT200392",
+        "maCanBo" : "PDT200392",
+        "email" : "dungnh@ptit.edu.vn"
+    },
+    {
+        "maSv" : "PDT200393",
+        "maCanBo" : "PDT200393",
+        "email" : "lybt@ptit.edu.vn"
+    },
+    {
+        "maSv" : "PDT200394",
+        "maCanBo" : "PDT200394",
+        "email" : "thaontp@ptit.edu.vn"
+    },
+    {
+        "maSv" : "PGV200395",
+        "maCanBo" : "PGV200395",
+        "email" : "khanhnx@ptit.edu.vn"
+    },
+    {
+        "maSv" : "PGV200396",
+        "maCanBo" : "PGV200396",
+        "email" : "bangnn@ptit.edu.vn"
+    },
+    {
+        "maSv" : "PGV200397",
+        "maCanBo" : "PGV200397",
+        "email" : "cuongnx@ptit.edu.vn"
+    },
+    {
+        "maSv" : "PGV200398",
+        "maCanBo" : "PGV200398",
+        "email" : "huyenctt@ptit.edu.vn"
+    },
+    {
+        "maSv" : "PGV200399",
+        "maCanBo" : "PGV200399",
+        "email" : "khimdt@ptit.edu.vn"
+    },
+    {
+        "maSv" : "PGV200400",
+        "maCanBo" : "PGV200400",
+        "email" : "trangltt@ptit.edu.vn"
+    },
+    {
+        "maSv" : "PSV200401",
+        "maCanBo" : "PSV200401",
+        "email" : "thuantq@ptit.edu.vn"
+    },
+    {
+        "maSv" : "PSV200402",
+        "maCanBo" : "PSV200402",
+        "email" : "hoaltm@ptit.edu.vn"
+    },
+    {
+        "maSv" : "PSV200403",
+        "maCanBo" : "PSV200403",
+        "email" : "huongnm@ptit.edu.vn"
+    },
+    {
+        "maSv" : "PSV200404",
+        "maCanBo" : "PSV200404",
+        "email" : "nhamnl@ptit.edu.vn"
+    },
+    {
+        "maSv" : "PSV200405",
+        "maCanBo" : "PSV200405",
+        "email" : "yendth@ptit.edu.vn"
+    },
+    {
+        "maSv" : "TKT200406",
+        "maCanBo" : "TKT200406",
+        "email" : "nhthanh@ptit.edu.vn"
+    },
+    {
+        "maSv" : "TKT200407",
+        "maCanBo" : "TKT200407",
+        "email" : "dhha@ptit.edu.vn"
+    },
+    {
+        "maSv" : "TKT200408",
+        "maCanBo" : "TKT200408",
+        "email" : "hanhhlh@ptit.edu.vn"
+    },
+    {
+        "maSv" : "TKT200409",
+        "maCanBo" : "TKT200409",
+        "email" : "hieunth@ptit.edu.vn"
+    },
+    {
+        "maSv" : "TKT200410",
+        "maCanBo" : "TKT200410",
+        "email" : "linhtnp@ptit.edu.vn"
+    },
+    {
+        "maSv" : "TKT200411",
+        "maCanBo" : "TKT200411",
+        "email" : "yntn@ptit.edu.vn"
+    },
+    {
+        "maSv" : "KCB200413",
+        "maCanBo" : "KCB200413",
+        "email" : "quannguyen@ptit.edu.vn"
+    },
+    {
+        "maSv" : "KCB200414",
+        "maCanBo" : "KCB200414",
+        "email" : "baotk@ptit.edu.vn"
+    },
+    {
+        "maSv" : "KCB200415",
+        "maCanBo" : "KCB200415",
+        "email" : "ducph@ptit.edu.vn"
+    },
+    {
+        "maSv" : "KCB200417",
+        "maCanBo" : "KCB200417",
+        "email" : "linhnty@ptit.edu.vn"
+    },
+    {
+        "maSv" : "KCB200418",
+        "maCanBo" : "KCB200418",
+        "email" : "loanntp@ptit.edu.vn"
+    },
+    {
+        "maSv" : "KCB200419",
+        "maCanBo" : "KCB200419",
+        "email" : "nhandnt@ptit.edu.vn"
+    },
+    {
+        "maSv" : "KCB200420",
+        "maCanBo" : "KCB200420",
+        "email" : "phongnd@ptit.edu.vn"
+    },
+    {
+        "maSv" : "KCB200421",
+        "maCanBo" : "KCB200421",
+        "email" : "thienlg@ptit.edu.vn"
+    },
+    {
+        "maSv" : "KCB200422",
+        "maCanBo" : "KCB200422",
+        "email" : "thuytrinh@ptithcm.edu.vn"
+    },
+    {
+        "maSv" : "KCB200423",
+        "maCanBo" : "KCB200423",
+        "email" : "vinhlh@ptit.edu.vn"
+    },
+    {
+        "maSv" : "KCB200424",
+        "maCanBo" : "KCB200424",
+        "email" : "yendn@ptit.edu.vn"
+    },
+    {
+        "maSv" : "KCB200425",
+        "maCanBo" : "KCB200425",
+        "email" : "thuylet@ptit.edu.vn"
+    },
+    {
+        "maSv" : "KCN200426",
+        "maCanBo" : "KCN200426",
+        "email" : "sonngh@ptit.edu.vn"
+    },
+    {
+        "maSv" : "KCN200427",
+        "maCanBo" : "KCN200427",
+        "email" : "thulnk@ptit.edu.vn"
+    },
+    {
+        "maSv" : "KCN200428",
+        "maCanBo" : "KCN200428",
+        "email" : "duynn@ptit.edu.vn"
+    },
+    {
+        "maSv" : "KCN200429",
+        "maCanBo" : "KCN200429",
+        "email" : "diepln@ptit.edu.vn"
+    },
+    {
+        "maSv" : "KCN200430",
+        "maCanBo" : "KCN200430",
+        "email" : "haona@ptit.edu.vn"
+    },
+    {
+        "maSv" : "KCN200431",
+        "maCanBo" : "KCN200431",
+        "email" : "hieppn@ptithcm.edu.vn"
+    },
+    {
+        "maSv" : "KCN200433",
+        "maCanBo" : "KCN200433",
+        "email" : "hoalm@ptit.edu.vn"
+    },
+    {
+        "maSv" : "KCN200434",
+        "maCanBo" : "KCN200434",
+        "email" : "hypt@ptit.edu.vn"
+    },
+    {
+        "maSv" : "KCN200435",
+        "maCanBo" : "KCN200435",
+        "email" : "linhdm.tg@ptithcm.edu.vn"
+    },
+    {
+        "maSv" : "KCN200436",
+        "maCanBo" : "KCN200436",
+        "email" : "loctv@ptit.edu.vn"
+    },
+    {
+        "maSv" : "KCN200437",
+        "maCanBo" : "KCN200437",
+        "email" : "KCN200437@ptit.edu.vn"
+    },
+    {
+        "maSv" : "KCN200438",
+        "maCanBo" : "KCN200438",
+        "email" : "nguyenntb@ptit.edu.vn"
+    },
+    {
+        "maSv" : "KCN200439",
+        "maCanBo" : "KCN200439",
+        "email" : "saunv@ptit.edu.vn"
+    },
+    {
+        "maSv" : "KCN200440",
+        "maCanBo" : "KCN200440",
+        "email" : "ntthai@ptit.edu.vn"
+    },
+    {
+        "maSv" : "KCN200441",
+        "maCanBo" : "KCN200441",
+        "email" : "tamht@ptit.edu.vn"
+    },
+    {
+        "maSv" : "KCN200442",
+        "maCanBo" : "KCN200442",
+        "email" : "nhthanh@ptithcm.edu.vn"
+    },
+    {
+        "maSv" : "KCN200443",
+        "maCanBo" : "KCN200443",
+        "email" : "thuaht@ptit.edu.vn"
+    },
+    {
+        "maSv" : "KCN200444",
+        "maCanBo" : "KCN200444",
+        "email" : "trinhhtt@ptit.edu.vn"
+    },
+    {
+        "maSv" : "KCN200445",
+        "maCanBo" : "KCN200445",
+        "email" : "truht@ptit.edu.vn"
+    },
+    {
+        "maSv" : "KCN200446",
+        "maCanBo" : "KCN200446",
+        "email" : "vittn.tg@ptithcm.edu.vn"
+    },
+    {
+        "maSv" : "KCN200447",
+        "maCanBo" : "KCN200447",
+        "email" : "trangnln@ptit.edu.vn"
+    },
+    {
+        "maSv" : "KCN200448",
+        "maCanBo" : "KCN200448",
+        "email" : "hungtc@ptit.edu.vn"
+    },
+    {
+        "maSv" : "KDT200450",
+        "maCanBo" : "KDT200450",
+        "email" : "nhatnl@ptit.edu.vn"
+    },
+    {
+        "maSv" : "KDT200452",
+        "maCanBo" : "KDT200452",
+        "email" : "anhnl@ptit.edu.vn"
+    },
+    {
+        "maSv" : "KDT200454",
+        "maCanBo" : "KDT200454",
+        "email" : "duypt@ptit.edu.vn"
+    },
+    {
+        "maSv" : "KDT200455",
+        "maCanBo" : "KDT200455",
+        "email" : "dattd@ptit.edu.vn"
+    },
+    {
+        "maSv" : "KDT200456",
+        "maCanBo" : "KDT200456",
+        "email" : "huannt@ptit.edu.vn"
+    },
+    {
+        "maSv" : "KDT200457",
+        "maCanBo" : "KDT200457",
+        "email" : "kiennt021186@gmail.com"
+    },
+    {
+        "maSv" : "KDT200458",
+        "maCanBo" : "KDT200458",
+        "email" : "lamct@ptit.edu.vn"
+    },
+    {
+        "maSv" : "KDT200459",
+        "maCanBo" : "KDT200459",
+        "email" : "minhhn@ptit.edu.vn"
+    },
+    {
+        "maSv" : "KDT200460",
+        "maCanBo" : "KDT200460",
+        "email" : "minhpx@ptit.edu.vn"
+    },
+    {
+        "maSv" : "KDT200461",
+        "maCanBo" : "KDT200461",
+        "email" : "ngocptd@ptit.edu.vn"
+    },
+    {
+        "maSv" : "KDT200462",
+        "maCanBo" : "KDT200462",
+        "email" : "ndphong@ptit.edu.vn"
+    },
+    {
+        "maSv" : "KDT200463",
+        "maCanBo" : "KDT200463",
+        "email" : "quynhptn@ptit.edu.vn"
+    },
+    {
+        "maSv" : "KQT200464",
+        "maCanBo" : "KQT200464",
+        "email" : "ngatd@ptit.edu.vn"
+    },
+    {
+        "maSv" : "KQT200465",
+        "maCanBo" : "KQT200465",
+        "email" : "sanght@ptit.edu.vn"
+    },
+    {
+        "maSv" : "KQT200466",
+        "maCanBo" : "KQT200466",
+        "email" : "phamlananhdtw@gmail.com"
+    },
+    {
+        "maSv" : "KQT200467",
+        "maCanBo" : "KQT200467",
+        "email" : "ttnha@ptit.edu.vn"
+    },
+    {
+        "maSv" : "KQT200468",
+        "maCanBo" : "KQT200468",
+        "email" : "hanhpm@ptit.edu.vn"
+    },
+    {
+        "maSv" : "KQT200469",
+        "maCanBo" : "KQT200469",
+        "email" : "nguyenthiphuonghao@ptithcm.edu.vn"
+    },
+    {
+        "maSv" : "KQT200470",
+        "maCanBo" : "KQT200470",
+        "email" : "KQT200470@ptit.edu.vn"
+    },
+    {
+        "maCanBo" : "KQT200471",
+        "email" : "huongntt@ptit.edu.vn"
+    },
+    {
+        "maSv" : "KQT200472",
+        "maCanBo" : "KQT200472",
+        "email" : "lamnb@ptit.edu.vn"
+    },
+    {
+        "maSv" : "KQT200473",
+        "maCanBo" : "KQT200473",
+        "email" : "littk@ptit.edu.vn"
+    },
+    {
+        "maSv" : "KQT200474",
+        "maCanBo" : "KQT200474",
+        "email" : "lucdn@ptit.edu.vn"
+    },
+    {
+        "maSv" : "KQT200475",
+        "maCanBo" : "KQT200475",
+        "email" : "minhdnu@ptit.edu.vn"
+    },
+    {
+        "maSv" : "KQT200479",
+        "maCanBo" : "KQT200479",
+        "email" : "phuocnv@ptit.edu.vn"
+    },
+    {
+        "maSv" : "KQT200480",
+        "maCanBo" : "KQT200480",
+        "email" : "tuyetthanh@vnpt.vn"
+    },
+    {
+        "maSv" : "KQT200481",
+        "maCanBo" : "KQT200481",
+        "email" : "tranlnn@ptit.edu.vn"
+    },
+    {
+        "maSv" : "KQT200482",
+        "maCanBo" : "KQT200482",
+        "email" : "trongdd@ptit.edu.vn"
+    },
+    {
+        "maSv" : "KQT200483",
+        "maCanBo" : "KQT200483",
+        "email" : "uyennth@ptit.edu.vn"
+    },
+    {
+        "maSv" : "KQT200485",
+        "maCanBo" : "KQT200485",
+        "email" : "vothithanhthuy@ptithcm.edu.vn"
+    },
+    {
+        "maSv" : "KQT200486",
+        "maCanBo" : "KQT200486",
+        "email" : "tranthanhtra@ptithcm.edu.vn"
+    },
+    {
+        "maSv" : "KQT200487",
+        "maCanBo" : "KQT200487",
+        "email" : "banx@ptit.edu.vn"
+    },
+    {
+        "maSv" : "KQT200488",
+        "maCanBo" : "KQT200488",
+        "email" : "hanhpth@ptit.edu.vn"
+    },
+    {
+        "maSv" : "KQT200489",
+        "maCanBo" : "KQT200489",
+        "email" : "tandk@ptit.edu.vn"
+    },
+    {
+        "maSv" : "KVT200490",
+        "maCanBo" : "KVT200490",
+        "email" : "baovnq@ptit.edu.vn"
+    },
+    {
+        "maSv" : "KVT200491",
+        "maCanBo" : "KVT200491",
+        "email" : "thuantd@ptit.edu.vn"
+    },
+    {
+        "maSv" : "KVT200492",
+        "maCanBo" : "KVT200492",
+        "email" : "chinhnd@ptit.edu.vn"
+    },
+    {
+        "maSv" : "KVT200493",
+        "maCanBo" : "KVT200493",
+        "email" : "dampt@ptit.edu.vn"
+    },
+    {
+        "maSv" : "KVT200494",
+        "maCanBo" : "KVT200494",
+        "email" : "emdvv@ptit.edu.vn"
+    },
+    {
+        "maSv" : "KVT200495",
+        "maCanBo" : "KVT200495",
+        "email" : "hiennv@ptit.edu.vn"
+    },
+    {
+        "maSv" : "KVT200496",
+        "maCanBo" : "KVT200496",
+        "email" : "hoahv@ptit.edu.vn"
+    },
+    {
+        "maSv" : "KVT200497",
+        "maCanBo" : "KVT200497",
+        "email" : "hoppq@ptit.edu.vn"
+    },
+    {
+        "maSv" : "KVT200498",
+        "maCanBo" : "KVT200498",
+        "email" : "khanhld@ptit.edu.vn"
+    },
+    {
+        "maSv" : "KVT200499",
+        "maCanBo" : "KVT200499",
+        "email" : "khanlc@ptit.edu.vn"
+    },
+    {
+        "maSv" : "KVT200500",
+        "maCanBo" : "KVT200500",
+        "email" : "quangpm@ptit.edu.vn"
+    },
+    {
+        "maSv" : "KVT200501",
+        "maCanBo" : "KVT200501",
+        "email" : "toannk@ptit.edu.vn"
+    },
+    {
+        "maSv" : "KVT200502",
+        "maCanBo" : "KVT200502",
+        "email" : "toanpt@ptit.edu.vn"
+    },
+    {
+        "maSv" : "KVT200503",
+        "maCanBo" : "KVT200503",
+        "email" : "KVT200503@ptit.edu.vn"
+    },
+    {
+        "maSv" : "KVT200504",
+        "maCanBo" : "KVT200504",
+        "email" : "nttthuy@ptit.edu.vn"
+    },
+    {
+        "maSv" : "TDV200505",
+        "maCanBo" : "TDV200505",
+        "email" : "vannt@ptit.edu.vn"
+    },
+    {
+        "maSv" : "TDV200506",
+        "maCanBo" : "TDV200506",
+        "email" : "cunglv@ptit.edu.vn"
+    },
+    {
+        "maSv" : "TDV200507",
+        "maCanBo" : "TDV200507",
+        "email" : "doaitd@ptit.edu.vn"
+    },
+    {
+        "maSv" : "TDV200508",
+        "maCanBo" : "TDV200508",
+        "email" : "hoangbv@ptit.edu.vn"
+    },
+    {
+        "maSv" : "TDV200509",
+        "maCanBo" : "TDV200509",
+        "email" : "hongtd@ptit.edu.vn"
+    },
+    {
+        "maSv" : "TDV200510",
+        "maCanBo" : "TDV200510",
+        "email" : "nmhung@ptit.edu.vn"
+    },
+    {
+        "maSv" : "TDV200511",
+        "maCanBo" : "TDV200511",
+        "email" : "minhvv@ptit.edu.vn"
+    },
+    {
+        "maSv" : "TDV200512",
+        "maCanBo" : "TDV200512",
+        "email" : "phuoclv@ptit.edu.vn"
+    },
+    {
+        "maSv" : "TDV200514",
+        "maCanBo" : "TDV200514",
+        "email" : "sondt@ptit.edu.vn"
+    },
+    {
+        "maSv" : "TDV200515",
+        "maCanBo" : "TDV200515",
+        "email" : "sondv@ptit.edu.vn"
+    },
+    {
+        "maSv" : "TDV200516",
+        "maCanBo" : "TDV200516",
+        "email" : "sonnh@ptit.edu.vn"
+    },
+    {
+        "maSv" : "TDV200517",
+        "maCanBo" : "TDV200517",
+        "email" : "tuantv@ptit.edu.vn"
+    },
+    {
+        "maSv" : "TDV200518",
+        "maCanBo" : "TDV200518",
+        "email" : "vyln@ptit.edu.vn"
+    },
+    {
+        "maSv" : "VKH100519",
+        "maCanBo" : "VKH100519",
+        "email" : "daidt@ptit.edu.vn"
+    },
+    {
+        "maSv" : "VKH100520",
+        "maCanBo" : "VKH100520",
+        "email" : "chinhtt@ptit.edu.vn"
+    },
+    {
+        "maSv" : "VKH100521",
+        "maCanBo" : "VKH100521",
+        "email" : "huongvtl@ptit.edu.vn"
+    },
+    {
+        "maSv" : "VKH100522",
+        "maCanBo" : "VKH100522",
+        "email" : "anhdh@ptit.edu.vn"
+    },
+    {
+        "maSv" : "VKH100523",
+        "maCanBo" : "VKH100523",
+        "email" : "lhminh@ptit.edu.vn"
+    },
+    {
+        "maSv" : "VKH100524",
+        "maCanBo" : "VKH100524",
+        "email" : "oanhdt@ptit.edu.vn"
+    },
+    {
+        "maSv" : "VKH100525",
+        "maCanBo" : "VKH100525",
+        "email" : "thinttm@ptit.edu.vn"
+    },
+    {
+        "maSv" : "VKH100526",
+        "maCanBo" : "VKH100526",
+        "email" : "uyendt@ptit.edu.vn"
+    },
+    {
+        "maSv" : "VKH100527",
+        "maCanBo" : "VKH100527",
+        "email" : "sonvh@ptit.edu.vn"
+    },
+    {
+        "maSv" : "VKH100528",
+        "maCanBo" : "VKH100528",
+        "email" : "namntp@ptit.edu.vn"
+    },
+    {
+        "maSv" : "VKH100529",
+        "maCanBo" : "VKH100529",
+        "email" : "dieuth@ptit.edu.vn"
+    },
+    {
+        "maSv" : "VKH100530",
+        "maCanBo" : "VKH100530",
+        "email" : "linhct@ptit.edu.vn"
+    },
+    {
+        "maSv" : "VKH100531",
+        "maCanBo" : "VKH100531",
+        "email" : "duchq@ptit.edu.vn"
+    },
+    {
+        "maSv" : "VKH100532",
+        "maCanBo" : "VKH100532",
+        "email" : "nhandt@ptit.edu.vn"
+    },
+    {
+        "maSv" : "VKH100533",
+        "maCanBo" : "VKH100533",
+        "email" : "vuongld@ptit.edu.vn"
+    },
+    {
+        "maSv" : "VKH100534",
+        "maCanBo" : "VKH100534",
+        "email" : "quantm@ptit.edu.vn"
+    },
+    {
+        "maSv" : "VKH100535",
+        "maCanBo" : "VKH100535",
+        "email" : "hantm@ptit.edu.vn"
+    },
+    {
+        "maSv" : "VKH100536",
+        "maCanBo" : "VKH100536",
+        "email" : "longth@ptit.edu.vn"
+    },
+    {
+        "maSv" : "VKH100537",
+        "maCanBo" : "VKH100537",
+        "email" : "phongtt@ptit.edu.vn"
+    },
+    {
+        "maSv" : "VKH100538",
+        "maCanBo" : "VKH100538",
+        "email" : "duongdd@ptit.edu.vn"
+    },
+    {
+        "maSv" : "VKH100539",
+        "maCanBo" : "VKH100539",
+        "email" : "khanhtb@ptit.edu.vn"
+    },
+    {
+        "maSv" : "VKH100540",
+        "maCanBo" : "VKH100540",
+        "email" : "phongch@ptit.edu.vn"
+    },
+    {
+        "maSv" : "VKH100541",
+        "maCanBo" : "VKH100541",
+        "email" : "tttu@ptit.edu.vn"
+    },
+    {
+        "maSv" : "VKH100542",
+        "maCanBo" : "VKH100542",
+        "email" : "nvdung@ptit.edu.vn"
+    },
+    {
+        "maSv" : "VKH100543",
+        "maCanBo" : "VKH100543",
+        "email" : "hado@ptit.edu.vn"
+    },
+    {
+        "maSv" : "VKH100544",
+        "maCanBo" : "VKH100544",
+        "email" : "hiendt@ptit.edu.vn"
+    },
+    {
+        "maSv" : "VKH100545",
+        "maCanBo" : "VKH100545",
+        "email" : "tqhung@ptit.edu.vn"
+    },
+    {
+        "maSv" : "VKH100546",
+        "maCanBo" : "VKH100546",
+        "email" : "huongdd@ptit.edu.vn"
+    },
+    {
+        "maSv" : "VKH100547",
+        "maCanBo" : "VKH100547",
+        "email" : "chungpd@ptit.edu.vn"
+    },
+    {
+        "maSv" : "VKH100548",
+        "maCanBo" : "VKH100548",
+        "email" : "binhpv@ptit.edu.vn"
+    },
+    {
+        "maSv" : "VKH200550",
+        "maCanBo" : "VKH200550",
+        "email" : "chieunh@ptit.edu.vn"
+    },
+    {
+        "maSv" : "VKH200551",
+        "maCanBo" : "VKH200551",
+        "email" : "longtv@ptit.edu.vn"
+    },
+    {
+        "maSv" : "VKH200552",
+        "maCanBo" : "VKH200552",
+        "email" : "quangnt@ptit.edu.vn"
+    },
+    {
+        "maSv" : "VKH200554",
+        "maCanBo" : "VKH200554",
+        "email" : "taiph@ptit.edu.vn"
+    },
+    {
+        "maSv" : "VKH200555",
+        "maCanBo" : "VKH200555",
+        "email" : "tuyethta@ptit.edu.vn"
+    },
+    {
+        "maSv" : "VKT100556",
+        "maCanBo" : "VKT100556",
+        "email" : "namtd@ptit.edu.vn"
+    },
+    {
+        "maSv" : "VKT100557",
+        "maCanBo" : "VKT100557",
+        "email" : "linhnn@ptit.edu.vn"
+    },
+    {
+        "maSv" : "VKT100558",
+        "maCanBo" : "VKT100558",
+        "email" : "anhttl@ptit.edu.vn"
+    },
+    {
+        "maSv" : "VKT100559",
+        "maCanBo" : "VKT100559",
+        "email" : "anhntk@ptit.edu.vn"
+    },
+    {
+        "maSv" : "VKT100560",
+        "maCanBo" : "VKT100560",
+        "email" : "hongdtt@ptit.edu.vn"
+    },
+    {
+        "maSv" : "VKT100561",
+        "maCanBo" : "VKT100561",
+        "email" : "huyennn@ptit.edu.vn"
+    },
+    {
+        "maSv" : "VKT100562",
+        "maCanBo" : "VKT100562",
+        "email" : "lyttr@ptit.edu.vn"
+    },
+    {
+        "maCanBo" : "VKT100565",
+        "email" : "huongdt@ptit.edu.vn"
+    },
+    {
+        "maSv" : "VKT100568",
+        "maCanBo" : "VKT100568",
+        "email" : "huyendtt@ptit.edu.vn"
+    },
+    {
+        "maSv" : "VKT100585",
+        "maCanBo" : "VKT100585",
+        "email" : "thiennx@ptit.edu.vn"
+    },
+    {
+        "maSv" : "VKT100586",
+        "maCanBo" : "VKT100586",
+        "email" : "binhdt@ptit.edu.vn"
+    },
+    {
+        "maSv" : "VKT100587",
+        "maCanBo" : "VKT100587",
+        "email" : "hieuvt@ptit.edu.vn"
+    },
+    {
+        "maSv" : "VKT100588",
+        "maCanBo" : "VKT100588",
+        "email" : "ndhung@ptit.edu.vn"
+    },
+    {
+        "maSv" : "VKT100589",
+        "maCanBo" : "VKT100589",
+        "email" : "manhph@ptit.edu.vn"
+    },
+    {
+        "maSv" : "VKT100590",
+        "maCanBo" : "VKT100590",
+        "email" : "ngocntb@ptit.edu.vn"
+    },
+    {
+        "maSv" : "VKT100591",
+        "maCanBo" : "VKT100591",
+        "email" : "phonglt@ptit.edu.vn"
+    },
+    {
+        "maSv" : "VKT100592",
+        "maCanBo" : "VKT100592",
+        "email" : "nangtt@ptit.edu.vn"
+    },
+    {
+        "maSv" : "VCN100595",
+        "maCanBo" : "VCN100595",
+        "email" : "kiennt@ptit.edu.vn"
+    },
+    {
+        "maSv" : "VCN100596",
+        "maCanBo" : "VCN100596",
+        "email" : "quangnk@ptit.edu.vn"
+    },
+    {
+        "maSv" : "VCN100597",
+        "maCanBo" : "VCN100597",
+        "email" : "thangcm@ptit.edu.vn"
+    },
+    {
+        "maSv" : "VCN100598",
+        "maCanBo" : "VCN100598",
+        "email" : "quangdv@ptit.edu.vn"
+    },
+    {
+        "maSv" : "VCN100599",
+        "maCanBo" : "VCN100599",
+        "email" : "anhvt@ptit.edu.vn"
+    },
+    {
+        "maSv" : "VCN100600",
+        "maCanBo" : "VCN100600",
+        "email" : "ngocdb@ptit.edu.vn"
+    },
+    {
+        "maSv" : "VCN100601",
+        "maCanBo" : "VCN100601",
+        "email" : "ngant@ptit.edu.vn"
+    },
+    {
+        "maSv" : "VCN100602",
+        "maCanBo" : "VCN100602",
+        "email" : "hungld@ptit.edu.vn"
+    },
+    {
+        "maSv" : "VCN100603",
+        "maCanBo" : "VCN100603",
+        "email" : "minhn@ptit.edu.vn"
+    },
+    {
+        "maSv" : "VCN100604",
+        "maCanBo" : "VCN100604",
+        "email" : "chuongnv@ptit.edu.vn"
+    },
+    {
+        "maSv" : "VCN100605",
+        "maCanBo" : "VCN100605",
+        "email" : "hungtq@ptit.edu.vn"
+    },
+    {
+        "maSv" : "VCN100606",
+        "maCanBo" : "VCN100606",
+        "email" : "quangnh@ptit.edu.vn"
+    },
+    {
+        "maSv" : "VCN100607",
+        "maCanBo" : "VCN100607",
+        "email" : "hungdm@ptit.edu.vn"
+    },
+    {
+        "maSv" : "VCN100608",
+        "maCanBo" : "VCN100608",
+        "email" : "vtanh@ptit.edu.vn"
+    },
+    {
+        "maSv" : "VCN100609",
+        "maCanBo" : "VCN100609",
+        "email" : "quynhntt@ptit.edu.vn"
+    },
+    {
+        "maSv" : "VCN100610",
+        "maCanBo" : "VCN100610",
+        "email" : "dthyen@ptit.edu.vn"
+    },
+    {
+        "maSv" : "VCN100611",
+        "maCanBo" : "VCN100611",
+        "email" : "dunghd@ptit.edu.vn"
+    },
+    {
+        "maSv" : "VCN100612",
+        "maCanBo" : "VCN100612",
+        "email" : "anhbtv@ptit.edu.vn"
+    },
+    {
+        "maSv" : "VCN100613",
+        "maCanBo" : "VCN100613",
+        "email" : "ltha@ptit.edu.vn"
+    },
+    {
+        "maSv" : "VCN100614",
+        "maCanBo" : "VCN100614",
+        "email" : "hanhdv@ptit.edu.vn"
+    },
+    {
+        "maSv" : "VCN100615",
+        "maCanBo" : "VCN100615",
+        "email" : "hieu19980629@gmail.com"
+    },
+    {
+        "maSv" : "VCN100616",
+        "maCanBo" : "VCN100616",
+        "email" : "sonhx@ptit.edu.vn"
+    },
+    {
+        "maSv" : "VCN100617",
+        "maCanBo" : "VCN100617",
+        "email" : "thuht@ptit.edu.vn"
+    },
+    {
+        "maSv" : "VCN100618",
+        "maCanBo" : "VCN100618",
+        "email" : "thuyptt@ptit.edu.vn"
+    },
+    {
+        "maSv" : "VCN100619",
+        "maCanBo" : "VCN100619",
+        "email" : "hoangnd@ptit.edu.vn"
+    },
+    {
+        "maSv" : "VCN100620",
+        "maCanBo" : "VCN100620",
+        "email" : "anhnp@ptit.edu.vn"
+    },
+    {
+        "maSv" : "VCN100621",
+        "maCanBo" : "VCN100621",
+        "email" : "dvdung@ptit.edu.vn"
+    },
+    {
+        "maSv" : "VCN100622",
+        "maCanBo" : "VCN100622",
+        "email" : "minhnt@ptit.edu.vn"
+    },
+    {
+        "maSv" : "VCN100623",
+        "maCanBo" : "VCN100623",
+        "email" : "toannt@ptit.edu.vn"
+    },
+    {
+        "maSv" : "TDT100626",
+        "maCanBo" : "TDT100626",
+        "email" : "doanhieu@ptit.edu.vn"
+    },
+    {
+        "maSv" : "TDT100627",
+        "maCanBo" : "TDT100627",
+        "email" : "truongnx@ptit.edu.vn"
+    },
+    {
+        "maSv" : "TDT100628",
+        "maCanBo" : "TDT100628",
+        "email" : "chinm@ptit.edu.vn"
+    },
+    {
+        "maSv" : "TDT100629",
+        "maCanBo" : "TDT100629",
+        "email" : "nhungltk@ptit.edu.vn"
+    },
+    {
+        "maSv" : "TDT100630",
+        "maCanBo" : "TDT100630",
+        "email" : "oanhpt@ptit.edu.vn"
+    },
+    {
+        "maSv" : "TDT100631",
+        "maCanBo" : "TDT100631",
+        "email" : "nmphuong@ptit.edu.vn"
+    },
+    {
+        "maSv" : "TDT100632",
+        "maCanBo" : "TDT100632",
+        "email" : "tranglh@ptit.edu.vn"
+    },
+    {
+        "maSv" : "TDT100633",
+        "maCanBo" : "TDT100633",
+        "email" : "uyentt@ptit.edu.vn"
+    },
+    {
+        "maSv" : "TDT100634",
+        "maCanBo" : "TDT100634",
+        "email" : "hungcq@ptit.edu.vn"
+    },
+    {
+        "maSv" : "TDT100635",
+        "maCanBo" : "TDT100635",
+        "email" : "congtv@ptit.edu.vn"
+    },
+    {
+        "maSv" : "TDT100636",
+        "maCanBo" : "TDT100636",
+        "email" : "hangntt1@ptit.edu.vn"
+    },
+    {
+        "maSv" : "TDT100637",
+        "maCanBo" : "TDT100637",
+        "email" : "maipt@ptit.edu.vn"
+    },
+    {
+        "maSv" : "TDT100638",
+        "maCanBo" : "TDT100638",
+        "email" : "truongpd@ptit.edu.vn"
+    },
+    {
+        "maSv" : "TDT100639",
+        "maCanBo" : "TDT100639",
+        "email" : "vinhht@ptit.edu.vn"
+    },
+    {
+        "maSv" : "TDT100640",
+        "maCanBo" : "TDT100640",
+        "email" : "phongnt@ptit.edu.vn"
+    },
+    {
+        "maSv" : "TDT100641",
+        "maCanBo" : "TDT100641",
+        "email" : "hungnq@ptit.edu.vn"
+    },
+    {
+        "maSv" : "TDT100642",
+        "maCanBo" : "TDT100642",
+        "email" : "anhptl@ptit.edu.vn"
+    },
+    {
+        "maSv" : "TDT100643",
+        "maCanBo" : "TDT100643",
+        "email" : "hung_nv@ptit.edu.vn"
+    },
+    {
+        "maSv" : "TDT100644",
+        "maCanBo" : "TDT100644",
+        "email" : "tratt@ptit.edu.vn"
+    },
+    {
+        "maSv" : "TDT100645",
+        "maCanBo" : "TDT100645",
+        "email" : "ngoclk@ptit.edu.vn"
+    },
+    {
+        "maSv" : "TDT100646",
+        "maCanBo" : "TDT100646",
+        "email" : "namqh@ptit.edu.vn"
+    },
+    {
+        "maSv" : "TDT100647",
+        "maCanBo" : "TDT100647",
+        "email" : "quyennt@ptit.edu.vn"
+    },
+    {
+        "maSv" : "TDT200650",
+        "maCanBo" : "TDT200650",
+        "email" : "linhdd@ptit.edu.vn"
+    },
+    {
+        "maSv" : "TDT200651",
+        "maCanBo" : "TDT200651",
+        "email" : "lhphuoc@ptit.edu.vn"
+    },
+    {
+        "maSv" : "TDT200652",
+        "maCanBo" : "TDT200652",
+        "email" : "hoangmy@ptit.edu.vn"
+    },
+    {
+        "maSv" : "TDT200654",
+        "maCanBo" : "TDT200654",
+        "email" : "hunghn@ptit.edu.vn"
+    },
+    {
+        "maSv" : "TDT200655",
+        "maCanBo" : "TDT200655",
+        "email" : "TĐT200655@ptit.edu.vn"
+    },
+    {
+        "maSv" : "TDT200656",
+        "maCanBo" : "TDT200656",
+        "email" : "TĐT200656@ptit.edu.vn"
+    },
+    {
+        "maSv" : "TDT200657",
+        "maCanBo" : "TDT200657",
+        "email" : "TĐT200657@ptit.edu.vn"
+    },
+    {
+        "maSv" : "TDT200658",
+        "maCanBo" : "TDT200658",
+        "email" : "thuongntq@ptit.edu.vn"
+    },
+    {
+        "maSv" : "TDT200659",
+        "maCanBo" : "TDT200659",
+        "email" : "TĐT200659@ptit.edu.vn"
+    },
+    {
+        "maSv" : "TDT200660",
+        "maCanBo" : "TDT200660",
+        "email" : "phamdauyen0905@gmail.com"
+    },
+    {
+        "maSv" : "TDT200661",
+        "maCanBo" : "TDT200661",
+        "email" : "chung.nhu@gmail.com"
+    },
+    {
+        "maCanBo" : "BGD100003",
+        "email" : "bacdh@ptit.edu.vn",
+        "maSv" : "QL1037"
+    },
+    {
+        "email" : "lichtuan@ptit.edu.vn",
+        "maSv" : "qllt"
+    },
+    {
+        "maCanBo" : "HDHV00013",
+        "email" : "matam@ptit.edu.vn",
+        "maSv" : "HDHV00013"
+    },
+    {
+        "maCanBo" : "HDHV00014",
+        "email" : "matam@ptit.edu.vn",
+        "maSv" : "HDHV00014"
+    },
+    {
+        "maCanBo" : "HDHV00015",
+        "email" : "matam@ptit.edu.vn",
+        "maSv" : "HDHV00015"
+    },
+    {
+        "maCanBo" : "HDHV00016",
+        "email" : "matam@ptit.edu.vn",
+        "maSv" : "HDHV00016"
+    },
+    {
+        "maCanBo" : "HDHV00017",
+        "email" : "matam@ptit.edu.vn",
+        "maSv" : "HDHV00017"
+    },
+    {
+        "maCanBo" : "HDHV00018",
+        "email" : "matam@ptit.edu.vn",
+        "maSv" : "HDHV00018"
+    },
+    {
+        "maCanBo" : "HDHV00019",
+        "email" : "matam@ptit.edu.vn",
+        "maSv" : "HDHV00019"
+    },
+    {
+        "maSv" : "dieuphoitx1",
+        "email" : "example@domain.co"
+    },
+    {
+        "maSv" : "QLKH111",
+        "email" : "a@yopmail.com"
+    },
+    {
+        "maSv" : "TEST00001",
+        "email" : "example@domain.co"
+    }
+]

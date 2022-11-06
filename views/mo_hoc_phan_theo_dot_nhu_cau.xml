@@ -1,0 +1,35 @@
+<odoo>
+    <data>
+        <record model="ir.ui.view" id="mo_hoc_phan_theo_dot_nhu_cau_form">
+            <field name="model">mo_hoc_phan_theo_dot_nhu_cau</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <notebook colspan="4">
+                            <page string="Danh sách sinh viên">
+                                <field name="sinh_vien_ids"/>
+                            </page>
+                            <page string="Danh sách học phần mở">
+                                <field name="hoc_phan_ids"/>
+                            </page>
+                        </notebook>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+        <record model="ir.ui.view" id="mo_hoc_phan_theo_dot_nhu_cau_tree">
+            <field name="model">mo_hoc_phan_theo_dot_nhu_cau</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="sinh_vien_ids"/>
+                    <field name="hoc_phan_ids"/>
+                </tree>
+            </field>
+        </record>
+        <record model="ir.actions.act_window" id="action_mo_hoc_phan_theo_dot_nhu_cau">
+            <field name="name">Mở học phần theo đợt đăng ký nhu cầu</field>
+            <field name="res_model">mo_hoc_phan_theo_dot_nhu_cau</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+    </data>
+</odoo>

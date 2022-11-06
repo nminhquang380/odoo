@@ -1,0 +1,48 @@
+<odoo>
+    <data>
+        <record model="ir.ui.view" id="vai_tro_kiem_nhiem_tree">
+            <field name="model">vai_tro_kiem_nhiem</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="nhan_vien_id"/>
+                    <field name="don_vi_id"/>
+                    <field name="vai_tro"/>
+                </tree>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="vai_tro_kiem_nhiem_form">
+            <field name="model">vai_tro_kiem_nhiem</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group col="4">
+                            <field name="nhan_vien_id" required="1" options="{'no_create': True, 'no_open': True}"/>
+                            <field name="don_vi_id" required="1"/>
+                            <field name="vai_tro" required="1"/>
+                        </group>
+                        <group col="4" string="Thông tin cán bộ">
+                            <field name="ma_dinh_danh"/>
+                            <field name="gioi_tinh"/>
+                            <field name="vai_tro_goc"/>
+                            <field name="so_cmnd"/>
+                            <field name="email"/>
+                            <field name="dan_toc"/>
+                            <field name="ton_giao"/>
+                            <field name="tinh_tp_no"/>
+                            <field name="quan_huyen_no"/>
+                            <field name="phuong_xa_no"/>
+                            <field name="so_nha_ten_duong_no"/>
+                            <field name="so_dien_thoai"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+        <record model="ir.actions.act_window" id="action_vai_tro_kiem_nhiem">
+            <field name="name">Thống kê vai trò kiêm nhiệm</field>
+            <field name="res_model">vai_tro_kiem_nhiem</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+    </data>
+</odoo>

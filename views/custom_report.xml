@@ -1,0 +1,74 @@
+<odoo>
+    <data>
+        <record model="ir.ui.view" id="report_dang_ky_nhu_cau_form">
+            <field name="model">report_dang_ky_nhu_cau</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group>
+                            <field name="dot_dang_ky_nhu_cau_id"/>
+                        </group>
+                        <footer>
+                            <button string='Tải về' type='object' name='export_report' class='btn-primary'/>
+                        </footer>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+        <record model="ir.actions.act_window" id="action_report_dang_ky_nhu_cau">
+            <field name="name">Tổng hợp số liệu đăng ký nhu cầu</field>
+            <field name="res_model">report_dang_ky_nhu_cau</field>
+            <field name="view_mode">form</field>
+            <field name="target">new</field>
+        </record>
+
+        <record model="ir.ui.view" id="export_template_form">
+            <field name="model">export_template</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group>
+                            <field name="hinh_thuc_dao_tao"/>
+                            <field name="co_masv"/>
+                        </group>    
+                        <footer>
+                            <button string='Tải về' type='object' name='export_mau_import_sv_nv' class='btn-primary'/>
+                        </footer>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+        <record model="ir.actions.act_window" id="action_export_template">
+            <field name="name">Tải biểu mẫu import</field>
+            <field name="res_model">export_template</field>
+            <field name="view_mode">form</field>
+            <field name="target">new</field>
+        </record>
+
+        <!--        Xuất báo cáo hóa đơn        -->
+        <record model="ir.ui.view" id="export_hoa_don_form">
+            <field name="model">export_hoa_don</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group>
+                            <field name="hinh_thuc_dao_tao_id"/>
+                            <field name="ngay_bat_dau"/>
+                            <field name="ngay_ket_thuc"/>
+                            <field name="trang_thai_thanh_toan"/>
+                        </group>
+                        <footer>
+                            <button string='Tải về' type='object' name='action_export_bao_cao_hoa_don' class='btn-primary'/>
+                        </footer>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+        <record model="ir.actions.act_window" id="action_export_hoa_don">
+            <field name="name">Xuất báo cáo hóa đơn</field>
+            <field name="res_model">export_hoa_don</field>
+            <field name="view_mode">form</field>
+            <field name="target">new</field>
+        </record>
+    </data>
+</odoo>

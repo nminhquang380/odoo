@@ -1,0 +1,64 @@
+<odoo>
+    <data>
+    <record model="ir.ui.view" id="tong_hop_so_lieu_nhu_cau_form">
+            <field name="model">tong_hop_so_lieu_nhu_cau</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <div class="oe_edit_only" style="font-size:25px" attrs="{'invisible': [('id', '=', False)], }">Chỉnh sửa tổng hợp số liệu nhu cầu</div>
+                        <div class="oe_edit_only" style="font-size:25px" attrs="{'invisible': [('id', '!=', False)], }">Tạo mới tổng hợp số liệu nhu cầu</div>
+                        <div class="oe_read_only" style="font-size:25px">Tổng hợp số liệu nhu cầu</div>
+                        <group>
+                            <group>
+                                <field name="dot_dang_ky_nhu_cau_id"/>
+                                <field name="hoc_phan_id"/>
+                                <field name="ma_hoc_phan"/>
+                                <field name="tong_so_dk"/>
+                                <field name="hoc_phi"/>
+                            </group>
+                        </group>
+                        <group>
+                            <field name="nv_hoc_phan_ids"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="tong_hop_so_lieu_nhu_cau_tree">
+            <field name="model">tong_hop_so_lieu_nhu_cau</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="dot_dang_ky_nhu_cau_id"/>
+                    <field name="hoc_phan_id"/>
+                    <field name="ma_hoc_phan"/>
+                    <field name="tong_so_dk"/>
+                    <field name="hoc_phi"/>
+                </tree>
+            </field>
+        </record>
+
+        <!-- <record model="ir.ui.view" id="tong_hop_so_lieu_nhu_cau_search_all">
+            <field name="model">tong_hop_so_lieu_nhu_cau</field>
+            <field name="arch" type="xml">
+                <search>
+                    <field name="hoc_phan_id"/>
+                    <field name="hoc_phi"/>
+                    <field name="tong_so_dk"/>
+                    <searchpanel>
+                        <field name="dot_dang_ky_nhu_cau_id"/>
+                    </searchpanel>
+                </search>
+            </field>
+        </record> -->
+
+        <record model="ir.actions.act_window" id="action_quan_ly_tong_hop_so_lieu_nhu_cau">
+            <field name="name">Tổng hợp số liệu nhu cầu</field>
+            <field name="res_model">tong_hop_so_lieu_nhu_cau</field>
+            <field name="view_mode">tree,form</field>
+            <!-- <field name="search_view_id" ref="tong_hop_so_lieu_nhu_cau_search_all"/> -->
+            <field name="context">{"group_by":["dot_dang_ky_nhu_cau_id"]}</field>
+        </record>
+
+    </data>
+</odoo>

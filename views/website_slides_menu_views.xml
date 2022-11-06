@@ -1,0 +1,754 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <menuitem name="PTIT-DU"
+              id="website_slides_menu_root"
+              groups="base.group_user"
+              web_icon="website_slides,static/description/icon.png"/>
+
+    <!-- Main top menu elements -->
+    <menuitem name="Quản lý kế hoạch giảng dạy"
+              id="website_slide_menu_ke_hoach_giang_day"
+              parent="website_slides_menu_root"
+              sequence="1"/>
+    <menuitem name="Quản lý chương trình đào tạo"
+              id="website_slide_menu_chuong_trinh_dao_tao"
+              parent="website_slides_menu_root"
+              sequence="2"/>
+    <menuitem name="Quản lý kết quả học tập"
+              id="website_slide_menu_diem"
+              parent="website_slides_menu_root"
+              sequence="3"/>
+    <menuitem name="Xử lý kết quả học tập"
+              id="website_slide_menu_xu_ly_ket_qua_hoc_tap"
+              parent="website_slides_menu_root"
+              sequence="4"/>
+    <menuitem name="Công nhận kết quả học tập"
+              id="website_slide_menu_cong_nhan_ket_qua_hoc_tap"
+              parent="website_slides_menu_root"
+              sequence="5"/>
+    <menuitem name="Quản lý học phần - học liệu"
+              id="website_slides_menu_hoc_phan_hoc_lieu"
+              parent="website_slides_menu_root"
+              sequence="7"/>
+    <menuitem name="Quản lý hồ sơ người dùng"
+              id="website_slides_menu_tai_khoan"
+              parent="website_slides_menu_root"
+              sequence="8"/>
+    <menuitem name="Quản lý công nợ"
+              id="website_slides_menu_cong_no"
+              parent="website_slides_menu_root"
+              sequence="9"/>
+    <menuitem name="Quản lý thông tin đào tạo"
+              id="website_slide_menu_thong_tin_dao_tao"
+              parent="website_slides_menu_root"
+              sequence="10"/>
+    <menuitem name="Quản lý danh mục đào tạo"
+              id="website_slides_menu_quan_ly_du_lieu_danh_muc"
+              parent="website_slides_menu_root"
+              sequence="11"
+    />
+    <menuitem name="Quản lý danh mục cơ sở"
+              id="website_slides_menu_co_so_hanh_chinh"
+              parent="website_slides_menu_root"
+              sequence="12"
+    />
+    <menuitem name="Quản lý thông tin sự cố"
+              id="website_slides_menu_quan_ly_thong_tin_su_co"
+              parent="website_slides_menu_root"
+              sequence="13"
+    />
+
+
+    <!-- <menuitem name="Quản lý khóa sinh viên/lớp"
+              id="website_slides_menu_quan_ly_khoa_sinh_vien"
+              parent="website_slides_menu_root"
+              sequence="4"/>
+    <menuitem name="Quản lý kỳ học"
+              id="website_slides_menu_quan_ly_ky_hoc"
+              parent="website_slides_menu_root"
+              sequence="5"/> -->
+
+    <menuitem name="Tin tức"
+              id="website_slides_menu_tin_tuc"
+              parent="website_slides_menu_root"
+              sequence="8"/>
+    <!--    tin tức-->
+    <menuitem name="Quản lý tin tức"
+              id="website_slides_menu_quan_ly_tin_tuc"
+              parent="website_slides_menu_tin_tuc"
+              sequence="1"
+              action="action_tin_tuc"
+    />
+    <menuitem name="Reporting"
+              id="website_slides_menu_report"
+              parent="website_slides_menu_root"
+              groups="website_slides.group_website_slides_manager"
+              sequence="9"/>
+    <menuitem name="Configuration"
+              id="website_slides_menu_configuration"
+              parent="website_slides_menu_root"
+              sequence="99"/>
+
+    <!--    Quản lý danh mục đào tạo sub menu-->
+
+    <menuitem name="Quản lý thông tin ngành học"
+              id="website_slides_menu_chuong_trinh_dao_tao_danh_sach_nganh"
+              parent="website_slide_menu_thong_tin_dao_tao"
+              sequence="3"
+              action="action_nganh_hoc_danh_sach_nganh_hoc"
+    />
+    <menuitem name="Quản lý thông tin chuyên ngành"
+              id="website_slides_menu_chuong_trinh_dao_tao_danh_sach_chuyen_nganh"
+              parent="website_slide_menu_thong_tin_dao_tao"
+              sequence="5"
+              action="action_nganh_hoc_danh_sach_chuyen_nganh"
+    />
+
+
+    <!--    <menuitem name="Tổng hợp số liệu thông tin đào tạo"-->
+    <!--              id="website_slides_menu_so_lieu"-->
+    <!--              parent="website_slide_menu_thong_tin_dao_tao"-->
+    <!--              sequence="11"-->
+    <!--              action="action_so_lieu"-->
+    <!--    />-->
+    <!--    Quản lý chương trình đào tạo sub menu-->
+    <!-- Học phần sub-menu -->
+    <menuitem name="Quản lý học phần"
+              id="website_slides_menu_courses_courses"
+              parent="website_slides_menu_hoc_phan_hoc_lieu"
+              sequence="1"
+              action="slide_channel_action_overview"/>
+
+    <menuitem name="Quản lý học liệu"
+              id="website_slides_menu_courses_content"
+              parent="website_slides_menu_hoc_phan_hoc_lieu"
+              sequence="5"
+              action="slide_slide_action"/>
+    <menuitem name="Quizzes"
+              id="website_slides_menu_report_quizzes"
+              parent="website_slides_menu_hoc_phan_hoc_lieu"
+              sequence="7"
+              action="slide_question_action_report"/>
+    <menuitem name="Câu trả lời"
+              id="website_slides_menu_answer"
+              parent="website_slides_menu_hoc_phan_hoc_lieu"
+              sequence="8"
+              action="slide_answer_action_report"/>
+<!--        <menuitem name="Quản lý quan hệ các học phần"-->
+<!--                  id="website_slides_menu_mon_hoc_dieu_kien"-->
+<!--                  parent="website_slides_menu_hoc_phan_hoc_lieu"-->
+<!--                  sequence="9"-->
+<!--                  action="action_mon_hoc_dieu_kien"/>-->
+
+    <!--    <menuitem name="Quản lý học liệu - mới"-->
+    <!--              id="website_slides_menu_courses_content"-->
+    <!--              parent="website_slide_menu_thong_tin_dao_tao"-->
+    <!--              sequence="7"-->
+    <!--              action="action_quan_ly_hoc_lieu"/>-->
+    <!--    <menuitem name="Quản lý phản hồi - reviews"-->
+    <!--              id="website_slides_menu_courses_reviews"-->
+    <!--              parent="website_slide_menu_chuong_trinh_dao_tao"-->
+    <!--              sequence="99"-->
+    <!--              action="rating_rating_action_slide_channel"/>-->
+
+
+    <!--    Hồ sơ người dùng sub-menu-->
+    <menuitem name="Hồ sơ sinh viên"
+              id="website_slides_menu_tai_khoan_sinh_vien"
+              parent="website_slides_menu_tai_khoan"
+              sequence="99"
+              action="action_sinh_vien_danh_sach_sinh_vien"
+    />
+    <menuitem name="Hồ sơ cán bộ - CNV - GV"
+              id="website_slides_menu_tai_khoan_nhan_vien"
+              parent="website_slides_menu_tai_khoan"
+              sequence="3"
+              action="action_nhan_vien_danh_sach_nhan_vien"
+    />
+    <menuitem name="Hồ sơ quản trị viên"
+              id="website_slides_menu_tai_khoan_quan_tri"
+              parent="website_slides_menu_tai_khoan"
+              sequence="7"
+              action="action_quan_tri_danh_sach_quan_tri"
+    />
+    <menuitem name="Hồ sơ quản trị viên HT bồi dưỡng"
+              id="website_slides_menu_tai_khoan_quan_tri_boi_duong"
+              parent="website_slides_menu_tai_khoan"
+              sequence="10"
+              action="action_quan_tri_vien_boi_duong"
+    />
+
+    <menuitem name="Hồ sơ trợ giảng"
+              id="website_slides_menu_tai_khoan_tro_giang"
+              parent="website_slides_menu_tai_khoan"
+              sequence="11"
+              action="action_tro_giang_danh_sach_tro_giang"
+    />
+    <menuitem name="Hồ sơ kế toán"
+              id="website_slides_menu_tai_khoan_ke_toan"
+              parent="website_slides_menu_tai_khoan"
+              sequence="12"
+              action="action_tro_giang_danh_sach_ke_toan"
+    />
+    <menuitem name="Hồ sơ cán bộ quản lý khoa học"
+              id="website_slides_menu_tai_khoan_can_bo_qlkh"
+              parent="website_slides_menu_tai_khoan"
+              sequence="13"
+              action="action_can_bo_qlkh"
+    />
+    <menuitem name="Hồ sơ lãnh đạo"
+              id="website_slides_menu_tai_khoan_lanh_dao"
+              parent="website_slides_menu_tai_khoan"
+              sequence="14"
+              action="action_lanh_dao"
+    />
+
+
+    <menuitem name="Quản lý thông tin năm học"
+              id="website_slides_menu_nam_hoc"
+              parent="website_slide_menu_chuong_trinh_dao_tao"
+              sequence="1"
+              action="action_nam_hoc"
+    />
+    <menuitem name="Thiết lập quy chế đào tạo"
+              id="website_slides_menu_quy_che_dao_tao"
+              parent="website_slide_menu_chuong_trinh_dao_tao"
+              sequence="2"
+              action="action_quy_che_dao_tao_nam_hoc"
+    />
+
+    <menuitem name="Quản lý thông tin khóa sinh viên"
+              id="website_slides_menu_khoa_sinh_vien"
+              parent="website_slide_menu_chuong_trinh_dao_tao"
+              sequence="3"
+              action="action_khoa_sinh_vien_danh_sach_khoa_sinh_vien"
+    />
+
+    <menuitem name="Quản lý thông tin khóa - ngành"
+              id="website_slides_menu_khoa_nganh"
+              parent="website_slide_menu_chuong_trinh_dao_tao"
+              sequence="4"
+              action="action_khoa_nganh"
+    />
+    <menuitem name="Quản lý thông tin khóa - chuyên ngành"
+              id="website_slides_menu_khoa_chuyen_nganh"
+              parent="website_slide_menu_chuong_trinh_dao_tao"
+              sequence="5"
+              action="action_khoa_chuyen_nganh"
+    />
+    <menuitem name="Quản lý đợt nhập học"
+              id="website_slides_menu_dot_nhap_hoc"
+              parent="website_slide_menu_chuong_trinh_dao_tao"
+              sequence="6"
+              action="action_dot_nhap_hoc"
+    />
+    <menuitem name="Quản lý khối lớp"
+              id="website_slides_menu_khoi_lop"
+              parent="website_slide_menu_chuong_trinh_dao_tao"
+              sequence="7"
+              action="action_khoi_lop"
+    />
+    <menuitem name="Quản lý lớp hành chính"
+              id="website_slides_menu_lop_hanh_chinh"
+              parent="website_slide_menu_chuong_trinh_dao_tao"
+              sequence="8"
+              action="action_lop_hanh_chinh_danh_sach_lop"
+    />
+    <menuitem name="Quản lý học kỳ-chương trình khung"
+              id="website_slides_menu_ky_hoc_quan_ly_hoc_ky_chuong_trinh_khung"
+              parent="website_slide_menu_chuong_trinh_dao_tao"
+              sequence="9"
+              action="action_hoc_ky_chuong_trinh_khung"
+    />
+    <menuitem name="Quản lý chương trình khung"
+              id="website_slides_menu_ky_hoc_quan_ly_chuong_trinh_khung"
+              parent="website_slide_menu_chuong_trinh_dao_tao"
+              sequence="10"
+              action="action_quan_ly_chuong_trinh_khung"
+    />
+    <menuitem name="Danh sách môn học điều kiện"
+              id="website_slides_menu_ky_hoc_quan_ly_mhdk"
+              parent="website_slide_menu_chuong_trinh_dao_tao"
+              sequence="12"
+              action="action_mon_hoc_dieu_kien"
+    />
+
+    <!--    Kế hoạch giảng dạy submenu-->
+    <menuitem name="Quản lý thông tin kỳ học"
+              id="website_slides_menu_ky_hoc_qlttkh"
+              parent="website_slide_menu_ke_hoach_giang_day"
+              sequence="6"
+              action="action_ky_nam_hoc"
+    />
+    <menuitem name="Quản lý mở học phần cho đợt đăng ký nhu cầu"
+              id="website_slides_menu_mo_hoc_phan_dot_nhu_cau"
+              parent="website_slide_menu_ke_hoach_giang_day"
+              sequence="7"
+              action="action_mo_hoc_phan_theo_dot_nhu_cau"
+    />
+    <menuitem name="Quản lý đợt đăng ký nhu cầu"
+              id="website_slides_menu_quan_ly_dot_dang_ky_nhu_cau"
+              parent="website_slide_menu_ke_hoach_giang_day"
+              sequence="8"
+              action="action_quan_ly_dot_dang_ky_nhu_cau"
+    />
+    <menuitem name="Quản lý phiếu đăng ký học phần"
+              id="website_slides_menu_phieu_dang_ky_hoc_phan"
+              parent="website_slide_menu_ke_hoach_giang_day"
+              sequence="9"
+              action="action_phieu_dang_ky_hoc_phan"
+    />
+    <menuitem name="Quản lý nguyện vọng đăng ký học phần"
+              id="website_slides_menu_nv_hoc_phan"
+              parent="website_slide_menu_ke_hoach_giang_day"
+              sequence="10"
+              action="action_nv_hoc_phan"
+    />
+    <!-- <menuitem name="Quản lý tổng hợp số liệu đăng ký nhu cầu"
+              id="website_slides_menu_tong_hop_so_lieu"
+              parent="website_slide_menu_ke_hoach_giang_day"
+              sequence="11"
+              action="action_quan_ly_tong_hop_so_lieu_nhu_cau"
+    /> -->
+
+    <menuitem name="Quản lý lớp tín chỉ"
+              id="website_slides_menu_lop_tin_chi"
+              parent="website_slide_menu_ke_hoach_giang_day"
+              sequence="12"
+              action="action_lop_tin_chi_danh_sach_lop"
+    />
+
+    <!--    Đổi chỗ này thành lớp thực hành-->
+    <menuitem name="Quản lý nhóm lớp tín chỉ"
+              id="website_slides_menu_nhom_lop_tin_chi"
+              parent="website_slide_menu_ke_hoach_giang_day"
+              sequence="13"
+              action="action_nhom_lop_tin_chi"
+    />
+    <menuitem name="Quản lý lớp bồi dưỡng"
+              id="website_slides_menu_lop_boi_duong"
+              parent="website_slide_menu_ke_hoach_giang_day"
+              sequence="14"
+              action="action_lop_boi_duong"
+    />
+
+
+    <menuitem name="Quản lý thời khóa biểu"
+              id="website_slides_menu_ky_hoc_quan_ly_buoi_hoc"
+              parent="website_slide_menu_ke_hoach_giang_day"
+              sequence="15"
+              action="action_ky_hoc_quan_ly_buoi_hoc"/>
+
+    <menuitem name="Quản lý đợt đăng ký tín chỉ"
+              id="website_slides_menu_quan_ly_dot_dang_ky_tin_chi"
+              parent="website_slide_menu_ke_hoach_giang_day"
+              sequence="17"
+              action="action_quan_ly_dot_dang_ky_tin_chi"
+    />
+    <menuitem name="Quản lý phiếu đăng ký tín chỉ"
+              id="website_slides_menu_phieu_dang_ky_tin_chi"
+              parent="website_slide_menu_ke_hoach_giang_day"
+              sequence="18"
+              action="action_phieu_dang_ky_tin_chi"
+    />
+<!--    <menuitem name="Quản lý sinh viên đăng ký tín chỉ"-->
+<!--              id="website_slides_menu_sv_hp_dktc"-->
+<!--              parent="website_slide_menu_ke_hoach_giang_day"-->
+<!--              sequence="21"-->
+<!--              action="action_sv_hp_dktc"-->
+<!--    />-->
+    <menuitem name="Quản lý thông tin ca thi"
+              id="website_slides_menu_quan_ly_ca_thi"
+              parent="website_slide_menu_ke_hoach_giang_day"
+              sequence="19"
+              action="action_ca_thi"
+    />
+    <menuitem name="Quản lý thông tin đợt thi"
+              id="website_slides_menu_quan_ly_dot_thi"
+              parent="website_slide_menu_ke_hoach_giang_day"
+              sequence="20"
+              action="action_dot_thi"
+    />
+
+
+    <!--   Quản lý điểm submenu -->
+    <menuitem name="Quản lý điểm danh buổi học"
+              id="website_slides_menu_diem_danh_buoi_hoc"
+              parent="website_slide_menu_diem"
+              sequence="1"
+              action="action_diem_danh_buoi_hoc"
+    />
+    <menuitem name="Quản lý trọng số điểm theo học phần"
+              id="website_slides_menu_trong_so_diem_hoc_phan"
+              parent="website_slide_menu_diem"
+              sequence="2"
+              action="slide_channel_trong_so_diem_action"
+    />
+    <!--    <menuitem name="Quản lý trọng số điểm theo học phần - mới"-->
+    <!--              id="website_slides_menu_trong_so_diem_hoc_phan_moi"-->
+    <!--              parent="website_slide_menu_diem"-->
+    <!--              sequence="3"-->
+    <!--              action="action_trong_so_diem_hoc_phan"-->
+    <!--    />-->
+    <menuitem name="Danh mục quy tắc đánh giá - tính điểm học phần"
+          id="website_slides_menu_danh_muc_quy_tac_danh_gia_tinh_diem_hoc_phan"
+          parent="website_slide_menu_diem"
+          sequence="4"
+          action="action_danh_muc_quy_tac_danh_gia_tinh_diem_hoc_phan"
+    />
+    <menuitem name="Quy tắc đánh giá - tính điểm học kỳ"
+              id="website_slides_menu_danh_gia_tinh_diem_hoc_ky"
+              parent="website_slide_menu_diem"
+              sequence="5"
+              action="action_quy_tac_danh_gia_tinh_diem_hoc_ky"
+    />
+<!--    <menuitem name="Quy tắc xếp loại học lực"-->
+<!--              id="website_slides_menu_xep_loai_hoc_luc"-->
+<!--              parent="website_slide_menu_diem"-->
+<!--              sequence="6"-->
+<!--              action="action_quy_tac_xep_loai_hoc_luc"-->
+<!--    />-->
+    <menuitem name="Danh mục quy tắc xếp loại học lực"
+          id="website_slides_menu_danh_muc_xep_loai_hoc_luc"
+          parent="website_slide_menu_diem"
+          sequence="6"
+          action="action_danh_muc_quy_tac_xep_loai_hoc_luc"
+    />
+    <menuitem name="Quy tắc xử lý kết quả học tập"
+              id="website_slides_menu_xu_ly_ket_qua_hoc_tap"
+              parent="website_slide_menu_diem"
+              sequence="7"
+              action="action_quy_tac_xu_ly_ket_qua_hoc_tap"
+    />
+<!--    <menuitem name="Đánh giá kết quả học kỳ"-->
+<!--              id="website_slides_menu_danh_gia_ket_qua_hoc_tap_hoc_ky"-->
+<!--              parent="website_slide_menu_diem"-->
+<!--              sequence="8"-->
+<!--              action="action_qldt_ket_qua_hoc_tap_hoc_ky"-->
+<!--    />-->
+    <!--    Cái này là menu danh sách điểm theo lớp tín chỉ, đã filter lại để hiển thị theo yêu cầu-->
+    <menuitem name="Danh sách điểm theo lớp tín chỉ"
+              id="website_slides_menu_sv_ltc_ds"
+              parent="website_slide_menu_diem"
+              sequence="9"
+              action="action_sv_ltc_ds_group_by_lop_tin_chi"
+    />
+    <menuitem name="Danh sách điểm học phần"
+              id="website_slides_menu_sv_hp_ds"
+              parent="website_slide_menu_diem"
+              sequence="10"
+              action="action_sv_hp_ds"
+    />
+    <menuitem name="Quản lý kết quả học tập học kỳ"
+              id="website_slides_menu_quan_ly_sinh_vien_hoc_ky"
+              parent="website_slide_menu_diem"
+              sequence="11"
+              action="action_quan_ly_sinh_vien_hoc_ky"
+    />
+    <menuitem name="Quản lý kết quả học tập năm học"
+              id="website_slides_menu_danh_gia_ket_qua_hoc_tap_nam_hoc"
+              parent="website_slide_menu_diem"
+              sequence="12"
+              action="action_qldt_ket_qua_hoc_tap_nam_hoc"
+    />
+    <menuitem name="Quản lý kết quả sinh viên điểm tổng kết"
+              id="website_slides_menu_sinh_vien_diem_tong_ket"
+              parent="website_slide_menu_diem"
+              sequence="13"
+              action="action_sinh_vien_diem_tong_ket"
+    />
+
+
+    <!-- Xử lý kết quả học tập-->
+    <menuitem name="Danh sách sinh viên bị cảnh cáo học tập"
+              id="website_slides_menu_sinh_vien_bi_canh_cao_ket_qua_hoc_tap"
+              parent="website_slide_menu_xu_ly_ket_qua_hoc_tap"
+              sequence="1"
+              action="action_sinh_vien_bi_canh_cao_hoc_tap"
+    />
+    <menuitem name="Danh sách sinh viên bị thôi học"
+              id="website_slides_menu_sinh_vien_bi_thoi_hoc"
+              parent="website_slide_menu_xu_ly_ket_qua_hoc_tap"
+              sequence="2"
+              action="action_sinh_vien_bi_thoi_hoc"
+    />
+    <menuitem name="Danh sách sinh viên học lại"
+              id="website_slides_menu_sinh_vien_hoc_lai"
+              parent="website_slide_menu_xu_ly_ket_qua_hoc_tap"
+              sequence="3"
+              action="action_sinh_vien_hoc_lai"
+    />
+
+    <!--    Công nhận kết quả học tập sub menus-->
+    <menuitem name="Quản lý học phần tương đương"
+              id="website_slides_hoc_phan_tuong_duong"
+              parent="website_slide_menu_cong_nhan_ket_qua_hoc_tap"
+              sequence="1"
+              action="action_quan_ly_hoc_phan_tuong_duong"
+    />
+    <menuitem name="Phiếu yêu cầu công nhận kết quả học tập"
+              id="website_slides_phieu_yeu_cau_cong_nhan_ket_qua_hoc_tap"
+              parent="website_slide_menu_cong_nhan_ket_qua_hoc_tap"
+              sequence="3"
+              action="action_phieu_yeu_cau_cong_nhan_kqht"/>
+
+    <menuitem name="Công nhận kết quả học tập"
+              id="website_slides_cong_nhan_ket_qua_hoc_tap"
+              parent="website_slide_menu_cong_nhan_ket_qua_hoc_tap"
+              sequence="5"
+              action="action_cong_nhan_kqht"/>
+
+    <!-- Quản lý kết quả học tập sub menu-->
+    <!--    <menuitem name="Đánh giá kết quả học tập theo học kỳ"-->
+    <!--              id="website_slides_menu_ket_qua_hoc_tap_hoc_ky"-->
+    <!--              parent="website_slide_menu_quy_tac_danh_gia_ket_qua_hoc_tap"-->
+    <!--              sequence="1"-->
+    <!--              action=""-->
+    <!--    />-->
+    <!--    <menuitem name="Đánh giá kết quả học tập theo năm học"-->
+    <!--              id="website_slides_menu_ket_qua_hoc_tap_nam_hoc"-->
+    <!--              parent="website_slide_menu_quy_tac_danh_gia_ket_qua_hoc_tap"-->
+    <!--              sequence="3"-->
+    <!--              action=""-->
+    <!--    />-->
+    <!--    <menuitem name="Xử lý kết quả học tập theo tín chỉ"-->
+    <!--              id="website_slides_menu_xu_ly_ket_qua_hoc_tap_theo_tin_chi"-->
+    <!--              parent="website_slide_menu_quy_tac_danh_gia_ket_qua_hoc_tap"-->
+    <!--              sequence="3"-->
+    <!--              action=""-->
+    <!--    />-->
+    <!--    <menuitem name="Công nhận/chuyển đổi kết quả học tập theo tín chỉ"-->
+    <!--              id="website_slides_menu_cong_nhan_ket_qua_hoc_tap_theo_tin_chi"-->
+    <!--              parent="website_slide_menu_quy_tac_danh_gia_ket_qua_hoc_tap"-->
+    <!--              sequence="5"-->
+    <!--              action=""-->
+    <!--    />-->
+
+    <!-- Quản lý công nợ-->
+    <menuitem name="Quản lý công nợ học phí sinh viên"
+              id="website_slides_menu_quan_ly_cong_no_sinh_vien"
+              parent="website_slides_menu_cong_no"
+              sequence="1"
+              action="action_qldt_cong_no"
+    />
+    <menuitem name="Quản lý học phí"
+              id="website_slides_menu_quan_ly_hoc_phi"
+              parent="website_slides_menu_cong_no"
+              sequence="2"
+              action="action_hoc_phi"
+    />
+    <menuitem name="Quản lý hóa đơn"
+              id="website_slides_menu_quan_ly_hoa_don"
+              parent="website_slides_menu_cong_no"
+              sequence="3"
+              action="action_qldt_hoa_don"
+    />
+    <!--    Quản lý danh mục đào tạo-->
+    <menuitem name="Quy định - văn bản"
+              id="website_slides_menu_quan_ly_danh_muc_van_ban_quy_dinh"
+              parent="website_slides_menu_quan_ly_du_lieu_danh_muc"
+              sequence="1"
+              action="action_danh_muc_van_ban_quy_dinh"
+    />
+    <menuitem name="Danh mục hình thức đào tạo"
+              id="website_slides_menu_chuong_trinh_dao_tao_danh_sach_hinh_thuc_dao_tao"
+              parent="website_slides_menu_quan_ly_du_lieu_danh_muc"
+              sequence="2"
+              action="action_hinh_thuc_dao_tao_danh_sach_hinh_thuc_dao_tao"
+    />
+    
+    <menuitem name="Danh mục khoa"
+              id="website_slides_menu_quan_ly_danh_muc_khoa"
+              parent="website_slides_menu_quan_ly_du_lieu_danh_muc"
+              sequence="3"
+              action="action_danh_muc_khoa"
+    />
+    <menuitem name="Danh mục ngành học"
+              id="website_slides_menu_quan_ly_danh_muc_nganh_hoc"
+              parent="website_slides_menu_quan_ly_du_lieu_danh_muc"
+              sequence="4"
+              action="action_danh_muc_nganh_hoc"
+    />
+    <menuitem name="Danh mục chuyên ngành"
+              id="website_slides_menu_quan_ly_danh_muc_chuyen_nganh"
+              parent="website_slides_menu_quan_ly_du_lieu_danh_muc"
+              sequence="5"
+              action="action_danh_muc_chuyen_nganh"
+    />
+    <!--    <menuitem name="Danh mục học phần"-->
+    <!--              id="website_slides_menu_quan_ly_danh_muc_hoc_phan"-->
+    <!--              parent="website_slides_menu_quan_ly_du_lieu_danh_muc"-->
+    <!--              sequence="6"-->
+    <!--              action="action_danh_muc_hoc_phan"-->
+    <!--    />-->
+    <menuitem name="Danh mục các loại phí"
+              id="website_slides_menu_quan_ly_danh_muc_phi"
+              parent="website_slides_menu_quan_ly_du_lieu_danh_muc"
+              sequence="7"
+              action="action_danh_muc_phi"
+    />
+    <menuitem name="Danh mục biểu giá"
+              id="website_slides_menu_quan_ly_danh_muc_bieu_gia"
+              parent="website_slides_menu_quan_ly_du_lieu_danh_muc"
+              sequence="8"
+              action="action_danh_muc_bieu_gia"
+    />
+    <menuitem name="Danh mục miễn giảm các loại phí"
+              id="website_slides_menu_quan_ly_danh_muc_cac_loai_phi"
+              parent="website_slides_menu_quan_ly_du_lieu_danh_muc"
+              sequence="9"
+              action="action_danh_muc_mien_giam_cac_loai_phi"
+    />
+    <menuitem name="Danh mục cơ sở đào tạo"
+              id="website_slides_menu_quan_ly_danh_muc_co_so_dao_tao"
+              parent="website_slides_menu_quan_ly_du_lieu_danh_muc"
+              sequence="10"
+              action="action_danh_muc_co_so_dao_tao"
+    />
+    <menuitem name="Danh mục phương pháp đánh giá học phần"
+              id="website_slides_menu_quan_ly_danh_muc_phuong_phap_danh_gia_hoc_phan"
+              parent="website_slides_menu_quan_ly_du_lieu_danh_muc"
+              sequence="11"
+              action="action_danh_muc_phuong_phap_danh_gia_hoc_phan"
+    />
+    <menuitem name="Danh mục đầu điểm"
+              id="website_slides_menu_quan_ly_danh_muc_dau_diem"
+              parent="website_slides_menu_quan_ly_du_lieu_danh_muc"
+              sequence="12"
+              action="action_danh_muc_dau_diem"
+    />
+    <menuitem name="Danh mục đơn vị"
+              id="website_slides_menu_quan_ly_danh_muc_don_vi"
+              parent="website_slides_menu_quan_ly_du_lieu_danh_muc"
+              sequence="13"
+              action="action_danh_muc_don_vi"
+    />
+    <menuitem name="Danh mục đơn vị thụ hưởng"
+              id="website_slides_menu_quan_ly_danh_muc_don_vi_thu_huong"
+              parent="website_slides_menu_quan_ly_du_lieu_danh_muc"
+              sequence="14"
+              action="action_danh_muc_don_vi_thu_huong"
+    />
+    <menuitem name="Danh mục khoản thu"
+              id="website_slides_menu_quan_ly_danh_muc_khoan_thu"
+              parent="website_slides_menu_quan_ly_du_lieu_danh_muc"
+              sequence="15"
+              action="action_danh_muc_khoan_thu"
+    />
+    <menuitem name="Danh mục vai trò kiêm nhiệm"
+              id="website_slides_menu_quan_ly_danh_muc_vai_tro_kiem_nhiem"
+              parent="website_slides_menu_quan_ly_du_lieu_danh_muc"
+              sequence="16"
+              action="action_vai_tro_kiem_nhiem"
+    />
+    <menuitem name="Danh mục hướng dẫn sử dụng"
+              id="website_slides_menu_quan_ly_danh_muc_hdsd"
+              parent="website_slides_menu_quan_ly_du_lieu_danh_muc"
+              sequence="17"
+              action="action_danh_muc_hdsd"
+    />
+<!--    <menuitem name="Danh mục tiết học"-->
+<!--              id="website_slides_menu_quan_ly_danh_muc_tiet_hoc"-->
+<!--              parent="website_slides_menu_quan_ly_du_lieu_danh_muc"-->
+<!--              sequence="19"-->
+<!--              action="action_danh_muc_tiet_hoc"-->
+<!--    />-->
+    <menuitem name="Danh mục nhóm tiết học"
+              id="website_slides_menu_quan_ly_danh_muc_template_tiet_hoc"
+              parent="website_slides_menu_quan_ly_du_lieu_danh_muc"
+              sequence="18"
+              action="action_danh_muc_template_tiet_hoc"
+    />
+
+    <menuitem name="Danh mục trình độ, hình thức đào tạo"
+              id="website_slides_menu_quan_ly_danh_muc_trinh_hinh_dao_tao"
+              parent="website_slides_menu_quan_ly_du_lieu_danh_muc"
+              sequence="19"
+              action="action_danh_muc_trinh_hinh_dao_tao"
+    />
+
+    <!-- Cơ sở hành chính -->
+    <menuitem name="Danh mục cơ sở hành chính"
+              id="website_slides_menu_danh_muc_co_so_hanh_chinh"
+              parent="website_slides_menu_co_so_hanh_chinh"
+              action="action_co_so_hanh_chinh"
+              sequence="1"
+              />
+    <menuitem name="Danh mục trường THPT"
+              id="website_slides_menu_truong_thpt"
+              parent="website_slides_menu_co_so_hanh_chinh"
+              action="action_truong_thpt"
+              sequence="2"
+              />
+    <menuitem name="Danh mục dân tộc"
+              id="website_slides_menu_dan_toc"
+              parent="website_slides_menu_co_so_hanh_chinh"
+              action="action_dan_toc"
+              sequence="3"
+              />
+    <menuitem name="Danh mục tôn giáo"
+              id="website_slides_menu_ton_giao"
+              parent="website_slides_menu_co_so_hanh_chinh"
+              action="action_ton_giao"
+              sequence="4"
+              />
+    <!--    Quản lý thông tin sự cố-->
+    <menuitem name="Thông tin sự cố"
+              id="website_slides_menu_thong_tin_su_co"
+              parent="website_slides_menu_quan_ly_thong_tin_su_co"
+              action="action_thong_tin_su_co"
+              sequence="1"/>
+
+    <!-- Courses sub-menu -->
+    <!--    <menuitem name="Danh sách học phần"-->
+    <!--              id="website_slides_menu_courses_courses"-->
+    <!--              parent="website_slides_menu_courses"-->
+    <!--              sequence="1"-->
+    <!--              action="slide_channel_action_overview"/>-->
+    <!--    <menuitem name="Nội dung học tập"-->
+    <!--              id="website_slides_menu_courses_content"-->
+    <!--              parent="website_slides_menu_courses"-->
+    <!--              sequence="2"-->
+    <!--              action="slide_slide_action"/>-->
+    <!--    <menuitem name="Reviews"-->
+    <!--              id="website_slides_menu_courses_reviews"-->
+    <!--              parent="website_slides_menu_courses"-->
+    <!--              sequence="3"-->
+    <!--              action="rating_rating_action_slide_channel"/>-->
+
+    <!--     Reporting sub-menu -->
+    <menuitem name="Courses"
+              id="website_slides_menu_report_courses"
+              parent="website_slides_menu_report"
+              sequence="1"
+              action="slide_channel_action_report"/>
+    <menuitem name="Contents"
+              id="website_slides_menu_report_contents"
+              parent="website_slides_menu_report"
+              sequence="2"
+              action="slide_slide_action_report"/>
+    <menuitem name="Reviews"
+              id="website_slides_menu_report_reviews"
+              parent="website_slides_menu_report"
+              sequence="6"
+              action="rating_rating_action_slide_channel_report"/>
+
+
+    <!--     Settings sub-menu -->
+    <menuitem name="Settings"
+              id="website_slides_menu_config_settings"
+              parent="website_slides_menu_configuration"
+              sequence="1"
+              action="website_slides_action_settings"
+              groups="base.group_system"/>
+    <menuitem name="Course Groups"
+              id="website_slides_menu_config_course_groups"
+              parent="website_slides_menu_configuration"
+              sequence="2"
+              action="slide_channel_tag_group_action"/>
+    <menuitem name="Content Tags"
+              id="website_slides_menu_config_content_tags"
+              parent="website_slides_menu_configuration"
+              sequence="3"
+              action="action_slide_tag"/>
+</odoo>

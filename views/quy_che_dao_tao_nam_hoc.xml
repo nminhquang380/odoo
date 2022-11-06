@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record id="quy_che_dao_tao_nam_hoc_view_form" model="ir.ui.view">
+            <field name="name">qldt_quy_che_dao_tao_nam_hoc.view.form</field>
+            <field name="model">qldt.quy_che_dao_tao_nam_hoc</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <div class="oe_edit_only" style="font-size:25px" attrs="{'invisible': [('id', '=', False)], }">Chỉnh sửa quy chế đào tạo năm học</div>
+                        <div class="oe_edit_only" style="font-size:25px" attrs="{'invisible': [('id', '!=', False)], }">Tạo mới quy chế đào tạo năm học</div>
+                        <div class="oe_read_only" style="font-size:25px">Quy chế đào tạo năm học</div>
+                        <group col="4">
+                            <field name="ten_quy_che"/>
+                            <field name="ma_quy_che"/>
+                            <field name="phuong_phap_danh_gia_id"/>
+                        </group>
+                        <notebook>
+                            <page string="Thông tin chung">
+                                <group>
+                                    <field name="danh_sach_van_ban_quy_dinh">
+                                        <tree>
+                                            <field name="ma_van_ban_quy_dinh"/>
+                                            <field name="create_uid" string="Người tạo"/>
+                                            <field name="create_date" string="Ngày tạo"/>
+                                        </tree>
+                                    </field>
+                                    <field name="dot_nhap_hoc_ids" context="{'form_view_ref':'website_slides.dot_nhap_hoc_form_quy_che_dao_tao_nam_hoc'}">
+                                        <tree>
+                                            <field name="ten_dot"/>
+                                            <field name="nam_hoc_id"/>
+                                            <field name="khoa_nganh_ids" widget="many2many_tags">
+                                            </field>
+                                        </tree>
+                                    </field>
+                                </group>
+                                <group>
+                                    <field name="chuong_trinh_khung_ids">
+                                        <tree>
+                                            <field name="ten_chuong_trinh_khung"/>
+                                            <field name="khoa_nganh_ids" widget="many2many_tags"/>
+                                            <field name="create_uid"/>
+                                        </tree>
+                                    </field>
+                                </group>
+                            </page>
+                            <page string="Thông tin về phương pháp đánh giá">
+                                <group>
+                                    <field name="dau_diem_ids"/>
+                                </group>
+
+                            </page>
+                        </notebook>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="quy_che_dao_tao_nam_hoc_view_list" model="ir.ui.view">
+            <field name="name">qldt_quy_che_dao_tao_nam_hoc.view.list</field>
+            <field name="model">qldt.quy_che_dao_tao_nam_hoc</field>
+            <field name="arch" type="xml">
+                <tree string="Hình thức đào tạo">
+                    <field name="ten_quy_che"/>
+                    <field name="ma_quy_che"/>
+                    <field name="dot_nhap_hoc_ids"/>
+                    <field name="chuong_trinh_khung_ids"/>
+                    <field name="phuong_phap_danh_gia_id"/>
+                    <field string="Ngày tạo" name="create_date"/>
+                    <field string="Người tạo" name="create_uid"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="action_quy_che_dao_tao_nam_hoc" model="ir.actions.act_window">
+            <field name="name">Quy chế đào tạo năm học</field>
+            <field name="res_model">qldt.quy_che_dao_tao_nam_hoc</field>
+            <field name="view_mode">list,form</field>
+            <!--            <field name="view_id" ref="hinh_thuc_dao_tao_view_kanban"/>-->
+            <!--            <field name="view_id" ref="hinh_thuc_dao_tao_view_form"/>-->
+            <!--            <field name="view_id" ref="hinh_thuc_dao_tao_view_list"/>-->
+
+        </record>
+
+    </data>
+</odoo>

@@ -1,0 +1,60 @@
+<odoo>
+    <data>
+
+        <record model="ir.ui.view" id="mon_hoc_dieu_kien_view_tree">
+            <field name="name">mon_hoc_dieu_kien.view.tree</field>
+            <field name="model">mon_hoc_dieu_kien</field>
+            <field name="arch" type="xml">
+                <tree string="Các môn học điều kiện" default_order="hoc_ky asc">
+                    <field name="hoc_phan_id"/>
+                    <field name="ten_hoc_phan"/>
+                    <field name="ctk_id"/>
+                    <field name="hoc_ky"/>
+                    <field name="so_tin_chi"/>
+                    <field name="hoc_phan_tien_quyet_ids" string="HP tiên quyết" widget="many2many_tags"/>
+                    <field name="hoc_phan_truoc_ids" string="HP trước" widget="many2many_tags"/>
+                    <field name="hoc_phan_song_hanh_ids" string="HP song hành" widget="many2many_tags"/>
+                </tree>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="mon_hoc_dieu_kien_view_form">
+            <field name="name">mon_hoc_dieu_kien.view.form</field>
+            <field name="model">mon_hoc_dieu_kien</field>
+            <field name="arch" type="xml">
+                <form string="Các môn học điều kiện">
+                    <sheet>
+                        <group col="4">
+                            <field name="hoc_phan_id"/>
+                            <field name="ten_hoc_phan"/>
+                            <field name="hoc_ky" required="1"/>
+                            <field name="tinh_chat"/>
+                            <field name="hoc_phan_tien_quyet_ids" string="HP tiên quyết" widget="many2many_tags"/>
+                            <field name="hoc_phan_truoc_ids" string="HP trước" widget="many2many_tags"/>
+                            <field name="hoc_phan_song_hanh_ids" string="HP song hành" widget="many2many_tags"/>
+                            <field name="is_tinh_diem"/>
+                            <field name="loai_hoc_phan" required="1"/>
+                            <!-- <field name="hoc_phan_song_hanh_ids" string="Danh sách HP song hành"/>-->
+                        </group>
+                        <group>
+<!--                            <field name="hoc_phan_tuong_duong_id"/>-->
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record model="ir.actions.act_window" id="action_mon_hoc_dieu_kien">
+            <field name="name">Quan hệ các môn học</field>
+            <field name="res_model">mon_hoc_dieu_kien</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+<!--        <record id="action_mon_hoc_dieu_kien_form" model="ir.actions.act_window.view">-->
+<!--            <field name="act_window_id" ref="action_ky_hoc_quan_ly_ky_hoc"/>-->
+<!--            <field name="view_id" ref="mon_hoc_dieu_kien_view_form"/>-->
+<!--            <field name="view_mode">form</field>-->
+<!--            <field name="sequence" eval="22"/>-->
+<!--        </record>-->
+    </data>
+</odoo>

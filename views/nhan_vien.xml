@@ -1,0 +1,124 @@
+<odoo>
+    <data>
+        <record id="nhan_vien_form" model="ir.ui.view">
+            <field name="model">nhan_vien</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="name" string="Họ và tên" required="1" placeholder="VD: Nguyễn Văn A"/>
+<!--                                <field name="email" placeholder="ngggnv@gmail.com" required="1"/>-->
+                                <field name="email"/>
+                                <!-- <field name="password" required="1" password="1"/> -->
+                                <field name="vai_tro_goc"/>
+                                <field name="don_vi_id"/>
+                                <field name="ma_dinh_danh"/>
+                                <field name="vai_tro_kiem_nhiem">
+                                <field name="hoc_ham"/>
+                                <field name="hoc_vi"/>
+                                    <tree>
+                                        <field name="vai_tro"/>
+                                        <field name="don_vi_id"/>
+                                    </tree>
+                                </field>
+                            </group>
+                            <group>
+                                <field name="anh_dai_dien" widget='image' class="oe_avatar"
+                                       options='{"preview_image": "image_128"}'/>
+                            </group>
+                        </group>
+                        <notebook colspan="4">
+                            <page name="thong_tin_ca_nhan" string="Thông tin cá nhân">
+                                <group>
+                                    <group string="Thông tin bản thân">
+                                        <field name="ho_dem"/>
+                                        <field name="ten"/>
+                                        <field name="ten_goi_khac"/>
+                                        <field name="ngay_sinh"/>
+                                        <field name="gioi_tinh"/>
+                                        <field name="dan_toc"/>
+                                        <field name="ton_giao"/>
+                                        <field name="so_cmnd"/>
+                                        <field name="ngay_cap"/>
+                                        <field name="noi_cap"/>
+                                        <field name="so_so_bhxh"/>
+                                        <field name="so_dien_thoai"/>
+                                    </group>
+                                    <group string="Nơi sinh">
+                                        <field name="loaiNoiSinh"/>
+                                        <field name="tinh_tp_id"/>
+                                        <field name="quan_huyen_id"/>
+                                        <field name="phuong_xa_id"/>
+                                        <field name="so_nha_ten_duong_ns"/>
+                                        <field name="noiSinhNuocNgoai" attrs="{'invisible': [('loaiNoiSinh', '=', '0')], }"/>
+                                    </group>
+                                    <group string="Quê quán trên sổ hộ khẩu">
+                                        <field name="tinh_tp_hk"/>
+                                        <field name="quan_huyen_hk"/>
+                                        <field name="phuong_xa_hk"/>
+                                        <field name="so_nha_ten_duong_hk"/>
+                                    </group>
+                                    <group string="Nơi ở hiện nay">
+                                        <field name="tinh_tp_no"/>
+                                        <field name="quan_huyen_no"/>
+                                        <field name="phuong_xa_no"/>
+                                        <field name="so_nha_ten_duong_no"/>
+                                    </group>
+                                </group>
+                            </page>
+                            <page name="qua_trinh_cong_tac" string="Quá trình công tác">
+                                <group col="4">
+                                    <field name="ngay_bat_dau"/>
+                                    <field name="ngay_ket_thuc"/>
+                                </group>
+                            </page>
+                            <page name="lop_hanh_chinh" string="Lớp hành chính phụ trách">
+                                <group>
+                                    <field name="lop_hanh_chinh_ids"/>
+                                </group>
+                            </page>
+                            <page name="lop_tin_chi" string="Lớp tín chỉ">
+                                <group>
+                                    <field name="lop_tin_chi_ids"/>
+                                </group>
+                            </page>
+                        </notebook>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="nhan_vien_tree">
+            <field name="model">nhan_vien</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="image_128" widget="image" string="Ảnh đại diện"/>
+                    <field name="name"/>
+                    <field name="ma_dinh_danh"/>
+                    <field name="don_vi_id" string="Đơn vị"/>
+                    <field name="vai_tro_kiem_nhiem" widget="many2many_tags"/>
+                    <field name="email"/>
+                    <field name="create_uid" string="Nguời tạo"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="nhan_vien_search_view" model="ir.ui.view">
+            <field name="name">nhan_vien_search_field</field>
+            <field name="model">nhan_vien</field>
+            <field name="arch" type="xml">
+                <search>
+                    <field name="name"/>
+                    <field name="ma_dinh_danh"/>
+            </search>
+            </field>
+        </record> 
+
+        <record model="ir.actions.act_window" id="action_nhan_vien_danh_sach_nhan_vien">
+            <field name="name">Cán bộ - CNV - GV</field>
+            <field name="res_model">nhan_vien</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+    </data>
+</odoo>

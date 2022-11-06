@@ -1,0 +1,450 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <data>
+        <!--                KANBAN views ngành học -->
+
+        <!--        FORM views cho ngành học-->
+        <record id="danh_sach_nganh_hoc_view_form" model="ir.ui.view">
+            <field name="name"></field>
+            <field name="model">quan_ly_nganh_hoc.nganh</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <div class="oe_edit_only" style="font-size:25px" attrs="{'invisible': [('id', '=', False)], }">Chỉnh sửa ngành học</div>
+                        <div class="oe_edit_only" style="font-size:25px" attrs="{'invisible': [('id', '!=', False)], }">Tạo mới ngành học</div>
+                        <div class="oe_read_only" style="font-size:25px">Ngành học</div>
+                        <div class="oe_button_box" name="button_box"/>
+                        <group>
+                            <group>
+                                <field name="name"
+                                       required="1"
+                                       string="Tên Ngành"
+                                       widget="selection"
+                                />
+                                <field name="ten_nganh_viet_tat"
+                                       required="1"
+                                       string="Tên Ngành viết tắt"
+                                />
+                                <field name="ma_nganh"/>
+                            </group>
+<!--                            <group>-->
+<!--                                <field name="banner" widget='image' class="oe_avatar"-->
+<!--                                       string="Ảnh banner ngành"/>-->
+<!--&lt;!&ndash;                                       options='{"preview_image": "image_128"}' &ndash;&gt;-->
+
+<!--                            </group>-->
+                        </group>
+                        <notebook colspan="4">
+                            <page name="thong_tin_chung" string="Thông tin chung">
+                                <group>
+                                    <field name="mo_ta_html"/>
+                                </group>
+                                <group>
+                                    <field name="hinh_thuc_dao_tao">
+                                        <tree>
+                                            <field name="ten_hinh_thuc_dao_tao"/>
+                                            <field name="thoi_gian_dao_tao" width="200px"/>
+                                        </tree>
+                                    </field>
+                                </group>
+                            </page>
+                            <page string="Chuẩn đầu ra - Nghề nghiệp">
+                                <group>
+                                    <group>
+                                        <field name="chuan_dau_ra"/>
+                                    </group>
+                                    <group>
+                                        <field name="nghe_nghiep"/>
+                                    </group>
+                                </group>
+                            </page>
+                            <page string="Cấu trúc chương trình">
+                                <group>
+                                    <field name="chuyen_nganh_ids">
+                                        <tree>
+                                            <field name="ma_chuyen_nganh"/>
+                                            <field name="name"/>
+                                        </tree>
+                                    </field>
+                                </group>
+                            </page>
+                            <page string="Học phí">
+                                <group>
+                                    <field name="hoc_phi" string="Thông tin về học phí"/>
+                                </group>
+                            </page>
+                            <page string="Điều kiện tuyển sinh">
+                                <group>
+                                    <field name="thong_tin_tuyen_sinh"/>
+                                </group>
+                            </page>
+                            <page string="Quy trình nhập học">
+                                <group>
+                                    <field name="quy_trinh_nhap_hoc"/>
+                                </group>
+                            </page>
+                        </notebook>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="danh_sach_nganh_hoc_view_form_old">
+            <field name="model">quan_ly_nganh_hoc.nganh</field>
+            <field name="arch" type="xml">
+                <form>
+                    <notebook colspan="4">
+                        <page string="Thông tin chung">
+                            <group>
+                                <group colspan="4">
+                                    <field name="name" widget="selection"/>
+                                    <field name="ma_nganh"/>
+                                </group>action_view_ratings
+                                <group>
+                                    <field name="hinh_thuc_dao_tao">
+                                        <tree>
+                                            <field name="ten_hinh_thuc_dao_tao"/>
+                                            <field name="thoi_gian_dao_tao"/>
+                                        </tree>
+                                    </field>
+                                </group>
+                                <group colspan="4">
+                                    <!--                                    <field name="thoi_gian_dao_tao"/>-->
+                                    <field name="mo_ta_html"/>
+                                </group>
+                                <group colspan="4">
+                                    <field string="Banner" name="banner" widget="image"/>
+                                </group>
+                            </group>
+
+                        </page>
+                        <page string="Chuẩn đầu ra">
+                            <!--                        <form>-->
+                            <group>
+                                <field name="chuan_dau_ra"/>
+                            </group>
+                            <!--                        </form>-->
+                        </page>
+                        <page string="Cấu trúc chương trình">
+                            <!--                        <form>-->
+                            <group>
+                                <field name="chuyen_nganh_ids">
+                                    <tree>
+                                        <field name="ma_chuyen_nganh"/>
+                                        <field name="name"/>
+                                        <!--                                        <field name="danh_sach_ky_hoc"/>-->
+                                    </tree>
+                                </field>
+                                <!--                                <field name="hoc_phan_id">-->
+                                <!--                                    <tree>-->
+                                <!--                                        <field name="ma_hoc_phan"/>-->
+                                <!--                                        <field name="name"/>-->
+                                <!--                                        <field name="so_tin_chi"/>-->
+                                <!--                                        <field name="loai_hoc_phan"/>-->
+                                <!--&lt;!&ndash;                                        <field name="khoa_bo_mon_phu_trach"/>&ndash;&gt;-->
+                                <!--                                    </tree>-->
+                                <!--                                </field>-->
+                            </group>
+                            <!--                        </form>-->
+                        </page>
+                        <page string="Nghề nghiệp">
+                            <!--                        <form>-->
+                            <group>
+                                <field name="nghe_nghiep"/>
+                            </group>
+                            <!--                        </form>-->
+                        </page>
+                        <page string="Học phí">
+                            <!--                        <form>-->
+                            <group>
+                                <field name="hoc_phi"/>
+                            </group>
+                            <!--                        </form>-->
+                        </page>
+                        <page string="Điều kiện tuyển sinh">
+                            <!--                        <form>-->
+                            <group>
+                                <field name="thong_tin_tuyen_sinh"/>
+                            </group>
+                            <!--                        </form>-->
+                        </page>
+                        <page string="Quy trình nhập học">
+                            <!--                        <form>-->
+                            <group>
+                                <field name="quy_trinh_nhap_hoc"/>
+                            </group>
+                            <!--                        </form>-->
+                        </page>
+                    </notebook>
+                </form>
+            </field>
+        </record>
+
+        <!--        KANBAN views cho ngành học-->
+        <record id="danh_sach_nganh_hoc_view_kanban" model="ir.ui.view">
+            <field name="name">nganh.view.kanban</field>
+            <field name="model">quan_ly_nganh_hoc.nganh</field>
+            <field name="arch" type="xml">
+                <kanban
+                        string="Danh sách ngành học"
+                        class="o_emphasize_colors o_kanban_dashboard o_slide_kanban breadcrumb_item active" edit="false" sample="1">
+                    <field name="color"/>
+                    <!--                    <field name="website_published"/>-->
+                    <templates>
+                        <t t-name="kanban-box">
+                            <div class="o_kanban_card_header">
+                                <div class="o_kanban_card_header_title mb16">
+                                    <!--                                        Hiển thị tên ngành-->
+                                    <div class="o_primary">
+                                        <a type="edit" class="mr-auto">
+                                            <span><field name="name" class="o_primary"/></span>
+                                        </a>
+                                    </div>
+                                    <!--                                        hiển thị tag của ngành ở bên dưới tên ngành-->
+                                    <!--                                <div t-if="record.tag_ids">-->
+                                    <!--                                    <field name="tag_ids" widget="many2many_tags"/>-->
+                                    <!--                                </div>-->
+                                </div>
+                                <div class="container o_kanban_card_content mt0">
+                                    <div class="row mt3">
+                                        <!--                                        Đếm số lượng sinh viên trong ngành-->
+                                        <!--                                        <div class="col-4 border-right">-->
+                                        <!--                                            <a name="action_view_slides" type="object" class="d-flex flex-column align-items-center">-->
+                                        <!--                                                <span class="font-weight-bold"><field name="sinh_vien_count"/></span>-->
+                                        <!--                                                <span class="text-muted">Sinh viên</span>-->
+                                        <!--                                            </a>-->
+                                        <!--                                        </div>-->
+                                        <!--&lt;!&ndash;                                        Đếm số lượng sinh vien đã tốt nghiệp &ndash;&gt;-->
+                                        <!--                                        <div class="col-4 border-right">-->
+                                        <!--                                            <a name="action_redirect_to_members" type="object" class="d-flex flex-column align-items-center">-->
+                                        <!--                                                <span class="font-weight-bold"><field name="so_luong_chuyen_nganh"/></span>-->
+                                        <!--                                                <span class="text-muted">Số lượng chuyên ngành</span>-->
+                                        <!--                                            </a>-->
+                                        <!--                                        </div>-->
+                                        <!--                                        Hiển thị hạn nộp hồ sơ-->
+                                        <div class="col-4">
+                                            <!--                                            <a name="action_redirect_to_done_members" type="object" class="d-flex flex-column align-items-center">-->
+                                            <!--                                                <span class="font-weight-bold"><field name="han_nop_ho_so"/></span>-->
+                                            <!--                                                <span name="done_members_count_label" class="text-muted">Hạn nộp HS </span>-->
+                                            <!--                                            </a>-->
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </t>
+                    </templates>
+                </kanban>
+            </field>
+        </record>
+
+        <!--        LIST view cho ngành học-->
+        <record id="danh_sach_nganh_hoc_view_list" model="ir.ui.view">
+            <field name="name">nganh.view.list</field>
+            <field name="model">quan_ly_nganh_hoc.nganh</field>
+            <field name="arch" type="xml">
+                <tree string="Ngành học" sample="1">
+                    <field name="sequence" widget="handle"/>
+                    <field name="ma_nganh"/>
+                    <field name="name"/>
+                    <field name="ten_nganh_viet_tat"/>
+                    <!--                    <field name="thoi_gian_dao_tao"/>-->
+                    <field name="hinh_thuc_dao_tao" widget="many2many_tags"/>
+                    <field name="chuyen_nganh_ids" widget="many2many_tags"/>
+                    <!--                    <field name="han_nop_ho_so"/>-->
+                    <field string="Ngày tạo" name="create_date"/>
+                </tree>
+            </field>
+        </record>
+
+
+        <!--        form view cho chuyên ngành-->
+        <record id="danh_sach_chuyen_nganh_view_form" model="ir.ui.view">
+            <field name="name"></field>
+            <field name="model">quan_ly_nganh_hoc.chuyen_nganh</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <div class="oe_button_box" name="button_box"/>
+                        <div class="oe_edit_only" style="font-size:25px" attrs="{'invisible': [('id', '=', False)], }">Chỉnh sửa chuyên ngành</div>
+                        <div class="oe_edit_only" style="font-size:25px" attrs="{'invisible': [('id', '!=', False)], }">Tạo mới chuyên ngành</div>
+                        <div class="oe_read_only" style="font-size:25px">Hình thức chuyên ngành</div>
+                        <group col="4">
+                            <field name="ma_chuyen_nganh" required="1"/>
+                            <field name="name" required="1" string="Tên chuyên ngành"/>
+                            <field name="nganh_id"></field>
+                        </group>
+                        <notebook colspan="4">
+                            <page name="hinh_thuc_dao_tao" string="Hình thức đào tạo">
+                                <field name="hinh_thuc_dao_tao_ids"/>
+                            </page>
+                            <page name="thong_tin_chung" string="Thông tin chung">
+                                <field name="mo_ta_html"/>
+                            </page>
+                        </notebook>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+        <record model="ir.ui.view" id="danh_sach_chuyen_nganh_view_form_old">
+            <field name="model">quan_ly_nganh_hoc.chuyen_nganh</field>
+            <field name="arch" type="xml">
+                <form>
+                    <notebook>
+
+                        <page string="Thông tin chung">
+
+                            <group>
+                                <field name="name"/>
+                                <field name="ma_chuyen_nganh"/>
+                                <field name="nganh_id">
+                                </field>
+                                <field name="mo_ta_html"/>
+                            </group>
+                            <!--                        </form>-->
+                        </page> continue
+                        <!--                    <page string="Học phần chuyên ngành">-->
+                        <!--&lt;!&ndash;                        <form>&ndash;&gt;-->
+                        <!--                            <group>-->
+                        <!--                                <field name="hoc_phan_chuyen_nganh_id">-->
+                        <!--                                    <tree>-->
+                        <!--                                        <field name="ma_hoc_phan"/>-->
+                        <!--                                        <field name="name"/>-->
+                        <!--                                    </tree>-->
+                        <!--                                </field>-->
+                        <!--                            </group>-->
+                        <!--&lt;!&ndash;                        </form>&ndash;&gt;-->
+                        <!--                    </page>-->
+                        <!--                    <page string="Danh sách kỳ học">-->
+                        <!--&lt;!&ndash;                        <form>&ndash;&gt;-->
+                        <!--                            <group>-->
+                        <!--                                <field name="danh_sach_ky_hoc">-->
+                        <!--                                    <tree>-->
+                        <!--                                        <field name="ten_ky_hoc"/>-->
+                        <!--                                        <field name="danh_sach_mon_hoc"/>-->
+                        <!--                                    </tree>-->
+                        <!--                                </field>-->
+                        <!--                            </group>-->
+                        <!--&lt;!&ndash;                        </form>&ndash;&gt;-->
+                        <!--                    </page>-->
+                        <!--                    <page string="Sinh viên chuyên ngành">-->
+                        <!--                        <form>-->
+                        <!--                            <group>-->
+                        <!--                                <field name="sinh_vien_chuyen_nganh">-->
+                        <!--                                    <tree>-->
+                        <!--                                        <field name="ma_dinh_danh"/>-->
+                        <!--                                        <field name="name"/>-->
+                        <!--                                        <field name="MaNg"/>-->
+                        <!--                                        <field name="lop_hanh_chinh_id"/>-->
+                        <!--                                    </tree>-->
+                        <!--                                </field>-->
+                        <!--                            </group>-->
+                        <!--                        </form>-->
+                        <!--                    </page>-->
+                    </notebook>
+                </form>
+            </field>
+        </record>
+        <!--        KANBAN views cho chuyên ngành-->
+        <record id="danh_sach_chuyen_nganh_view_kanban" model="ir.ui.view">
+            <field name="name">chuyen.nganh.view.kanban</field>
+            <field name="model">quan_ly_nganh_hoc.chuyen_nganh</field>
+            <field name="arch" type="xml">
+                <kanban
+                        string="Danh sách chuyên ngành"
+                        class="o_emphasize_colors o_kanban_dashboard o_slide_kanban breadcrumb_item active" edit="false" sample="1">
+                    <field name="color"/>
+                    <templates>
+                        <t t-name="kanban-box">
+                            <div class="o_kanban_card_header">
+                                <div class="o_kanban_card_header_title mb16">
+                                    <!--                                        Hiển thị tên chuyên ngành-->
+                                    <div class="o_primary">
+                                        <a type="edit" class="mr-auto">
+                                            <span><field name="name" class="o_primary"/></span>
+                                        </a>
+                                    </div>
+                                    <field name="nganh_id"></field>
+                                    <!--                                        hiển thị tag của ngành ở bên dưới tên ngành-->
+                                    <!--                                <div t-if="record.tag_ids">-->
+                                    <!--                                    <field name="tag_ids" widget="many2many_tags"/>-->
+                                    <!--                                </div>-->
+                                </div>
+                                <div class="container o_kanban_card_content mt0">
+                                    <div class="row mt3">
+                                        <!--                                        Đếm số lượng sinh viên trong chuyên ngành-->
+                                        <div class="col-4 border-right">
+                                            <!--                                            <a name="action_view_slides" type="object" class="d-flex flex-column align-items-center">-->
+                                            <!--                                                <span class="font-weight-bold"><field name="sinh_vien_count"/></span>-->
+                                            <!--                                                <span class="text-muted">Sinh viên</span>-->
+                                            <!--                                            </a>-->
+                                        </div>
+                                        <!--                                        Đếm số lượng sinh vien đã tốt nghiệp -->
+                                        <div class="col-4 border-right">
+                                            <!--                                            <a name="action_redirect_to_members" type="object" class="d-flex flex-column align-items-center">-->
+                                            <!--                                                <span class="font-weight-bold"><field name="sinh_vien_tot_nghiep_count"/></span>-->
+                                            <!--                                                <span class="text-muted">Sinh viên tốt nghiệp</span>-->
+                                            <!--                                            </a>-->
+                                        </div>
+                                        <!--                                        Hiển thị hạn đăng ký chuyên ngành-->
+                                        <div class="col-4">
+                                            <!--                                            <a name="action_redirect_to_done_members" type="object" class="d-flex flex-column align-items-center">-->
+                                            <!--                                                <span class="font-weight-bold"><field name="han_dang_ky_chuyen_nganh"/></span>-->
+                                            <!--                                                <span name="done_members_count_label" class="text-muted">Hạn đăng ký chuyên ngành</span>-->
+                                            <!--                                            </a>-->
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </t>
+                    </templates>
+                </kanban>
+            </field>
+        </record>
+
+        <!--        LIST view cho chuyên ngành-->
+        <record id="danh_sach_chuyen_nganh_view_list" model="ir.ui.view">
+            <field name="name">chuyen.nganh.view.list</field>
+            <field name="model">quan_ly_nganh_hoc.chuyen_nganh</field>
+            <field name="arch" type="xml">
+                <tree string="Chuyên ngành" sample="1">
+                    <field name="sequence" widget="handle"/>
+                    <field name="ma_chuyen_nganh"/>
+                    <field name="name"/>
+                    <field name="nganh_id" string="Thuộc ngành"/>
+                    <!--                    <field name="hoc_phan_chuyen_nganh_id"/>-->
+                    <field name="hinh_thuc_dao_tao_ids" widget="many2many_tags"/>
+                    <field name="create_uid" string="Tạo bởi"/>
+                    <field string="Ngày tạo" name="create_date"/>
+                </tree>
+            </field>
+        </record>
+
+        <!--        action list-->
+        <record id="action_nganh_hoc_danh_sach_nganh_hoc" model="ir.actions.act_window">
+            <field name="name">Danh sách thông tin ngành học</field>
+            <field name="res_model">quan_ly_nganh_hoc.nganh</field>
+            <field name="view_mode">list,form,graph</field>
+            <!--            <field name="view_id" ref="danh_sach_nganh_hoc_view_kanban"/>-->
+            <field name="view_id" ref="danh_sach_nganh_hoc_view_form"/>
+            <field name="view_id" ref="danh_sach_nganh_hoc_view_list"/>
+            <field name="help" type="html">
+                <p class="o_view_nocontent_smiling_face">
+                    Tạo ngành học
+                </p>
+            </field>
+        </record>
+
+        <record id="action_nganh_hoc_danh_sach_chuyen_nganh" model="ir.actions.act_window">
+            <field name="name">Danh sách thông tin chuyên ngành</field>
+            <field name="res_model">quan_ly_nganh_hoc.chuyen_nganh</field>
+            <field name="view_mode">list,form,graph</field>
+            <field name="view_id" ref="danh_sach_chuyen_nganh_view_kanban"/>
+            <field name="help" type="html">
+                <p class="o_view_nocontent_smiling_face">
+                    Tạo chuyên ngành
+                </p>
+            </field>
+        </record>
+
+    </data>
+</odoo>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <data>
+        <menuitem name="Ngành học" id="nganh_hoc_base_menu"></menuitem>
+        <menuitem name="Danh sách ngành học"
+                  id="nganh_hoc_danh_sach"
+                  parent="nganh_hoc_base_menu"
+                  action="action_nganh_hoc_danh_sach_nganh_hoc"/>
+        <menuitem name="Danh sách chuyên ngành"
+                  id="nganh_hoc_danh_sach_chuyen_nganh"
+                  parent="nganh_hoc_base_menu"
+                  action="action_nganh_hoc_danh_sach_chuyen_nganh"/>
+    </data>
+</odoo>

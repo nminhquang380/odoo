@@ -1,0 +1,837 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record model="ir.module.category" id="base.module_category_website_elearning"/>
+
+    <record id="group_website_slides_ke_toan" model="res.groups">
+        <field name="name">Kế toán</field>
+        <field name="category_id" ref="base.module_category_website_elearning"/>
+        <field name="implied_ids" eval="[(4, ref('base.group_user'))]"/>
+    </record>
+
+    <record id="group_website_slides_tro_giang" model="res.groups">
+        <field name="name">Trợ giảng</field>
+        <field name="category_id" ref="base.module_category_website_elearning"/>
+        <field name="implied_ids" eval="[(4, ref('base.group_user'))]"/>
+    </record>
+
+    <record id="group_website_quan_tri_vien_bd" model="res.groups">
+        <field name="name">Quản trị viên bồi dưỡng ngắn hạn</field>
+        <field name="category_id" ref="base.module_category_website_elearning"/>
+        <field name="implied_ids" eval="[(4, ref('base.group_user'))]"/>
+    </record>
+
+    <record id="group_website_slides_officer" model="res.groups">
+        <field name="name">Quản trị viên</field>
+        <field name="category_id" ref="base.module_category_website_elearning"/>
+        <field name="implied_ids" eval="[(4, ref('base.group_user')),(4, ref('website.group_website_publisher'))]"/>
+    </record>
+
+    <record id="group_website_slides_manager" model="res.groups">
+        <field name="name">AIS admin</field>
+        <field name="category_id" ref="base.module_category_website_elearning"/>
+        <field name="implied_ids" eval="[(4, ref('group_website_slides_officer'))]"/>
+    </record>
+
+
+
+    <record id="base.default_user" model="res.users">
+        <field name="groups_id" eval="[(4,ref('group_website_slides_manager'))]"/>
+    </record>
+
+    <record id="base.group_system" model="res.groups">
+        <field name="implied_ids" eval="[(4, ref('group_website_slides_manager'))]"/>
+    </record>
+
+    <data noupdate="0">
+
+        <!-- CHANNEL -->
+        
+        <!-- <record id="rule_slide_channel_global" model="ir.rule">
+            <field name="name">Channel: always visible (sub rules exist)</field>
+            <field name="model_id" ref="model_slide_channel"/>
+            <field name="domain_force">[(1, '=', 1)]</field>
+        </record> -->
+
+        <!-- <record id="rule_slide_channel_not_website" model="ir.rule">
+            <field name="name">Channel: public/portal/user: restricted to published and (public or member only)</field>
+            <field name="model_id" ref="model_slide_channel"/>
+            <field name="groups"
+                   eval="[(4, ref('base.group_public')), (4, ref('base.group_portal')), (4, ref('base.group_user'))]"/>
+            <field name="domain_force">['&amp;', ('website_published', '=', True), '|', ('visibility', '=', 'public'),
+                ('partner_ids', '=', user.partner_id.id)]
+            </field>
+            <field name="perm_unlink" eval="0"/>
+            <field name="perm_write" eval="0"/>
+            <field name="perm_read" eval="1"/>
+            <field name="perm_create" eval="0"/>
+        </record> -->
+
+        <!-- <record id="rule_slide_channel_officer_r" model="ir.rule">
+            <field name="name">Channel: officer: read all</field>
+            <field name="model_id" ref="model_slide_channel"/>
+            <field name="domain_force">[(1, '=', 1)]</field>
+            <field name="groups" eval="[(4, ref('group_website_slides_officer'))]"/>
+            <field name="perm_unlink" eval="0"/>
+            <field name="perm_write" eval="0"/>
+            <field name="perm_read" eval="1"/>
+            <field name="perm_create" eval="0"/>
+        </record> -->
+        
+        <!-- <record id="rule_slide_channel_officer_cw" model="ir.rule">
+            <field name="name">Channel: officer: create/write own only</field>
+            <field name="model_id" ref="model_slide_channel"/>
+            <field name="domain_force">[(1, '=', 1)]</field>
+            <field name="groups" eval="[(4, ref('group_website_slides_officer'))]"/>
+            <field name="perm_unlink" eval="0"/>
+            <field name="perm_write" eval="1"/>
+            <field name="perm_read" eval="0"/>
+            <field name="perm_read" eval="1"/>
+            <field name="perm_create" eval="1"/>
+        </record> -->
+
+        <!-- <record id="rule_slide_channel_manager" model="ir.rule">
+            <field name="name">Channel: manager: crud all</field>
+            <field name="model_id" ref="model_slide_channel"/>
+            <field name="domain_force">[(1, '=', 1)]</field>
+            <field name="groups" eval="[(4, ref('group_website_slides_manager'))]"/>
+            <field name="perm_unlink" eval="1"/>
+            <field name="perm_write" eval="1"/>
+            <field name="perm_read" eval="1"/>
+            <field name="perm_create" eval="1"/>
+        </record> -->
+
+
+        <!-- SLIDE - Học liệu-->
+        <record id="rule_slide_slide_global" model="ir.rule">
+            <field name="name">Slide: always visible (sub rules exist)</field>
+            <field name="model_id" ref="model_slide_slide"/>
+            <field name="domain_force">[(1, '=', 1)]</field>
+        </record>
+
+        <record id="rule_slide_slide_not_website" model="ir.rule">
+            <field name="name">Slide: public/portal/user: restricted to published or uploaded by user, and either
+                channel member or public channel &amp; (category or previewable)
+            </field>
+            <field name="model_id" ref="model_slide_slide"/>
+            <field name="groups"
+                   eval="[(4, ref('base.group_public')), (4, ref('base.group_portal')), (4, ref('base.group_user'))]"/>
+            <field name="domain_force">['&amp;',
+                '|',
+                '&amp;', ('channel_id.visibility', '=', 'public'), '|', ('is_category','=', True), ('is_preview', '=',
+                True),
+                ('channel_id.partner_ids', '=', user.partner_id.id),
+                '&amp;', ('channel_id.website_published', '=', True), '|', ('user_id', '=', user.id),
+                ('website_published', '=', True)]
+            </field>
+            <field name="perm_unlink" eval="0"/>
+            <field name="perm_write" eval="0"/>
+            <field name="perm_read" eval="1"/>
+            <field name="perm_create" eval="1"/>
+        </record>
+
+        <!-- Rule này cho phép quản trị viên các hình thức đào tạo được CRUD học liệu trên giao diện backend view       -->
+        <record id="rule_slide_slide_officer_r" model="ir.rule">
+            <field name="name">Slide: QTV read all</field>
+            <field name="model_id" ref="model_slide_slide"/>
+            <field name="domain_force">[(1, '=', 1)]</field>
+            <field name="groups"
+                   eval="[(4, ref('group_website_slides_officer'))]"/>
+            <field name="perm_unlink" eval="1"/>
+            <field name="perm_write" eval="1"/>
+            <field name="perm_read" eval="1"/>
+            <field name="perm_create" eval="1"/>
+        </record>
+
+        <!--        sửa ở đây để giảng viên có thể thêm - sửa  - xóa học liệu (do học liệu kế thừa delegation từ slide_slide-->
+        <record id="rule_slide_slide_officer_cw" model="ir.rule">
+            <field name="name">Slide: officer: create/write own only</field>
+            <field name="model_id" ref="model_slide_slide"/>
+            <field name="domain_force">[('channel_id.user_id', '=', user.id)]</field>
+            <field name="groups" eval="[(4, ref('group_website_slides_officer'))]"/>
+            <field name="perm_unlink" eval="0"/>
+            <field name="perm_write" eval="1"/>
+            <field name="perm_read" eval="1"/>
+            <field name="perm_create" eval="1"/>
+        </record>
+
+        <record id="rule_slide_slide_manager" model="ir.rule">
+            <field name="name">Slide: manager: crud all</field>
+            <field name="model_id" ref="model_slide_slide"/>
+            <field name="domain_force">[(1, '=', 1)]</field>
+            <field name="groups" eval="[(4, ref('group_website_slides_manager'))]"/>
+            <field name="perm_unlink" eval="1"/>
+            <field name="perm_write" eval="1"/>
+            <field name="perm_read" eval="1"/>
+            <field name="perm_create" eval="1"/>
+        </record>
+
+        <!-- CHANNEL PARTNER -->
+        <record id="rule_slide_channel_partner_officer" model="ir.rule">
+            <field name="name">Channel Partner: officer: create/write/unlink own only</field>
+            <field name="model_id" ref="model_slide_channel_partner"/>
+            <field name="domain_force">[('channel_id.user_id', '=', user.id)]</field>
+            <field name="groups" eval="[(4, ref('group_website_slides_officer'))]"/>
+            <field name="perm_unlink" eval="1"/>
+            <field name="perm_write" eval="1"/>
+            <field name="perm_read" eval="0"/>
+            <field name="perm_create" eval="1"/>
+        </record>
+
+        <record id="rule_slide_channel_partner_manager" model="ir.rule">
+            <field name="name">Channel Partner: manager: crud all</field>
+            <field name="model_id" ref="model_slide_channel_partner"/>
+            <field name="domain_force">[(1, '=', 1)]</field>
+            <field name="groups" eval="[(4, ref('group_website_slides_manager'))]"/>
+            <field name="perm_unlink" eval="1"/>
+            <field name="perm_write" eval="1"/>
+            <field name="perm_read" eval="1"/>
+            <field name="perm_create" eval="1"/>
+        </record>
+
+        <!-- SLIDE PARTNER -->
+        <record id="rule_slide_slide_partner_officer" model="ir.rule">
+            <field name="name">Slide Partner: officer: create/write/unlink own only</field>
+            <field name="model_id" ref="model_slide_slide_partner"/>
+            <field name="domain_force">[('channel_id.user_id', '=', user.id)]</field>
+            <field name="groups" eval="[(4, ref('group_website_slides_officer'))]"/>
+            <field name="perm_unlink" eval="1"/>
+            <field name="perm_write" eval="1"/>
+            <field name="perm_read" eval="0"/>
+            <field name="perm_create" eval="1"/>
+        </record>
+
+        <record id="rule_slide_slide_partner_manager" model="ir.rule">
+            <field name="name">Slide Partner: manager: crud all</field>
+            <field name="model_id" ref="model_slide_slide_partner"/>
+            <field name="domain_force">[(1, '=', 1)]</field>
+            <field name="groups" eval="[(4, ref('group_website_slides_manager'))]"/>
+            <field name="perm_unlink" eval="1"/>
+            <field name="perm_write" eval="1"/>
+            <field name="perm_read" eval="1"/>
+            <field name="perm_create" eval="1"/>
+        </record>
+
+        <!--SLIDE RESOURCE-->
+        <record id="rule_slide_slide_resource_downloadable" model="ir.rule">
+            <field name="name">Resource: restricted to channel members and channel responsible</field>
+            <field name="model_id" ref="model_slide_slide_resource"/>
+            <field name="domain_force">[('slide_id.channel_id.partner_ids', '=', user.partner_id.id)]</field>
+            <field name="groups" eval="[(4, ref('base.group_portal')), (4, ref('base.group_user'))]"/>
+            <field name="perm_read" eval="True"/>
+            <field name="perm_write" eval="False"/>
+            <field name="perm_create" eval="False"/>
+            <field name="perm_unlink" eval="False"/>
+        </record>
+
+
+
+        <!--                Chương trình khung-->
+        <record model="ir.rule" id="rule_chuong_trinh_khung_manager">
+            <field name="name">Tất cả quản trị viên của các hình thức đào tạo thì được xem chương trình khung chung</field>
+            <field name="model_id" ref="model_chuong_trinh_khung"/>
+            <field name="groups"
+                   eval="[(4,ref('group_website_slides_manager'))]"/>
+            <field name="domain_force">[(1, '=', 1)]</field>
+        </record>
+
+        <record model="ir.rule" id="rule_chuong_trinh_khung_chinh_quy">
+            <field name="name">Quản trị viên của hình thức đào tạo nào thì được xem chương trình khung của hình thức đó</field>
+            <field name="model_id" ref="model_chuong_trinh_khung"/>
+            <field name="groups"
+                   eval="[(4,ref('group_website_slides_officer'))]"/>
+            <field name="domain_force">[('hinh_thuc_dao_tao_id','=',user.hinh_thuc_dao_tao_id.id)]</field>
+        </record>
+
+        <record model="ir.rule" id="rule_chuong_trinh_khung_ke_toan">
+            <field name="name">Kế toán của hình thức đào tạo nào thì được xem chương trình khung của hình thức đó</field>
+            <field name="model_id" ref="model_chuong_trinh_khung"/>
+            <field name="groups"
+                   eval="[(4,ref('group_website_slides_ke_toan'))]"/>
+            <field name="domain_force">[('hinh_thuc_dao_tao_id','=',user.hinh_thuc_dao_tao_id.id)]</field>
+        </record>
+
+        <!--                Trọng số điểm-->
+        <record model="ir.rule" id="rule_trong_so_diem_chung">
+            <field name="name">Tất cả quản trị viên của các hình thức đào tạo thì được xem trọng số điểm chung </field>
+            <field name="model_id" ref="model_qldt_trong_so_diem_hoc_phan"/>
+            <field name="groups"
+                   eval="[(4,ref('group_website_slides_manager'))]"/>
+        </record>
+
+        <record model="ir.rule" id="rule_trong_so_diem_chinh_quy">
+            <field name="name">Quản trị viên của hình thức đào tạo nào thì được xem trọng số điểm của hình thức đó</field>
+            <field name="model_id" ref="model_qldt_trong_so_diem_hoc_phan"/>
+            <field name="groups"
+                   eval="[(4,ref('group_website_slides_officer'))]"/>
+            <field name="domain_force">[('hinh_thuc_dao_tao_id','=',user.hinh_thuc_dao_tao_id.id)]</field>
+        </record>
+
+        <record model="ir.rule" id="rule_trong_so_diem_ke_toan">
+            <field name="name">Kế toán của hình thức đào tạo nào thì được xem trọng số điểm của hình thức đó</field>
+            <field name="model_id" ref="model_qldt_trong_so_diem_hoc_phan"/>
+            <field name="groups"
+                   eval="[(4,ref('group_website_slides_ke_toan'))]"/>
+            <field name="domain_force">[('hinh_thuc_dao_tao_id','=',user.hinh_thuc_dao_tao_id.id)]</field>
+        </record>
+
+        <!--    Khóa sinh viên-->
+        <record model="ir.rule" id="rule_khoa_sinh_vien_chung">
+            <field name="name">Super Admin được xem tất cả các khóa sinh viên</field>
+            <field name="model_id" ref="model_khoa_sinh_vien"/>
+            <field name="groups"
+                   eval="[(4,ref('group_website_slides_manager'))]"/>
+        </record>
+        <record model="ir.rule" id="rule_khoa_sinh_vien_tu_xa">
+            <field name="name">Quản trị viên hình thức đào tạo nào thì được xem khóa sinh viên của hình thức đào tạo đó</field>
+            <field name="model_id" ref="model_khoa_sinh_vien"/>
+            <field name="groups"
+                   eval="[(4,ref('group_website_slides_officer'))]"/>
+            <field name="domain_force">[('hinh_thuc_dao_tao_id','=',user.hinh_thuc_dao_tao_id.id)]</field>
+        </record>
+        <record model="ir.rule" id="rule_khoa_sinh_vien_ke_toan">
+            <field name="name">Kế toán hình thức đào tạo nào thì được xem khóa sinh viên của hình thức đào tạo đó</field>
+            <field name="model_id" ref="model_khoa_sinh_vien"/>
+            <field name="groups"
+                   eval="[(4,ref('group_website_slides_ke_toan'))]"/>
+            <field name="domain_force">[('hinh_thuc_dao_tao_id','=',user.hinh_thuc_dao_tao_id.id)]</field>
+        </record>
+
+        <!--    Khóa ngành-->
+        <record model="ir.rule" id="rule_khoa_nganh_chung">
+            <field name="name">Super Admin được xem tất cả các khóa - ngành</field>
+            <field name="model_id" ref="model_khoa_nganh"/>
+            <field name="groups"
+                   eval="[(4,ref('group_website_slides_manager'))]"/>
+        </record>
+        <record model="ir.rule" id="rule_khoa_nganh_tu_xa">
+            <field name="name">Quản trị viên hình thức đào tạo nào thì được xem khóa - ngành của hình thức đào tạo đó</field>
+            <field name="model_id" ref="model_khoa_nganh"/>
+            <field name="groups"
+                   eval="[(4,ref('group_website_slides_officer'))]"/>
+            <field name="domain_force">[('hinh_thuc_dao_tao_id','=',user.hinh_thuc_dao_tao_id.id)]</field>
+        </record>
+        <record model="ir.rule" id="rule_khoa_nganh_ke_toan">
+            <field name="name">Kế toán hình thức đào tạo nào thì được xem khóa - ngành của hình thức đào tạo đó</field>
+            <field name="model_id" ref="model_khoa_nganh"/>
+            <field name="groups"
+                   eval="[(4,ref('group_website_slides_ke_toan'))]"/>
+            <field name="domain_force">[('hinh_thuc_dao_tao_id','=',user.hinh_thuc_dao_tao_id.id)]</field>
+        </record>
+
+        <!--  Khối lớp-->
+        <record model="ir.rule" id="rule_khoi_lop_chung">
+            <field name="name">Super Admin được xem tất cả các khối lớp</field>
+            <field name="model_id" ref="model_khoi_lop"/>
+            <field name="groups"
+                   eval="[(4,ref('group_website_slides_manager'))]"/>
+        </record>
+        <record model="ir.rule" id="rule_khoi_lop_tu_xa">
+            <field name="name">Quản trị viên hình thức đào tạo nào thì được xem khối lớp của hình thức đào tạo đó</field>
+            <field name="model_id" ref="model_khoi_lop"/>
+            <field name="groups"
+                   eval="[(4,ref('group_website_slides_officer'))]"/>
+            <field name="domain_force">[('hinh_thuc_dao_tao_id','=',user.hinh_thuc_dao_tao_id.id)]</field>
+        </record>
+        <record model="ir.rule" id="rule_khoi_lop_ke_toan">
+            <field name="name">Kế toán hình thức đào tạo nào thì được xem khối lớp của hình thức đào tạo đó</field>
+            <field name="model_id" ref="model_khoi_lop"/>
+            <field name="groups"
+                   eval="[(4,ref('group_website_slides_ke_toan'))]"/>
+            <field name="domain_force">[('hinh_thuc_dao_tao_id','=',user.hinh_thuc_dao_tao_id.id)]</field>
+        </record>
+
+        <!--    Lớp hành chính-->
+        <record model="ir.rule" id="rule_lop_hanh_chinh_chung">
+            <field name="name">Super Admin được xem tất cả lớp hành chính</field>
+            <field name="model_id" ref="model_lop_hanh_chinh"/>
+            <field name="groups"
+                   eval="[(4,ref('group_website_slides_manager'))]"/>
+        </record>
+        <record model="ir.rule" id="rule_lop_hanh_chinh_tu_xa">
+            <field name="name">Quản trị viên hình thức đào tạo nào thì được xem lớp hành chính của hình thức đào tạo đó</field>
+            <field name="model_id" ref="model_lop_hanh_chinh"/>
+            <field name="groups"
+                   eval="[(4,ref('group_website_slides_officer'))]"/>
+            <field name="domain_force">[('hinh_thuc_dao_tao_id','=',user.hinh_thuc_dao_tao_id.id)]</field>
+        </record>
+        <record model="ir.rule" id="rule_lop_hanh_chinh_ke_toan">
+            <field name="name">Kế toán hình thức đào tạo nào thì được xem lớp hành chính của hình thức đào tạo đó</field>
+            <field name="model_id" ref="model_lop_hanh_chinh"/>
+            <field name="groups"
+                   eval="[(4,ref('group_website_slides_ke_toan'))]"/>
+            <field name="domain_force">[('hinh_thuc_dao_tao_id','=',user.hinh_thuc_dao_tao_id.id)]</field>
+        </record>
+
+        <!--    Học phần-->
+        <record model="ir.rule" id="rule_hoc_phan_chung">
+            <field name="name">Super Admin được xem tất cả học phần</field>
+            <field name="model_id" ref="model_slide_channel"/>
+            <field name="groups"
+                   eval="[(4,ref('group_website_slides_manager'))]"/>
+        </record>
+        <record model="ir.rule" id="rule_hoc_phan_tu_xa">
+            <field name="name">Quản trị viên hình thức đào tạo nào thì được xem học phần của hình thức đào tạo đó</field>
+            <field name="model_id" ref="model_slide_channel"/>
+            <field name="groups"
+                   eval="[(4,ref('group_website_slides_officer'))]"/>
+            <field name="domain_force">[('hinh_thuc_dao_tao_id','=',user.hinh_thuc_dao_tao_id.id)]</field>
+        </record>
+        <record model="ir.rule" id="rule_hoc_phan_ke_toan">
+            <field name="name">Kế toán hình thức đào tạo nào thì được xem học phần của hình thức đào tạo đó</field>
+            <field name="model_id" ref="model_slide_channel"/>
+            <field name="groups"
+                   eval="[(4,ref('group_website_slides_ke_toan'))]"/>
+            <field name="domain_force">[('hinh_thuc_dao_tao_id','=',user.hinh_thuc_dao_tao_id.id)]</field>
+        </record>
+
+        <!--   Sinh viên-->
+        <record model="ir.rule" id="rule_sinh_vien_chung">
+            <field name="name">Super Admin được xem tất cả sinh viên</field>
+            <field name="model_id" ref="model_sinh_vien"/>
+            <field name="groups"
+                   eval="[(4,ref('group_website_slides_manager'))]"/>
+        </record>
+        <record model="ir.rule" id="rule_sinh_vien_tu_xa">
+            <field name="name">Quản trị viên hình thức đào tạo nào thì được xem thông tin sinh viên của hình thức đào tạo đó</field>
+            <field name="model_id" ref="model_sinh_vien"/>
+            <field name="groups"
+                   eval="[(4,ref('group_website_slides_officer'))]"/>
+            <field name="domain_force">['|',('hinh_thuc_dao_tao_id','=',user.hinh_thuc_dao_tao_id.id), ('hinh_thuc_dao_tao_id','=',False)]</field>
+        </record>
+        <record model="ir.rule" id="rule_sinh_vien_ke_toan">
+            <field name="name">Kế toán hình thức đào tạo nào thì được xem thông tin sinh viên của hình thức đào tạo đó</field>
+            <field name="model_id" ref="model_sinh_vien"/>
+            <field name="groups"
+                   eval="[(4,ref('group_website_slides_ke_toan'))]"/>
+            <field name="domain_force">[('hinh_thuc_dao_tao_id', '=', user.hinh_thuc_dao_tao_id.id)]</field>
+        </record>
+
+        <!-- Thông tin Ngành học -->
+        <record model="ir.rule" id="rule_nganh_hoc_chung">
+            <field name="name">Super Admin được xem tất cả ngành học</field>
+            <field name="model_id" ref="model_quan_ly_nganh_hoc_nganh"/>
+            <field name="groups"
+                   eval="[(4,ref('group_website_slides_manager'))]"/>
+        </record>
+        <record model="ir.rule" id="rule_nganh_hoc_tu_xa">
+            <field name="name">Quản trị viên hình thức đào tạo nào thì được xem thông tin ngành học của hình thức đào tạo đó</field>
+            <field name="model_id" ref="model_quan_ly_nganh_hoc_nganh"/>
+            <field name="groups"
+                   eval="[(4,ref('group_website_slides_officer'))]"/>
+            <field name="domain_force">[('hinh_thuc_dao_tao','=',user.hinh_thuc_dao_tao_id.id)]</field>
+        </record>
+        <record model="ir.rule" id="rule_nganh_hoc_ke_toan">
+            <field name="name">Kế toán hình thức đào tạo nào thì được xem thông tin ngành học của hình thức đào tạo đó</field>
+            <field name="model_id" ref="model_quan_ly_nganh_hoc_nganh"/>
+            <field name="groups"
+                   eval="[(4,ref('group_website_slides_ke_toan'))]"/>
+            <field name="domain_force">[('hinh_thuc_dao_tao','=',user.hinh_thuc_dao_tao_id.id)]</field>
+        </record>
+
+        <!--        Thông tin chuyên ngành-->
+        <record model="ir.rule" id="rule_chuyen_nganh_chung">
+            <field name="name">Super Admin được xem tất cả thông tin chuyên ngành</field>
+            <field name="model_id" ref="model_quan_ly_nganh_hoc_chuyen_nganh"/>
+            <field name="groups"
+                   eval="[(4,ref('group_website_slides_manager'))]"/>
+        </record>
+        <record model="ir.rule" id="rule_chuyen_nganh_tu_xa">
+            <field name="name">Quản trị viên hình thức đào tạo nào thì được xem thông tin chuyên ngành của hình thức đào tạo đó</field>
+            <field name="model_id" ref="model_quan_ly_nganh_hoc_chuyen_nganh"/>
+            <field name="groups"
+                   eval="[(4,ref('group_website_slides_officer'))]"/>
+            <field name="domain_force">[('hinh_thuc_dao_tao_ids','in',user.hinh_thuc_dao_tao_id.id)]</field>
+        </record>
+        <record model="ir.rule" id="rule_chuyen_nganh_ke_toan">
+            <field name="name">Kế toán hình thức đào tạo nào thì được xem thông tin chuyên ngành của hình thức đào tạo đó</field>
+            <field name="model_id" ref="model_quan_ly_nganh_hoc_chuyen_nganh"/>
+            <field name="groups"
+                   eval="[(4,ref('group_website_slides_ke_toan'))]"/>
+            <field name="domain_force">[('hinh_thuc_dao_tao_ids','in',user.hinh_thuc_dao_tao_id.id)]</field>
+        </record>
+
+        <!-- Danh mục Ngành học -->
+        <record model="ir.rule" id="rule_danh_muc_nganh_chung">
+            <field name="name">Super Admin được xem tất cả danh mục ngành học</field>
+            <field name="model_id" ref="model_danh_muc_nganh_hoc"/>
+            <field name="groups"
+                   eval="[(4,ref('group_website_slides_manager'))]"/>
+        </record>
+        <record model="ir.rule" id="rule_danh_muc_nganh_tu_xa">
+            <field name="name">Quản trị viên hình thức đào tạo nào thì được xem danh mục ngành học của hình thức đào tạo đó</field>
+            <field name="model_id" ref="model_danh_muc_nganh_hoc"/>
+            <field name="groups"
+                   eval="[(4,ref('group_website_slides_officer'))]"/>
+            <field name="domain_force">[('hinh_thuc_dao_tao_ids','in',user.hinh_thuc_dao_tao_id.id)]</field>
+        </record>
+        <record model="ir.rule" id="rule_danh_muc_nganh_ke_toan">
+            <field name="name">Kế toán hình thức đào tạo nào thì được xem danh mục ngành học của hình thức đào tạo đó</field>
+            <field name="model_id" ref="model_danh_muc_nganh_hoc"/>
+            <field name="groups"
+                   eval="[(4,ref('group_website_slides_ke_toan'))]"/>
+            <field name="domain_force">[('hinh_thuc_dao_tao_ids','in',user.hinh_thuc_dao_tao_id.id)]</field>
+        </record>
+
+        <!--        Danh mục chuyên ngành-->
+        <record model="ir.rule" id="rule_danh_muc_chuyen_nganh_chung">
+            <field name="name">Super Admin được xem tất cả thông tin danh mục chuyên ngành</field>
+            <field name="model_id" ref="model_danh_muc_chuyen_nganh"/>
+            <field name="groups"
+                   eval="[(4,ref('group_website_slides_manager'))]"/>
+        </record>
+        <record model="ir.rule" id="rule_danh_muc_chuyen_nganh_tu_xa">
+            <field name="name">Quản trị viên hình thức đào tạo nào thì được xem thông tin danh mục chuyên ngành của hình thức đào tạo đó</field>
+            <field name="model_id" ref="model_danh_muc_chuyen_nganh"/>
+            <field name="groups"
+                   eval="[(4,ref('group_website_slides_officer'))]"/>
+            <field name="domain_force">[('hinh_thuc_dao_tao_ids','in',user.hinh_thuc_dao_tao_id.id)]</field>
+        </record>
+        <record model="ir.rule" id="rule_danh_muc_chuyen_nganh_ke_toan">
+            <field name="name">Kế toán hình thức đào tạo nào thì được xem thông tin danh mục chuyên ngành của hình thức đào tạo đó</field>
+            <field name="model_id" ref="model_danh_muc_chuyen_nganh"/>
+            <field name="groups"
+                   eval="[(4,ref('group_website_slides_ke_toan'))]"/>
+            <field name="domain_force">[('hinh_thuc_dao_tao_ids','in',user.hinh_thuc_dao_tao_id.id)]</field>
+        </record>
+
+        <!--        Danh mục văn bản quy định, khoa-->
+        <record model="ir.rule" id="rule_danh_muc_van_ban_khoa_phi_bieu_gia_chung">
+            <field name="name">Super Admin được xem tất cả thông tin danh mục chuyên ngành</field>
+            <field name="model_id" ref="model_danh_muc_van_ban_quy_dinh"/>
+            <field name="model_id" ref="model_danh_muc_khoa"/>
+            <field name="groups"
+                   eval="[(4,ref('group_website_slides_manager'))]"/>
+        </record>
+        <record model="ir.rule" id="rule_danh_muc_van_ban_khoa_phi_bieu_gia_tu_xa">
+            <field name="name">Quản trị viên hình thức đào tạo nào thì được xem thông tin danh mục của hình thức đào tạo đó</field>
+            <field name="model_id" ref="model_danh_muc_van_ban_quy_dinh"/>
+            <field name="model_id" ref="model_danh_muc_khoa"/>
+            <field name="groups"
+                   eval="[(4,ref('group_website_slides_officer'))]"/>
+            <field name="domain_force">[('hinh_thuc_dao_tao_ids','in',user.hinh_thuc_dao_tao_id.id)]</field>
+        </record>
+        <record model="ir.rule" id="rule_danh_muc_van_ban_khoa_phi_bieu_gia_ke_toan">
+            <field name="name">Kế toán hình thức đào tạo nào thì được xem thông tin danh mục của hình thức đào tạo đó</field>
+            <field name="model_id" ref="model_danh_muc_van_ban_quy_dinh"/>
+            <field name="model_id" ref="model_danh_muc_khoa"/>
+            <field name="groups"
+                   eval="[(4,ref('group_website_slides_ke_toan'))]"/>
+            <field name="domain_force">[('hinh_thuc_dao_tao_ids','in',user.hinh_thuc_dao_tao_id.id)]</field>
+        </record>
+
+        <!--        Danh mục các loại phí, biểu giá-->
+        <record model="ir.rule" id="rule_danh_muc_van_ban_khoa_phi_bieu_gia_chung">
+            <field name="name">Super Admin được xem tất cả thông tin danh mục chuyên ngành</field>
+            <field name="id" ref="model_danh_muc_phi"/>
+            <field name="model_id" ref="model_danh_muc_bieu_gia"/>
+            <field name="groups"
+                   eval="[(4, ref('group_website_slides_manager'))]"/>
+        </record>
+        <record model="ir.rule" id="rule_danh_muc_van_ban_khoa_phi_bieu_gia_tu_xa">
+            <field name="name">Quản trị viên hình thức đào tạo nào thì được xem thông tin danh mục của hình thức đào tạo đó</field>
+            <field name="model_id" ref="model_danh_muc_phi"/>
+            <field name="model_id" ref="model_danh_muc_bieu_gia"/>
+            <field name="groups"
+                   eval="[(4,ref('group_website_slides_officer'))]"/>
+            <field name="domain_force">[('hinh_thuc_dao_tao_ap_dung','=',user.hinh_thuc_dao_tao_id.id)]</field>
+        </record>
+        <record model="ir.rule" id="rule_danh_muc_van_ban_khoa_phi_bieu_gia_ke_toan">
+            <field name="name">Kế toán hình thức đào tạo nào thì được xem thông tin danh mục của hình thức đào tạo đó</field>
+            <field name="model_id" ref="model_danh_muc_phi"/>
+            <field name="model_id" ref="model_danh_muc_bieu_gia"/>
+            <field name="groups"
+                   eval="[(4,ref('group_website_slides_ke_toan'))]"/>
+            <field name="domain_force">[('hinh_thuc_dao_tao_ap_dung','=',user.hinh_thuc_dao_tao_id.id)]</field>
+        </record>
+
+        <!--        Danh mục phương pháp đánh giá học phần-->
+        <record model="ir.rule" id="rule_danh_muc_phuong_phap_danh_gia_hp_chung">
+            <field name="name">Super Admin được xem tất cả danh mục PP đánh giá học phần chung</field>
+            <field name="model_id" ref="model_danh_muc_phuong_phap_danh_gia_hoc_phan"/>
+            <field name="groups"
+                   eval="[(4,ref('group_website_slides_manager'))]"/>
+        </record>
+        <record model="ir.rule" id="rule_danh_muc_phuong_phap_danh_gia_hp_tu_xa">
+            <field name="name">Quản trị viên hình thức đào tạo nào thì được xem danh mục PP đánh giá học phần của hình thức đào tạo đó</field>
+            <field name="model_id" ref="model_danh_muc_phuong_phap_danh_gia_hoc_phan"/>
+            <field name="groups"
+                   eval="[(4,ref('group_website_slides_officer'))]"/>
+            <field name="domain_force">[('hinh_thuc_dao_tao_ap_dung','=',user.hinh_thuc_dao_tao_id.id)]</field>
+        </record>
+        <record model="ir.rule" id="rule_danh_muc_phuong_phap_danh_gia_hp_ke_toan">
+            <field name="name">Kế toán hình thức đào tạo nào thì được xem danh mục PP đánh giá học phần của hình thức đào tạo đó</field>
+            <field name="model_id" ref="model_danh_muc_phuong_phap_danh_gia_hoc_phan"/>
+            <field name="groups"
+                   eval="[(4,ref('group_website_slides_ke_toan'))]"/>
+            <field name="domain_force">[('hinh_thuc_dao_tao_ap_dung','=',user.hinh_thuc_dao_tao_id.id)]</field>
+        </record>
+
+        <!-- Danh mục cơ sở đào tạo -->
+        <record model="ir.rule" id="rule_co_so_dao_tao_chung">
+            <field name="name">Officer có thể lựa chọn cơ sở đào tạo</field>
+            <field name="model_id" ref="model_danh_muc_co_so_dao_tao"/>
+            <field name="groups"
+                   eval="[(4,ref('group_website_slides_officer'))]"/>
+        </record>
+
+        <!-- Danh mục trình dộ, hình thức đào tạo -->
+        <record model="ir.rule" id="rule_trinh_do_hinh_dao_tao_chung">
+            <field name="name">Super Admin có thể lựa chọn tất cả trình độ, hình đào tạo</field>
+            <field name="model_id" ref="model_danh_muc_trinh_do_hinh_dao_tao"/>
+            <field name="groups"
+                   eval="[(4,ref('group_website_slides_manager'))]"/>
+        </record>
+        <record model="ir.rule" id="rule_trinh_do_hinh_dao_tao_qtv">
+            <field name="name">Quản trị viên hình thức đào tạo nào thì được chọn trình độ, hình thức đào tạo đó</field>
+            <field name="model_id" ref="model_danh_muc_trinh_do_hinh_dao_tao"/>
+            <field name="groups"
+                   eval="[(4,ref('group_website_slides_officer'))]"/>
+            <field name="domain_force">[('hinh_thuc_dao_tao_id','=',user.hinh_thuc_dao_tao_id.id)]</field>
+        </record>
+        <record model="ir.rule" id="rule_trinh_do_hinh_dao_tao_ke_toan">
+            <field name="name">Kế toán hình thức đào tạo nào thì được chọn trình độ, hình thức đào tạo đó</field>
+            <field name="model_id" ref="model_danh_muc_trinh_do_hinh_dao_tao"/>
+            <field name="groups"
+                   eval="[(4,ref('group_website_slides_ke_toan'))]"/>
+            <field name="domain_force">[('hinh_thuc_dao_tao_id','=',user.hinh_thuc_dao_tao_id.id)]</field>
+        </record>
+        <!--        Danh mục phương pháp đánh giá số liệu-->
+        <record model="ir.rule" id="rule_so_lieu_chung">
+            <field name="name">Super Admin được xem tất cả số liệu</field>
+            <field name="model_id" ref="model_so_lieu"/>
+            <field name="groups"
+                   eval="[(4,ref('group_website_slides_manager'))]"/>
+        </record>
+        <record model="ir.rule" id="rule_so_lieu_tu_xa">
+            <field name="name">Quản trị viên hình thức đào tạo nào thì được xem số liệu của hình thức đào tạo đó</field>
+            <field name="model_id" ref="model_so_lieu"/>
+            <field name="groups"
+                   eval="[(4,ref('group_website_slides_officer'))]"/>
+            <field name="domain_force">[('hinh_thuc_dao_tao_ap_dung','=',user.hinh_thuc_dao_tao_id.id)]</field>
+        </record>
+        <record model="ir.rule" id="rule_so_lieu_ke_toan">
+            <field name="name">Kế toán hình thức đào tạo nào thì được xem số liệu của hình thức đào tạo đó</field>
+            <field name="model_id" ref="model_so_lieu"/>
+            <field name="groups"
+                   eval="[(4,ref('group_website_slides_ke_toan'))]"/>
+            <field name="domain_force">[('hinh_thuc_dao_tao_ap_dung','=',user.hinh_thuc_dao_tao_id.id)]</field>
+        </record>
+
+        <!-- Đợt nhập học -->
+        <record model="ir.rule" id="rule_dot_nhap_hoc_chung">
+            <field name="name">Super Admin được xem tất cả đợt nhập học</field>
+            <field name="model_id" ref="model_dot_nhap_hoc"/>
+            <field name="groups"
+                   eval="[(4,ref('group_website_slides_manager'))]"/>
+        </record>
+        <record model="ir.rule" id="rule_dot_nhap_hoc_qtv">
+            <field name="name">Quản trị viên hình thức đào tạo nào thì được xem đợt nhập hoc của hình thức đó</field>
+            <field name="model_id" ref="model_dot_nhap_hoc"/>
+            <field name="groups"
+                   eval="[(4,ref('group_website_slides_officer'))]"/>
+            <field name="domain_force">[('hinh_thuc_dao_tao_id','=',user.hinh_thuc_dao_tao_id.id)]</field>
+        </record>
+        <record model="ir.rule" id="rule_dot_nhap_hoc_ke_toan">
+            <field name="name">Kế toán hình thức đào tạo nào thì được xem đợt nhập hoc của hình thức đó</field>
+            <field name="model_id" ref="model_dot_nhap_hoc"/>
+            <field name="groups"
+                   eval="[(4,ref('group_website_slides_ke_toan'))]"/>
+            <field name="domain_force">[('hinh_thuc_dao_tao_id','=',user.hinh_thuc_dao_tao_id.id)]</field>
+        </record>
+
+        <!-- Đợt đăng ký nhu cầu -->
+        <record model="ir.rule" id="rule_dot_dang_ky_nhu_cau">
+            <field name="name">Super Admin được xem tất cả đợt đăng ký nhu cầu</field>
+            <field name="model_id" ref="model_dot_dang_ky_nhu_cau"/>
+            <field name="groups"
+                   eval="[(4,ref('group_website_slides_manager'))]"/>
+        </record>
+        <record model="ir.rule" id="rule_dot_dang_ky_nhu_cau_qtv">
+            <field name="name">Quản trị viên hình thức đào tạo nào thì được xem đợt đăng ký nhu cầu của hình thức đó</field>
+            <field name="model_id" ref="model_dot_dang_ky_nhu_cau"/>
+            <field name="groups"
+                   eval="[(4,ref('group_website_slides_officer'))]"/>
+            <field name="domain_force">[('hinh_thuc_dao_tao_id','=',user.hinh_thuc_dao_tao_id.id)]</field>
+        </record>
+        <record model="ir.rule" id="rule_dot_dang_ky_nhu_cau_ke_toan">
+            <field name="name">Kế toán hình thức đào tạo nào thì được xem đợt đăng ký nhu cầu của hình thức đó</field>
+            <field name="model_id" ref="model_dot_dang_ky_nhu_cau"/>
+            <field name="groups"
+                   eval="[(4,ref('group_website_slides_ke_toan'))]"/>
+            <field name="domain_force">[('hinh_thuc_dao_tao_id','=',user.hinh_thuc_dao_tao_id.id)]</field>
+        </record>
+
+        <!-- Đợt đăng ký tín chỉ -->
+        <record model="ir.rule" id="rule_dot_dang_ky_tin_chi">
+            <field name="name">Super Admin được xem tất cả đợt đăng ký tín chỉ</field>
+            <field name="model_id" ref="model_dot_dang_ky_tin_chi"/>
+            <field name="groups"
+                   eval="[(4,ref('group_website_slides_manager'))]"/>
+        </record>
+        <record model="ir.rule" id="rule_dot_dang_ky_tin_chi_qtv">
+            <field name="name">Quản trị viên hình thức đào tạo nào thì được xem đợt đăng ký tín chỉ của hình thức đó</field>
+            <field name="model_id" ref="model_dot_dang_ky_tin_chi"/>
+            <field name="groups"
+                   eval="[(4,ref('group_website_slides_officer'))]"/>
+            <field name="domain_force">[('hinh_thuc_dao_tao_id','=',user.hinh_thuc_dao_tao_id.id)]</field>
+        </record>
+        <record model="ir.rule" id="rule_dot_dang_ky_tin_chi_ke_toan">
+            <field name="name">Kế toán hình thức đào tạo nào thì được xem đợt đăng ký tín chỉ của hình thức đó</field>
+            <field name="model_id" ref="model_dot_dang_ky_tin_chi"/>
+            <field name="groups"
+                   eval="[(4,ref('group_website_slides_ke_toan'))]"/>
+            <field name="domain_force">[('hinh_thuc_dao_tao_id','=',user.hinh_thuc_dao_tao_id.id)]</field>
+        </record>
+
+        <!-- Lớp tín chỉ -->
+        <record model="ir.rule" id="rule_lop_tin_chi">
+            <field name="name">Super Admin được xem tất cả lớp tín chỉ</field>
+            <field name="model_id" ref="model_lop_tin_chi"/>
+            <field name="groups"
+                   eval="[(4,ref('group_website_slides_manager'))]"/>
+        </record>
+        <record model="ir.rule" id="rule_lop_tin_chi_qtv">
+            <field name="name">Quản trị viên hình thức đào tạo nào thì được xem lớp tín chỉ của hình thức đó</field>
+            <field name="model_id" ref="model_lop_tin_chi"/>
+            <field name="groups"
+                   eval="[(4,ref('group_website_slides_officer'))]"/>
+            <field name="domain_force">[('hinh_thuc_dao_tao_id','=',user.hinh_thuc_dao_tao_id.id)]</field>
+        </record>
+        <record model="ir.rule" id="rule_lop_tin_chi_ke_toan">
+            <field name="name">Kế toán hình thức đào tạo nào thì được xem lớp tín chỉ của hình thức đó</field>
+            <field name="model_id" ref="model_lop_tin_chi"/>
+            <field name="groups"
+                   eval="[(4,ref('group_website_slides_ke_toan'))]"/>
+            <field name="domain_force">[('hinh_thuc_dao_tao_id','=',user.hinh_thuc_dao_tao_id.id)]</field>
+        </record>
+
+        <!-- Kỳ năm học -->
+        <record model="ir.rule" id="rule_ky_nam_hoc">
+            <field name="name">Super Admin được xem tất cả kỳ năm học</field>
+            <field name="model_id" ref="model_ky_nam_hoc"/>
+            <field name="groups"
+                   eval="[(4,ref('group_website_slides_manager'))]"/>
+        </record>
+        <record model="ir.rule" id="rule_ky_nam_hoc_qtv">
+            <field name="name">Quản trị viên hình thức đào tạo nào thì được xem kỳ năm học của hình thức đó</field>
+            <field name="model_id" ref="model_ky_nam_hoc"/>
+            <field name="groups"
+                   eval="[(4,ref('group_website_slides_officer'))]"/>
+            <field name="domain_force">[('hinh_thuc_dao_tao_id','=',user.hinh_thuc_dao_tao_id.id)]</field>
+        </record>
+        <record model="ir.rule" id="rule_ky_nam_hoc_ke_toan">
+            <field name="name">Kế toán hình thức đào tạo nào thì được xem kỳ năm học của hình thức đó</field>
+            <field name="model_id" ref="model_ky_nam_hoc"/>
+            <field name="groups"
+                   eval="[(4,ref('group_website_slides_ke_toan'))]"/>
+            <field name="domain_force">[('hinh_thuc_dao_tao_id','=',user.hinh_thuc_dao_tao_id.id)]</field>
+        </record>
+
+        <!-- Tiết học -->
+        <record model="ir.rule" id="rule_danh_muc_tiet_hoc">
+            <field name="name">Super Admin được xem tất cả tiết học</field>
+            <field name="model_id" ref="model_danh_muc_tiet_hoc"/>
+            <field name="groups"
+                   eval="[(4,ref('group_website_slides_manager'))]"/>
+        </record>
+        <record model="ir.rule" id="rule_danh_muc_tiet_hoc_qtv">
+            <field name="name">Quản trị viên hình thức đào tạo nào thì được xem tiết học của hình thức đó</field>
+            <field name="model_id" ref="model_danh_muc_tiet_hoc"/>
+            <field name="groups"
+                   eval="[(4,ref('group_website_slides_officer'))]"/>
+            <field name="domain_force">[('hinh_thuc_dao_tao_id','=',user.hinh_thuc_dao_tao_id.id)]</field>
+        </record>
+        <record model="ir.rule" id="rule_danh_muc_tiet_hoc_ke_toan">
+            <field name="name">Kế toán hình thức đào tạo nào thì được xem tiết học của hình thức đó</field>
+            <field name="model_id" ref="model_danh_muc_tiet_hoc"/>
+            <field name="groups"
+                   eval="[(4,ref('group_website_slides_ke_toan'))]"/>
+            <field name="domain_force">[('hinh_thuc_dao_tao_id','=',user.hinh_thuc_dao_tao_id.id)]</field>
+        </record>
+
+                <!-- Buổi học -->
+        <record model="ir.rule" id="rule_buoi_hoc">
+            <field name="name">Super Admin được xem tất cả buổi học</field>
+            <field name="model_id" ref="model_buoi_hoc"/>
+            <field name="groups"
+                   eval="[(4,ref('group_website_slides_manager'))]"/>
+        </record>
+        <record model="ir.rule" id="rule_buoi_hoc_qtv">
+            <field name="name">Quản trị viên hình thức đào tạo nào thì được xem buổi học của hình thức đó</field>
+            <field name="model_id" ref="model_buoi_hoc"/>
+            <field name="groups"
+                   eval="[(4,ref('group_website_slides_officer'))]"/>
+            <field name="domain_force">[('hinh_thuc_dao_tao_id','=',user.hinh_thuc_dao_tao_id.id)]</field>
+        </record>
+        <record model="ir.rule" id="rule_buoi_hoc_ke_toan">
+            <field name="name">Kế toán hình thức đào tạo nào thì được xem buổi học của hình thức đó</field>
+            <field name="model_id" ref="model_buoi_hoc"/>
+            <field name="groups"
+                   eval="[(4,ref('group_website_slides_ke_toan'))]"/>
+            <field name="domain_force">[('hinh_thuc_dao_tao_id','=',user.hinh_thuc_dao_tao_id.id)]</field>
+        </record>
+
+                <!-- Hình thức đào tạo -->
+        <record model="ir.rule" id="rule_hinh_thuc_dao_tao">
+            <field name="name">Super Admin được xem tất cả buổi học</field>
+            <field name="model_id" ref="model_hinh_thuc_dao_tao"/>
+            <field name="groups"
+                   eval="[(4,ref('group_website_slides_manager'))]"/>
+        </record>
+        <record model="ir.rule" id="rule_hinh_thuc_dao_tao_qtv">
+            <field name="name">Quản trị viên hình thức đào tạo nào thì được xem hình đào tạo đó</field>
+            <field name="model_id" ref="model_hinh_thuc_dao_tao"/>
+            <field name="groups"
+                   eval="[(4,ref('group_website_slides_officer'))]"/>
+            <field name="domain_force">[('id','=',user.hinh_thuc_dao_tao_id.id)]</field>
+        </record>
+
+        <!-- Danh mục nhóm tiết học -->
+        <record model="ir.rule" id="rule_template_tiet_hoc">
+            <field name="name">Super Admin được xem tất cả nhóm tiết học</field>
+            <field name="model_id" ref="model_danh_muc_template_tiet_hoc"/>
+            <field name="groups"
+                   eval="[(4,ref('group_website_slides_manager'))]"/>
+        </record>
+        <record model="ir.rule" id="rule_template_tiet_hoc_qtv">
+            <field name="name">Quản trị viên hình thức đào tạo nào thì được xem nhóm tiết học đó</field>
+            <field name="model_id" ref="model_danh_muc_template_tiet_hoc"/>
+            <field name="groups"
+                   eval="[(4,ref('group_website_slides_officer'))]"/>
+            <field name="domain_force">[('hinh_thuc_dao_tao_id','=',user.hinh_thuc_dao_tao_id.id)]</field>
+        </record>
+        <record model="ir.rule" id="rule_template_tiet_hoc_ke_toan">
+            <field name="name">Kế toán hình thức đào tạo nào thì được xem nhóm tiết học đó</field>
+            <field name="model_id" ref="model_danh_muc_template_tiet_hoc"/>
+            <field name="groups"
+                   eval="[(4,ref('group_website_slides_ke_toan'))]"/>
+            <field name="domain_force">[('hinh_thuc_dao_tao_id','=',user.hinh_thuc_dao_tao_id.id)]</field>
+        </record>
+
+<!--        trợ giảng-->
+
+        <record model="ir.rule" id="rule_lop_boi_duong_tro_giang">
+            <field name="name">Trợ giảng chỉ nhìn thấy các lớp bồi dưỡng có tên mình</field>
+            <field name="model_id" ref="model_qldt_lop_boi_duong"/>
+            <field name="groups"
+                   eval="[(4,ref('group_website_slides_tro_giang'))]"/>
+            <field name="domain_force">[('tro_giang_id.partner_id.id','=',user.partner_id.id)]</field>
+        </record>
+
+
+<!--        TODO: đặt record rules cho menu quản lý thông tin sinh viên theo học kỳ-->
+        <record model="ir.rule" id="rule_qldt_sinh_vien_hoc_ky">
+            <field name="name">Super Admin được xem tất cả sinh viên - học kỳ</field>
+            <field name="model_id" ref="model_qldt_sinh_vien_hoc_ky"/>
+            <field name="groups"
+                   eval="[(4,ref('group_website_slides_manager'))]"/>
+        </record>
+        <record model="ir.rule" id="rule_qldt_sinh_vien_hoc_ky_qtv">
+            <field name="name">Quản trị viên hình thức đào tạo nào thì được xem sinh viên - học kỳ đó</field>
+            <field name="model_id" ref="model_qldt_sinh_vien_hoc_ky"/>
+            <field name="groups"
+                   eval="[(4,ref('group_website_slides_officer'))]"/>
+            <field name="domain_force">[('hinh_thuc_dao_tao_id','=',user.hinh_thuc_dao_tao_id.id)]</field>
+        </record>
+    </data>
+</odoo>

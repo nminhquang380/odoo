@@ -1,0 +1,106 @@
+<odoo>
+    <data>
+        <record id="action_phe_duyet" model="ir.actions.server">
+            <field name="name">Phê duyệt</field>
+            <field name="type">ir.actions.server</field>
+            <field name="model_id" ref="model_phieu_dang_ky_tin_chi" />
+            <field name="binding_model_id" ref="model_phieu_dang_ky_tin_chi" />
+            <field name="state">code</field>
+            <field name="code">records.phe_duyet()</field>
+        </record>
+        <record model="ir.ui.view" id="phieu_dang_ky_tin_chi_form">
+            <field name="model">phieu_dang_ky_tin_chi</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <div class="oe_edit_only" style="font-size:25px" attrs="{'invisible': [('id', '=', False)], }">
+                            Chỉnh sửa thông tin phiếu đăng ký tín chỉ
+                        </div>
+                        <div class="oe_edit_only" style="font-size:25px" attrs="{'invisible': [('id', '!=', False)], }">
+                            Tạo mới phiếu đăng ký tín chỉ
+                        </div>
+                        <div class="oe_read_only" style="font-size:25px">Phiếu đăng ký tín chỉ</div>
+
+                        <group col="4" string="Thông tin chung">
+                            <field name="sinh_vien_id"
+                                   options="{'no_create_edit':1,
+                                        'no_quick_create':1,
+                                        'no_open': True, 'no_create': True}"/>
+                            <field name="ma_sinh_vien"/>
+                            <field name="lop_hanh_chinh_id"/>
+                            <field name="so_dien_thoai"/>
+                            <field name="dot_dang_ky_tin_chi_id"/>
+                            <field name="tong_so_tin_chi"/>
+                            <field name="trang_thai_sinh_ma_thanh_toan"/>
+                            <field name="hoc_phi_mot_tin_chi"/>
+                        </group>
+                        <group col="4" string="Thông tin thanh toán">
+                            <field name="ap_dung_thanh_toan_truc_tuyen"/>
+                            <field name="hoc_phi_ap_dung"/>
+                            <field name="khoan_thu_id"/>
+                            <field name="tong_hoc_phi"/>
+                            <field name="trang_thai_thanh_toan"/>
+                            <field name="so_tien_da_nhan"/>
+                            <field name="ma_thanh_toan" attrs="{'invisible': [('ap_dung_thanh_toan_truc_tuyen', '=', False)], }" readonly="1"/>
+                        </group>
+                        <notebook colspan="4">
+                            <page string="Danh sách tín chỉ đăng ký">
+                                <field name="sv_hp_dktc_id"/>
+                            </page>
+                            <page string="Mã hóa mã thanh toán" invisible="1">
+                                <field name="ma_hoa_ma_thanh_toan"/>
+                            </page>
+                        </notebook>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+        <record model="ir.ui.view" id="phieu_dang_ky_tin_chi_tree">
+            <field name="model">phieu_dang_ky_tin_chi</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="ten_phieu_dktc"/>
+<!--                    <field name="sinh_vien_id"/>-->
+<!--                    <field name="name"/>-->
+                    <field name="lop_hanh_chinh_id"/>
+                    <!-- <field name="ma_khoan_thu"/> -->
+                    <field name="hinh_thuc_dao_tao_id"/>
+                    <field name="hoc_phi_mot_tin_chi"/>
+                    <field name="tong_so_tin_chi"/>
+                    <field name="tong_hoc_phi"/>
+                    <field name="trang_thai_sinh_ma_thanh_toan"/>
+                    <field name="trang_thai_thanh_toan"/>
+                </tree>
+            </field>
+        </record>
+        <record model="ir.actions.act_window" id="action_phieu_dang_ky_tin_chi">
+            <field name="name">Phiếu đăng ký tín chỉ</field>
+            <field name="res_model">phieu_dang_ky_tin_chi</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <!-- <record id="phet_duyet_dktc_form" model="ir.ui.view">
+            <field name="model">phe_duyet_trang_thai.phieu_dktc</field>
+            <field name="arch" type="xml">
+                <form string="Phê duyệt">
+                    <p>
+                        Bạn có muốn phê duyệt các phiếu đăng ký tín chỉ đã chọn?
+                    </p>
+                    <footer>
+                        <button name="phe_duyet" string="Phê duyệt" type="object" class="btn- primary"/>
+                        <button string="Cancel" class="btn-default" special="cancel"/>
+                    </footer>
+                </form>
+            </field>
+        </record>
+        <record id="action_phe_duyet_dktc" model="ir.actions.act_window">
+            <field name="name">Phê duyệt</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">phe_duyet_trang_thai.phieu_dktc</field>
+            <field name="view_type">form</field>
+            <field name="view_mode">tree,form</field>
+            <field name="view_id" ref="phieu_dang_ky_tin_chi_tree"/>
+            <field name="binding_model_id" ref="model_phieu_dang_ky_tin_chi"/>
+        </record> -->
+    </data>
+</odoo>

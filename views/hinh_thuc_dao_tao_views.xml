@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record id="hinh_thuc_dao_tao_view_form" model="ir.ui.view">
+            <field name="name">hinh.thuc.dao.tao.view.form</field>
+            <field name="model">hinh_thuc_dao_tao</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <div class="oe_edit_only" style="font-size:25px" attrs="{'invisible': [('id', '=', False)], }">Chỉnh sửa hình thức đào tạo</div>
+                        <div class="oe_edit_only" style="font-size:25px" attrs="{'invisible': [('id', '!=', False)], }">Tạo mới hình thức đào tạo</div>
+                        <div class="oe_read_only" style="font-size:25px">Hình thức đào tạo</div>
+                        <group col="4">
+                            <field name="ten_hinh_thuc_dao_tao"/>
+                            <field name="ten_hinh_thuc_dao_tao_viet_tat"/>
+                            <field name="thoi_gian_dao_tao"/>
+                            <field name="danh_muc_quy_tac_tinh_diem_hoc_phan_id"/>
+                            <field name="danh_muc_quy_tac_danh_gia_xep_loai_hoc_luc"/>
+                            <field name="ma_thanh_toan_bidv"/>
+                            <field name="url_huong_dan_thanh_toan"/>
+                        </group>
+                        <notebook colspan="4">
+                            <page string="Mô tả">
+                                <field name="mo_ta"/>
+                            </page>
+<!--                            Hiện không sử dụng-->
+<!--                            <page string="Danh mục đầu điểm áp dụng">-->
+<!--                                <field name="dau_diem_id"/>-->
+<!--                            </page>-->
+                        </notebook>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+
+
+        <record id="hinh_thuc_dao_tao_view_list" model="ir.ui.view">
+            <field name="name">hinh.thuc.dao.tao.view.list</field>
+            <field name="model">hinh_thuc_dao_tao</field>
+            <field name="arch" type="xml">
+                <tree string="Hình thức đào tạo" default_order="create_date desc">
+                    <field name="ten_hinh_thuc_dao_tao" string="Tên hình thức đào tạo"/>
+                    <field name="thoi_gian_dao_tao" string="Thời gian đào tạo"/>
+                    <field name="ma_thanh_toan_bidv"/>
+                    <field name="mo_ta" string="Mô tả"/>
+                    <field string="Ngày tạo" name="create_date"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="action_hinh_thuc_dao_tao_danh_sach_hinh_thuc_dao_tao" model="ir.actions.act_window">
+            <field name="name">Danh mục hình thức đào tạo</field>
+            <field name="res_model">hinh_thuc_dao_tao</field>
+            <field name="view_mode">list,form</field>
+            <!--            <field name="view_id" ref="hinh_thuc_dao_tao_view_kanban"/>-->
+            <field name="view_id" ref="hinh_thuc_dao_tao_view_form"/>
+            <field name="view_id" ref="hinh_thuc_dao_tao_view_list"/>
+            <field name="help" type="html">
+                <p class="o_view_nocontent_smiling_face">
+                    Thêm hình thức đào tạo
+                </p>
+            </field>
+        </record>
+
+    </data>
+</odoo>

@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<templates id="template" xml:space="preserve">
+    <t t-extend="ListView.buttons">
+        <t t-jquery="div.o_list_buttons" t-operation="append" >
+            <button t-if="widget.modelName=='lop_tin_chi'" type="button" class="btn btn-primary import-lop-tin-chi" accesskey="u">
+                Import lớp tín chỉ
+            </button>
+            <button t-if="widget.modelName=='lop_tin_chi'" type="button" class="btn btn-primary export-lop-tin-chi" accesskey="u">
+                Export lớp tín chỉ
+            </button>
+            <button t-if="widget.modelName=='buoi_hoc'" type="button" class="btn btn-primary import-buoi-hoc" accesskey="u">
+                Import thời khóa biểu
+            </button>
+            <button t-if="widget.modelName=='buoi_hoc'" type="button" class="btn btn-primary export-buoi-hoc" accesskey="u">
+                Export thời khóa biểu
+            </button>
+            <button t-if="widget.modelName=='sv_ltc_ds'" type="button" class="btn btn-primary import-diem-hoc-phan" accesskey="u">
+                Import điểm học phần
+            </button>
+            <button t-if="widget.modelName=='lop_hanh_chinh'" type="button" class="btn btn-primary import-lop-hanh-chinh" accesskey="u">
+                Import lớp hành chính
+            </button>
+            <button t-if="widget.modelName=='lop_hanh_chinh'" type="button" class="btn btn-primary export-lop-hanh-chinh" accesskey="u">
+                Export lớp hành chính
+            </button>
+            <button t-if="widget.modelName=='sinh_vien'" type="button" class="btn btn-primary import-danh-sach-sinh-vien" accesskey="u">
+                Import danh sách sinh viên
+            </button>
+            <button t-if="widget.modelName=='sinh_vien'" type="button" class="btn btn-primary export-sinh-vien" accesskey="u">
+                Export danh sách sinh viên
+            </button>
+            <!-- <button t-if="widget.modelName=='sinh_vien'" type="button" class="btn btn-primary sinh-vien-import-template" accesskey="u">
+                Xuât mẫu import sinh viên
+            </button> -->
+            <button t-if="widget.modelName=='nhan_vien'" type="button" class="btn btn-primary nhan-vien-import-template" accesskey="u">
+                Xuât mẫu import nhân viên
+            </button>
+            <button t-if="widget.modelName=='nv_hoc_phan'" type="button" class="btn btn-primary export-report-dang-ky-nhu-cau" accesskey="u">
+                Tổng hợp số liệu đăng ký nhu cầu
+            </button>
+            <button t-if="widget.modelName=='qldt.hoa_don'" type="button" class="btn btn-primary export-hoa-don" accesskey="u">
+                Xuất báo cáo hóa đơn
+            </button>
+        </t>
+    </t>
+</templates>

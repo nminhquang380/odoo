@@ -1,0 +1,41 @@
+<odoo>
+    <data>
+        <record model="ir.ui.view" id="diem_danh_buoi_hoc_form">
+            <field name="model">diem_danh_buoi_hoc</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <div class="oe_edit_only" style="font-size:25px" attrs="{'invisible': [('id', '=', False)], }">Chỉnh sửa điểm danh buổi học</div>
+                        <div class="oe_edit_only" style="font-size:25px" attrs="{'invisible': [('id', '!=', False)], }">Tạo mới điểm danh buổi học</div>
+                        <div class="oe_read_only" style="font-size:25px">Điểm danh buổi học</div>
+                        <group col="4">
+                            <field name="sinh_vien_id"/>
+                            <field name="buoi_hoc_id"/>
+                            <field name="trang_thai"/>
+                            <field name="diem_cong"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="diem_danh_buoi_hoc_tree">
+            <field name="model">diem_danh_buoi_hoc</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="sinh_vien_id"/>
+                    <field name="buoi_hoc_id"/>
+                    <field name="trang_thai"/>
+                    <field name="diem_cong"/>
+                </tree>
+            </field>
+        </record>
+
+        <record model="ir.actions.act_window" id="action_diem_danh_buoi_hoc">
+            <field name="name">Điểm danh buổi học</field>
+            <field name="res_model">diem_danh_buoi_hoc</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+    </data>
+</odoo>

@@ -1,0 +1,163 @@
+<odoo>
+    <data>
+        <!-- cơ sở hành chính -->
+        <record model="ir.ui.view" id="co_so_hanh_chinh_form">
+            <field name="model">co_so_hanh_chinh</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <div class="oe_edit_only" style="font-size:25px" attrs="{'invisible': [('id', '=', False)], }">Chỉnh sửa cơ sở hành chính</div>
+                        <div class="oe_edit_only" style="font-size:25px" attrs="{'invisible': [('id', '!=', False)], }">Thêm cơ sở hành chính</div>
+                        <div class="oe_read_only" style="font-size:25px">Thông tin cơ sở hành chính</div>
+                            <group>
+                                <field name="ten_don_vi"/>
+                                <field name="ma_don_vi"/>
+                                <field name="cap_don_vi"/>
+                                <field name="ma_don_vi_truc_thuoc"/>
+                            </group>
+                            <!-- <notebook>
+                            <page string="Các đơn vị cấp dưới">
+                                    <field name="don_vi_cap_duoi"/>
+                            </page>
+                            </notebook> -->
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="co_so_hanh_chinh_tree">
+            <field name="model">co_so_hanh_chinh</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="ma_don_vi"/>
+                    <field name="ten_don_vi"/>
+                    <field name="cap_don_vi"/>
+                    <field name="ten_cap_don_vi"/>
+                    <field name="ten_don_vi_truc_thuoc"/>
+                </tree>
+            </field>
+        </record>
+
+        <record model="ir.actions.act_window" id="action_co_so_hanh_chinh">
+            <field name="name">Cơ sở hành chính</field>
+            <field name="res_model">co_so_hanh_chinh</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <!-- trường thpt -->
+        <record model="ir.ui.view" id="truong_thpt_form">
+            <field name="model">truong_thpt</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <div class="oe_edit_only" style="font-size:25px" attrs="{'invisible': [('id', '=', False)], }">Chỉnh sửa trường THPT</div>
+                        <div class="oe_edit_only" style="font-size:25px" attrs="{'invisible': [('id', '!=', False)], }">Thêm trường THPT</div>
+                        <div class="oe_read_only" style="font-size:25px">Thông tin trường THPT</div>
+                            <group>
+                                <field name="ten_truong"/>
+                                <field name="ma_truong"/>
+                                <field name="dia_chi"/>
+                                <field name="khu_vuc"/>
+                                <field name="truong_dtnt"/>
+                                <field name="truong_chuyen"/>
+                            </group>
+                            <group name="Thông tin chi tiết">
+                                <field name="ma_tinh_tp"/>
+                                <field name="ten_tinh_tp"/>
+                                <field name="ma_quan_huyen"/>
+                                <field name="ten_quan_huyen"/>
+                            </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="truong_thpt_tree">
+            <field name="model">truong_thpt</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="ma_truong"/>
+                    <field name="ten_truong"/>
+                    <field name="dia_chi"/>
+                    <field name="khu_vuc"/>
+                    <field name="truong_dtnt"/>
+                    <field name="truong_chuyen"/>
+                </tree>
+            </field>
+        </record>
+
+        <record model="ir.actions.act_window" id="action_truong_thpt">
+            <field name="name">Trường Trung học Phổ thông</field>
+            <field name="res_model">truong_thpt</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <!-- dân tộc -->
+        <record model="ir.ui.view" id="dan_toc_form">
+            <field name="model">dan_toc</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <div class="oe_edit_only" style="font-size:25px" attrs="{'invisible': [('id', '=', False)], }">Chỉnh sửa thông tin Dân tộc</div>
+                        <div class="oe_edit_only" style="font-size:25px" attrs="{'invisible': [('id', '!=', False)], }">Thêm thông tin Dân tộc</div>
+                        <div class="oe_read_only" style="font-size:25px">Thông tin Dân tộc</div>
+                            <group>
+                                <field name="ten_dan_toc"/>
+                                <field name="ma_dan_toc"/>
+                            </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="dan_toc_tree">
+            <field name="model">dan_toc</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="ma_dan_toc"/>
+                    <field name="ten_dan_toc"/>
+                </tree>
+            </field>
+        </record>
+
+        <record model="ir.actions.act_window" id="action_dan_toc">
+            <field name="name">Dân tộc</field>
+            <field name="res_model">dan_toc</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <!-- tôn giáo -->
+        <record model="ir.ui.view" id="ton_giao_form">
+            <field name="model">ton_giao</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <div class="oe_edit_only" style="font-size:25px" attrs="{'invisible': [('id', '=', False)], }">Chỉnh sửa thông tin Tôn giáo</div>
+                        <div class="oe_edit_only" style="font-size:25px" attrs="{'invisible': [('id', '!=', False)], }">Thêm thông tin Tôn giáo</div>
+                        <div class="oe_read_only" style="font-size:25px">Thông tin Tôn giáo</div>
+                            <group>
+                                <field name="ten_ton_giao"/>
+                                <field name="ma_ton_giao"/>
+                            </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="ton_giao_tree">
+            <field name="model">ton_giao</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="ma_ton_giao"/>
+                    <field name="ten_ton_giao"/>
+                </tree>
+            </field>
+        </record>
+
+        <record model="ir.actions.act_window" id="action_ton_giao">
+            <field name="name">Tôn giáo</field>
+            <field name="res_model">ton_giao</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+    </data>
+</odoo>

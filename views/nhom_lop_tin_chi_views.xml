@@ -1,0 +1,92 @@
+<odoo>
+    <data>
+        <record model="ir.ui.view" id="nhom_lop_tin_chi_form">
+            <field name="model">nhom_lop_tin_chi</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <div class="oe_edit_only" style="font-size:25px" attrs="{'invisible': [('id', '=', False)], }">Chỉnh sửa Nhóm lớp tín chỉ</div>
+                        <div class="oe_edit_only" style="font-size:25px" attrs="{'invisible': [('id', '!=', False)], }">Tạo mới Nhóm lớp tín chỉ</div>
+                        <div class="oe_read_only" style="font-size:25px">Nhóm lớp tín chỉ</div>
+                        <notebook>
+                            <page name="thong_tin_chung" string="Thông tin chung">
+                                <group col="4">
+                                    <field name="ma_nhom_lop_tin_chi" readonly="1"/>
+                                    <field name="ma_lop_tin_chi_id" widget="selection"/>
+                                    <field name="ten_hoc_phan"/>
+                                    <field name="loai_nhom_lop"/>
+                                    <field name="so_thu_tu_nhom"/>
+                                    <field name="si_so"/>
+                                </group>
+                                <group>
+                                    <field name="sinh_vien_ids"/>
+                                </group>
+                            </page>
+                            <page name="buoi_hoc" string="Buổi học">
+                                <group>
+                                    <field name="ma_hoa_lich_hoc"/>
+                                    <field name="buoi_hoc_ids"/>
+                                </group>
+                            </page>
+                        </notebook>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+<!--        cái form dưới đây để người dùng khi thêm nhóm lớp tín chỉ trong màn lớp tín chỉ không cần chọn mã lớp tín chỉ-->
+        <record model="ir.ui.view" id="nhom_lop_tin_chi_form_trong_danh_sach_lop_tin_chi">
+            <field name="model">nhom_lop_tin_chi</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <div class="oe_edit_only" style="font-size:25px" attrs="{'invisible': [('id', '=', False)], }">Chỉnh sửa Nhóm lớp tín chỉ</div>
+                        <div class="oe_edit_only" style="font-size:25px" attrs="{'invisible': [('id', '!=', False)], }">Tạo mới Nhóm lớp tín chỉ</div>
+                        <div class="oe_read_only" style="font-size:25px">Nhóm lớp tín chỉ</div>
+                        <notebook>
+                            <page name="thong_tin_chung" string="Thông tin chung">
+                                <group col="4">
+                                    <field name="ma_nhom_lop_tin_chi" readonly="1"/>
+                                    <field name="ma_lop_tin_chi_id" widget="selection" attrs="{'invisible': 1}"/>
+                                    <field name="loai_nhom_lop"/>
+                                    <field name="ten_hoc_phan"/>
+                                    <field name="so_thu_tu_nhom"/>
+                                    <field name="si_so"/>
+                                </group>
+                                    <group>
+                                        <field name="sinh_vien_ids"/>
+                                </group>
+                            </page>
+                            <page name="buoi_hoc" string="Buổi học">
+                                <field name="buoi_hoc_ids"/>
+                            </page>
+                        </notebook>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="nhom_lop_tin_chi_tree">
+            <field name="model">nhom_lop_tin_chi</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="ma_nhom_lop_tin_chi"/>
+                    <field name="ma_lop_tin_chi_id" />
+                    <field name="ten_hoc_phan"/>
+                    <field name="loai_nhom_lop"/>
+                    <field name="so_thu_tu_nhom"/>
+                    <field name="sinh_vien_ids" string="Danh sách sinh viên"/>
+                    <field name="si_so"/>
+                </tree>
+            </field>
+        </record>
+
+
+
+        <record model="ir.actions.act_window" id="action_nhom_lop_tin_chi">
+            <field name="name">Nhóm lớp tín chỉ</field>
+            <field name="res_model">nhom_lop_tin_chi</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+    </data>
+</odoo>

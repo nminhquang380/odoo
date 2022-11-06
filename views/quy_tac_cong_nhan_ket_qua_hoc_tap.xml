@@ -1,0 +1,119 @@
+<odoo>
+    <data>
+        <!--        Học phần của cơ sở đào tạo khác-->
+        <record model="ir.ui.view" id="hoc_phan_co_so_dao_tao_khac_form">
+            <field name="model">qldt.hoc_phan_co_so_dao_tao_khac</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <div class="oe_edit_only" style="font-size:25px" attrs="{'invisible': [('id', '=', False)], }">Chỉnh sửa danh sách học phần cơ sở đào tạo khác</div>
+                        <div class="oe_edit_only" style="font-size:25px" attrs="{'invisible': [('id', '!=', False)], }">Tạo mới danh sách học phần cơ sở đào tạo khác</div>
+                        <div class="oe_read_only" style="font-size:25px">Danh sách học phần cơ sở đào tạo khác</div>
+                        <group col="4">
+                            <field name="ma_hoc_phan"/>
+                            <field name="ten_hoc_phan" required = "1"/>
+                            <field name="so_tin_chi"/>
+                            <field name="co_so_dao_tao_chung_nhan"/>
+                            <field name="link_hoc_phan" widget="url"/>
+                        </group>
+                        <group>
+                            <field name="ten_file_minh_chung"/>
+                            <field name="so_cu" filename="ten_file_minh_chung" widget="pdf_viewer"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="hoc_phan_co_so_dao_tao_khac_tree">
+            <field name="model">qldt.hoc_phan_co_so_dao_tao_khac</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="ma_hoc_phan" string="Mã học phần/chứng chỉ"/>
+                    <field name="ten_hoc_phan" string="Tên học phần/chứng chỉ"/>
+                    <!--                    <field name="so_tin_chi"/>-->
+                    <field name="co_so_dao_tao_chung_nhan" string="Cơ sở đào tạo/cấp chứng chỉ"/>
+                    <field name="link_hoc_phan"/>
+                    <field name="create_date" string="Ngày tạo"/>
+                    <field name="create_uid" string="Tạo bởi"/>
+                </tree>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="hoc_phan_co_so_dao_tao_khac_tree_ban_ghi_cong_nhan_ket_qua_hoc_tap">
+            <field name="model">qldt.hoc_phan_co_so_dao_tao_khac</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="ma_hoc_phan" string="Mã học phần/chứng chỉ"/>
+                    <field name="ten_hoc_phan" string="Tên học phần/chứng chỉ"/>
+                    <!--                    <field name="so_tin_chi"/>-->
+                    <field name="co_so_dao_tao_chung_nhan" string="Cơ sở đào tạo/cấp chứng chỉ"/>
+                    <field name="link_hoc_phan"/>
+                </tree>
+            </field>
+        </record>
+
+        <record model="ir.actions.act_window" id="action_quan_ly_hoc_phan_co_so_dao_tao_khac">
+            <field name="name">Quản lý danh sách học phần cơ sở đào tạo khác</field>
+            <field name="res_model">qldt.hoc_phan_co_so_dao_tao_khac</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <!--        Học phần tương đương -->
+        <record model="ir.ui.view" id="hoc_phan_tuong_duong_form">
+            <field name="model">qldt.hoc_phan_tuong_duong</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <div class="oe_edit_only" style="font-size:25px" attrs="{'invisible': [('id', '=', False)], }">Chỉnh sửa danh sách học phần tương đương</div>
+                        <div class="oe_edit_only" style="font-size:25px" attrs="{'invisible': [('id', '!=', False)], }">Tạo mới danh sách học phần tương đương</div>
+                        <div class="oe_read_only" style="font-size:25px">Danh sách học phần tương đương</div>
+                        <group>
+                            <group>
+                                <field name="noi_dung_chuyen_doi" required = "1"/>
+                                <field name="ctk_id" required = "1"/>
+                                <!--                                <field name="ma_hoc_phan_goc" readonly="1"/>-->
+                                <!--                                <field name="so_tin_chi" readonly="1"/>-->
+                            </group>
+                        </group>
+                        <group>
+                            <field name="hoc_phan_id" domain="[('ctk_id','=',ctk_id)]" />
+                            <field name="hoc_phan_co_so_dao_tao_khac">
+                                <!--                                <tree>-->
+                                <!--                                    <field name="ma_hoc_phan"/>-->
+                                <!--                                    <field name="ten_hoc_phan" />-->
+                                <!--&lt;!&ndash;                                    <field name="so_tin_chi"/>&ndash;&gt;-->
+                                <!--                                    <field name="co_so_dao_tao_chung_nhan"/>-->
+                                <!--&lt;!&ndash;                                    <field name="so_cu"/>&ndash;&gt;-->
+                                <!--                                </tree>-->
+                            </field>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="hoc_phan_tuong_duong_tree">
+            <field name="model">qldt.hoc_phan_tuong_duong</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="noi_dung_chuyen_doi"/>
+                    <field name="hoc_phan_id" widget="many2many_tags"/>
+                    <field name="ctk_id" string="Thuộc chương trình khung"/>
+                    <field name="hoc_phan_co_so_dao_tao_khac" widget="many2many_tags"/>
+                    <field name="create_date" string="Ngày tạo"/>
+                    <field name="create_uid" string="Tạo bởi"/>
+                </tree>
+            </field>
+        </record>
+
+        <record model="ir.actions.act_window" id="action_quan_ly_hoc_phan_tuong_duong">
+            <field name="name">Quản lý danh sách học phần tương đương</field>
+            <field name="res_model">qldt.hoc_phan_tuong_duong</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+
+
+    </data>
+</odoo>

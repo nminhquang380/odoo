@@ -1,0 +1,53 @@
+<odoo>
+    <data>
+        <record model="ir.ui.view" id="sv_hp_dktc_form">
+            <field name="model">sv_hp_dktc</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <div class="oe_edit_only" style="font-size:25px" attrs="{'invisible': [('id', '=', False)], }">
+                            Chỉnh sửa thông tin Sinh viên - học phần - phiếu đăng ký tín chỉ
+                        </div>
+                        <div class="oe_edit_only" style="font-size:25px" attrs="{'invisible': [('id', '!=', False)], }">
+                            Tạo mới Sinh viên - học phần - phiếu đăng ký tín chỉ
+                        </div>
+                        <div class="oe_read_only" style="font-size:25px">Sinh viên - học phần - phiếu đăng ký tín chỉ</div>
+                    <group col="4">
+                        <field name="lop_tin_chi_id"/>
+                        <field name="ky_hoc_id"/>
+                        <field name="hoc_phan_id"/>
+                        <field name="ten_hoc_phan"/>
+                        <field name="so_tin_chi"/>
+                        <field name="sinh_vien_id"/>
+                        <field name="name"/>
+                        <field name="dot_dk_tin_chi_id"/>
+                    </group>
+                    <group col="4">
+                        <field name="ghi_chu"/>
+                    </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+        <record model="ir.ui.view" id="sv_hp_dktc_tree">
+            <field name="model">sv_hp_dktc</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="dot_dk_tin_chi_id"/>
+                    <field name="sinh_vien_id"/>
+                    <field name="name"/>
+                    <field name="hoc_phan_id"/>
+                    <field name="ten_hoc_phan"/>
+                    <field name="so_tin_chi"/>
+                    <field name="lop_tin_chi_id"/>
+                </tree>
+            </field>
+        </record>
+        <record model="ir.actions.act_window" id="action_sv_hp_dktc">
+            <field name="name">Sinh viên - học phần - phiếu đăng ký tín chỉ</field>
+            <field name="res_model">sv_hp_dktc</field>
+            <field name="view_mode">tree,form</field>
+<!--            <field name="context">{"group_by":["dot_dk_nhu_cau_id","hoc_phan_id"]}</field>-->
+        </record>
+    </data>
+</odoo>

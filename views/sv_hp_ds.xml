@@ -1,0 +1,117 @@
+<odoo>
+    <data>
+        <record model="ir.ui.view" id="sv_hp_ds_form">
+            <field name="model">sv_hp_ds</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <div class="oe_edit_only" style="font-size:25px" attrs="{'invisible': [('id', '=', False)], }">Chỉnh sửa kết quả học tập theo học phần</div>
+                        <div class="oe_edit_only" style="font-size:25px" attrs="{'invisible': [('id', '!=', False)], }">Tạo mới kết quả học tập theo học phần</div>
+                        <div class="oe_read_only" style="font-size:25px">Kết quả học tập theo học phần</div>
+                        <group col="4">
+                            <field name="sinh_vien_id"/>
+                            <field name="hoc_phan_id"/>
+                            <field name="diem_hoc_phan"/>
+                            <field name="trang_thai"/>
+                            <field name="diem_chu"/>
+<!--                            <field name="diem_lan_1"/>-->
+<!--                            <field name="diem_lan_2"/>-->
+<!--                            <field name="diem_lan_3"/>-->
+<!--                            <field name="diem_lan_4"/>-->
+<!--                            <field name="diem_lan_5"/>-->
+                            <field name="diem_quy_doi"/>
+                            <field name="ghi_chu"/>
+                            <field name="create_date" string="Ngày nhập"/>
+                        </group>
+                        <notebook colspan="4">
+                            <page string="Danh sách điểm">
+                                <field name="sv_ltc_ds_ids"/>
+                            </page>
+                        </notebook>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="sv_hp_ds_tree">
+            <field name="model">sv_hp_ds</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="sinh_vien_id"/>
+                    <field name="so_tin_chi"/>
+                    <field name="diem_hoc_phan" string="Điểm Học phần"/>
+                     <field name="diem_thang_4"/>
+                    <field name="diem_chu"/>
+<!--                    <field name="diem_lan_1"/>-->
+<!--                    <field name="diem_lan_2"/>-->
+<!--                    <field name="diem_lan_3"/>-->
+<!--                    <field name="diem_lan_4"/>-->
+<!--                    <field name="diem_lan_5"/>-->
+                    <field name="diem_quy_doi"/>
+                    <field name="ghi_chu"/>
+                    <field name="create_date" string="Ngày nhập"/>
+                </tree>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="sv_hp_ds_tree_view_in_ho_so_sinh_vien">
+            <field name="model">sv_hp_ds</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="sinh_vien_id"/>
+                    <field name="ten_sv"/>
+                    <!--                    <field name="hoc_phan_id"/>-->
+                    <field name="diem_hoc_phan" string="Điểm Học phần"/>
+                    <field name="diem_thang_4"/>
+                    <field name="diem_chu"/>
+                    <field name="trang_thai"/>
+<!--                    <field name="diem_lan_1"/>-->
+<!--                    <field name="diem_lan_2"/>-->
+<!--                    <field name="diem_lan_3"/>-->
+<!--                    <field name="diem_lan_4"/>-->
+<!--                    <field name="diem_lan_5"/>-->
+<!--                    <field name="diem_quy_doi"/>-->
+<!--                    <field name="ghi_chu"/>-->
+                    <field name="create_date" string="Ngày nhập"/>
+                </tree>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="sv_hp_ds_search_all">
+            <field name="model">sv_hp_ds</field>
+            <field name="arch" type="xml">
+                <search>
+                    <field name="sinh_vien_id"/>
+                    <field name="ten_sv"/>
+                    <!--                    <field name="hoc_phan_id"/>-->
+                    <field name="so_tin_chi"/>
+                    <field name="diem_hoc_phan" string="Điểm Học phần"/>
+                    <field name="diem_chu"/>
+<!--                    <field name="diem_lan_1"/>-->
+<!--                    <field name="diem_lan_2"/>-->
+<!--                    <field name="diem_lan_3"/>-->
+<!--                    <field name="diem_lan_4"/>-->
+<!--                    <field name="diem_lan_5"/>-->
+                    <field name="diem_quy_doi"/>
+                    <field name="ghi_chu"/>
+                    <field name="create_date" string="Ngày nhập"/>
+                    <searchpanel>
+                        <field name="khoi_lop_id" />
+                        <!--                        <field name="lop_tin_chi_id" select="multi" enable_counters="1"  />-->
+                    </searchpanel>
+                </search>
+            </field>
+        </record>
+
+        <record model="ir.actions.act_window" id="action_sv_hp_ds">
+            <field name="name">Quản lý đánh giá và tính điểm theo học phần</field>
+            <field name="res_model">sv_hp_ds</field>
+            <field name="view_mode">tree,form</field>
+            <field name="search_view_id" ref="sv_hp_ds_search_all"/>
+            <!--            <field name="view_id" ref="sv_hp_ds_form"/>-->
+            <field name="view_id" ref="sv_hp_ds_tree_view_in_ho_so_sinh_vien"/>
+            <field name="context">{"group_by":["ma_hp_ten_hp","ma_dinh_danh_ten_sv"]}</field>
+        </record>
+
+    </data>
+</odoo>

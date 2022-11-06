@@ -1,0 +1,79 @@
+<odoo>
+    <data>
+        <record model="ir.ui.view" id="sinh_vien_hoc_ky_form">
+            <field name="model">qldt.sinh_vien_hoc_ky</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <div class="oe_edit_only" style="font-size:25px" attrs="{'invisible': [('id', '=', False)], }">
+                            Chỉnh thông tin sinh viên theo học kỳ
+                        </div>
+                        <div class="oe_edit_only" style="font-size:25px" attrs="{'invisible': [('id', '!=', False)], }">
+                            Tạo mới thông tin sinh viên theo học kỳ
+                        </div>
+                        <div class="oe_read_only" style="font-size:25px">Thông tin sinh viên theo học kỳ</div>
+                        <group col="4">
+                            <field name="sinh_vien_id"/>
+                            <field name="ten_sv" readonly="1"/>
+                            <field name="ctk_nganh_id"/>
+                            <field name="ctk_chuyen_nganh_id"/>
+                            <field name="ky_ctk"/>
+                            <field name="ky_nam_hoc_id"/>
+                            <field name="tong_so_tin_chi_da_dang_ky"/>
+                            <field name="tong_so_tin_chi_duoc_mien"/>
+                            <field name="tong_so_tin_chi_trong_hoc_ky"/>
+                            <field name="tong_so_tin_chi_tich_luy_sau_hoc_ky"/>
+<!--                            <field name="diem_tb_chung_hoc_ky"/>-->
+<!--                            <field name="diem_tb_tich_luy_hoc_ky"/>-->
+                            <field name="diem_tb_chung_hoc_ky_thang_4"/>
+                            <field name="diem_tb_tich_luy_hoc_ky_thang_4"/>
+                            <field name="xep_loai_hoc_luc_hoc_ky"/>
+                            <field name="trang_thai"/>
+                            <field name="hinh_thuc_dao_tao_id"/>
+                        </group>
+                        <notebook>
+                            <page string="Danh sách lớp tín chỉ - điểm số">
+                                <field name="sv_ltc_ds_ids"/>
+                            </page>
+                        </notebook>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="sinh_vien_hoc_ky_tree">
+            <field name="model">qldt.sinh_vien_hoc_ky</field>
+            <field name="arch" type="xml">
+                <tree default_order="create_date desc">
+                    <field name="sinh_vien_id"/>
+                    <field name="ten_sv" readonly="1"/>
+<!--                    <field name="ctk_nganh_id"/>-->
+<!--                    <field name="ctk_chuyen_nganh_id"/>-->
+                    <field name="ky_ctk"/>
+                    <field name="ky_nam_hoc_id"/>
+                    <field name="tong_so_tin_chi_da_dang_ky"/>
+                    <field name="tong_so_tin_chi_duoc_mien"/>
+                    <field name="tong_so_tin_chi_trong_hoc_ky"/>
+                    <field name="tong_so_tin_chi_tich_luy_sau_hoc_ky"/>
+<!--                    <field name="diem_tb_chung_hoc_ky"/>-->
+<!--                    <field name="diem_tb_tich_luy_hoc_ky"/>-->
+                    <field name="diem_tb_chung_hoc_ky_thang_4"/>
+                    <field name="diem_tb_tich_luy_hoc_ky_thang_4"/>
+                    <field name="trang_thai"/>
+                    <field name="diem_tb_tich_luy_hoc_ky"/>
+                    <!--                    <field name="xep_loai_hoc_luc_hoc_ky"/>-->
+<!--                    <field name="hinh_thuc_dao_tao_id"/>-->
+                    <!--                    <field name="create_uid" string="Người tạo"/>-->
+                    <!--                    <field name="create_date" string="Ngày tạo"/>-->
+                </tree>
+            </field>
+        </record>
+
+
+        <record model="ir.actions.act_window" id="action_quan_ly_sinh_vien_hoc_ky">
+            <field name="name">Quản lý thông tin sinh viên theo học kỳ</field>
+            <field name="res_model">qldt.sinh_vien_hoc_ky</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+    </data>
+</odoo>

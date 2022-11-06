@@ -1,0 +1,64 @@
+<odoo>
+    <data>
+        <record model="ir.ui.view" id="ky_hoc_form">
+            <field name="model">ky_hoc</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <div class="oe_edit_only" style="font-size:25px" attrs="{'invisible': [('id', '=', False)], }">Chỉnh sửa kỳ học</div>
+                        <div class="oe_edit_only" style="font-size:25px" attrs="{'invisible': [('id', '!=', False)], }">Tạo mới kỳ học</div>
+                        <div class="oe_read_only" style="font-size:25px">Kỳ học</div>
+                        <group>
+                            <group>
+                                <field name="ten_ky_hoc"/>
+                            </group>
+    <!--                        <field name="tg_bat_dau"/>-->
+    <!--                        <field name="tg_ket_thuc"/>-->
+                            <!--                        <field name="nganh" widget="selection"/>-->
+                            <!--                        <field name="chuyen_nganh" widget="selection"/>-->
+                            <!--                        <field name="khoa_sinh_vien"/>-->
+
+    <!--                        <field name="ctk_ids"/>-->
+                            <!--                        <field name="lop_tin_chi"/>-->
+                        </group>
+                        <group>
+                            <field name="danh_sach_mon_hoc">
+<!--                                <tree>-->
+<!--                                    <field name="ma_hoc_phan"/>-->
+<!--                                    <field name="name"/>-->
+<!--                                    <field name="so_tin_chi"/>-->
+<!--                                    <field name="loai_hoc_phan"/>-->
+<!--                                    <field name="khoa_bo_mon_phu_trach"/>-->
+<!--                                </tree>-->
+                            </field>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="ky_hoc_tree">
+            <field name="model">ky_hoc</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="ten_ky_hoc"/>
+<!--                    <field name="tg_bat_dau"/>-->
+<!--                    <field name="tg_ket_thuc"/>-->
+                    <!--                    <field name="nganh"/>-->
+                    <!--                    <field name="chuyen_nganh"/>-->
+                    <!--                    <field name="khoa_sinh_vien"/>-->
+                    <field name="danh_sach_mon_hoc" widget="many2many_tags"/>
+                    <field name="create_uid" string="Tạo bởi"/>
+<!--                    <field name="ctk_ids"/>-->
+                    <!--                    <field name="lop_tin_chi"/>-->
+                </tree>
+            </field>
+        </record>
+
+        <record model="ir.actions.act_window" id="action_ky_hoc_quan_ly_ky_hoc">
+            <field name="name">Kỳ học</field>
+            <field name="res_model">ky_hoc</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+    </data>
+</odoo>

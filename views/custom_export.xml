@@ -1,0 +1,98 @@
+ <odoo>
+    <data>
+        <record id='lop_hanh_chinh_export_form' model='ir.ui.view'>
+            <field name='model'>lop_hanh_chinh.custom_export</field>
+            <field name='arch' type='xml'>
+                <form string="Export lớp hành chính">
+                    <sheet>
+                        <group>
+                            <field name="export_options" />
+                            <field name="lop_hanh_chinh_ids"/>
+                        </group>
+                        <footer>
+                            <button string='Tải về' type='object' name='export_lop_hanh_chinh' class='btn-primary'/>
+                        </footer>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+        <record id="action_lop_hanh_chinh_export_wizard" model="ir.actions.act_window">
+            <field name="name">Export lớp hành chính</field>
+            <field name="res_model">lop_hanh_chinh.custom_export</field>
+            <field name="view_mode">form</field>
+            <field name="target">new</field>
+        </record>
+
+        <record id='lop_tin_chi_export_form' model='ir.ui.view'>
+            <field name='model'>lop_tin_chi.custom_export</field>
+            <field name='arch' type='xml'>
+                <form string="Export lớp tín chỉ">
+                    <sheet>
+                        <group>
+                            <field name="export_template"/>
+                            <field name="lop_tin_chi_id"/>
+                        </group>
+                        <footer>
+                            <button string='Tải về' type='object' name='export_lop_tin_chi' class='btn-primary'/>
+                        </footer>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+        <record id="action_lop_tin_chi_export_wizard" model="ir.actions.act_window">
+            <field name="name">Export lớp tín chỉ</field>
+            <field name="res_model">lop_tin_chi.custom_export</field>
+            <field name="view_mode">form</field>
+            <field name="target">new</field>
+        </record>
+
+        <record id='tkb_export_form' model='ir.ui.view'>
+            <field name='model'>thoi_khoa_bieu.custom_export</field>
+            <field name='arch' type='xml'>
+                <form string="Export thời khóa biểu">
+                    <sheet>
+                        <group>
+                            <field name="export_template"/>
+                            <field name="buoi_hoc_id"/>
+                        </group>
+                        <footer>
+                            <button string='Tải về' type='object' name='export_buoi_hoc' class='btn-primary'/>
+                        </footer>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+        <record id="action_tkb_export_wizard" model="ir.actions.act_window">
+            <field name="name">Export thời khóa biểu</field>
+            <field name="res_model">thoi_khoa_bieu.custom_export</field>
+            <field name="view_mode">form</field>
+            <field name="target">new</field>
+        </record>
+
+        <record id='sinh_vien_export_form' model='ir.ui.view'>
+            <field name='model'>sinh_vien.custom_export</field>
+            <field name='arch' type='xml'>
+                <form string="Export danh sách sinh viên">
+                    <sheet>
+                        <group>
+                            <field name="hinh_thuc_dao_tao" required="1"/>
+                            <field name="export_options"/>
+                            <field name="sinh_vien_ids" attrs="{'invisible': [('export_options',  '!=', 'tuy_chon')]}" domain="[('hinh_thuc_dao_tao_id', '=', hinh_thuc_dao_tao)]"/>
+                            <field name="lop_hanh_chinh_ids" attrs="{'invisible': [('export_options', '!=', 'lop_hanh_chinh')]}" domain="[('hinh_thuc_dao_tao_id', '=', hinh_thuc_dao_tao)]"/>
+                            <field name="khoa_nganh_id" attrs="{'invisible': [('export_options', '!=', 'khoa_nganh')]}" domain="[('hinh_thuc_dao_tao_id', '=', hinh_thuc_dao_tao)]"/>
+                        </group>
+                        <footer>
+                            <button string='Tải về' type='object' name='export_dssv' class='btn-primary'/>
+                        </footer>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+        <record id="action_sinh_vien_export_wizard" model="ir.actions.act_window">
+            <field name="name">Export danh sách sinh viên</field>
+            <field name="res_model">sinh_vien.custom_export</field>
+            <field name="view_mode">form</field>
+            <field name="target">new</field>
+        </record>
+    </data>
+</odoo>

@@ -1,0 +1,140 @@
+<odoo>
+    <data>
+        <record model="ir.ui.view" id="chuong_trinh_khung_form">
+            <field name="model">chuong_trinh_khung</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <div class="oe_edit_only" style="font-size:25px" attrs="{'invisible': [('id', '=', False)], }">
+                            Chỉnh sửa chương trình khung
+                        </div>
+                        <div class="oe_edit_only" style="font-size:25px" attrs="{'invisible': [('id', '!=', False)], }">
+                            Tạo mới chương trình khung
+                        </div>
+                        <div class="oe_read_only" style="font-size:25px">Chương trình khung</div>
+                        <group col="4">
+                            <field name="ten_chuong_trinh_khung" required='1'/>
+                            <!-- <field name="hinh_thuc_dao_tao_id" options="{'no_create': True, 'no_create_edit':True}" /> -->
+                            <!-- <field name="nganh_id" options="{'no_create': True, 'no_create_edit':True}" /> -->
+                            <field name="nganh_id"/>
+                            <!-- <field name="chuyen_nganh_id" options="{'no_create': True, 'no_create_edit':True}" /> -->
+                            <field name="chuyen_nganh_id"/>
+                            <field name="is_nganh"/>
+                        </group>
+                        <group>
+                            <field name="hinh_thuc_dao_tao_id"/>
+                            <field name="khoa_sinh_vien_ids" domain="[('hinh_thuc_dao_tao_id', '=', hinh_thuc_dao_tao_id)]"/>
+                        </group>
+                        <notebook colspan="4">
+                            <!-- <group string="Khóa ngành">
+                                <field name="khoa_nganh_ids"/>
+                            </group> -->
+                            <group string="Học phần">
+                                <field name="mon_hoc_dieu_kien_ids" default_order="hoc_ky asc">
+                                    <tree>
+                                        <field name="hoc_phan_id"/>
+                                        <field name="ten_hoc_phan"/>
+                                        <field name="so_tin_chi"/>
+                                        <field name="loai_hoc_phan"/>
+                                        <field name="hoc_ky"/>
+                                        <field name="hoc_phan_tien_quyet_ids" widget="many2many_tags"/>
+                                        <field name="hoc_phan_truoc_ids" widget="many2many_tags"/>
+                                        <field name="hoc_phan_song_hanh_ids" widget="many2many_tags"/>
+                                    </tree>
+                                </field>
+                            </group>
+                            <group string="Học kỳ chương trình khung">
+                                <field name="hoc_ky_chuong_trinh_khung_ids" default_order="hoc_ky asc"/>
+                            </group>
+                        </notebook>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="chuong_trinh_khung_tree">
+            <field name="model">chuong_trinh_khung</field>
+            <field name="arch" type="xml">
+                <tree default_order="create_date desc">
+                    <field name="hinh_thuc_dao_tao_id"/>
+                    <field name="ten_chuong_trinh_khung"/>
+                    <!-- <field name="khoa_nganh_ids"/> -->
+                    <field name="nganh_id"/>
+                    <field name="chuyen_nganh_id"/>
+                    <field name="is_nganh"/>
+                    <field name="create_uid" string="Người tạo"/>
+                    <field name="create_date" string="Ngày tạo"/>
+                </tree>
+            </field>
+        </record>
+
+
+        <record model="ir.actions.act_window" id="action_quan_ly_chuong_trinh_khung">
+            <field name="name">Chương trình khung</field>
+            <field name="res_model">chuong_trinh_khung</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+<!--      Danh sách  Môn học - điều kiện -->
+<!--         <record model="ir.ui.view" id="mon_hoc_dieu_kien_form">-->
+<!--            <field name="model">mon_hoc_dieu_kien</field>-->
+<!--            <field name="arch" type="xml">-->
+<!--                <form>-->
+<!--                    <sheet>-->
+<!--                        <div class="oe_edit_only" style="font-size:25px" attrs="{'invisible': [('id', '=', False)], }">-->
+<!--                            Chỉnh sửa môn học điều kiện-->
+<!--                        </div>-->
+<!--                        <div class="oe_edit_only" style="font-size:25px" attrs="{'invisible': [('id', '!=', False)], }">-->
+<!--                            Tạo mới môn học điều kiện-->
+<!--                        </div>-->
+<!--                        <div class="oe_read_only" style="font-size:25px">Môn học điều kiện</div>-->
+<!--                        <group col="4">-->
+<!--                            <field name="ten_chuong_trinh_khung" required='1'/>-->
+<!--                            <field name="hinh_thuc_dao_tao_id" options="{'no_create': True, 'no_create_edit':True}" />-->
+<!--                            <field name="nganh_id" options="{'no_create': True, 'no_create_edit':True}" />-->
+<!--                            <field name="chuyen_nganh_id" options="{'no_create': True, 'no_create_edit':True}" />-->
+<!--                        </group>-->
+<!--                        <notebook colspan="4">-->
+<!--                            <group string="Khóa ngành">-->
+<!--                                <field name="khoa_nganh_ids"/>-->
+<!--                            </group>-->
+<!--                            <group string="Học phần">-->
+<!--                                <field name="mon_hoc_dieu_kien_ids" default_order="hoc_ky asc"/>-->
+<!--                            </group>-->
+<!--                            <group string="Học kỳ chương trình khung">-->
+<!--                                <field name="hoc_ky_chuong_trinh_khung_ids" default_order="hoc_ky asc"/>-->
+<!--                            </group>-->
+<!--                        </notebook>-->
+<!--                    </sheet>-->
+<!--                </form>-->
+<!--            </field>-->
+<!--        </record>-->
+
+        <record model="ir.ui.view" id="mon_hoc_dieu_kien_tree">
+            <field name="model">mon_hoc_dieu_kien</field>
+            <field name="arch" type="xml">
+                <tree default_order="create_date desc">
+                    <field name="ctk_id"/>
+                    <field name="hoc_phan_id"/>
+                    <field name="ten_hoc_phan"/>
+                    <field name="so_tin_chi"/>
+                    <field name="hoc_ky"/>
+                    <field name="tinh_chat"/>
+                    <field name="hoc_phan_tien_quyet_ids"/>
+                    <field name="hoc_phan_truoc_ids"/>
+                    <field name="hoc_phan_song_hanh_ids"/>
+                    <field name="create_uid" string="Người tạo"/>
+                    <field name="create_date" string="Ngày tạo"/>
+                </tree>
+            </field>
+        </record>
+
+
+        <record model="ir.actions.act_window" id="action_mon_hoc_dieu_kien">
+            <field name="name">Danh sách môn học điều kiện</field>
+            <field name="res_model">mon_hoc_dieu_kien</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+    </data>
+</odoo>

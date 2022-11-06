@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+
+        <record model="ir.ui.view" id="lop_tin_chi_view_form">
+            <field name="name">lop_tin_chi.view.form</field>
+            <field name="model">lop_tin_chi</field>
+            <field name="arch" type="xml">
+                <form string="Lớp tín chỉ">
+                    <sheet>
+                        <div class="oe_button_box" name="button_box">
+                            <button name="action_view_diem_lop_tin_chi"
+                                        type="object"
+                                        icon="fa-files-o"
+                                        class="oe_stat_button">
+                                <div class="o_field_widget o_stat_info">
+                                    <span class="o_stat_value">Quản lý Điểm</span>
+<!--                                    <span class="o_stat_value"><field name="total_slides" nolabel="1"/> Contents</span>-->
+                                </div>
+                            </button>
+                            <button name="action_import_diem_lop_tin_chi"
+                                        type="object"
+                                        icon="fa-files-o"
+                                        class="oe_stat_button">
+                                <div class="o_field_widget o_stat_info">
+                                    <span class="o_stat_value">Import Điểm</span>
+<!--                                    <span class="o_stat_value"><field name="total_slides" nolabel="1"/> Contents</span>-->
+                                </div>
+                            </button>
+                        </div>
+                        <div class="oe_edit_only" style="font-size:25px" attrs="{'invisible': [('id', '=', False)], }">Chỉnh sửa lớp tín chỉ</div>
+                        <div class="oe_edit_only" style="font-size:25px" attrs="{'invisible': [('id', '!=', False)], }">Tạo mới lớp tín chỉ</div>
+                        <div class="oe_read_only" style="font-size:25px">Lớp tín chỉ</div>
+                        <group>
+                            <field name="ten_lop_tin_chi" readonly="1"/>
+                        </group>
+                        <notebook colspan="4">
+                            <page string="Thông tin chung">
+                                <group>
+                                    <field name="mon_hoc_ids" required="1"/>
+                                    <field name="ten_hoc_phan"/>
+                                    <field name="ma_lop" readonly="1"/>
+                                    <field name="giang_vien_id" required="1"/>
+                                    <field name="dot_dk_tin_chi_id"/>
+                                    <field name="ky_nam_hoc_id"/>
+                                    <field name="so_thu_tu_lop"/>
+                                    <field name="si_so"/>
+                                    <field name="khoa_id"/>
+                                </group>
+                                <notebook colspan="4">
+                                    <page string="Danh sách nhóm lớp tín chỉ">
+                                        <field name="nhom_lop_tin_chi_id" context="{'form_view_ref':'website_slides.nhom_lop_tin_chi_form_trong_danh_sach_lop_tin_chi'}"/>
+                                    </page>
+                                </notebook>
+                            </page>
+                            <page name="sinh_vien_ids" string="Danh sách sinh viên">
+                                <group>
+                                    <field name="sinh_vien_ids">
+                                        <tree>
+                                            <field name="ma_dinh_danh"/>
+                                            <field name="ho_dem"/>
+                                            <field name="ten"/>
+                                            <field name="lop_tin_chi_ids"/>
+                                        </tree>
+                                    </field>
+                                </group>
+                            </page>
+                            <page string="Danh sách giảng viên">
+                                <group>
+                                    <field name="giang_vien_ids"/>
+                                </group>
+                            </page>
+                            <page name="lich_hoc" string="Lịch học">
+                                <field name="ma_hoa_lich_hoc"/>
+                                <field name="buoi_hoc_ids">
+                                    <!-- <tree>
+                                        <field name="nhom_lop_tin_chi_id"/>
+                                        <field name="dia_diem" />
+                                        <field name="loai_hinh"/>
+                                        <field name="so_thu_tu_buoi_hoc"/>
+                                        <field name="ngay_gio_hoc"/>
+                                        <field name="ngay_gio_ket_thuc"/>
+                                       <field name="calendar_event_id"/>
+
+                                    </tree> -->
+                                </field>
+                            </page>
+                            <page name="trong_so" string="Trọng số điểm (tính theo %)">
+                                <group col="4">
+                                    <field name="ts_attendance"/>
+                                    <field name="ts_trung_binh_kiem_tra_tren_lop"/>
+                                    <field name="ts_bai_tap"/>
+                                    <field name="ts_thi_nghiem"/>
+                                    <field name="ts_cuoi_ky"/>
+                                </group>
+                            </page>
+                            <page name="diem" string="Danh sách điểm">
+                                <field name="sv_ltc_ds_id">
+                                    <tree>
+                                        <field name="sinh_vien_id"/>
+                                        <field name="name"/>
+                                        <field name="diem_attendance"/>
+                                        <field name="diem_bai_tap"/>
+                                        <field name="diem_trung_binh_kiem_tra_tren_lop"/>
+                                        <field name="diem_cuoi_ky" string="Điểm thi"/>
+                                        <field name="diem_tong_ket"/>
+                                        <field name="diem_tong_ket_dang_chu"/>
+                <!--                    <field name="diem_tong_ket_thang_4"/>-->
+                                    </tree>
+                                </field>
+                            </page>
+                        </notebook>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="lop_tin_chi_view_tree">
+            <field name="name">lop_tin_chi.view.tree</field>
+            <field name="model">lop_tin_chi</field>
+            <field name="arch" type="xml">
+                <tree string="Lớp tín chỉ">
+                    <field name="ma_lop"/>
+                    <field name="ten_hoc_phan"/>
+                    <field name="so_thu_tu_lop"/>
+                    <field name="mon_hoc_ids"/>
+                    <field name="hinh_thuc_dao_tao_id"/>
+                    <field name="thoi_gian_bat_dau"/>
+                    <field name="giang_vien_id"/>
+                    <field name="khoa_id"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="action_lop_tin_chi_danh_sach_lop" model="ir.actions.act_window">
+            <field name="name">Danh sách lớp tín chỉ</field>
+            <field name="res_model">lop_tin_chi</field>
+            <field name="view_mode">tree,form</field>
+            <!-- <field name="view_id" ref="lop_tin_chi_view_kanban"/> -->
+            <field name="view_id" ref="lop_tin_chi_view_form"/>
+            <field name="view_id" ref="lop_tin_chi_view_tree"/>
+            <field name="help" type="html">
+                <p class="o_view_nocontent_smiling_face">
+                    Tạo lớp tín chỉ
+                </p>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="lop_tin_chi_search_all">
+            <field name="model">lop_tin_chi</field>
+            <field name="arch" type="xml">
+                <search>
+                    <field name="ma_lop"/>
+                    <field name="ky_nam_hoc_id"/>
+                    <searchpanel>
+                        <field name="hinh_thuc_dao_tao_id" select="multi" />
+                        <field name="ky_nam_hoc_id" select="multi"/>
+                    </searchpanel>
+                </search>
+            </field>
+        </record>
+
+    </data>
+</odoo>

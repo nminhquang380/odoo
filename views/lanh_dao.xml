@@ -1,0 +1,87 @@
+<odoo>
+    <data>
+        <record id="lanh_dao_form" model="ir.ui.view">
+            <field name="model">lanh_dao</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <div class="oe_button_box" name="button_box"/>
+                        <div class="oe_edit_only" style="font-size:25px" attrs="{'invisible': [('id', '=', False)], }">Chỉnh sửa lãnh đạo</div>
+                        <div class="oe_edit_only" style="font-size:25px" attrs="{'invisible': [('id', '!=', False)], }">Tạo mới lãnh đạo</div>
+                        <div class="oe_read_only" style="font-size:25px">Lãnh đạo</div>
+                        <group>
+                            <group>
+                                <field name="name" string="Họ và tên" required="1" placeholder="VD: Nguyễn Văn A"/>
+                                <field name="ma_dinh_danh" required="1"/>
+                            </group>
+                            <group>
+                                <field name="anh_dai_dien" widget='image' class="oe_avatar"
+                                       options='{"preview_image": "image_128"}'/>
+                            </group>
+                        </group>
+                        <notebook colspan="4">
+                            <page name="thong_tin_ca_nhan" string="Thông tin cá nhân">
+                                <group>
+                                    <group string="Thông tin bản thân">
+                                        <field name="ten_goi_khac"/>
+                                        <field name="ngay_sinh"/>
+                                        <field name="gioi_tinh"/>
+                                        <field name="dan_toc"/>
+                                        <field name="ton_giao"/>
+                                        <field name="so_cmnd" required="1"/>
+                                        <field name="ngay_cap"/>
+                                        <field name="so_so_bhxh"/>
+                                    </group>
+                                    <group string="Nơi sinh">
+                                        <field name="tinh_tp_ns"/>
+                                        <field name="quan_huyen_ns"/>
+                                        <field name="phuong_xa_ns"/>
+                                        <field name="so_nha_ten_duong_ns"/>
+                                    </group>
+                                    <group string="Quê quán trên sổ hộ khẩu">
+                                        <field name="tinh_tp_hk"/>
+                                        <field name="quan_huyen_hk"/>
+                                        <field name="phuong_xa_hk"/>
+                                        <field name="so_nha_ten_duong_hk"/>
+                                    </group>
+                                    <group string="Nơi ở hiện nay">
+                                        <field name="tinh_tp_no"/>
+                                        <field name="quan_huyen_no"/>
+                                        <field name="phuong_xa_no"/>
+                                        <field name="so_nha_ten_duong_no"/>
+                                    </group>
+                                </group>
+                            </page>
+                            <page name="qua_trinh_cong_tac" string="Quá trình công tác">
+                                <group col="4">
+                                    <field name="ngay_bat_dau"/>
+                                    <field name="ngay_ket_thuc"/>
+                                </group>
+                            </page>
+                        </notebook>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="lanh_dao_tree">
+            <field name="model">lanh_dao</field>
+            <field name="arch" type="xml">
+                <tree>
+<!--                    <field name="image_128" widget="image" string="Ảnh đại diện"/>-->
+                    <field name="ma_dinh_danh"/>
+                    <field name="name" string="Họ và tên"/>
+                    <field name="email" string="Email"/>
+<!--                    <field name="user_id"/>-->
+                </tree>
+            </field>
+        </record>
+
+        <record model="ir.actions.act_window" id="action_lanh_dao">
+            <field name="name">Lãnh đạo</field>
+            <field name="res_model">lanh_dao</field>
+            <!-- <field name="view_mode">kanban,tree,form</field> -->
+            <field name="view_mode">tree,kanban,form</field>
+        </record>
+    </data>
+</odoo>

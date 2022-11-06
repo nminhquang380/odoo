@@ -1,0 +1,193 @@
+<odoo>
+    <data>
+
+        <!--        Kết quả học tập sinh viên-->
+        <record model="ir.ui.view" id="qldt_ket_qua_hoc_tap_sinh_vien_form">
+            <field name="model">qldt.ket_qua_hoc_tap_sinh_vien</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <div class="oe_edit_only" style="font-size:25px" attrs="{'invisible': [('id', '=', False)], }">Chỉnh sửa kết quả học tập sinh viên</div>
+                        <div class="oe_edit_only" style="font-size:25px" attrs="{'invisible': [('id', '!=', False)], }">Tạo mới bản ghi kết quả học tập sinh viên</div>
+                        <div class="oe_read_only" style="font-size:25px">Kết quả học tập sinh viên</div>
+                        <group col="4">
+                            <field name="ky_nam_hoc_id"/>
+                            <field name="sinh_vien_id"/>
+                        </group>
+                        <group col="4">
+                            <field name="ma_sinh_vien"/>
+                            <field name="diem_tb_hoc_ky"/>
+                            <field name="hoc_luc"/>
+                            <field name="diem_tb_tich_luy"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="qldt_ket_qua_hoc_tap_sinh_vien_tree">
+            <field name="model">qldt.ket_qua_hoc_tap_sinh_vien</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="ky_nam_hoc_id"/>
+                    <field name="ma_sinh_vien"/>
+                    <field name="sinh_vien_id"/>
+                    <field name="diem_tb_hoc_ky"/>
+                    <field name="hoc_luc"/>
+                    <field name="diem_tb_tich_luy"/>
+                    <!--                    <field name="create_uid" string="Tạo bởi"/>-->
+                    <!--                    <field name="create_date" string="Ngày tạo"/>-->
+                </tree>
+            </field>
+        </record>
+
+        <!--        <record model="ir.ui.view" id="qldt_ket_qua_hoc_tap_sinh_vien_search_all">-->
+        <!--            <field name="model">qldt.ket_qua_hoc_tap_sinh_vien</field>-->
+
+        <!--            <field name="arch" type="xml">-->
+        <!--                <search>-->
+        <!--                    <field name="ky_nam_hoc_id"/>-->
+        <!--                    <field name="ma_sinh_vien"/>-->
+        <!--                    <field name="sinh_vien_id"/>-->
+        <!--                    <field name="diem_tb_hoc_ky"/>-->
+        <!--                    <field name="hoc_luc"/>-->
+        <!--                    <field name="diem_tb_tich_luy"/>-->
+        <!--                </search>-->
+        <!--            </field>-->
+        <!--        </record>-->
+
+        <record model="ir.actions.act_window" id="action_qldt_ket_qua_hoc_tap_sinh_vien">
+            <field name="name">Kết quả học tập sinh viên</field>
+            <field name="res_model">qldt.ket_qua_hoc_tap_sinh_vien</field>
+            <field name="view_mode">tree,form</field>
+            <!--            <field name="search_view_id" ref="qldt_ket_qua_hoc_tap_sinh_vien_search_all"/>-->
+        </record>
+        <!--================================================================================================================-->
+        <!--        Kết quả học tập học kỳ-->
+        <record model="ir.ui.view" id="qldt_ket_qua_hoc_tap_hoc_ky_form">
+            <field name="model">qldt.ket_qua_hoc_tap_hoc_ky</field>
+
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <div class="oe_edit_only" style="font-size:25px" attrs="{'invisible': [('id', '=', False)], }">Chỉnh sửa kết quả học tập theo học kỳ</div>
+                        <div class="oe_edit_only" style="font-size:25px" attrs="{'invisible': [('id', '!=', False)], }">Tạo mới bản ghi kết quả học tập theo học kỳ</div>
+                        <div class="oe_read_only" style="font-size:25px">Kết quả học tập theo học kỳ</div>
+                        <group col="4">
+                            <field name="ky_nam_hoc_id"/>
+                            <field name="nam_hoc"/>
+                            <field name="khoi_lop_id" domain="[('ky_nam_hoc_ids','in',ky_nam_hoc_id)]" widget="selection"/>
+                            <field name="lop_hanh_chinh_id" domain="[('khoi_lop_id','=',khoi_lop_id)]" widget="selection"/>
+                        </group>
+                        <group>
+                            <field name="ket_qua_hoc_tap_sinh_vien_ids"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="qldt_ket_qua_hoc_tap_hoc_ky_tree">
+            <field name="model">qldt.ket_qua_hoc_tap_hoc_ky</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="ky_nam_hoc_id"/>
+                    <field name="khoi_lop_id"/>
+                    <field name="lop_hanh_chinh_id"/>
+                    <field name="ket_qua_hoc_tap_sinh_vien_ids"/>
+                    <field name="create_uid" string="Tạo bởi"/>
+                    <field name="create_date" string="Ngày tạo"/>
+                </tree>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="qldt_ket_qua_hoc_tap_hoc_ky_search_all">
+            <field name="model">qldt.ket_qua_hoc_tap_hoc_ky</field>
+            <field name="arch" type="xml">
+                <search>
+                    <!--                    <field name="ky_nam_hoc_id"/>-->
+                    <field name="khoi_lop_id"/>
+                    <field name="lop_hanh_chinh_id"/>
+                    <field name="ket_qua_hoc_tap_sinh_vien_ids"/>
+                    <field name="create_uid" string="Tạo bởi"/>
+                    <field name="create_date" string="Ngày tạo"/>
+                    <searchpanel>
+                        <field name="ky_nam_hoc_id"/>
+                        <field name="khoi_lop_id"/>
+                        <!--                        <field name="lop_hanh_chinh_id"/>-->
+                    </searchpanel>
+                </search>
+
+            </field>
+        </record>
+
+        <record model="ir.actions.act_window" id="action_qldt_ket_qua_hoc_tap_hoc_ky">
+            <field name="name">Kết quả học tập theo học kỳ</field>
+            <field name="res_model">qldt.ket_qua_hoc_tap_hoc_ky</field>
+            <field name="view_mode">tree,form</field>
+            <field name="context">
+                {"group_by":[]}
+            </field>
+            <field name="search_view_id" ref="qldt_ket_qua_hoc_tap_hoc_ky_search_all"/>
+        </record>
+        <!--=================================================================================================================-->
+        <!--        Kết quả học tập theo năm học-->
+        <record model="ir.ui.view" id="qldt_ket_qua_hoc_tap_nam_hoc_form">
+            <field name="model">qldt.ket_qua_hoc_tap_nam_hoc</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <div class="oe_edit_only" style="font-size:25px" attrs="{'invisible': [('id', '=', False)], }">Chỉnh sửa kết quả học tập theo năm học</div>
+                        <div class="oe_edit_only" style="font-size:25px" attrs="{'invisible': [('id', '!=', False)], }">Tạo mới bản ghi kết quả học tập theo năm học</div>
+                        <div class="oe_read_only" style="font-size:25px">Kết quả học tập theo năm học</div>
+                        <group>
+                            <field name="sinh_vien_id"/>
+                            <field name="ten_sv" readonly="1"/>
+                            <field name="nam_hoc_id"/>
+                            <field name="diem_tb_tich_luy_nam_hoc"/>
+                            <field name="diem_tb_chung_nam_hoc"/>
+                            <field name="tong_so_tin_chi_trong_nam_hoc"/>
+                            <field name="tong_so_tin_chi_tich_luy_sau_nam_hoc"/>
+                            <field name="diem_tb_tich_luy_nam_hoc_thang_4"/>
+                            <field name="diem_tb_chung_nam_hoc_thang_4"/>
+                            <field name="sinh_vien_hoc_ky_ids">
+                                <tree>
+                                    <field name="sinh_vien_id"/>
+                                    <field name="ten_sv" readonly="1"/>
+                                    <field name="ky_nam_hoc_id"/>
+                                    <field name="diem_tb_tich_luy_hoc_ky"/>
+                                    <field name="xep_loai_hoc_luc_hoc_ky"/>
+                                    <field name="hinh_thuc_dao_tao_id"/>
+                                </tree>
+                            </field>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="qldt_ket_qua_hoc_tap_nam_hoc_tree">
+            <field name="model">qldt.ket_qua_hoc_tap_nam_hoc</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="sinh_vien_id"/>
+                    <field name="ten_sv" readonly="1"/>
+                    <field name="nam_hoc_id"/>
+                    <field name="diem_tb_tich_luy_nam_hoc"/>
+                    <field name="diem_tb_chung_nam_hoc"/>
+                    <field name="tong_so_tin_chi_trong_nam_hoc"/>
+                    <field name="tong_so_tin_chi_tich_luy_sau_nam_hoc"/>
+                    <field name="diem_tb_tich_luy_nam_hoc_thang_4"/>
+                    <field name="diem_tb_chung_nam_hoc_thang_4"/>
+                    <field name="sinh_vien_hoc_ky_ids"/>
+                </tree>
+            </field>
+        </record>
+
+        <record model="ir.actions.act_window" id="action_qldt_ket_qua_hoc_tap_nam_hoc">
+            <field name="name">Kết quả học tập theo năm học</field>
+            <field name="res_model">qldt.ket_qua_hoc_tap_nam_hoc</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+    </data>
+</odoo>

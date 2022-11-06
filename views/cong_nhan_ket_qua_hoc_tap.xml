@@ -1,0 +1,248 @@
+<odoo>
+    <data>
+        <!--        Công nhận kết quả học tập -->
+        <record model="ir.ui.view" id="cong_nhan_kqht_form">
+            <field name="model">qldt.cong_nhan_kqht</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <div class="oe_edit_only" style="font-size:25px" attrs="{'invisible': [('id', '=', False)], }">Chỉnh sửa bản ghi công nhận kết quả học tập</div>
+                        <div class="oe_edit_only" style="font-size:25px" attrs="{'invisible': [('id', '!=', False)], }">Tạo mới bản ghi công nhận kết quả học tập</div>
+                        <div class="oe_read_only" style="font-size:25px">Bản ghi công nhận kết quả học tập</div>
+                        <group>
+                            <group>
+                                <field name="sinh_vien_id" options="{'no_quick_create':1,}" required = "1"/>
+                                <field name="khoi_lop_id" readonly="1"/>
+                                <field name="ten_day_du_sv" readonly="1"/>
+                                <field name="ctk_nganh_id" readonly="1"/>
+                                <field name="ctk_chuyen_nganh_id" readonly="1"/>
+                            </group>
+                        </group>
+                        <notebook>
+                            <page string="Nội dung quy đổi">
+                                <notebook string="Môn học thuộc CTK">
+                                    <page>
+                                        <group>
+                                            <field name="mon_hoc_thuoc_chuong_trinh_khung" domain="[('ctk_id','in', [ctk_nganh_id, ctk_chuyen_nganh_id])]"/>
+                                        </group>
+                                    </page>
+                                </notebook>
+                                <notebook>
+                                    <page>
+                                        <group>
+                                            <field name="mon_hoc_da_hoan_thanh">
+                                                <tree>
+                                                    <field name="ma_hoc_phan"/>
+                                                    <field name="ten_hoc_phan"/>
+                                                    <field name="co_so_dao_tao_chung_nhan"/>
+                                                </tree>
+                                            </field>
+                                        </group>
+                                    </page>
+                                </notebook>
+                            </page>
+
+                            <page string="Tài liệu - minh chứng">
+                                <group>
+                                    <field name="ten_file_minh_chung"/>
+                                    <field name="file_minh_chung" filename="ten_file_minh_chung" widget="pdf_viewer"/>
+                                    <field name="ghi_chu"/>
+                                </group>
+                            </page>
+                        </notebook>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="cong_nhan_kqht_tree">
+            <field name="model">qldt.cong_nhan_kqht</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="sinh_vien_id"/>
+                    <field name="ten_sv"/>
+                    <field name="khoi_lop_id"/>
+                    <field name="ctk_nganh_id"/>
+                    <field name="ctk_chuyen_nganh_id"/>
+                    <!-- <field name="so_luong_hoc_phan_duoc_cong_nhan"/> -->
+                    <field name="ghi_chu"/>
+                    <field name="create_date" string="Ngày tạo"/>
+                    <field name="create_uid" string="Tạo bởi"/>
+                </tree>
+            </field>
+        </record>
+
+        <record model="ir.actions.act_window" id="action_cong_nhan_kqht">
+            <field name="name">Quản lý công nhận kết quả học tập</field>
+            <field name="res_model">qldt.cong_nhan_kqht</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+                <!--      Phiếu yêu cầu công nhận kết quả học tập -->
+        <record model="ir.ui.view" id="yc_cong_nhan_kqht_form">
+            <field name="model">qldt.yc_cong_nhan_kqht</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <div class="oe_edit_only" style="font-size:25px" attrs="{'invisible': [('id', '=', False)], }">Chỉnh sửa phiếu công nhận kết quả học tập</div>
+                        <div class="oe_edit_only" style="font-size:25px" attrs="{'invisible': [('id', '!=', False)], }">Tạo mới phiếu công nhận kết quả học tập</div>
+                        <div class="oe_read_only" style="font-size:25px">Phiếu yêu cầu công nhận kết quả học tập</div>
+                        <group>
+                            <group>
+                                <field name="sinh_vien_id" options="{'no_quick_create':1,}" required = "1"/>
+                                <field name="khoi_lop_id" readonly="1"/>
+                                <field name="ten_sv" readonly="1"/>
+                                <field name="ctk_id" readonly="1"/>
+                                <field name="trang_thai"/>
+                            </group>
+                        </group>
+                        <notebook>
+                            <page string="Nội dung quy đổi">
+                                <notebook string="Môn học thuộc CTK">
+                                    <page>
+                                        <group>
+                                            <field name="mon_hoc_thuoc_chuong_trinh_khung" domain="[('ctk_id','=',ctk_id)]"/>
+                                        </group>
+                                    </page>
+                                </notebook>
+                                <notebook>
+                                    <page>
+                                        <group>
+                                            <field name="mon_hoc_da_hoan_thanh">
+                                                <tree>
+                                                    <field name="ma_hoc_phan"/>
+                                                    <field name="ten_hoc_phan"/>
+                                                    <field name="co_so_dao_tao_chung_nhan"/>
+                                                </tree>
+                                            </field>
+                                        </group>
+                                    </page>
+                                </notebook>
+                            </page>
+
+                            <page string="Tài liệu - minh chứng">
+                                <group>
+                                    <field name="ten_file_minh_chung"/>
+                                    <field name="file_minh_chung" filename="ten_file_minh_chung" widget="pdf_viewer"/>
+                                    <field name="ghi_chu"/>
+                                </group>
+                            </page>
+                        </notebook>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="yc_cong_nhan_kqht_tree">
+            <field name="model">qldt.yc_cong_nhan_kqht</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="trang_thai"/>
+                    <field name="sinh_vien_id"/>
+                    <field name="ten_sv"/>
+                    <field name="khoi_lop_id"/>
+                    <field name="ctk_id"/>
+                    <field name="mon_hoc_thuoc_chuong_trinh_khung" widget="many2many_tags"/>
+                    <field name="mon_hoc_da_hoan_thanh" widget="many2many_tags"/>
+                    <field name="ghi_chu"/>
+                    <field name="create_date" string="Ngày tạo"/>
+                    <field name="create_uid" string="Tạo bởi"/>
+                </tree>
+            </field>
+        </record>
+
+        <record model="ir.actions.act_window" id="action_phieu_yeu_cau_cong_nhan_kqht">
+            <field name="name">Quản lý phiếu yêu cầu công nhận kết quả học tập</field>
+            <field name="res_model">qldt.yc_cong_nhan_kqht</field>
+            <field name="context">{"group_by":["trang_thai"]}</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+
+        <!--        KQHT được công nhận-->
+
+        <!--        <record model="ir.ui.view" id="kqht_duoc_cong_nhan_form">-->
+        <!--            <field name="model">qldt.kqht_duoc_cong_nhan</field>-->
+        <!--            <field name="arch" type="xml">-->
+        <!--                <form>-->
+        <!--                    <sheet>-->
+        <!--                        <div class="oe_edit_only" style="font-size:25px" attrs="{'invisible': [('id', '=', False)], }">Chỉnh sửa danh sách công nhận kết quả học tập</div>-->
+        <!--                        <div class="oe_edit_only" style="font-size:25px" attrs="{'invisible': [('id', '!=', False)], }">Tạo mới danh sách công nhận kết quả học tập</div>-->
+        <!--                        <div class="oe_read_only" style="font-size:25px">Danh sách công nhận kết quả học tập</div>-->
+        <!--                        <group col="4">-->
+        <!--                            &lt;!&ndash;                            <group>&ndash;&gt;-->
+        <!--                            <field name="noi_dung_chuyen_doi"-->
+        <!--                                   string="Nội dung chuyển đổi"-->
+        <!--                                   widget="selection"-->
+        <!--                                   options="{'no_quick_create':1,-->
+        <!--                                                'no_open': True}"/>-->
+        <!--                            <field name="ngay_het_han"/>-->
+        <!--                            <field name="diem_quy_doi"/>-->
+        <!--&lt;!&ndash;                            <field name="danh_sach_mon_hoc_duoc_chuyen_doi" invisible="1"/>&ndash;&gt;-->
+        <!--                            <field name="hoc_phan_cs_khac" invisible="1"/>-->
+        <!--                        </group>-->
+        <!--                        <group>-->
+        <!--                            <field name="ten_hoc_phan"  />-->
+        <!--&lt;!&ndash;                            <field name="ma_hoc_phan" />&ndash;&gt;-->
+        <!--                            <field name="hoc_phan_co_so_dao_tao_khac_id"/>-->
+        <!--                        </group>-->
+        <!--                        <group>-->
+        <!--                            <field name="ten_file_minh_chung"/>-->
+        <!--                            <field name="file_minh_chung" filename="ten_file_minh_chung" widget="pdf_viewer"/>-->
+        <!--                        </group>-->
+        <!--                        &lt;!&ndash;                        <group>&ndash;&gt;-->
+        <!--                        &lt;!&ndash;                            <field name="hoc_phan_ids" widget="many2many">&ndash;&gt;-->
+        <!--                        &lt;!&ndash;                                <tree>&ndash;&gt;-->
+        <!--                        &lt;!&ndash;&lt;!&ndash;                                    <field name="noi_dung_chuyen_doi"/>&ndash;&gt;&ndash;&gt;-->
+        <!--                        &lt;!&ndash;&lt;!&ndash;                                    <field name="ten_hoc_phan"/>&ndash;&gt;&ndash;&gt;-->
+        <!--                        &lt;!&ndash;                                    <field name="ma_hoc_phan_moi"/>&ndash;&gt;-->
+        <!--                        &lt;!&ndash;                                    <field name="hoc_phan_id"/>&ndash;&gt;-->
+        <!--                        &lt;!&ndash;                                    <field name="hoc_ky" />&ndash;&gt;-->
+        <!--                        &lt;!&ndash;                                    &lt;!&ndash;                                    <field name="so_tin_chi"/>&ndash;&gt;&ndash;&gt;-->
+        <!--                        &lt;!&ndash;                                    <field name="loai_hoc_phan"/>&ndash;&gt;-->
+        <!--                        &lt;!&ndash;&lt;!&ndash;                                    <field name="hoc_phan_tuong_duong_id" widget="many2many_tags"/>&ndash;&gt;&ndash;&gt;-->
+        <!--                        &lt;!&ndash;                                </tree>&ndash;&gt;-->
+        <!--                        &lt;!&ndash;                            </field>&ndash;&gt;-->
+        <!--                        &lt;!&ndash;                        </group>&ndash;&gt;-->
+        <!--                        &lt;!&ndash;                        <group>&ndash;&gt;-->
+        <!--                        &lt;!&ndash;                            <field name="hoc_phan_tuong_duong_ids" widget="many2many">&ndash;&gt;-->
+        <!--                        &lt;!&ndash;                                <tree>&ndash;&gt;-->
+        <!--                        &lt;!&ndash;                                    <field name="noi_dung_chuyen_doi"/>&ndash;&gt;-->
+        <!--                        &lt;!&ndash;&lt;!&ndash;                                    <field name="ten_hoc_phan" widget="many2many_tags"/>&ndash;&gt;&ndash;&gt;-->
+        <!--                        &lt;!&ndash;                                    <field name="hoc_phan_id" widget="many2many_tags"/>&ndash;&gt;-->
+        <!--                        &lt;!&ndash;                                    <field name="hoc_phan_co_so_dao_tao_khac" widget="many2many_tags"/>&ndash;&gt;-->
+        <!--                        &lt;!&ndash;&lt;!&ndash;                                    <field name="so_tin_chi" string="Số tín chỉ quy đổi"/>&ndash;&gt;&ndash;&gt;-->
+        <!--                        &lt;!&ndash;                                    <field name="create_date" string="Ngày tạo"/>&ndash;&gt;-->
+        <!--                        &lt;!&ndash;                                    <field name="create_uid" string="Tạo bởi"/>&ndash;&gt;-->
+        <!--                        &lt;!&ndash;                                </tree>&ndash;&gt;-->
+        <!--                        &lt;!&ndash;                            </field>&ndash;&gt;-->
+        <!--                        &lt;!&ndash;                        </group>&ndash;&gt;-->
+        <!--                    </sheet>-->
+        <!--                </form>-->
+        <!--            </field>-->
+        <!--        </record>-->
+
+        <!--        <record model="ir.ui.view" id="kqht_duoc_cong_nhan_tree">-->
+        <!--            <field name="model">qldt.kqht_duoc_cong_nhan</field>-->
+        <!--            <field name="arch" type="xml">-->
+        <!--                <tree>-->
+        <!--                    <field name="noi_dung_chuyen_doi" string="ND chuyển đổi"/>-->
+        <!--                    <field name="ten_hoc_phan" widget="many2many_tags" string="HP của CTK hiện tại"/>-->
+        <!--&lt;!&ndash;                    <field name="ma_hoc_phan" readonly="1" string="MaHP"/>&ndash;&gt;-->
+        <!--                    <field name="hoc_phan_co_so_dao_tao_khac_id" string="HP/CC tương đương" />-->
+        <!--                    <field name="file_minh_chung"/>-->
+        <!--                    <field name="ngay_het_han"/>-->
+        <!--                    <field name="diem_quy_doi"/>-->
+        <!--&lt;!&ndash;                    <field name="create_date" string="Ngày tạo"/>&ndash;&gt;-->
+        <!--&lt;!&ndash;                    <field name="create_uid" string="Tạo bởi"/>&ndash;&gt;-->
+        <!--                </tree>-->
+        <!--            </field>-->
+        <!--        </record>-->
+
+        <!--        <record model="ir.actions.act_window" id="action_kqht_duoc_cong_nhan">-->
+        <!--            <field name="name">Quản lý kết quả học tập được công nhận</field>-->
+        <!--            <field name="res_model">qldt.kqht_duoc_cong_nhan</field>-->
+        <!--            <field name="view_mode">tree,form</field>-->
+        <!--        </record>-->
+    </data>
+</odoo>

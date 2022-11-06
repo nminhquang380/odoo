@@ -1,0 +1,52 @@
+<odoo>
+    <data>
+        <record model="ir.ui.view" id="nv_hoc_phan_form">
+            <field name="model">nv_hoc_phan</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <div class="oe_edit_only" style="font-size:25px" attrs="{'invisible': [('id', '=', False)], }">
+                            Chỉnh sửa thông tin nguyện vọng đăng ký học phần
+                        </div>
+                        <div class="oe_edit_only" style="font-size:25px" attrs="{'invisible': [('id', '!=', False)], }">
+                            Tạo mới phiếu nguyện vọng đăng ký học phần
+                        </div>
+                        <div class="oe_read_only" style="font-size:25px">Nguyện vọng đăng ký học phần</div>
+                    <group col="4">
+                        <field name="hoc_phan_id"/>
+                        <field name="phieu_dang_ky_hoc_phan_id"/>
+                        <field name="ky_hoc_id"/>
+                        <field name="sinh_vien_id"/>
+                        <field name="ghi_chu"/>
+<!--                        <field name="phieu_dang_ky_hoc_phan_id"/>-->
+                        <field name="so_tin_chi"/>
+                        <field name="muc_hoc_phi_phai_dong"/>
+                        <field name="hoc_phi"/>
+                    </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+        <record model="ir.ui.view" id="nv_hoc_phan_tree">
+            <field name="model">nv_hoc_phan</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="hoc_phan_id"/>
+                    <field name="ten_hoc_phan"/>
+                    <field name="so_tin_chi"/>
+                    <field name="ky_hoc_id"/>
+                    <field name="sinh_vien_id"/>
+                    <field name="muc_hoc_phi_phai_dong"/>
+                    <field name="hoc_phi"/>
+                    <!-- <field name="ma_khoan_thu"/> -->
+                </tree>
+            </field>
+        </record>
+        <record model="ir.actions.act_window" id="action_nv_hoc_phan">
+            <field name="name">Nguyện vọng đăng ký học phần</field>
+            <field name="res_model">nv_hoc_phan</field>
+            <field name="view_mode">tree,form</field>
+            <field name="context">{"group_by":["dot_dk_nhu_cau_id","hoc_phan_id"]}</field>
+        </record>
+    </data>
+</odoo>

@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record model="ir.ui.view" id="lop_boi_duong_view_form">
+            <field name="name">lop_boi_duong.view.form</field>
+            <field name="model">qldt.lop_boi_duong</field>
+            <field name="arch" type="xml">
+                <form string="Lớp bồi dưỡng">
+                    <sheet>
+                        <div class="oe_button_box" name="button_box">
+                            <button name="action_sinh_vien_lop_boi_duong"
+                                    type="object"
+                                    icon="fa-users"
+                                    class="oe_stat_button"
+                                    groups="website_slides.group_website_slides_officer,website_slides.group_website_quan_tri_vien_bd,
+                                            website_slides.group_website_slides_tro_giang">
+                                <div class="o_field_widget o_stat_info">
+<!--                                    <span class="o_stat_value"><field name="members_done_count" nolabel="1"/></span>-->
+<!--                                    <span name="members_done_count_label" class="o_stat_text">Finished</span>-->
+                                    <span>DS Sinh viên</span>
+                                </div>
+                            </button>
+                            <button name="action_thong_ke_quiz"
+                                    type="object"
+                                    icon="fa-files-o"
+                                    class="oe_stat_button"
+                                    groups="website_slides.group_website_slides_officer,website_slides.group_website_quan_tri_vien_bd,
+                                            website_slides.group_website_slides_tro_giang">
+                                <div class="o_field_widget o_stat_info">
+                                    <span>SV - Học liệu</span>
+                                </div>
+                            </button>
+                        </div>
+                        <div class="oe_edit_only" style="font-size:25px" attrs="{'invisible': [('id', '=', False)], }">Chỉnh sửa lớp bồi dưỡng</div>
+                        <div class="oe_edit_only" style="font-size:25px" attrs="{'invisible': [('id', '!=', False)], }">Tạo mới lớp bồi dưỡng</div>
+                        <div class="oe_read_only" style="font-size:25px">Lớp lớp bồi dưỡng</div>
+                        <group col="4">
+                            <field name="ten_lop_boi_duong"/>
+                            <field name="ma_lop_boi_duong"/>
+                            <field name="slide_channel_id"/>
+                            <field name="can_bo_id"/>
+                            <field name="tro_giang_id"/>
+                            <field name="thoi_gian_bat_dau"/>
+                            <field name="thoi_gian_ket_thuc"/>
+                            <field name="hinh_thuc_dao_tao_id"/>
+                            <field name="si_so"/>
+                            <field name="mailing_list"/>
+                        </group>
+                        <notebook colspan="4">
+                            <page string="Danh sách sinh viên/học viên">
+                                <group>
+                                    <field name="sinh_vien_ids">
+                                        <tree>
+                                            <field name="ma_dinh_danh"/>
+                                            <field name="ma_dinh_danh"/>
+                                            <field name="ho_dem"/>
+                                            <field name="ten"/>
+                                            <field name="ghi_chu"/>
+                                        </tree>
+                                    </field>
+                                </group>
+                            </page>
+                            <page name="thong_tin_khac" string="Thông tin khác">
+                                <group>
+                                    <field name="ghi_chu"/>
+                                </group>
+                            </page>
+                        </notebook>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="lop_boi_duong_view_tree">
+            <field name="name">lop_boi_duong.view.tree</field>
+            <field name="model">qldt.lop_boi_duong</field>
+            <field name="arch" type="xml">
+                <tree string="Lớp bồi dưỡng">
+                    <field name="ma_lop_boi_duong"/>
+                    <field name="ten_lop_boi_duong"/>
+                    <field name="slide_channel_id"/>
+                    <field name="si_so"/>
+                    <field name="can_bo_id"/>
+                    <field name="thoi_gian_bat_dau"/>
+                    <field name="thoi_gian_ket_thuc"/>
+                    <field name="hinh_thuc_dao_tao_id"/>
+                    <field name="create_uid"/>
+                    <field name="create_date"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="action_lop_boi_duong" model="ir.actions.act_window">
+            <field name="name">Danh sách lớp bồi dưỡng</field>
+            <field name="res_model">qldt.lop_boi_duong</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+                <p class="o_view_nocontent_smiling_face">
+                    Danh sách lớp bồi dưỡng đang được cập nhật
+                </p>
+            </field>
+        </record>
+
+    </data>
+</odoo>

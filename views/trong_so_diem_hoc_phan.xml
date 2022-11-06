@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record id="trong_so_diem_hoc_phan_view_form" model="ir.ui.view">
+            <field name="name">qldt_trong_so_diem_hoc_phan.view.form</field>
+            <field name="model">qldt.trong_so_diem_hoc_phan</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <div class="oe_edit_only" style="font-size:25px" attrs="{'invisible': [('id', '=', False)], }">Chỉnh sửa trọng số điểm học phần</div>
+                        <div class="oe_edit_only" style="font-size:25px" attrs="{'invisible': [('id', '!=', False)], }">Tạo mới trọng số điểm học phần</div>
+                        <div class="oe_read_only" style="font-size:25px">Trọng số điểm học phần</div>
+                        <group col="4">
+                            <field name="hinh_thuc_dao_tao_id"/>
+                            <field name="hoc_phan_ap_dung_id"/>
+                            <field name="dau_diem_id"/>
+                            <field name="gia_tri_trong_so"/>
+                        </group>
+                        <notebook>
+                            <group>
+                                <field name="dot_nhap_hoc_ids"/>
+                            </group>
+                        </notebook>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="trong_so_diem_hoc_phan_view_form_phuong_phap_danh_gia_slide_channel" model="ir.ui.view">
+            <field name="name">qldt_trong_so_diem_hoc_phan.view.form</field>
+            <field name="model">qldt.trong_so_diem_hoc_phan</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <div class="oe_edit_only" style="font-size:25px" attrs="{'invisible': [('id', '=', False)], }">Chỉnh sửa trọng số điểm học phần</div>
+                        <div class="oe_edit_only" style="font-size:25px" attrs="{'invisible': [('id', '!=', False)], }">Tạo mới trọng số điểm học phần</div>
+                        <div class="oe_read_only" style="font-size:25px">Trọng số điểm học phần</div>
+                        <group col="4">
+                            <field name="hinh_thuc_dao_tao_id" readonly="1"/>
+                            <field name="hoc_phan_ap_dung_id" readonly="1"/>
+                            <field name="dau_diem_id" readonly="1"/>
+                            <field name="gia_tri_trong_so"/>
+                        </group>
+                        <notebook>
+                            <group>
+                                <field name="dot_nhap_hoc_ids"/>
+                            </group>
+                        </notebook>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="trong_so_diem_hoc_phan_view_tree" model="ir.ui.view">
+            <field name="name">qldt_trong_so_diem_hoc_phan.view.tree</field>
+            <field name="model">qldt.trong_so_diem_hoc_phan</field>
+            <field name="arch" type="xml">
+                <tree string="Trọng số điểm học phần">
+                    <field name="hinh_thuc_dao_tao_id"/>
+                    <field name="chuong_trinh_khung_id"/>
+                    <field name="phuong_phap_danh_gia_id"/>
+                    <field name="hoc_phan_ap_dung_id"/>
+                    <field name="dau_diem_id"/>
+                    <field name="gia_tri_trong_so"/>
+                    <field string="Ngày tạo" name="create_date"/>
+                    <field string="Người tạo" name="create_uid"/>
+                </tree>
+            </field>
+        </record>
+
+        <!--        trọng số điểm học phần list view hiển thị trong tab phương pháp đánh giá học phần trong menu quản lý học phần - slide_channel-->
+        <record id="trong_so_diem_hoc_phan_view_list_in_phuong_phap_danh_gia_slide_channel" model="ir.ui.view">
+            <field name="name">qldt_trong_so_diem_hoc_phan.view.list.pp.danh_gia</field>
+            <field name="model">qldt.trong_so_diem_hoc_phan</field>
+            <field name="arch" type="xml">
+                <tree string="Trọng số điểm học phần">
+                    <field name="hinh_thuc_dao_tao_id"/>
+                    <field name="dot_nhap_hoc_ids" widget="many2many_tags"/>
+                    <field name="chuong_trinh_khung_id"/>
+                    <field name="phuong_phap_danh_gia_id"/>
+                    <field name="dau_diem_id"/>
+                    <field name="gia_tri_trong_so"/>
+                </tree>
+            </field>
+        </record>
+
+        <!--        trọng số điểm học phần tree view hiển thị trong tab phương pháp đánh giá học phần trong menu quản lý học phần - slide_channel-->
+        <record id="trong_so_diem_hoc_phan_view_tree_in_phuong_phap_danh_gia_slide_channel" model="ir.ui.view">
+            <field name="name">qldt_trong_so_diem_hoc_phan.view.tree.pp.danh_gia</field>
+            <field name="model">qldt.trong_so_diem_hoc_phan</field>
+            <field name="arch" type="xml">
+                <tree string="Trọng số điểm học phần">
+                    <field name="hinh_thuc_dao_tao_id"/>
+                    <field name="chuong_trinh_khung_id"/>
+                    <field name="phuong_phap_danh_gia_id"/>
+                    <field name="dau_diem_id"/>
+                    <field name="gia_tri_trong_so"/>
+                    <field string="Ngày tạo" name="create_date"/>
+                    <field string="Người tạo" name="create_uid"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="action_trong_so_diem_hoc_phan" model="ir.actions.act_window">
+            <field name="name">Danh sách trọng số điểm học phần</field>
+            <field name="res_model">qldt.trong_so_diem_hoc_phan</field>
+            <field name="view_mode">tree,form</field>
+            <field name="view_id" ref="trong_so_diem_hoc_phan_view_tree"></field>
+            <!--            <field name="context">{"group_by":[]}</field>-->
+            <field name="context">{"group_by":["hinh_thuc_dao_tao_id","chuong_trinh_khung_id","hoc_phan_ap_dung_id","phuong_phap_danh_gia_id"]}</field>
+        </record>
+
+    </data>
+</odoo>

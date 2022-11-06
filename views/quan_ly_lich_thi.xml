@@ -1,0 +1,90 @@
+<odoo>
+    <data>
+        <record model="ir.ui.view" id="ca_thi_tree">
+            <field name="model">ca_thi</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="nhom_thi"/>
+                    <field name="to_thi"/>
+                    <field name="hoc_phan_id"/>
+                    <field name="ten_hoc_phan"/>
+                    <field name="ngay_thi"/>
+                    <field name="tiet_bd"/>
+                    <field name="so_tiet"/>
+                    <field name="phong_thi"/>
+                    <field name="gio_bd"/>
+                    <field name="so_phut"/>
+                    <field name="dot_thi_id"/>
+                </tree>
+            </field>
+        </record>
+        <record model="ir.ui.view" id="ca_thi_form">
+            <field name="model">ca_thi</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group col="4" string="Thông tin ca thi">
+                            <field name="nhom_thi"/>
+                            <field name="to_thi"/>
+                            <field name="hoc_phan_id"/>
+                            <field name="ten_hoc_phan"/>
+                            <field name="ngay_thi"/>
+                            <field name="tiet_bd"/>
+                            <field name="so_tiet"/>
+                            <field name="phong_thi"/>
+                            <field name="gio_bd"/>
+                            <field name="so_phut"/>
+                            <field name="dot_thi_id"/>
+                            <field name="can_bo_coi_thi"/>
+                            <field name="hinh_thuc"/>
+                            <field name="ghi_chu"/>
+                        </group>
+                        <group>
+                            <field name="sinh_vien_ids">
+                                <tree>
+                                    <field name="name" string="Họ và tên"/>
+                                    <field name="ma_dinh_danh"/>
+                                </tree>
+                            </field>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+        <record model="ir.ui.view" id="dot_thi_tree">
+            <field name="model">dot_thi</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="ten_dot_thi"/>
+                    <field name="ky_nam_hoc_id"/>
+                </tree>
+            </field>
+        </record>
+        <record model="ir.ui.view" id="dot_thi_form">
+            <field name="model">dot_thi</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group col="4" string="Thông tin đợt thi">
+                            <field name="ten_dot_thi"/>
+                            <field name="ky_nam_hoc_id"/>
+                        </group>
+                        <group>
+                            <field name="ca_thi_ids"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+        <record model="ir.actions.act_window" id="action_ca_thi">
+            <field name="name">Quản lý thông tin ca thi</field>
+            <field name="res_model">ca_thi</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+        <record model="ir.actions.act_window" id="action_dot_thi">
+            <field name="name">Quản lý thông tin đợt thi</field>
+            <field name="res_model">dot_thi</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+    </data>
+</odoo>

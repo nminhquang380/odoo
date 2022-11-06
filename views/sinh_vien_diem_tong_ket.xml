@@ -1,0 +1,58 @@
+<odoo>
+    <data>
+        <record model="ir.ui.view" id="sinh_vien_diem_tong_ket_form">
+            <field name="model">sinh_vien_diem_tong_ket</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <div class="oe_edit_only" style="font-size:25px" attrs="{'invisible': [('id', '=', False)], }">
+                            Chỉnh thông tin sinh viên điểm tổng kết
+                        </div>
+                        <div class="oe_edit_only" style="font-size:25px" attrs="{'invisible': [('id', '!=', False)], }">
+                            Tạo mới thông tin sinh viên điểm tổng kết
+                        </div>
+                        <div class="oe_read_only" style="font-size:25px">Thông tin sinh viên điểm tổng kết</div>
+                        <group col="4">
+                            <field name="sinh_vien_id"/>
+                            <field name="ten_sv" readonly="1"/>
+                            <field name="ctk_nganh_id"/>
+                            <field name="ctk_chuyen_nganh_id"/>
+                            <field name="tong_so_tin_chi_duoc_mien"/>
+                            <field name="tong_so_tin_chi_da_hoc"/>
+                            <field name="tong_so_tin_chi_tich_luy"/>
+                            <field name="diem_tb_tich_luy_thang_4"/>
+                            <field name="xep_loai_hoc_luc"/>
+                        </group>
+                        <notebook>
+                            <page string="Danh sách học phần - điểm số">
+                                <field name="sv_hp_ds_ids"/>
+                            </page>
+                        </notebook>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="sinh_vien_diem_tong_ket_tree">
+            <field name="model">sinh_vien_diem_tong_ket</field>
+            <field name="arch" type="xml">
+                <tree default_order="create_date desc">
+                    <field name="sinh_vien_id"/>
+                    <field name="ten_sv" readonly="1"/>
+                    <field name="ctk_nganh_id"/>
+                    <field name="ctk_chuyen_nganh_id"/>
+                    <field name="tong_so_tin_chi_duoc_mien"/>
+                    <field name="tong_so_tin_chi_da_hoc"/>
+                    <field name="tong_so_tin_chi_tich_luy"/>
+                    <field name="diem_tb_tich_luy_thang_4"/>
+                    <field name="xep_loai_hoc_luc"/>
+                </tree>
+            </field>
+        </record>
+        <record model="ir.actions.act_window" id="action_sinh_vien_diem_tong_ket">
+            <field name="name">Quản lý thông tin sinh viên điểm tổng kết</field>
+            <field name="res_model">sinh_vien_diem_tong_ket</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+    </data>
+</odoo>

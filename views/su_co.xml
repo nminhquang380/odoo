@@ -1,0 +1,45 @@
+<odoo>
+    <data>
+        <record model="ir.ui.view" id="ky_hoc_form">
+            <field name="model">qldt.su_co</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <div class="oe_edit_only" style="font-size:25px" attrs="{'invisible': [('id', '=', False)], }">Chỉnh sửa thông tin sự cố</div>
+                        <div class="oe_edit_only" style="font-size:25px" attrs="{'invisible': [('id', '!=', False)], }">Tạo mới sự cố</div>
+                        <div class="oe_read_only" style="font-size:25px">Thông tin sự cố</div>
+                        <group>
+                            <group>
+                                <field name="ten_su_co"/>
+                                <field name="mo_ta_ngan"/>
+                                <field name="link_anh_dinh_kem"/>
+                            </group>
+
+                        </group>
+                        <group>
+                            <field name="mo_ta_chi_tiet"/>
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="ky_hoc_tree">
+            <field name="model">qldt.su_co</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="ten_su_co"/>
+                    <field name="mo_ta_ngan"/>
+                    <field name="create_uid" string="Tạo bởi"/>
+                    <field name="create_date" string="Ngày tạo"/>
+                </tree>
+            </field>
+        </record>
+
+        <record model="ir.actions.act_window" id="action_thong_tin_su_co">
+            <field name="name">Quản lý sự cố</field>
+            <field name="res_model">qldt.su_co</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+    </data>
+</odoo>
